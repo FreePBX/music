@@ -257,12 +257,17 @@ else
 	<br />
 	<?php
 
+	// Check to see if the upload failed for some reason
+	if (isset($_FILES['mohfile']['name']) && !is_uploaded_file($_FILES['mohfile']['tmp_name'])) {
+		echo "<h5> PHP "._("Error Processing")." ".$_FILES['mohfile']['name']."! "._("Check")." upload_max_filesize "._("in")." /etc/php.ini</h5>";
+	}
 	if (isset($_FILES['mohfile']['tmp_name']) && is_uploaded_file($_FILES['mohfile']['tmp_name'])) {
 		//echo $_FILES['mohfile']['name']." uploaded OK";
 		move_uploaded_file($_FILES['mohfile']['tmp_name'], $path_to_dir."/orig_".$_FILES['mohfile']['name']);
 		$process_err = process_mohfile($_FILES['mohfile']['name']);
 		if (isset($process_err)) {
-			echo "<h5>"._("Error Processing").": \"$process_err\" for ".$_FILES['mohfile']['name']."!</h5>";
+			echo "<h5>"._("Error Processing").": \"$process_err\" for ".$_FILES['mohfile']['name']."!</h5>\n";
+			echo "<h5>"._("This is not a fatal error, your Music on Hold may still work.")."</h5>\n";
 		} else {
 			echo "<h5>"._("Completed processing")." ".$_FILES['mohfile']['name']."!</h5>";
 		}
