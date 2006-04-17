@@ -7,7 +7,7 @@
 	<menuitems>
 		<music>On Hold Music</music>
 	</menuitems>
-	<location>release/music-1.0.tgz</location>
+	<location>release/music-1.0.1.tgz</location>
 	<info>http://freepbx.org/wiki/OnHoldMusic</info>
-	<md5sum>f72f9a43a6a1916191ff43a609cdc86c</md5sum>
+	<md5sum>67d141e1ffe24301d11f760700d9c7e3</md5sum>
 </module>
