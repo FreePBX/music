@@ -82,7 +82,7 @@ function createmusicconf()
 			if (file_exists("{$dir}.random")) {
 				$File_Write.="[{$tresult}]\nmode=files\ndirectory={$dir}\nrandom=yes\n";
 			} else {
-				$File_Write.="[{$tresult}]\nmode=files\ndirectory={$dir}{$tresult}\n";
+				$File_Write.="[{$tresult}]\nmode=files\ndirectory={$dir}\n";
 			}
 		}
 	}
