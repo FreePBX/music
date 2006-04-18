@@ -45,7 +45,7 @@ function music_rmdirr($dirname)
         }
  
         // Recurse
-        rmdirr("$dirname/$entry");
+        music_rmdirr("$dirname/$entry");
     }
  
     // Clean up
