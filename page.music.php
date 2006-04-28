@@ -259,7 +259,11 @@ else
 
 	// Check to see if the upload failed for some reason
 	if (isset($_FILES['mohfile']['name']) && !is_uploaded_file($_FILES['mohfile']['tmp_name'])) {
-		echo "<h5> PHP "._("Error Processing")." ".$_FILES['mohfile']['name']."! "._("Check")." upload_max_filesize "._("in")." /etc/php.ini</h5>";
+		if (strlen($_FILES['mohfile']['name']) == 0) {
+			echo "<h5> PHP "._("Error Processing")."! "._("No file provided")." "._("Please select a file to upload")."</h5>";
+		} else {
+			echo "<h5> PHP "._("Error Processing")." ".$_FILES['mohfile']['name']."! "._("Check")." upload_max_filesize "._("in")." /etc/php.ini</h5>";
+		}
 	}
 	if (isset($_FILES['mohfile']['tmp_name']) && is_uploaded_file($_FILES['mohfile']['tmp_name'])) {
 		//echo $_FILES['mohfile']['name']." uploaded OK";
