@@ -1,13 +1,13 @@
 <module>
 	<rawname>music</rawname>
 	<name>On Hold Music</name>
-	<version>1.0.2</version>
+	<version>1.0.3</version>
 	<type>setup</type>
 	<category>Module</category>
 	<menuitems>
 		<music>On Hold Music</music>
 	</menuitems>
-	<location>release/music-1.0.2.tgz</location>
+	<location>release/music-1.0.3.tgz</location>
 	<info>http://freepbx.org/wiki/OnHoldMusic</info>
-	<md5sum>b5347439629712fd39bf64b5a8a2d7bb</md5sum>
+	<md5sum>df268f4a223e210b92877e31557479af</md5sum>
 </module>
