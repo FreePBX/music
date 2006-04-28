@@ -164,9 +164,9 @@ function process_mohfile($mohfile)
 	$returncode = 0;
 	$origmohfile=$path_to_dir."/orig_".$mohfile;
 	$newname = strtr($mohfile,"&", "_");
-	$newmohfile=$path_to_dir."/". ((stripos($newname,'.mp3') === false) ? $newname.".mp3" : $newname);
+	$newmohfile=$path_to_dir."/". ((strpos($newname,'.mp3') === false) ? $newname.".mp3" : $newname);
 	$lamecmd="lame --cbr -m m -t -F \"".$origmohfile."\" \"".$newmohfile."\" 2>&1 ";
-	if (stripos($newmohfile,'.mp3') !== false) 
+	if (strpos($newmohfile,'.mp3') !== false) 
 		exec($lamecmd, $output, $returncode);
 	if ($returncode != 0) {
 		return join("<br>\n", $output);
