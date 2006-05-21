@@ -276,6 +276,7 @@ else
 		} else {
 			echo "<h5>"._("Completed processing")." ".$_FILES['mohfile']['name']."!</h5>";
 		}
+		needreload();
 		//kill_mpg123();
 	}
 
@@ -292,6 +293,7 @@ else
 			exec($rmcmd);
 			echo "<h5>"._("Deleted")." ".$_REQUEST['del']."!</h5>";
 			//kill_mpg123();
+			needreload();
 		}
 	}
 	$file_array = build_list();
