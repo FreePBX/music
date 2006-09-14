@@ -1,13 +1,13 @@
 <module>
 	<rawname>music</rawname>
 	<name>On Hold Music</name>
-	<version>1.0.5</version>
+	<version>1.0.6</version>
 	<type>setup</type>
 	<category>Module</category>
 	<menuitems>
 		<music>On Hold Music</music>
 	</menuitems>
-	<location>release//2.2/music-1.0.5.tgz</location>
+	<location>release/2.2/music-1.0.6.tgz</location>
 	<info>http://aussievoip.com.au/wiki/freePBX-OHM</info>
-	<md5sum>0e64db0372997671d4600e167f2af5ab</md5sum>
+	<md5sum>ac329dab650ecfe14c38ae0168e70f75</md5sum>
 </module>
