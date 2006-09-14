@@ -286,12 +286,17 @@ else
 
 
 	if (isset($_REQUEST['del'])) {
+		$del = $_REQUEST['del'];
+		if (strpos($del, "\"") || strpos($del, "\'") || strpos($del, "\;")) {
+			print "You're trying to use an invalid character. Please don't.\n"; 
+			exit; 
+		}
 		if (($numf == 1) && ($category == "Default") ){
 			echo "<h5>"._("You must have at least one file for On Hold Music.  Please upload one before deleting this one.")."</h5>";
 		} else {
-			$rmcmd="rm -f \"".$path_to_dir."/".$_REQUEST['del']."\"";
+			$rmcmd="rm -f \"".$path_to_dir."/".$del."\"";
 			exec($rmcmd);
-			echo "<h5>"._("Deleted")." ".$_REQUEST['del']."!</h5>";
+			echo "<h5>"._("Deleted")." ".$del."!</h5>";
 			//kill_mpg123();
 			needreload();
 		}
