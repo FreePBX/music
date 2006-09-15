@@ -7,7 +7,7 @@
 	<menuitems>
 		<music>On Hold Music</music>
 	</menuitems>
-	<location>release/2.2/music-1.0.6.tgz</location>
+	<location>release/2.2/music-1.1.tgz</location>
 	<info>http://aussievoip.com.au/wiki/freePBX-OHM</info>
-	<md5sum>ac329dab650ecfe14c38ae0168e70f75</md5sum>
+	<md5sum>504bdeac3713093db691064315490ccf</md5sum>
 </module>
