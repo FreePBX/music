@@ -1,9 +1,10 @@
 <?php
 
 function music_list($path) {
-	$i = 0;
+	$i = 1;
 	$arraycount = 0;
 	
+	$filearray = Array("default");
 	if (is_dir($path)){
 		if ($handle = opendir($path)){
 			while (false !== ($file = readdir($handle))){ 
@@ -28,6 +29,7 @@ function music_rmdirr($dirname)
 {
     // Sanity check
     if (!file_exists($dirname)) {
+	print "$dirname Doesn't exist\n";
         return false;
     }
  

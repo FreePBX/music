@@ -16,14 +16,17 @@
 $action = isset($_REQUEST['action'])?$_REQUEST['action']:'';
 $randon = isset($_REQUEST['randon'])?$_REQUEST['randon']:'';
 $randoff = isset($_REQUEST['randoff'])?$_REQUEST['randoff']:'';
-$category = strtr(isset($_REQUEST['category'])?$_REQUEST['category']:''," ", "-");
-if ($category == null) $category = 'Default';
+$category = strtr(isset($_REQUEST['category'])?$_REQUEST['category']:''," ./\"\'\`", "------");
+if ($category == null) $category = 'default';
 $display='music';
 
-if ($category == "Default")
-	$path_to_dir = "/var/lib/asterisk/mohmp3"; //path to directory u want to read.
+global $asterisk_conf;
+
+if ($category == "default")
+	$path_to_dir = $asterisk_conf['astvarlibdir']."/mohmp3"; //path to directory u want to read.
 else
-	$path_to_dir = "/var/lib/asterisk/mohmp3/$category"; //path to directory u want to read.
+	$path_to_dir = $asterisk_conf['astvarlibdir']."/mohmp3/$category"; //path to directory u want to read.
+
 
 if (strlen($randon)) {
 	touch($path_to_dir."/.random");
@@ -46,7 +49,7 @@ switch ($action) {
 	case "delete":
 		music_rmdirr("$path_to_dir"); 
 		$path_to_dir = "/var/lib/asterisk/mohmp3"; //path to directory u want to read.
-		$category='Default';
+		$category='default';
 		createmusicconf();
 		needreload();
 	break;
@@ -57,11 +60,10 @@ switch ($action) {
 </div>
 <div class="rnav">
     <li><a href="config.php?display=<?php echo urlencode($display)?>&action=add"><?php echo _("Add Music Category")?></a></li>
-    <li><a id="<?php echo ($category=='Default' ? 'current':'')?>" href="config.php?display=<?php echo urlencode($display)?>&category=Default"><?php echo _("Default")?></a></li>
 
 <?php
 //get existing trunk info
-$tresults = music_list("/var/lib/asterisk/mohmp3");
+$tresults = music_list($asterisk_conf['astvarlibdir']."/mohmp3");
 if (isset($tresults)) {
 	foreach ($tresults as $tresult) {
 		echo "<li><a id=\"".($category==$tresult ? 'current':'')."\" href=\"config.php?display=".urlencode($display)."&category=".urlencode($tresult)."&action=edit\">{$tresult}</a></li>";
@@ -74,11 +76,17 @@ if (isset($tresults)) {
 <?php
 function createmusicconf()
 {
+	global $asterisk_conf;
+
 	$File_Write="";
-	$tresults = music_list("/var/lib/asterisk/mohmp3");
+	$tresults = music_list($asterisk_conf['astvarlibdir']."/mohmp3");
 	if (isset($tresults)) {
 		foreach ($tresults as $tresult)  {
-			$dir = "/var/lib/asterisk/mohmp3/{$tresult}/";
+			if ($tresult != "default" ) {
+				$dir = $asterisk_conf['astvarlibdir']."/mohmp3/{$tresult}/";
+			} else {
+				$dir = $asterisk_conf['astvarlibdir']."/mohmp3/";
+			}
 			if (file_exists("{$dir}.random")) {
 				$File_Write.="[{$tresult}]\nmode=files\ndirectory={$dir}\nrandom=yes\n";
 			} else {
@@ -231,8 +239,8 @@ else
 {
 ?>
 
-	<h5><?php echo _("Category:")?> <?php echo $category=="Default"?_("Default"):$category;?></h5>
-	<?php  if ($category!="Default"){?>
+	<h5><?php echo _("Category:")?> <?php echo $category=="default"?_("default"):$category;?></h5>
+	<?php  if ($category!="default"){?>
 	<p><a href="config.php?display=<?php echo urlencode($display) ?>&action=delete&category=<?php echo urlencode($category) ?>"><?php echo _("Delete Music Category")?> <?php echo $category; ?></a></p><?php }?>
 
 	<form enctype="multipart/form-data" name="upload" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST"/>
@@ -246,12 +254,10 @@ else
 	<br />
 	<form name="randomon" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 	<?php 
-		if ($category != "Default") {
-			if (file_exists("{$path_to_dir}/.random")) {
-				?> <input type="submit" name="randoff" value="Disable Random Play"> <?php
-			} else {
-				?> <input type="submit" name="randon" value="Enable Random Play"> <?php
-			}
+		if (file_exists("{$path_to_dir}/.random")) {
+			?> <input type="submit" name="randoff" value="Disable Random Play"> <?php
+		} else {
+			?> <input type="submit" name="randon" value="Enable Random Play"> <?php
 		}
 	?>
 	</form>
@@ -291,7 +297,7 @@ else
 			print "You're trying to use an invalid character. Please don't.\n"; 
 			exit; 
 		}
-		if (($numf == 1) && ($category == "Default") ){
+		if (($numf == 1) && ($category == "default") ){
 			echo "<h5>"._("You must have at least one file for On Hold Music.  Please upload one before deleting this one.")."</h5>";
 		} else {
 			$rmcmd="rm -f \"".$path_to_dir."/".$del."\"";
