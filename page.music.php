@@ -145,7 +145,7 @@ function build_list()
 	}
 	closedir($handle); 
 	
-	return $file_array;  //return the size of the array
+	return (isset($file_array))?$file_array:null;  //return the size of the array
 	
 }
 
