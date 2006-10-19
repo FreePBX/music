@@ -3,7 +3,8 @@
 	<name>On Hold Music</name>
 	<version>1.1.1</version>
 	<type>setup</type>
-	<category>Module</category>
+	<category>Internal Options &amp; Configuration</category>
+	<description>Uploading and management of sound files (wav, mp3) to be used for on-hold music.</description>
 	<menuitems>
 		<music>On Hold Music</music>
 	</menuitems>
