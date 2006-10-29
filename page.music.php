@@ -58,7 +58,7 @@ switch ($action) {
 
 ?>
 </div>
-<div class="rnav">
+<div class="rnav"><ul>
     <li><a href="config.php?display=<?php echo urlencode($display)?>&action=add"><?php echo _("Add Music Category")?></a></li>
 
 <?php
@@ -70,7 +70,7 @@ if (isset($tresults)) {
 	}
 }
 ?>
-</div>
+</ul></div>
 
 
 <?php
