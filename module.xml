@@ -7,11 +7,13 @@
 	<description>Uploading and management of sound files (wav, mp3) to be used for on-hold music.</description>
 	<changelog>
 	*1.3* Bumped version to assist upgraders from the 2.1 tree. No other changes.
-	*1.2* First release for FreePBX 2.2 - Fixed compatibility issue with new UI</changelog>
+	*1.2* First release for FreePBX 2.2 - Fixed compatibility issue with new UI
+	*1.2.1* Changed name to Music on Hold (from On Hold Music) 
+	</changelog>
 	<menuitems>
-		<music>On Hold Music</music>
+		<music>Music On Hold</music>
 	</menuitems>
 	<location>release/2.2/music-1.3.tgz</location>
 	<info>http://aussievoip.com.au/wiki/freePBX-OHM</info>
-	<md5sum>aba9f90ab6a8dfe0e6ce2a615a5982b6</md5sum>
+	<md5sum>fe623a448d6de10cc01b0fe7f5917acb</md5sum>
 </module>
