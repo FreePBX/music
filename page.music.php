@@ -41,10 +41,12 @@ switch ($action) {
 		makemusiccategory($path_to_dir,$category); 
 		createmusicconf();
 		needreload();
+		redirect_standard();
 	break;
 	case "addedfile":
 		createmusicconf();
 		needreload();
+		redirect_standard();
 	break;
 	case "delete":
 		music_rmdirr("$path_to_dir"); 
@@ -52,6 +54,7 @@ switch ($action) {
 		$category='default';
 		createmusicconf();
 		needreload();
+		redirect_standard();
 	break;
 }
 
