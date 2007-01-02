@@ -1,0 +1,97 @@
+# Hebrew version for Music FreePBX Module.
+# Copyright (C) 2006
+# This file is distributed under the same license as the PACKAGE package.
+# Shimi <shimi@shimi.net>, 2006.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FreePBX 2.2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-10-17 17:20+0300\n"
+"PO-Revision-Date: 2006-10-17 17:30+0300\n"
+"Last-Translator: Shimi <shimi@shimi.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: page.music.php:62 page.music.php:205
+msgid "Add Music Category"
+msgstr "הוסף קטגוריית מוסיקה"
+
+#: page.music.php:101
+msgid "Cannot write to file"
+msgstr "לא יכול לכתוב לקובץ"
+
+#: page.music.php:162
+msgid "Delete"
+msgstr "מחק"
+
+#: page.music.php:195
+msgid "On Hold Music"
+msgstr "מוסיקת המתנה"
+
+#: page.music.php:207
+msgid "Category Name:"
+msgstr "שם הקטגוריה:"
+
+#: page.music.php:207
+msgid ""
+"Allows you to Set up Different Categories for music on hold.  This is useful "
+"if you would like to specify different Hold Music or Commercials for various "
+"ACD Queues."
+msgstr "מאפשר לך להגדיר קטגוריות שונות עבור מוסיקת המתנה. דבר זה מועיל אם אתה רוצה לציין מנגינות שונות או פרסומות עבור תורי ACD שונים."
+
+#: page.music.php:242
+msgid "Category:"
+msgstr "קטגוריה:"
+
+#: page.music.php:242
+msgid "default"
+msgstr "ברירת מחדל"
+
+#: page.music.php:244
+msgid "Delete Music Category"
+msgstr "מחק קטגוריית מוסיקה"
+
+#: page.music.php:247
+msgid "Upload a .wav or .mp3 file:"
+msgstr "העלה קובץ wav או mp3:"
+
+#: page.music.php:270 page.music.php:272 page.music.php:280
+msgid "Error Processing"
+msgstr "תקלה בעיבוד"
+
+#: page.music.php:270
+msgid "No file provided"
+msgstr "לא סופק קובץ"
+
+#: page.music.php:270
+msgid "Please select a file to upload"
+msgstr "אנא בחר קובץ להעלאה"
+
+#: page.music.php:272
+msgid "Check"
+msgstr "בדוק"
+
+#: page.music.php:272
+msgid "in"
+msgstr "בתוך"
+
+#: page.music.php:281
+msgid "This is not a fatal error, your Music on Hold may still work."
+msgstr "שגיאה זו אינה מוחלטת, ייתכן ומוסיקת ההמתנה שלך בכל זאת תעבוד."
+
+#: page.music.php:283
+msgid "Completed processing"
+msgstr "עיבוד הושלם"
+
+#: page.music.php:301
+msgid ""
+"You must have at least one file for On Hold Music.  Please upload one before "
+"deleting this one."
+msgstr "חייב להיות לך לפחות קובץ אחד עבור מוסיקת המתנה. אנא העלה אחד לפני שתמחוק קובץ זה."
+
+#: page.music.php:305
+msgid "Deleted"
+msgstr "נמחק"
