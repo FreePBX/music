@@ -120,16 +120,10 @@ function build_list()
 	global $path_to_dir;
 	$pattern = '';
 	$handle=opendir($path_to_dir) ;
-	$extensions = array('.mp3'); // list of extensions which only u want to read.
+	$extensions = array('mp3','wav'); // list of extensions to match
 	
 	//generate the pattern to look for.
-	foreach ($extensions as $value)
-		$pattern .= "$value|";
-	
-	$length = strlen($pattern);
-	$length -= 1;
-	$pattern = substr($pattern,0,$length);
-	
+	$pattern = '/(\.'.implode('|\.',$extensions).')$/i';
 	
 	//store file names that match pattern in an array
 	$i = 0;
@@ -138,7 +132,7 @@ function build_list()
 		if ($file != "." && $file != "..") 
 		{ 
 		
-			if(eregi($pattern,$file))
+			if(preg_match($pattern,$file))
 			{
 				$file_array[$i] = $file; //pattern is matched store it in file_array.
 				$i++;		
