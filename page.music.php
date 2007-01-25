@@ -46,7 +46,7 @@ switch ($action) {
 	case "addedfile":
 		createmusicconf();
 		needreload();
-		redirect_standard();
+//		redirect_standard();
 	break;
 	case "delete":
 		music_rmdirr("$path_to_dir"); 

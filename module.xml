@@ -1,11 +1,12 @@
 <module>
 	<rawname>music</rawname>
 	<name>Music on Hold</name>
-	<version>1.4.2</version>
+	<version>1.5</version>
 	<type>setup</type>
 	<category>Internal Options &amp; Configuration</category>
 	<description>Uploading and management of sound files (wav, mp3) to be used for on-hold music.</description>
 	<changelog>
+	*1.5* Fixed upload bug, #1646 could not upload files
 	*1.4.2* List wav files
 	*1.4.1* Add redirect_standard() call to avoid #1616
 	*1.4* Fix an issue of a new install not having a working MOH until they visit the page.
@@ -17,7 +18,5 @@
 	<menuitems>
 		<music>Music on Hold</music>
 	</menuitems>
-	<location>release/2.3/music-1.4.1.tgz</location>
 	<info>http://aussievoip.com.au/wiki/freePBX-OHM</info>
-	<md5sum>7ac025a776618fa96ffad1aac509bfc3</md5sum>
 </module>
