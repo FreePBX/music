@@ -19,6 +19,10 @@ function music_list($path) {
 	}
 	if (isset($filearray)) {
 		sort($filearray);
+		// add a none categoy for no music
+		if (!in_array("none",$filearray)) {
+			$filearray[($i++)] = "none";
+		}
 		return ($filearray);
 	} else {
 		return null;

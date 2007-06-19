@@ -1,11 +1,12 @@
 <module>
 	<rawname>music</rawname>
 	<name>Music on Hold</name>
-	<version>1.5</version>
+	<version>1.5.1</version>
 	<type>setup</type>
 	<category>Internal Options &amp; Configuration</category>
 	<description>Uploading and management of sound files (wav, mp3) to be used for on-hold music.</description>
 	<changelog>
+	*1.5.1* Added a 'none' category that results in silence played
 	*1.5* Fixed upload bug, #1646 could not upload files
 	*1.4.2* List wav files
 	*1.4.1* Add redirect_standard() call to avoid #1616

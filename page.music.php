@@ -69,7 +69,9 @@ switch ($action) {
 $tresults = music_list($asterisk_conf['astvarlibdir']."/mohmp3");
 if (isset($tresults)) {
 	foreach ($tresults as $tresult) {
-		echo "<li><a id=\"".($category==$tresult ? 'current':'')."\" href=\"config.php?display=".urlencode($display)."&category=".urlencode($tresult)."&action=edit\">{$tresult}</a></li>";
+		if ($tresult != "none") {
+			echo "<li><a id=\"".($category==$tresult ? 'current':'')."\" href=\"config.php?display=".urlencode($display)."&category=".urlencode($tresult)."&action=edit\">{$tresult}</a></li>";
+		}
 	}
 }
 ?>
@@ -85,6 +87,14 @@ function createmusicconf()
 	$tresults = music_list($asterisk_conf['astvarlibdir']."/mohmp3");
 	if (isset($tresults)) {
 		foreach ($tresults as $tresult)  {
+			// hack - but his is all a hack until redone, in functions, etc.
+			// this puts a none category to allow no music to be chosen
+			//
+			if ($tresult == "none") {
+				$dir = "/dev/null";
+				$File_Write.="[{$tresult}]\nmode=files\ndirectory={$dir}\n";
+				continue;
+			}
 			if ($tresult != "default" ) {
 				$dir = $asterisk_conf['astvarlibdir']."/mohmp3/{$tresult}/";
 			} else {
@@ -97,6 +107,7 @@ function createmusicconf()
 			}
 		}
 	}
+
 
 	$handle = fopen("/etc/asterisk/musiconhold_additional.conf", "w");
 
@@ -216,10 +227,13 @@ theForm.category.focus();
 
 function addcategory_onsubmit() {
 	var msgInvalidCategoryName = "<?php echo _('Please enter a valid Category Name'); ?>";
+	var msgReservedCategoryName = "<?php echo _('Categories: "none" and "default" are reserved names. Please enter a different name'); ?>";
 
 	defaultEmptyOK = false;
 	if (!isAlphanumeric(theForm.category.value))
 		return warnInvalid(theForm.category, msgInvalidCategoryName);
+	if (theForm.category.value == "default" || theForm.category.value == "none")
+		return warnInvalid(theForm.category, msgReservedCategoryName);
 	
 	return true;
 }
