@@ -1,11 +1,13 @@
 <module>
 	<rawname>music</rawname>
 	<name>Music on Hold</name>
-	<version>1.5.1</version>
+	<version>1.5.1.1</version>
+	<candisable>no</candisable>
 	<type>setup</type>
 	<category>Internal Options &amp; Configuration</category>
 	<description>Uploading and management of sound files (wav, mp3) to be used for on-hold music.</description>
 	<changelog>
+	*1.5.1.1* added candisable = no for module admin
 	*1.5.1* Added a 'none' category that results in silence played
 	*1.5* Fixed upload bug, #1646 could not upload files
 	*1.4.2* List wav files
@@ -19,7 +21,7 @@
 	<menuitems>
 		<music>Music on Hold</music>
 	</menuitems>
-	<location>release/2.3/music-1.5.1.tgz</location>
+	<location>release/2.3/music-1.5.1.1.tgz</location>
 	<info>http://aussievoip.com.au/wiki/freePBX-OHM</info>
-	<md5sum>79f4ab579d254405d594d619d884589b</md5sum>
+	<md5sum>ed74cd205f70d319f20dbdaa05bfb246</md5sum>
 </module>
