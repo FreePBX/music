@@ -1,4 +1,4 @@
-<? 
+<?php
 global $asterisk_conf;
 require_once("modules/music/functions.inc.php");
 

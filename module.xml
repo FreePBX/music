@@ -1,22 +1,23 @@
 <module>
 	<rawname>music</rawname>
 	<name>Music on Hold</name>
-	<version>1.5.1.1</version>
+	<version>1.5.1.2</version>
 	<candisable>no</candisable>
 	<type>setup</type>
 	<category>Internal Options &amp; Configuration</category>
 	<description>Uploading and management of sound files (wav, mp3) to be used for on-hold music.</description>
 	<changelog>
-	*1.5.1.1* added candisable = no for module admin
-	*1.5.1* Added a 'none' category that results in silence played
-	*1.5* Fixed upload bug, #1646 could not upload files
-	*1.4.2* List wav files
-	*1.4.1* Add redirect_standard() call to avoid #1616
-	*1.4* Fix an issue of a new install not having a working MOH until they visit the page.
-	*1.3.2* Add he_IL translation
-	*1.3.1* Changed name to Music on Hold (from On Hold Music) 
-	*1.3* Bumped version to assist upgraders from the 2.1 tree. No other changes.
-	*1.2* First release for FreePBX 2.2 - Fixed compatibility issue with new UI
+		*1.5.1.2* #2070 fix proper use of script tags
+		*1.5.1.1* added candisable = no for module admin
+		*1.5.1* Added a 'none' category that results in silence played
+		*1.5* Fixed upload bug, #1646 could not upload files
+		*1.4.2* List wav files
+		*1.4.1* Add redirect_standard() call to avoid #1616
+		*1.4* Fix an issue of a new install not having a working MOH until they visit the page.
+		*1.3.2* Add he_IL translation
+		*1.3.1* Changed name to Music on Hold (from On Hold Music) 
+		*1.3* Bumped version to assist upgraders from the 2.1 tree. No other changes.
+		*1.2* First release for FreePBX 2.2 - Fixed compatibility issue with new UI
 	</changelog>
 	<menuitems>
 		<music>Music on Hold</music>
