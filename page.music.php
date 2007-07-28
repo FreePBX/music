@@ -227,7 +227,7 @@ theForm.category.focus();
 
 function addcategory_onsubmit() {
 	var msgInvalidCategoryName = "<?php echo _('Please enter a valid Category Name'); ?>";
-	var msgReservedCategoryName = "<?php echo _('Categories: "none" and "default" are reserved names. Please enter a different name'); ?>";
+	var msgReservedCategoryName = "<?php echo _('Categories: \"none\" and \"default\" are reserved names. Please enter a different name'); ?>";
 
 	defaultEmptyOK = false;
 	if (!isAlphanumeric(theForm.category.value))

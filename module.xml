@@ -1,12 +1,14 @@
 <module>
 	<rawname>music</rawname>
 	<name>Music on Hold</name>
-	<version>1.5.1.2</version>
+	<version>1.5.1.3</version>
 	<candisable>no</candisable>
+	<canuninstall>no</canuninstall>
 	<type>setup</type>
 	<category>Internal Options &amp; Configuration</category>
 	<description>Uploading and management of sound files (wav, mp3) to be used for on-hold music.</description>
 	<changelog>
+		*1.5.1.3* #1969 fix javascript validation, add canunninstall:no
 		*1.5.1.2* #2070 fix proper use of script tags
 		*1.5.1.1* added candisable = no for module admin
 		*1.5.1* Added a 'none' category that results in silence played
