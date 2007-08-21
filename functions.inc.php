@@ -1,6 +1,6 @@
 <?php
 
-function music_list($path) {
+function music_list($path=$amp_conf['ASTVARLIBDIR']."/mohmp3") {
 	$i = 1;
 	$arraycount = 0;
 	

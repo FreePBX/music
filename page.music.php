@@ -50,7 +50,7 @@ switch ($action) {
 	break;
 	case "delete":
 		music_rmdirr("$path_to_dir"); 
-		$path_to_dir = "/var/lib/asterisk/mohmp3"; //path to directory u want to read.
+		$path_to_dir = $asterisk_conf['astvarlibdir']."/mohmp3"; //path to directory u want to read.
 		$category='default';
 		createmusicconf();
 		needreload();
