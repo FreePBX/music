@@ -1,0 +1,107 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-01-26 15:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Francesco Romano\n"
+"Language-Team: Italian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: install.php:24 page.music.php:104
+msgid "Cannot write to file"
+msgstr "Impossibile scrivere il file"
+
+#: page.music.php:65 page.music.php:202
+msgid "Add Music Category"
+msgstr "Aggiungi Categoria Musica"
+
+#: page.music.php:159
+msgid "Delete"
+msgstr "Elimina"
+
+#: page.music.php:192
+msgid "On Hold Music"
+msgstr "Musica di Attesa"
+
+#: page.music.php:204
+msgid "Category Name:"
+msgstr "Nome Categoria:"
+
+#: page.music.php:204
+msgid ""
+"Allows you to Set up Different Categories for music on hold.  This is useful "
+"if you would like to specify different Hold Music or Commercials for various "
+"ACD Queues."
+msgstr "Permette di impostare differenti categorie di musiche di attesa. E' molto utile se si vogliono creare attese o messaggi per diverse Code."
+
+#: page.music.php:239
+msgid "Category:"
+msgstr "Categoria:"
+
+#: page.music.php:239
+msgid "default"
+msgstr "predefinito"
+
+#: page.music.php:241
+msgid "Delete Music Category"
+msgstr "Elimna Categoria Musica"
+
+#: page.music.php:244
+msgid "Upload a .wav or .mp3 file:"
+msgstr "Carica un file .wav o .mp3:"
+
+#: page.music.php:267 page.music.php:269 page.music.php:277
+msgid "Error Processing"
+msgstr "Errore durante il processo"
+
+#: page.music.php:267
+msgid "No file provided"
+msgstr "Nessun file caricato"
+
+#: page.music.php:267
+msgid "Please select a file to upload"
+msgstr "Prego selezionare un file da caricare"
+
+#: page.music.php:269
+msgid "Check"
+msgstr "Controllo"
+
+#: page.music.php:269
+msgid "in"
+msgstr "di"
+
+#: page.music.php:278
+msgid "This is not a fatal error, your Music on Hold may still work."
+msgstr "Questo non è un errore fatale, la Musica di Attesa potrebbe ancora funzionare."
+
+#: page.music.php:280
+msgid "Completed processing"
+msgstr "Processo completato"
+
+#: page.music.php:298
+msgid ""
+"You must have at least one file for On Hold Music.  Please upload one before "
+"deleting this one."
+msgstr "Bisogna avere almeno un file per la Musica di Attesa. Caricarne uno prima di cancellare questo."
+
+#: page.music.php:302
+msgid "Deleted"
+msgstr "Eliminato"
+
+msgid "Enable Random Play"
+msgstr "Attiva Riproduzione Casuale"
+
+msgid "Submit Changes"
+msgstr "Invia"
+
+msgid "Disable Random Play"
+msgstr "Disattiva Riproduzione Casuale"
