@@ -173,17 +173,34 @@ function draw_list($file_array, $path_to_dir, $category)
 	}
 }
 
-function process_mohfile($mohfile)
+function process_mohfile($mohfile,$onlywav=false)
 {
 	global $path_to_dir;
 	$output = 0;
 	$returncode = 0;
+
 	$origmohfile=$path_to_dir."/orig_".$mohfile;
 	$newname = strtr($mohfile,"&", "_");
-	$newmohfile=$path_to_dir."/". ((strpos($newname,'.mp3') === false) ? $newname.".mp3" : $newname);
-	$lamecmd="lame --cbr -m m -t -F \"".$origmohfile."\" \"".$newmohfile."\" 2>&1 ";
-	if (strpos($newmohfile,'.mp3') !== false) 
-		exec($lamecmd, $output, $returncode);
+	if(strstr($newname,".mp3")) {
+		$onlywav = false;
+	}
+	if(!$onlywav) {
+		$newmohfile=$path_to_dir."/". ((strpos($newname,'.mp3') === false) ? $newname.".mp3" : $newname);
+		$lamecmd="lame --cbr -m m -t -F \"".$origmohfile."\" \"".$newmohfile."\" 2>&1 ";
+		if (strpos($newmohfile,'.mp3') !== false) 
+			exec($lamecmd, $output, $returncode);
+		} else {
+			$newmohfile = $path_to_dir."/wav_".$newname;
+			$soxcmd = "sox \"".$origmohfile."\" -r 8000 -c 1 \"".$newmohfile."\" ";
+			$soxresample = "resample -ql ";
+			exec($soxcmd.$soxresample."2>&1", $output, $returncode);
+			if ($returncode != 0) {
+				// try it again without the resample in case the input sample rate was the same
+				//
+				exec("rm -rf \"".$newmohfile."\"");
+				exec($soxcmd."2>&1", $output, $returncode);
+			}
+		}
 	if ($returncode != 0) {
 		return join("<br>\n", $output);
 	}
@@ -261,6 +278,8 @@ else
 		<input type="hidden" name="action" value="addedfile">
 		<input type="file" name="mohfile"/>
 		<input type="button" value="<?php echo _("Upload")?>" onclick="document.upload.submit(upload);alert('<?php echo addslashes(_("Please wait until the page loads. Your file is being processed."))?>');"/>
+		<br />
+		<input type="checkbox" name="onlywav" checked="checked"><small><?php echo _("Do not encode wav to mp3"); ?></small>
 	</form>
 	<br />
 	<form name="randomon" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
@@ -286,7 +305,9 @@ else
 	if (isset($_FILES['mohfile']['tmp_name']) && is_uploaded_file($_FILES['mohfile']['tmp_name'])) {
 		//echo $_FILES['mohfile']['name']." uploaded OK";
 		move_uploaded_file($_FILES['mohfile']['tmp_name'], $path_to_dir."/orig_".$_FILES['mohfile']['name']);
-		$process_err = process_mohfile($_FILES['mohfile']['name']);
+
+		$process_err = process_mohfile($_FILES['mohfile']['name'],($_REQUEST['onlywav'] != ''));
+
 		if (isset($process_err)) {
 			echo "<h5>"._("Error Processing").": \"$process_err\" for ".$_FILES['mohfile']['name']."!</h5>\n";
 			echo "<h5>"._("This is not a fatal error, your Music on Hold may still work.")."</h5>\n";
