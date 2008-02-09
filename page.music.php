@@ -285,9 +285,9 @@ else
 	<form name="randomon" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 	<?php 
 		if (file_exists("{$path_to_dir}/.random")) {
-			?> <input type="submit" name="randoff" value="Disable Random Play"> <?php
+			?> <input type="submit" name="randoff" value="<?php echo _("Disable Random Play");?>"> <?php
 		} else {
-			?> <input type="submit" name="randon" value="Enable Random Play"> <?php
+			?> <input type="submit" name="randon" value="<?php echo _("Enable Random Play");?>"> <?php
 		}
 	?>
 	</form>
