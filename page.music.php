@@ -173,39 +173,49 @@ function draw_list($file_array, $path_to_dir, $category)
 	}
 }
 
-function process_mohfile($mohfile,$onlywav=false)
+function process_mohfile($mohfile,$onlywav=false,$volume=false)
 {
 	global $path_to_dir;
 	$output = 0;
 	$returncode = 0;
-
 	$origmohfile=$path_to_dir."/orig_".$mohfile;
-	$newname = strtr($mohfile,"&", "_");
-	if(strstr($newname,".mp3")) {
-		$onlywav = false;
-	}
-	if(!$onlywav) {
-		$newmohfile=$path_to_dir."/". ((strpos($newname,'.mp3') === false) ? $newname.".mp3" : $newname);
-		$lamecmd="lame --cbr -m m -t -F \"".$origmohfile."\" \"".$newmohfile."\" 2>&1 ";
-		if (strpos($newmohfile,'.mp3') !== false) 
-			exec($lamecmd, $output, $returncode);
-		} else {
-			$newmohfile = $path_to_dir."/wav_".$newname;
-			$soxcmd = "sox \"".$origmohfile."\" -r 8000 -c 1 \"".$newmohfile."\" ";
-			$soxresample = "resample -ql ";
-			exec($soxcmd.$soxresample."2>&1", $output, $returncode);
-			if ($returncode != 0) {
-				// try it again without the resample in case the input sample rate was the same
-				//
-				exec("rm -rf \"".$newmohfile."\"");
-				exec($soxcmd."2>&1", $output, $returncode);
-			}
+	if($onlywav) {
+		$newname = substr($mohfile,0,strrpos($mohfile,"."));
+
+		// If we are dealing with an MP3, we need to decode it to a wav file
+		if (strpos($origmohfile,'.mp3') !== false)  { 
+                        //$lamecmd="lame --cbr -m m -t -F --decode \"".$origmohfile."\" \"".substr($origmohfile,0,strrpos($origmohfile,".")).".wav\" 2>&1 ";
+                       // exec($lamecmd, $output, $returncode);
+			$mpg123cmd = "mpg123 -w \"".substr($origmohfile,0,strrpos($origmohfile,".")).".wav\" \"".$origmohfile."\" 2>&1 ";
+			exec($mpg123cmd, $output, $returncode);
 		}
+		$newmohfile = $path_to_dir."/wav_".$newname.".wav";
+                //asdf
+		$soxcmd = "sox \"".substr($origmohfile,0,strrpos($origmohfile,".")).".wav\"";
+                if($volume)
+                  $soxcmd .= " -v ".$volume;
+                $soxcmd .= " -r 8000 -c 1 \"".$newmohfile."\" ";
+		$soxresample = "resample -ql ";
+		exec($soxcmd.$soxresample."2>&1", $output, $returncode);
+		if ($returncode != 0) {
+			// try it again without the resample in case the input sample rate was the same
+			//
+			exec("rm -rf \"".$newmohfile."\"");
+			exec($soxcmd."2>&1", $output, $returncode);
+		}
+	}
 	if ($returncode != 0) {
 		return join("<br>\n", $output);
 	}
 	$rmcmd="rm -f \"". $origmohfile."\"";
 	exec($rmcmd);
+	// If this started as an mp3, we converted it to a wav and then transcoded it from there, so we have two "original" files to delete
+        if (strpos($origmohfile,'.mp3') !== false)  {
+  		$rmcmd="rm -f \"". substr($origmohfile,0,strrpos($origmohfile,".")).".wav\"";
+		exec($rmcmd);
+
+        }
+
 	return null;
 }
 
@@ -279,7 +289,16 @@ else
 		<input type="file" name="mohfile"/>
 		<input type="button" value="<?php echo _("Upload")?>" onclick="document.upload.submit(upload);alert('<?php echo addslashes(_("Please wait until the page loads. Your file is being processed."))?>');"/>
 		<br />
-		<input type="checkbox" name="onlywav" checked="checked"><small><?php echo _("Do not encode wav to mp3"); ?></small>
+		<select name="volume">
+			<option value="1.50">Volume 150%</option>
+			<option value="1.25">Volume 125%</option>
+			<option value="" selected>Volume 100%</option>
+			<option value=".75">Volume 75%</option>
+			<option value=".5">Volume 50%</option>
+			<option value=".25">Volume 25%</option>
+			<option value=".1">Volume 10%</option>
+		</select>
+		<small><?php echo _("Volume adjustments are done linearly, therefore 50% will not be exactly 'half volume'"); ?></small>
 	</form>
 	<br />
 	<form name="randomon" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
@@ -305,8 +324,7 @@ else
 	if (isset($_FILES['mohfile']['tmp_name']) && is_uploaded_file($_FILES['mohfile']['tmp_name'])) {
 		//echo $_FILES['mohfile']['name']." uploaded OK";
 		move_uploaded_file($_FILES['mohfile']['tmp_name'], $path_to_dir."/orig_".$_FILES['mohfile']['name']);
-
-		$process_err = process_mohfile($_FILES['mohfile']['name'],($_REQUEST['onlywav'] != ''));
+		$process_err = process_mohfile($_FILES['mohfile']['name'],true,$_REQUEST['volume']);
 
 		if (isset($process_err)) {
 			echo "<h5>"._("Error Processing").": \"$process_err\" for ".$_FILES['mohfile']['name']."!</h5>\n";
