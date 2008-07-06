@@ -286,10 +286,10 @@ else
 		<input type="hidden" name="display" value="<?php echo $display?>">
 		<input type="hidden" name="category" value="<?php echo "$category" ?>">
 		<input type="hidden" name="action" value="addedfile">
-		<input type="file" name="mohfile"/>
-		<input type="button" value="<?php echo _("Upload")?>" onclick="document.upload.submit(upload);alert('<?php echo addslashes(_("Please wait until the page loads. Your file is being processed."))?>');"/>
+		<input type="file" name="mohfile" tabindex="<?php echo ++$tabindex;?>"/>
+		<input type="button" value="<?php echo _("Upload")?>" onclick="document.upload.submit(upload);alert('<?php echo addslashes(_("Please wait until the page loads. Your file is being processed."))?>');" tabindex="<?php echo ++$tabindex;?>"/>
 		<br />
-		<select name="volume">
+		<select name="volume" tabindex="<?php echo ++$tabindex;?>">
 			<option value="1.50">Volume 150%</option>
 			<option value="1.25">Volume 125%</option>
 			<option value="" selected>Volume 100%</option>
