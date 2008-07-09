@@ -163,12 +163,14 @@ function draw_list($file_array, $path_to_dir, $category)
 	//list existing mp3s and provide delete buttons
 	if ($file_array) {
 		foreach ($file_array as $thisfile) {
-			print "<div style=\"text-align:right;width:350px;border: 1px solid;padding:2px;\">";
+			print "<div style=\"text-align:right;width:550px;border: 1px solid;padding:2px;\">";
 			//print "<a style=\"float:left;margin-left:5px;\" href=\"file:". $path_to_dir ."". $thisfile ."\">".$thisfile."</a>";
 			print "<b style=\"float:left;margin-left:5px;\" >".$thisfile."</b>";
-			print "<a style=\"margin-right:5px;\" href=\"".$_SERVER['SCRIPT_NAME']."?display=";
-			print (isset($display)?$display:'')."&del=".$thisfile."&category=".$category."\">"._("Delete")."</a>";
-			print "</div><br>";
+
+			$delURL = $_SERVER['SCRIPT_NAME']."?display=".(isset($display)?$display:'')."&del=".$thisfile."&category=".$category;
+			$tlabel = _("Delete");
+			$label = '<span><img width="16" height="16" border="0" title="'.$tlabel.'" alt="'.$tlabel.'" src="images/core_delete.png"/>&nbsp;</span>';
+			echo "<a style=\"margin-right:5px;\" href=".$delURL.">".$label."</a></div><br />";
 		}
 	}
 }
@@ -278,8 +280,16 @@ else
 ?>
 
 	<h5><?php echo _("Category:")?> <?php echo $category=="default"?_("default"):$category;?></h5>
-	<?php  if ($category!="default"){?>
-	<p><a href="config.php?display=<?php echo urlencode($display) ?>&action=delete&category=<?php echo urlencode($category) ?>"><?php echo _("Delete Music Category")?> <?php echo $category; ?></a></p><?php }?>
+<?php  
+	if ($category!="default") {
+		$delURL = $_SERVER['PHP_SELF'].'?dsplay='.urlencode($display).'&action=delete&category='.urlencode($category);
+		$tlabel = sprintf(_("Delete Music Category %s"),$category);
+		$label = '<span><img width="16" height="16" border="0" title="'.$tlabel.'" alt="" src="images/core_delete.png"/>&nbsp;'.$tlabel.'</span>';
+?>
+		<p><a href="<?php echo $delURL ?>"><?php echo $label; ?></a></p>
+<?php  
+	}
+?>
 
 	<form enctype="multipart/form-data" name="upload" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST"/>
 		<?php echo _("Upload a .wav or .mp3 file:")?><br>
