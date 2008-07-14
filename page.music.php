@@ -360,9 +360,13 @@ else
 		if (($numf == 1) && ($category == "default") ){
 			echo "<h5>"._("You must have at least one file for On Hold Music.  Please upload one before deleting this one.")."</h5>";
 		} else {
-			$rmcmd="rm -f \"".$path_to_dir."/".$del."\"";
-			exec($rmcmd);
-			echo "<h5>"._("Deleted")." ".$del."!</h5>";
+			//$rmcmd="rm -f \"".$path_to_dir."/".$del."\"";
+			//exec($rmcmd);
+			if (@unlink($path_to_dir."/".$del)) {
+				echo "<h5>"._("Deleted")." ".$del."!</h5>";
+			} else {
+				echo "<h5>".sprintf(_("Error Deleting %s"),$del)."!</h5>";
+			}
 			//kill_mpg123();
 			needreload();
 		}
