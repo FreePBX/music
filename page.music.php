@@ -22,10 +22,11 @@ $display='music';
 
 global $asterisk_conf;
 
-if ($category == "default")
+if ($category == "default") {
 	$path_to_dir = $asterisk_conf['astvarlibdir']."/mohmp3"; //path to directory u want to read.
-else
+} else {
 	$path_to_dir = $asterisk_conf['astvarlibdir']."/mohmp3/$category"; //path to directory u want to read.
+}
 
 
 if (strlen($randon)) {
@@ -79,9 +80,9 @@ if (isset($tresults)) {
 
 
 <?php
-function createmusicconf()
-{
+function createmusicconf() {
 	global $asterisk_conf;
+	global $amp_conf;
 
 	$File_Write="";
 	$tresults = music_list($asterisk_conf['astvarlibdir']."/mohmp3");
@@ -109,7 +110,7 @@ function createmusicconf()
 	}
 
 
-	$handle = fopen("/etc/asterisk/musiconhold_additional.conf", "w");
+	$handle = fopen($amp_conf['ASTETCDIR']."/musiconhold_additional.conf", "w");
 
 	if (fwrite($handle, $File_Write) === FALSE) {
 		echo _("Cannot write to file")." ($tmpfname)";
@@ -121,13 +122,11 @@ function createmusicconf()
 	needreload();
 }
 
-function makemusiccategory($category)
-{
+function makemusiccategory($category) {
 	mkdir("$path_to_dir/$category", 0755); 
 }
  
-function build_list() 
-{
+function build_list() {
 	global $path_to_dir;
 	$pattern = '';
 	$handle=opendir($path_to_dir) ;
@@ -138,33 +137,25 @@ function build_list()
 	
 	//store file names that match pattern in an array
 	$i = 0;
-	while (($file = readdir($handle))!==false) 
-	{
-		if ($file != "." && $file != "..") 
-		{ 
-		
-			if(preg_match($pattern,$file))
-			{
+	while (($file = readdir($handle))!==false) {
+		if ($file != "." && $file != "..") { 
+			if(preg_match($pattern,$file)) {
 				$file_array[$i] = $file; //pattern is matched store it in file_array.
 				$i++;		
 			}
 		} 
-	
 	}
 	closedir($handle); 
 	
 	return (isset($file_array))?$file_array:null;  //return the size of the array
-	
 }
 
-function draw_list($file_array, $path_to_dir, $category) 
-{
+function draw_list($file_array, $path_to_dir, $category) {
 	global $display;
 	//list existing mp3s and provide delete buttons
 	if ($file_array) {
 		foreach ($file_array as $thisfile) {
 			print "<div style=\"text-align:right;width:550px;border: 1px solid;padding:2px;\">";
-			//print "<a style=\"float:left;margin-left:5px;\" href=\"file:". $path_to_dir ."". $thisfile ."\">".$thisfile."</a>";
 			print "<b style=\"float:left;margin-left:5px;\" >".$thisfile."</b>";
 
 			$delURL = $_SERVER['SCRIPT_NAME']."?display=".(isset($display)?$display:'')."&del=".$thisfile."&category=".$category;
@@ -175,65 +166,88 @@ function draw_list($file_array, $path_to_dir, $category)
 	}
 }
 
-function process_mohfile($mohfile,$onlywav=false,$volume=false)
-{
+function process_mohfile($mohfile,$onlywav=false,$volume=false) {
 	global $path_to_dir;
+	global $amp_conf;
+
 	$output = 0;
 	$returncode = 0;
 	$origmohfile=$path_to_dir."/orig_".$mohfile;
-	if($onlywav) {
-		$newname = substr($mohfile,0,strrpos($mohfile,"."));
+	if ($amp_conf['AMPMPG123']) {
+		if($onlywav) {
+			$newname = substr($mohfile,0,strrpos($mohfile,"."));
 
-		// If we are dealing with an MP3, we need to decode it to a wav file
-		if (strpos($origmohfile,'.mp3') !== false)  { 
-                        //$lamecmd="lame --cbr -m m -t -F --decode \"".$origmohfile."\" \"".substr($origmohfile,0,strrpos($origmohfile,".")).".wav\" 2>&1 ";
-                       // exec($lamecmd, $output, $returncode);
-			$mpg123cmd = "mpg123 -w \"".substr($origmohfile,0,strrpos($origmohfile,".")).".wav\" \"".$origmohfile."\" 2>&1 ";
-			exec($mpg123cmd, $output, $returncode);
+			// If we are dealing with an MP3, we need to decode it to a wav file
+			if (strpos($origmohfile,'.mp3') !== false)  { 
+				$mpg123cmd = "mpg123 -w \"".substr($origmohfile,0,strrpos($origmohfile,".")).".wav\" \"".$origmohfile."\" 2>&1 ";
+				exec($mpg123cmd, $output, $returncode);
+			}
+			$newmohfile = $path_to_dir."/wav_".$newname.".wav";
+			//asdf
+			$soxcmd = "sox \"".substr($origmohfile,0,strrpos($origmohfile,".")).".wav\"";
+			if($volume){
+				$soxcmd .= " -v ".$volume;
+			}
+			$soxcmd .= " -r 8000 -c 1 \"".$newmohfile."\" ";
+			$soxresample = "resample -ql ";
+			exec($soxcmd.$soxresample."2>&1", $output, $returncode);
+			if ($returncode != 0) {
+				// try it again without the resample in case the input sample rate was the same
+				//
+				exec("rm -rf \"".$newmohfile."\"");
+				exec($soxcmd."2>&1", $output, $returncode);
+			}
 		}
-		$newmohfile = $path_to_dir."/wav_".$newname.".wav";
-                //asdf
-		$soxcmd = "sox \"".substr($origmohfile,0,strrpos($origmohfile,".")).".wav\"";
-                if($volume)
-                  $soxcmd .= " -v ".$volume;
-                $soxcmd .= " -r 8000 -c 1 \"".$newmohfile."\" ";
-		$soxresample = "resample -ql ";
-		exec($soxcmd.$soxresample."2>&1", $output, $returncode);
-		if ($returncode != 0) {
-			// try it again without the resample in case the input sample rate was the same
-			//
-			exec("rm -rf \"".$newmohfile."\"");
-			exec($soxcmd."2>&1", $output, $returncode);
+	} else { // AMPMPG123
+		$newname = strtr($mohfile,"&", "_");
+		if(strstr($newname,".mp3")) {
+			$onlywav = false;
 		}
-	}
+
+		if(!$onlywav) {
+			$newmohfile=$path_to_dir."/". ((strpos($newname,'.mp3') === false) ? $newname.".mp3" : $newname);
+			$lamecmd="lame --cbr -m m -t -F \"".$origmohfile."\" \"".$newmohfile."\" 2>&1 ";
+			if (strpos($newmohfile,'.mp3') !== false) {
+				exec($lamecmd, $output, $returncode);
+			}
+		} else {
+			$newmohfile = $path_to_dir."/wav_".$newname;
+			$soxcmd = "sox \"".$origmohfile."\" -r 8000 -c 1 \"".$newmohfile."\" ";
+			$soxresample = "resample -ql ";
+			exec($soxcmd.$soxresample."2>&1", $output, $returncode);                                                      
+			if ($returncode != 0) {                                                                                       
+				// try it again without the resample in case the input sample rate was the same                             
+				//                                                                                                          
+				exec("rm -rf \"".$newmohfile."\"");                                                                         
+				exec($soxcmd."2>&1", $output, $returncode);                                                                 
+			}
+		}
+	} // AMPMPG123
+
 	if ($returncode != 0) {
 		return join("<br>\n", $output);
 	}
 	$rmcmd="rm -f \"". $origmohfile."\"";
 	exec($rmcmd);
-	// If this started as an mp3, we converted it to a wav and then transcoded it from there, so we have two "original" files to delete
-        if (strpos($origmohfile,'.mp3') !== false)  {
-  		$rmcmd="rm -f \"". substr($origmohfile,0,strrpos($origmohfile,".")).".wav\"";
-		exec($rmcmd);
-
-        }
-
+	if ($amp_conf['AMPMPG123']) {
+		// If this started as an mp3, we converted it to a wav and then transcoded it from there, 
+		// so we have two "original" files to delete
+		//
+		if (strpos($origmohfile,'.mp3') !== false)  {
+			$rmcmd="rm -f \"". substr($origmohfile,0,strrpos($origmohfile,".")).".wav\"";
+			exec($rmcmd);
+		}
+	} // AMPMPG123
 	return null;
 }
 
-/*function kill_mpg123()
-{
-	$killcmd="killall -9 mpg123";
-	exec($killcmd);
-}*/
 ?>
 
 <div class="content">
 <h2><?php echo _("On Hold Music")?></h2>
 
 <?php
-if ($action == 'add')
-{
+if ($action == 'add') {
 	?>
 	<form name="addcategory" action="<?php $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return addcategory_onsubmit();">
 	<input type="hidden" name="display" value="<?php echo $display?>">
@@ -274,9 +288,7 @@ function addcategory_onsubmit() {
 	<br><br><br><br><br>
 
 <?php
-}
-else
-{
+} else {
 ?>
 
 	<h5><?php echo _("Category:")?> <?php echo $category=="default"?_("default"):$category;?></h5>
@@ -299,6 +311,9 @@ else
 		<input type="file" name="mohfile" tabindex="<?php echo ++$tabindex;?>"/>
 		<input type="button" value="<?php echo _("Upload")?>" onclick="document.upload.submit(upload);alert('<?php echo addslashes(_("Please wait until the page loads. Your file is being processed."))?>');" tabindex="<?php echo ++$tabindex;?>"/>
 		<br />
+<?php
+	if ($amp_conf['AMPMPG123']) {
+?>
 		<select name="volume" tabindex="<?php echo ++$tabindex;?>">
 			<option value="1.50">Volume 150%</option>
 			<option value="1.25">Volume 125%</option>
@@ -308,7 +323,14 @@ else
 			<option value=".25">Volume 25%</option>
 			<option value=".1">Volume 10%</option>
 		</select>
-		<small><?php echo _("Volume adjustments are done linearly, therefore 50% will not be exactly 'half volume'"); ?></small>
+		<a href="#" class="info"><?php echo "&nbsp;"._("Volume Adjustment")?><span> <?php echo _("The volume adjustment is a linear value. Since loudness is logarithmic, the linear level will be less of an adjustment. You should test out the installed music to assure it is at the correct volume. This feature will convert MP3 files to WAV files. If you do not have mpg123 installed, you can set the paramter: <strong>AMPMPG123=false</strong> in your amportal.conf file") ?></span></a>
+<?php
+	} else { // AMPMPG123
+?>
+		<input type="checkbox" name="onlywav" checked="checked"><small><?php echo _("Do not encode wav to mp3"); ?></small>
+<?php
+	} // AMPMPG123
+?>
 	</form>
 	<br />
 	<form name="randomon" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
@@ -334,7 +356,12 @@ else
 	if (isset($_FILES['mohfile']['tmp_name']) && is_uploaded_file($_FILES['mohfile']['tmp_name'])) {
 		//echo $_FILES['mohfile']['name']." uploaded OK";
 		move_uploaded_file($_FILES['mohfile']['tmp_name'], $path_to_dir."/orig_".$_FILES['mohfile']['name']);
-		$process_err = process_mohfile($_FILES['mohfile']['name'],true,$_REQUEST['volume']);
+
+		if ($amp_conf['AMPMPG123']) {
+			$process_err = process_mohfile($_FILES['mohfile']['name'],true,$_REQUEST['volume']);
+		} else {
+			$process_err = process_mohfile($_FILES['mohfile']['name'],($_REQUEST['onlywav'] != ''));
+		}
 
 		if (isset($process_err)) {
 			echo "<h5>"._("Error Processing").": \"$process_err\" for ".$_FILES['mohfile']['name']."!</h5>\n";
@@ -343,7 +370,6 @@ else
 			echo "<h5>"._("Completed processing")." ".$_FILES['mohfile']['name']."!</h5>";
 		}
 		needreload();
-		//kill_mpg123();
 	}
 
 	//build the array of files
@@ -360,8 +386,6 @@ else
 		if (($numf == 1) && ($category == "default") ){
 			echo "<h5>"._("You must have at least one file for On Hold Music.  Please upload one before deleting this one.")."</h5>";
 		} else {
-			//$rmcmd="rm -f \"".$path_to_dir."/".$del."\"";
-			//exec($rmcmd);
 			if (@unlink($path_to_dir."/".$del)) {
 				echo "<h5>"._("Deleted")." ".$del."!</h5>";
 			} else {
