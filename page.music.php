@@ -323,7 +323,7 @@ function addcategory_onsubmit() {
 			<option value=".25">Volume 25%</option>
 			<option value=".1">Volume 10%</option>
 		</select>
-		<a href="#" class="info"><?php echo "&nbsp;"._("Volume Adjustment")?><span> <?php echo _("The volume adjustment is a linear value. Since loudness is logarithmic, the linear level will be less of an adjustment. You should test out the installed music to assure it is at the correct volume. This feature will convert MP3 files to WAV files. If you do not have mpg123 installed, you can set the paramter: <strong>AMPMPG123=false</strong> in your amportal.conf file") ?></span></a>
+		<a href="#" class="info"><?php echo "&nbsp;"._("Volume Adjustment")?><span> <?php echo _("The volume adjustment is a linear value. Since loudness is logarithmic, the linear level will be less of an adjustment. You should test out the installed music to assure it is at the correct volume. This feature will convert MP3 files to WAV files. If you do not have mpg123 installed, you can set the parameter: <strong>AMPMPG123=false</strong> in your amportal.conf file") ?></span></a>
 <?php
 	} else { // AMPMPG123
 ?>
