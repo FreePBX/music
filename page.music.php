@@ -43,6 +43,10 @@ switch ($action) {
 	case "addednewstream":
 	case "editednewstream":
 		$stream = isset($_REQUEST['stream'])?$_REQUEST['stream']:'';
+		$format = isset($_REQUEST['format'])?trim($_REQUEST['format']):'';
+		if ($format != "") {
+			$stream .= "\nformat=$format";
+		}
 		makestreamcatergory($path_to_dir,$stream);
 		createmusicconf();
 		needreload();
@@ -325,6 +329,11 @@ function addcategory_onsubmit() {
 		<td><input type="text" name="stream" size="80" value=""></td>
 	</tr>
 	<tr>
+	<tr>
+		<td><a href="#" class="info"><?php echo _("Optional Format:")?><span><?php echo _("Optional value for \"format=\" line used to provide the format to Asterisk. This should be a format understood by Asterisk such as ulaw, and is specific to the streaming application you are using. See information on musiconhold.conf configuration for different audio and internet streaming source options.")?> </span></a></td>
+		<td><input type="text" name="format" size="6" value=""></td>
+	</tr>
+	<tr>
 		<td colspan="2"><br><h6><input name="Submit" type="submit" value='<?php echo _("Submit Changes")?>' ></h6></td>		
 	</tr>
 	</table>
@@ -364,6 +373,13 @@ function addstream_onsubmit() {
 <?php  
 	if (file_exists("{$path_to_dir}/.custom")) {
 		$application = file_get_contents("{$path_to_dir}/.custom");
+		$application = explode("\n",$application);
+		if (isset($application[1])) {
+			$format = explode('=',$application[1],2);
+			$format = $format[1];
+		} else {
+			$format = "";
+		}
 	} else {
 		$application = false;
 	}
@@ -384,7 +400,11 @@ function addstream_onsubmit() {
 		<tr><td colspan="2"><h5><?php echo _("Edit Streaming Category").": $category"?><hr></h5></td></tr>
 		<tr>
 			<td><a href="#" class="info"><?php echo _("Application:")?><span><?php echo _("This is the \"application=\" line used to provide the streaming details to Asterisk. See information on musiconhold.conf configuration for different audio and internet streaming source options.")?> </span></a></td>
-			<td><input type="text" name="stream" size="80" value="<?php echo $application?>"></td>
+			<td><input type="text" name="stream" size="80" value="<?php echo $application[0]?>"></td>
+		</tr>
+		<tr>
+			<td><a href="#" class="info"><?php echo _("Optional Format:")?><span><?php echo _("Optional value for \"format=\" line used to provide the format to Asterisk. This should be a format understood by Asterisk such as ulaw, and is specific to the streaming application you are using. See information on musiconhold.conf configuration for different audio and internet streaming source options.")?> </span></a></td>
+			<td><input type="text" name="format" size="6" value="<?php echo $format?>"></td>
 		</tr>
 		<tr>
 			<td colspan="2"><br><h6><input name="Submit" type="submit" value='<?php echo _("Submit Changes")?>' ></h6></td>		
