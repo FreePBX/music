@@ -20,26 +20,35 @@ $category = strtr(isset($_REQUEST['category'])?$_REQUEST['category']:''," ./\"\'
 if ($category == null) $category = 'default';
 $display='music';
 
-global $asterisk_conf;
+global $amp_conf;
 
 if ($category == "default") {
-	$path_to_dir = $asterisk_conf['astvarlibdir']."/mohmp3"; //path to directory u want to read.
+	$path_to_dir = $amp_conf['ASTVARLIBDIR']."/mohmp3"; //path to directory u want to read.
 } else {
-	$path_to_dir = $asterisk_conf['astvarlibdir']."/mohmp3/$category"; //path to directory u want to read.
+	$path_to_dir = $amp_conf['ASTVARLIBDIR']."/mohmp3/$category"; //path to directory u want to read.
 }
 
 
 if (strlen($randon)) {
 	touch($path_to_dir."/.random");
 	createmusicconf();
+	needreload();
 }
 if (strlen($randoff)) {
 	unlink($path_to_dir."/.random");
 	createmusicconf();
+	needreload();
 }
 switch ($action) {
+	case "addednewstream":
+	case "editednewstream":
+		$stream = isset($_REQUEST['stream'])?$_REQUEST['stream']:'';
+		makestreamcatergory($path_to_dir,$stream);
+		createmusicconf();
+		needreload();
+		redirect_standard();
 	case "addednew":
-		makemusiccategory($path_to_dir,$category); 
+		makemusiccategory($path_to_dir); 
 		createmusicconf();
 		needreload();
 		redirect_standard();
@@ -50,8 +59,10 @@ switch ($action) {
 //		redirect_standard();
 	break;
 	case "delete":
+		//$fh = fopen("/tmp/music.log","a");
+		//fwrite($fh,print_r($_REQUEST,true));
 		music_rmdirr("$path_to_dir"); 
-		$path_to_dir = $asterisk_conf['astvarlibdir']."/mohmp3"; //path to directory u want to read.
+		$path_to_dir = $amp_conf['ASTVARLIBDIR']."/mohmp3"; //path to directory u want to read.
 		$category='default';
 		createmusicconf();
 		needreload();
@@ -64,10 +75,11 @@ switch ($action) {
 </div>
 <div class="rnav"><ul>
     <li><a href="config.php?display=<?php echo urlencode($display)?>&action=add"><?php echo _("Add Music Category")?></a></li>
+    <li><a href="config.php?display=<?php echo urlencode($display)?>&action=addstream"><?php echo _("Add Streaming Category")?></a></li>
 
 <?php
 //get existing trunk info
-$tresults = music_list($asterisk_conf['astvarlibdir']."/mohmp3");
+$tresults = music_list($amp_conf['ASTVARLIBDIR']."/mohmp3");
 if (isset($tresults)) {
 	foreach ($tresults as $tresult) {
 		if ($tresult != "none") {
@@ -81,11 +93,10 @@ if (isset($tresults)) {
 
 <?php
 function createmusicconf() {
-	global $asterisk_conf;
 	global $amp_conf;
 
 	$File_Write="";
-	$tresults = music_list($asterisk_conf['astvarlibdir']."/mohmp3");
+	$tresults = music_list($amp_conf['ASTVARLIBDIR']."/mohmp3");
 	if (isset($tresults)) {
 		foreach ($tresults as $tresult)  {
 			// hack - but his is all a hack until redone, in functions, etc.
@@ -97,11 +108,14 @@ function createmusicconf() {
 				continue;
 			}
 			if ($tresult != "default" ) {
-				$dir = $asterisk_conf['astvarlibdir']."/mohmp3/{$tresult}/";
+				$dir = $amp_conf['ASTVARLIBDIR']."/mohmp3/{$tresult}/";
 			} else {
-				$dir = $asterisk_conf['astvarlibdir']."/mohmp3/";
+				$dir = $amp_conf['ASTVARLIBDIR']."/mohmp3/";
 			}
-			if (file_exists("{$dir}.random")) {
+			if (file_exists("{$dir}.custom")) {
+				$application = file_get_contents("{$dir}.custom");
+				$File_Write.="[{$tresult}]\nmode=custom\napplication=$application\n";
+			} else if (file_exists("{$dir}.random")) {
 				$File_Write.="[{$tresult}]\nmode=files\ndirectory={$dir}\nrandom=yes\n";
 			} else {
 				$File_Write.="[{$tresult}]\nmode=files\ndirectory={$dir}\n";
@@ -118,12 +132,19 @@ function createmusicconf() {
 	}
 
 	fclose($handle);
-
-	needreload();
 }
 
-function makemusiccategory($category) {
-	mkdir("$path_to_dir/$category", 0755); 
+function makestreamcatergory($path_to_dir,$stream) {
+	if (!is_dir($path_to_dir)) {
+		makemusiccategory($path_to_dir);
+	}
+	$fh=fopen("$path_to_dir/.custom","w");
+	fwrite($fh,$stream);
+	fclose($fh);
+}
+
+function makemusiccategory($path_to_dir) {
+	mkdir("$path_to_dir", 0755); 
 }
  
 function build_list() {
@@ -288,19 +309,110 @@ function addcategory_onsubmit() {
 	<br><br><br><br><br>
 
 <?php
+	} else if ($action == 'addstream') {
+	?>
+	<form name="addstream" action="<?php $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return addstream_onsubmit();">
+	<input type="hidden" name="display" value="<?php echo $display?>">
+	<input type="hidden" name="action" value="addednewstream">
+	<table>
+	<tr><td colspan="2"><h5><?php echo _("Add Streaming Category")?><hr></h5></td></tr>
+	<tr>
+		<td><a href="#" class="info"><?php echo _("Category Name:")?><span><?php echo _("Allows you to Set up Different Categories for music on hold.  This is useful if you would like to specify different Hold Music or Commercials for various ACD Queues.")?> </span></a></td>
+		<td><input type="text" name="category" value=""></td>
+	</tr>
+	<tr>
+		<td><a href="#" class="info"><?php echo _("Application:")?><span><?php echo _("This is the \"application=\" line used to provide the streaming details to Asterisk. See information on musiconhold.conf configuration for different audio and internet streaming source options.")?> </span></a></td>
+		<td><input type="text" name="stream" size="80" value=""></td>
+	</tr>
+	<tr>
+		<td colspan="2"><br><h6><input name="Submit" type="submit" value='<?php echo _("Submit Changes")?>' ></h6></td>		
+	</tr>
+	</table>
+<script language="javascript">
+<!--
+
+var theForm = document.addstream;
+theForm.category.focus();
+
+function addstream_onsubmit() {
+	var msgInvalidCategoryName = "<?php echo _('Please enter a valid Category Name'); ?>";
+	var msgInvalidStreamName = "<?php echo _('Please enter a streaming application command and arguments'); ?>";
+	var msgReservedCategoryName = "<?php echo _('Categories: \"none\" and \"default\" are reserved names. Please enter a different name'); ?>";
+
+	defaultEmptyOK = false;
+	if (!isAlphanumeric(theForm.category.value))
+		return warnInvalid(theForm.category, msgInvalidCategoryName);
+	if (theForm.category.value == "default" || theForm.category.value == "none")
+		return warnInvalid(theForm.category, msgReservedCategoryName);
+	if (isEmpty(theForm.stream.value))
+		return warnInvalid(theForm.stream, msgInvalidStreamName);
+	
+	return true;
+}
+
+//-->
+</script>
+
+	</form>
+	<br><br><br><br><br>
+
+<?php
 } else {
 ?>
 
 	<h5><?php echo _("Category:")?> <?php echo $category=="default"?_("default"):$category;?></h5>
 <?php  
+	if (file_exists("{$path_to_dir}/.custom")) {
+		$application = file_get_contents("{$path_to_dir}/.custom");
+	} else {
+		$application = false;
+	}
 	if ($category!="default") {
-		$delURL = $_SERVER['PHP_SELF'].'?dsplay='.urlencode($display).'&action=delete&category='.urlencode($category);
-		$tlabel = sprintf(_("Delete Music Category %s"),$category);
+		$delURL = $_SERVER['PHP_SELF'].'?display='.urlencode($display).'&action=delete&category='.urlencode($category);
+		$tlabel = sprintf(($application === false)?_("Delete Music Category %s"):_("Delete Streaming Category"),$category);
 		$label = '<span><img width="16" height="16" border="0" title="'.$tlabel.'" alt="" src="images/core_delete.png"/>&nbsp;'.$tlabel.'</span>';
 ?>
 		<p><a href="<?php echo $delURL ?>"><?php echo $label; ?></a></p>
 <?php  
 	}
+	if ($application !== false) {
+	?>
+		<form name="editstream" action="<?php $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return editstream_onsubmit();">
+		<input type="hidden" name="display" value="<?php echo $display?>">
+		<input type="hidden" name="action" value="editednewstream">
+		<table>
+		<tr><td colspan="2"><h5><?php echo _("Edit Streaming Category").": $category"?><hr></h5></td></tr>
+		<tr>
+			<td><a href="#" class="info"><?php echo _("Application:")?><span><?php echo _("This is the \"application=\" line used to provide the streaming details to Asterisk. See information on musiconhold.conf configuration for different audio and internet streaming source options.")?> </span></a></td>
+			<td><input type="text" name="stream" size="80" value="<?php echo $application?>"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><br><h6><input name="Submit" type="submit" value='<?php echo _("Submit Changes")?>' ></h6></td>		
+		</tr>
+		</table>
+<script language="javascript">
+<!--
+
+var theForm = document.editstream;
+theForm.stream.focus();
+
+function editstream_onsubmit() {
+	var msgInvalidStreamName = "<?php echo _('Please enter a streaming application command and arguments'); ?>";
+
+	defaultEmptyOK = false;
+	if (isEmpty(theForm.stream.value))
+		return warnInvalid(theForm.stream, msgInvalidStreamName);
+	
+	return true;
+}
+//-->
+</script>
+
+		</form>
+		<br><br><br><br><br>
+
+<?php
+	} else { // normal moh dir
 ?>
 
 	<form enctype="multipart/form-data" name="upload" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST"/>
@@ -375,6 +487,7 @@ function addcategory_onsubmit() {
 	//build the array of files
 	$file_array = build_list();
 	$numf = count($file_array);
+	} // normal moh dir
 
 
 	if (isset($_REQUEST['del'])) {
@@ -395,8 +508,10 @@ function addcategory_onsubmit() {
 			needreload();
 		}
 	}
-	$file_array = build_list();
-	draw_list($file_array, $path_to_dir, $category);
+	if ($application === false) {
+		$file_array = build_list();
+		draw_list($file_array, $path_to_dir, $category);
+	}
 	?>
 	<br><br><br><br><br><br>
 <?php

@@ -1,7 +1,6 @@
 <?php
 
 function music_list($path) {
-	global $amp_conf;
 	$i = 1;
 	$arraycount = 0;
 	
@@ -32,32 +31,32 @@ function music_list($path) {
 
 function music_rmdirr($dirname)
 {
-    // Sanity check
-    if (!file_exists($dirname)) {
-	print "$dirname Doesn't exist\n";
-        return false;
-    }
+	// Sanity check
+	if (!file_exists($dirname)) {
+		print "$dirname Doesn't exist\n";
+		return false;
+	}
  
-    // Simple delete for a file
-    if (is_file($dirname)) {
-        return unlink($dirname);
-    }
+	// Simple delete for a file
+	if (is_file($dirname)) {
+		return unlink($dirname);
+	}
  
-    // Loop through the folder
-    $dir = dir($dirname);
-    while (false !== $entry = $dir->read()) {
-        // Skip pointers
-        if ($entry == '.' || $entry == '..') {
-            continue;
-        }
+	// Loop through the folder
+	$dir = dir($dirname);
+	while (false !== $entry = $dir->read()) {
+		// Skip pointers
+		if ($entry == '.' || $entry == '..') {
+			continue;
+		}
  
-        // Recurse
-        music_rmdirr("$dirname/$entry");
-    }
+		// Recurse
+		music_rmdirr("$dirname/$entry");
+	}
  
-    // Clean up
-    $dir->close();
-    return rmdir($dirname);
+	// Clean up
+	$dir->close();
+	return rmdir($dirname);
 }
 
 ?>
