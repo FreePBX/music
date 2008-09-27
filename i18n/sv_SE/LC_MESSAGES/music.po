@@ -1,0 +1,194 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: FreePBX musik\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-09-27 15:43+0200\n"
+"PO-Revision-Date: 2008-09-27 16:47+0100\n"
+"Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Swedish\n"
+"X-Poedit-Country: SWEDEN\n"
+
+#: install.php:24
+#: page.music.php:134
+msgid "Cannot write to file"
+msgstr "Kan inte skriva till fil"
+
+#: page.music.php:81
+#: page.music.php:281
+msgid "Add Music Category"
+msgstr "Lägg till musikkategori"
+
+#: page.music.php:82
+#: page.music.php:322
+msgid "Add Streaming Category"
+msgstr "Lägg till strömkategori"
+
+#: page.music.php:187
+msgid "Delete"
+msgstr "Ta bort"
+
+#: page.music.php:272
+msgid "On Hold Music"
+msgstr "Pausmusik"
+
+#: page.music.php:283
+#: page.music.php:324
+msgid "Category Name:"
+msgstr "Kategorinamn:"
+
+#: page.music.php:283
+#: page.music.php:324
+msgid "Allows you to Set up Different Categories for music on hold.  This is useful if you would like to specify different Hold Music or Commercials for various ACD Queues."
+msgstr "Ger dig möjlighet att sätta upp olika kategorier för pausmusik. Detta är användbart för att specificera olika typer av pausmusik eller reklam för köer."
+
+#: page.music.php:287
+#: page.music.php:337
+#: page.music.php:410
+msgid "Submit Changes"
+msgstr "Spara ändringar"
+
+#: page.music.php:297
+#: page.music.php:347
+msgid "Please enter a valid Category Name"
+msgstr "Skriv in ett giltigt kategorinamn"
+
+#: page.music.php:298
+#: page.music.php:349
+msgid "Categories: \\\"none\\\" and \\\"default\\\" are reserved names. Please enter a different name"
+msgstr "Kategorierna \\\"none\\\" och \\\"default\\\" är reserverade namn. Skriv in ett annat namn"
+
+#: page.music.php:328
+#: page.music.php:402
+msgid "Application:"
+msgstr "Applikation:"
+
+#: page.music.php:328
+#: page.music.php:402
+msgid "This is the \"application=\" line used to provide the streaming details to Asterisk. See information on musiconhold.conf configuration for different audio and internet streaming source options."
+msgstr "Detta är raden för \"application=\" som används för att förse Asterisk med strömmande ljud. Titta i filen musiconhold.conf för olika ljudformat och strömmande media från Internet."
+
+#: page.music.php:333
+#: page.music.php:406
+msgid "Optional Format:"
+msgstr "Valfritt format:"
+
+#: page.music.php:333
+#: page.music.php:406
+msgid "Optional value for \"format=\" line used to provide the format to Asterisk. This should be a format understood by Asterisk such as ulaw, and is specific to the streaming application you are using. See information on musiconhold.conf configuration for different audio and internet streaming source options."
+msgstr "Valfritt värde för raden \"format=\", används av Asterisk och måste vara ett format som Asterisk förstår, t.ex. ulaw, denna rad används specifikt för den applikation av strömmande ljud du anger. Titta i filen musiconhold.conf för olika ljudformat och strömmande media från Internet."
+
+#: page.music.php:348
+#: page.music.php:420
+msgid "Please enter a streaming application command and arguments"
+msgstr "Skriv in en applikation för strömmande media och eventuella argument denna applikation behöver"
+
+#: page.music.php:372
+msgid "Category:"
+msgstr "Kategori:"
+
+#: page.music.php:372
+msgid "default"
+msgstr "default"
+
+#: page.music.php:388
+#, php-format
+msgid "Delete Music Category %s"
+msgstr "Ta bort kategorin %s"
+
+#: page.music.php:388
+#, php-format
+msgid "Delete Streaming Category"
+msgstr "Ta bort strömmande kategori"
+
+#: page.music.php:400
+msgid "Edit Streaming Category"
+msgstr "Redigera strömmande kategori"
+
+#: page.music.php:439
+msgid "Upload a .wav or .mp3 file:"
+msgstr "Ladda upp en .wav eller .mp3 fil:"
+
+#: page.music.php:444
+msgid "Upload"
+msgstr "Ladda upp"
+
+#: page.music.php:444
+msgid "Please wait until the page loads. Your file is being processed."
+msgstr "Vänta medan sidan laddas och din fil hanteras."
+
+#: page.music.php:458
+msgid "Volume Adjustment"
+msgstr "Justera volym"
+
+#: page.music.php:458
+msgid "The volume adjustment is a linear value. Since loudness is logarithmic, the linear level will be less of an adjustment. You should test out the installed music to assure it is at the correct volume. This feature will convert MP3 files to WAV files. If you do not have mpg123 installed, you can set the parameter: <strong>AMPMPG123=false</strong> in your amportal.conf file"
+msgstr "Justering av volymen anges som ett linjärt värde. Eftersom loudness är logaritmiskt kommer den linjära nivån att vara en mindre justering. Du bör testa den installerade musiken för att försäkra dig om det rätta värdet. Detta funktion kommer att konvertera filerna MP3 till WAV. Om du inte har installerat mpg123 kan du sätta parametern: <strong>AMPMPG123=false</strong> i filen amportal.conf"
+
+#: page.music.php:462
+msgid "Do not encode wav to mp3"
+msgstr "Koda inte om wav till mp3"
+
+#: page.music.php:471
+msgid "Disable Random Play"
+msgstr "Avaktivera slumpmässig uppspelning"
+
+#: page.music.php:473
+msgid "Enable Random Play"
+msgstr "Aktivera slumpmässig uppspelning"
+
+#: page.music.php:483
+#: page.music.php:485
+#: page.music.php:499
+msgid "Error Processing"
+msgstr "Fel vid hantering av"
+
+#: page.music.php:483
+msgid "No file provided"
+msgstr "Ingen fil angiven"
+
+#: page.music.php:483
+msgid "Please select a file to upload"
+msgstr "Välj en fil att ladda upp"
+
+#: page.music.php:485
+msgid "Check"
+msgstr "Kontrollera"
+
+#: page.music.php:485
+msgid "in"
+msgstr "i"
+
+#: page.music.php:500
+msgid "This is not a fatal error, your Music on Hold may still work."
+msgstr "Detta är inget kritiskt fel, din pausmusik kommer kanske att fungera."
+
+#: page.music.php:502
+msgid "Completed processing"
+msgstr "Färdig med bearbetning"
+
+#: page.music.php:520
+msgid "You must have at least one file for On Hold Music.  Please upload one before deleting this one."
+msgstr "Du måste minst ha en fil för pausmusik. Ladda upp en före du tar bort denna."
+
+#: page.music.php:523
+msgid "Deleted"
+msgstr "Borttagen"
+
+#: page.music.php:525
+#, php-format
+msgid "Error Deleting %s"
+msgstr "Fel uppstod när %s togs bort"
+
+#: module.xml
+msgid "Music on Hold"
+msgstr "Pausmusik"
+
