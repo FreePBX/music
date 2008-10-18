@@ -183,7 +183,7 @@ function draw_list($file_array, $path_to_dir, $category) {
 			print "<div style=\"text-align:right;width:550px;border: 1px solid;padding:2px;\">";
 			print "<b style=\"float:left;margin-left:5px;\" >".$thisfile."</b>";
 
-			$delURL = $_SERVER['SCRIPT_NAME']."?display=".(isset($display)?$display:'')."&del=".$thisfile."&category=".$category;
+			$delURL = $_SERVER['SCRIPT_NAME']."?display=".(isset($display)?$display:'')."&del=".urlencode($thisfile)."&category=".$category;
 			$tlabel = _("Delete");
 			$label = '<span><img width="16" height="16" border="0" title="'.$tlabel.'" alt="'.$tlabel.'" src="images/core_delete.png"/>&nbsp;</span>';
 			echo "<a style=\"margin-right:5px;\" href=".$delURL.">".$label."</a></div><br />";
