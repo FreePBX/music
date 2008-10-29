@@ -210,11 +210,11 @@ function process_mohfile($mohfile,$onlywav=false,$volume=false) {
 			$newmohfile = $path_to_dir."/wav_".$newname.".wav";
 			//asdf
 			$soxcmd = "sox \"".substr($origmohfile,0,strrpos($origmohfile,".")).".wav\"";
+			$soxcmd .= " -r 8000 -c 1 \"".$newmohfile."\"";
 			if($volume){
-				$soxcmd .= " -v ".$volume;
+				$soxcmd .= " vol ".$volume;
 			}
-			$soxcmd .= " -r 8000 -c 1 \"".$newmohfile."\" ";
-			$soxresample = "resample -ql ";
+			$soxresample = " resample -ql ";
 			exec($soxcmd.$soxresample."2>&1", $output, $returncode);
 			if ($returncode != 0) {
 				// try it again without the resample in case the input sample rate was the same
