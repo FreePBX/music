@@ -87,7 +87,8 @@ $tresults = music_list($amp_conf['ASTVARLIBDIR']."/mohmp3");
 if (isset($tresults)) {
 	foreach ($tresults as $tresult) {
 		if ($tresult != "none") {
-			echo "<li><a id=\"".($category==$tresult ? 'current':'')."\" href=\"config.php?display=".urlencode($display)."&category=".urlencode($tresult)."&action=edit\">{$tresult}</a></li>";
+		    ( $tresult == 'default' ? $ttext = _("default") : $ttext = $tresult );
+			echo "<li><a id=\"".($category==$tresult ? 'current':'')."\" href=\"config.php?display=".urlencode($display)."&category=".urlencode($tresult)."&action=edit\">{$ttext}</a></li>";
 		}
 	}
 }
