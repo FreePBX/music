@@ -156,7 +156,7 @@ function build_list() {
 	global $path_to_dir;
 	$pattern = '';
 	$handle=opendir($path_to_dir) ;
-	$extensions = array('mp3','wav'); // list of extensions to match
+	$extensions = array('mp3','MP3','wav','WAV'); // list of extensions to match
 	
 	//generate the pattern to look for.
 	$pattern = '/(\.'.implode('|\.',$extensions).')$/i';
@@ -204,13 +204,13 @@ function process_mohfile($mohfile,$onlywav=false,$volume=false) {
 			$newname = substr($mohfile,0,strrpos($mohfile,"."));
 
 			// If we are dealing with an MP3, we need to decode it to a wav file
-			if (strpos($origmohfile,'.mp3') !== false)  { 
+			if (strpos($origmohfile,'.mp3') | strpos($origmohfile,'.MP3') !== false)  { 
 				$mpg123cmd = "mpg123 -w \"".substr($origmohfile,0,strrpos($origmohfile,".")).".wav\" \"".$origmohfile."\" 2>&1 ";
 				exec($mpg123cmd, $output, $returncode);
 			}
 			$newmohfile = $path_to_dir."/wav_".$newname.".wav";
 			//asdf
-			$soxcmd = "sox \"".substr($origmohfile,0,strrpos($origmohfile,".")).".wav\"";
+			$soxcmd = "sox \"".$origmohfile."\"";
 			$soxcmd .= " -r 8000 -c 1 \"".$newmohfile."\"";
 			if($volume){
 				$soxcmd .= " vol ".$volume;
@@ -259,7 +259,7 @@ function process_mohfile($mohfile,$onlywav=false,$volume=false) {
 		// If this started as an mp3, we converted it to a wav and then transcoded it from there, 
 		// so we have two "original" files to delete
 		//
-		if (strpos($origmohfile,'.mp3') !== false)  {
+		if (strpos($origmohfile,'.mp3') | strpos($origmohfile,'.MP3') !== false)  {
 			$rmcmd="rm -f \"". substr($origmohfile,0,strrpos($origmohfile,".")).".wav\"";
 			exec($rmcmd);
 		}
