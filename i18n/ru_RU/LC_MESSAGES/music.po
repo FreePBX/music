@@ -3,108 +3,219 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <ceo@postmet.com>, 2008.
 #
-#, fuzzy
-
+# fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.4\n"
+"Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-29 15:07+0100\n"
-"PO-Revision-Date: 2008-01-29 15:07+0100\n"
-"Last-Translator: Alexander Kozyrev\n"
-"Language-Team: Russian\n"
+"POT-Creation-Date: 2008-10-05 11:01+0200\n"
+"PO-Revision-Date: 2008-12-06 16:38+0100\n"
+"Last-Translator: Alexander Kozyrev <ceo@postmet.com>\n"
+"Language-Team: Russian <faq@postmet.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-5\n"
+"Content-Type: text/plain; charset=iso-8859-5\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: install.php:24 page.music.php:104
+#: install.php:24 page.music.php:134
 msgid "Cannot write to file"
 msgstr "Невозможно записать в файл"
 
-#: page.music.php:65 page.music.php:202
+#: page.music.php:81 page.music.php:281
 msgid "Add Music Category"
 msgstr "Добавить категорию музыки"
 
-#: page.music.php:159
+#: page.music.php:82 page.music.php:322
+msgid "Add Streaming Category"
+msgstr "Добавить категорию потока"
+
+#: page.music.php:187
 msgid "Delete"
 msgstr "Удалить"
 
-#: page.music.php:192
+#: page.music.php:272
 msgid "On Hold Music"
 msgstr "Музыка в ожидании"
 
-#: page.music.php:204
+#: page.music.php:283 page.music.php:324
 msgid "Category Name:"
 msgstr "Название категории:"
 
-#: page.music.php:204
+#: page.music.php:283 page.music.php:324
 msgid ""
 "Allows you to Set up Different Categories for music on hold.  This is useful "
 "if you would like to specify different Hold Music or Commercials for various "
 "ACD Queues."
 msgstr ""
-"Разрешает создание других категорий музыки в ожидании. Можно использовать "
-"для использования различной Музыки в ожидании при перенаправлении звонка и Очереди."
+"Разрешает создание других категорий музыки в ожидании. Можно использовать для "
+"использования различной Музыки в ожидании при перенаправлении звонка и Очереди."
 
-#: page.music.php:239
-msgid "Category:"
-msgstr "Категория:"
-
-#: page.music.php:239
-msgid "default"
-msgstr "по умолчанию"
-
-#: page.music.php:241
-msgid "Delete Music Category"
-msgstr "Удалить Категорию музыки"
-
-#: page.music.php:244
-msgid "Upload a .wav or .mp3 file:"
-msgstr "Загрузить файл .wav или .mp3:"
-
-#: page.music.php:267 page.music.php:269 page.music.php:277
-msgid "Error Processing"
-msgstr "Ошибка при совершении действия"
-
-#: page.music.php:267
-msgid "No file provided"
-msgstr "Не указан файл"
-
-#: page.music.php:267
-msgid "Please select a file to upload"
-msgstr "Укажите файл для загрузки"
-
-#: page.music.php:269
-msgid "Check"
-msgstr "Проверить"
-
-#: page.music.php:269
-msgid "in"
-msgstr "в"
-
-#: page.music.php:278
-msgid "This is not a fatal error, your Music on Hold may still work."
-msgstr "Это не критическая ошибка, Музыка в ожидании может работать."
-
-#: page.music.php:280
-msgid "Completed processing"
-msgstr "Действие завершено"
-
-#: page.music.php:298
-msgid ""
-"You must have at least one file for On Hold Music.  Please upload one before "
-"deleting this one."
-msgstr "Должен быть по крайней мере один файл для Музыки в ожидании. Загрузите какой-либо."
-
-#: page.music.php:302
-msgid "Deleted"
-msgstr "Удалено"
-
-msgid "Enable Random Play"
-msgstr "Случайная выборка при воспроизведении"
-
+#: page.music.php:287 page.music.php:337 page.music.php:410
 msgid "Submit Changes"
 msgstr "Применить изменения"
 
+#: page.music.php:297 page.music.php:347
+msgid "Please enter a valid Category Name"
+msgstr "Введите правильныое название для категории"
+
+#: page.music.php:298 page.music.php:349
+msgid ""
+"Categories: \\\"none\\\" and \\\"default\\\" are reserved names. Please "
+"enter a different name"
+msgstr ""
+"Категории с именами: \\\"none\\\" и \\\"default\\\" зарезервированы. "
+"Выберите другое название."
+
+#: page.music.php:328 page.music.php:402
+msgid "Application:"
+msgstr "Приложение:"
+
+#: page.music.php:328 page.music.php:402
+msgid ""
+"This is the \"application=\" line used to provide the streaming details to "
+"Asterisk. See information on musiconhold.conf configuration for different "
+"audio and internet streaming source options."
+msgstr ""
+"Эта линия \"приложение=\" используется для указания деталей потокового аудио "
+"Астериск. Посмотрите дополнительную информацию в конфигурации musiconhold.conf "
+"для выбора других опций для аудио- и потокового вещания из интернет."
+
+#: page.music.php:333 page.music.php:406
+msgid "Optional Format:"
+msgstr "Оптимальный формат:"
+
+#: page.music.php:333 page.music.php:406
+msgid ""
+"Optional value for \"format=\" line used to provide the format to Asterisk. "
+"This should be a format understood by Asterisk such as ulaw, and is specific "
+"to the streaming application you are using. See information on musiconhold."
+"conf configuration for different audio and internet streaming source options."
+msgstr ""
+"Опциональное значение линии \"format=\" используется для указания формата потоковой "
+"линии в Астериск. Это должен быть формат понятный для Астериск, как ulaw, и он "
+"специфичен для потоокового приложения, которое используется. Посмотрите дополнительную "
+"информацию в конфигурации musiconhold.conf для выбора других опций для аудио- и потокового "
+"вещания из интернет." 
+
+#: page.music.php:348 page.music.php:420
+msgid "Please enter a streaming application command and arguments"
+msgstr "Введите команду вызова потокового вещания и аргументы"
+
+#: page.music.php:372
+msgid "Category:"
+msgstr "Категория:"
+
+#: page.music.php:372
+msgid "default"
+msgstr "по умолчанию"
+
+#: page.music.php:388
+#, php-format
+msgid "Delete Music Category %s"
+msgstr "Удалить категорию музыки %s"
+
+#: page.music.php:388
+#, php-format
+msgid "Delete Streaming Category"
+msgstr "Удалить категорию потокового вещания"
+
+#: page.music.php:400
+msgid "Edit Streaming Category"
+msgstr "Редактировать категорию потокового вещания"
+
+#: page.music.php:439
+msgid "Upload a .wav or .mp3 file:"
+msgstr "Загрузить файл .wav или .mp3:"
+
+#: page.music.php:444
+msgid "Upload"
+msgstr "Загрузить"
+
+#: page.music.php:444
+msgid "Please wait until the page loads. Your file is being processed."
+msgstr "Дождитесь, пока страница загрузится. Ваш файл обрабатывается."
+
+#: page.music.php:458
+msgid "Volume Adjustment"
+msgstr "Настрока громкости"
+
+#: page.music.php:458
+msgid ""
+"The volume adjustment is a linear value. Since loudness is logarithmic, the "
+"linear level will be less of an adjustment. You should test out the "
+"installed music to assure it is at the correct volume. This feature will "
+"convert MP3 files to WAV files. If you do not have mpg123 installed, you can "
+"set the parameter: <strong>AMPMPG123=false</strong> in your amportal.conf "
+"file"
+msgstr ""
+"Настрока громкости это линейное значение. Так как громкость логарифмична, "
+"линейный уровень будет прибавляется меньше, чем настраиваимый. Вы должны "
+"протестировать инсталлированные музыкальные файлы чтобы убедиться что громкость "
+"приемлема. Эта опция сконвертирует MP3 файлы в WAV файлы. Если не установлена "
+"программа mpg123, то нужно установить параметр: <strong>AMPMPG123=false</strong> "
+"в файле amportal.conf"  
+
+#: page.music.php:462
+msgid "Do not encode wav to mp3"
+msgstr "Не конвертировать в mp3"
+
+#: page.music.php:471
 msgid "Disable Random Play"
 msgstr "Отменить случайное воспроизведение"
+
+#: page.music.php:473
+msgid "Enable Random Play"
+msgstr "Случайная выборка при воспроизведении"
+
+#: page.music.php:483 page.music.php:485 page.music.php:499
+msgid "Error Processing"
+msgstr "Ошибка при совершении действия"
+
+#: page.music.php:483
+msgid "No file provided"
+msgstr "Не указан файл"
+
+#: page.music.php:483
+msgid "Please select a file to upload"
+msgstr "Укажите файл для загрузки"
+
+#: page.music.php:485
+msgid "Check"
+msgstr "Проверить"
+
+#: page.music.php:485
+msgid "in"
+msgstr "в"
+
+#: page.music.php:500
+msgid "This is not a fatal error, your Music on Hold may still work."
+msgstr ""
+"Это не критическая ошибка, Музыка в ожидании "
+"может работать."
+
+#: page.music.php:502
+msgid "Completed processing"
+msgstr "Действие завершено"
+
+#: page.music.php:520
+msgid ""
+"You must have at least one file for On Hold Music.  Please upload one before "
+"deleting this one."
+msgstr ""
+"Должен быть по крайней мере один файл для "
+"Музыки в ожидании. Загрузите какой-либо."
+
+#: page.music.php:523
+msgid "Deleted"
+msgstr "Удалено"
+
+#: page.music.php:525
+#, php-format
+msgid "Error Deleting %s"
+msgstr "Ошибка при удалении %s"
+
+#: module.xml
+msgid "Music on Hold"
+msgstr "Музыка в ожидании"
+
+#~ msgid "Delete Music Category"
+#~ msgstr "Удалить Категорию музыки"
