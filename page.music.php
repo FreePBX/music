@@ -13,6 +13,7 @@
 ?>
 
 <?php
+$tabindex = 0;
 $action = isset($_REQUEST['action'])?$_REQUEST['action']:'';
 $randon = isset($_REQUEST['randon'])?$_REQUEST['randon']:'';
 $randoff = isset($_REQUEST['randoff'])?$_REQUEST['randoff']:'';
