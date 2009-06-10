@@ -204,14 +204,15 @@ function process_mohfile($mohfile,$onlywav=false,$volume=false) {
 		if($onlywav) {
 			$newname = substr($mohfile,0,strrpos($mohfile,"."));
 
-			// If we are dealing with an MP3, we need to decode it to a wav file
-			if (strpos($origmohfile,'.mp3') | strpos($origmohfile,'.MP3') !== false)  { 
+			// If we are dealing with an MP3, we need to decode it to a wav file. mpg123 -w writes the converted output to $origmohfile.wav
+			if (strtoupper(substr($origmohfile,-4)) == '.MP3') {
 				$mpg123cmd = "mpg123 -w \"".substr($origmohfile,0,strrpos($origmohfile,".")).".wav\" \"".$origmohfile."\" 2>&1 ";
 				exec($mpg123cmd, $output, $returncode);
 			}
 			$newmohfile = $path_to_dir."/wav_".$newname.".wav";
-			//asdf
-			$soxcmd = "sox \"".$origmohfile."\"";
+			//We need to take the output of mpg123 to use in the sox conversion. If we used $origmohfile directly then we would be bypassing mpg123. The mpg123 might not be needed on some systems if we had the sox version with mp3 compiled in. The standard rpmforge sox rpm does not have mp3 included.
+			//$soxcmd = "sox \"".$origmohfile."\"";
+			$soxcmd = "sox \"".substr($origmohfile,0,strrpos($origmohfile,".")).".wav\"";
 			$soxcmd .= " -r 8000 -c 1 \"".$newmohfile."\"";
 			if($volume){
 				$soxcmd .= " vol ".$volume;
