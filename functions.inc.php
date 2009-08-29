@@ -8,7 +8,7 @@ function music_list($path) {
 	if (is_dir($path)){
 		if ($handle = opendir($path)){
 			while (false !== ($file = readdir($handle))){ 
-				if ( ($file != ".") && ($file != "..") && ($file != "CVS") && ($file != ".svn")  ) 
+				if ( ($file != ".") && ($file != "..") && ($file != "CVS") && ($file != ".svn") && ($file != ".nomusic_reserved" ) )
 				{
 					if (is_dir("$path/$file"))
 						$filearray[($i++)] = "$file";

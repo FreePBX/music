@@ -109,11 +109,12 @@ function createmusicconf() {
 			// this puts a none category to allow no music to be chosen
 			//
 			if ($tresult == "none") {
-				$dir = "/dev/null";
-				$File_Write.="[{$tresult}]\nmode=files\ndirectory={$dir}\n";
-				continue;
-			}
-			if ($tresult != "default" ) {
+	      $dir = $amp_conf['ASTVARLIBDIR']."/mohmp3/.nomusic_reserved";
+	      if (!is_dir($dir)) {
+          makemusiccategory($dir);
+        }
+        touch($dir."/silence.wav");
+			} elseif ($tresult != "default" ) {
 				$dir = $amp_conf['ASTVARLIBDIR']."/mohmp3/{$tresult}/";
 			} else {
 				$dir = $amp_conf['ASTVARLIBDIR']."/mohmp3/";
@@ -303,7 +304,7 @@ function addcategory_onsubmit() {
 	defaultEmptyOK = false;
 	if (!isAlphanumeric(theForm.category.value))
 		return warnInvalid(theForm.category, msgInvalidCategoryName);
-	if (theForm.category.value == "default" || theForm.category.value == "none")
+	if (theForm.category.value == "default" || theForm.category.value == "none" || theForm.category.value == ".nomusic_reserved")
 		return warnInvalid(theForm.category, msgReservedCategoryName);
 	
 	return true;
@@ -354,7 +355,7 @@ function addstream_onsubmit() {
 	defaultEmptyOK = false;
 	if (!isAlphanumeric(theForm.category.value))
 		return warnInvalid(theForm.category, msgInvalidCategoryName);
-	if (theForm.category.value == "default" || theForm.category.value == "none")
+	if (theForm.category.value == "default" || theForm.category.value == "none" || theForm.category.value == ".nomusic_reserved")
 		return warnInvalid(theForm.category, msgReservedCategoryName);
 	if (isEmpty(theForm.stream.value))
 		return warnInvalid(theForm.stream, msgInvalidStreamName);
