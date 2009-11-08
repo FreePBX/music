@@ -1,5 +1,6 @@
 <?php
 global $asterisk_conf;
+global $amp_conf;
 require_once("modules/music/functions.inc.php");
 
 $File_Write="";
