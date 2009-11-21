@@ -4,7 +4,7 @@ global $amp_conf;
 require_once("modules/music/functions.inc.php");
 
 $File_Write="";
-$tresults = music_list($asterisk_conf['astvarlibdir']."/mohmp3");
+$tresults = music_list($amp_conf['ASTVARLIBDIR']."/mohmp3");
 if (isset($tresults)) {
 	foreach ($tresults as $tresult)  {
 		if ($tresult == "default" ) {
@@ -16,7 +16,7 @@ if (isset($tresults)) {
       }
       touch($dir."/silence.wav");
     } else {
-			$dir = $asterisk_conf['astvarlibdir']."/mohmp3/{$tresult}/";
+		$dir = $amp_conf['ASTVARLIBDIR']."/mohmp3/";
 		}
 		if (file_exists("{$dir}.random")) {
 			$File_Write.="[{$tresult}]\nmode=files\ndirectory={$dir}\nrandom=yes\n";
