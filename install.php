@@ -8,7 +8,7 @@ $tresults = music_list($amp_conf['ASTVARLIBDIR']."/mohmp3");
 if (isset($tresults)) {
 	foreach ($tresults as $tresult)  {
 		if ($tresult == "default" ) {
-			$dir = $asterisk_conf['astvarlibdir']."/mohmp3/";
+			$dir = $amp_conf['ASTVARLIBDIR']."/mohmp3/";
 		} elseif ($tresult == "none") {
       $dir = $amp_conf['ASTVARLIBDIR']."/mohmp3/.nomusic_reserved";
       if (!is_dir($dir)) {
@@ -16,7 +16,7 @@ if (isset($tresults)) {
       }
       touch($dir."/silence.wav");
     } else {
-		$dir = $amp_conf['ASTVARLIBDIR']."/mohmp3/";
+		$dir = $asterisk_conf['astvarlibdir']."/mohmp3/{$tresult}/";
 		}
 		if (file_exists("{$dir}.random")) {
 			$File_Write.="[{$tresult}]\nmode=files\ndirectory={$dir}\nrandom=yes\n";
