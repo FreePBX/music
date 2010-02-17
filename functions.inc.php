@@ -1,10 +1,18 @@
 <?php
 
-function music_list($path) {
+function music_list($path=null) {
+  if ($path === null) {
+    global $amp_conf;
+    // to get through possible upgrade gltiches, check if set
+    if (!isset($amp_conf['MOHDIR'])) {
+      $amp_conf['MOHDIR'] = '/mohmp3';
+    }
+    $path = $amp_conf['ASTVARLIBDIR'].$amp_conf['MOHDIR'];
+  }
 	$i = 1;
 	$arraycount = 0;
-	
 	$filearray = Array("default");
+
 	if (is_dir($path)){
 		if ($handle = opendir($path)){
 			while (false !== ($file = readdir($handle))){ 

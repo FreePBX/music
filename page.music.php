@@ -18,15 +18,20 @@ $action = isset($_REQUEST['action'])?$_REQUEST['action']:'';
 $randon = isset($_REQUEST['randon'])?$_REQUEST['randon']:'';
 $randoff = isset($_REQUEST['randoff'])?$_REQUEST['randoff']:'';
 $category = strtr(isset($_REQUEST['category'])?$_REQUEST['category']:''," ./\"\'\`", "------");
+
+// Determine default path to music directory, old default was mohmp3, now settable
+$path_to_moh_dir = $amp_conf['ASTVARLIBDIR'].$amp_conf['MOHDIR'];
+
+
 if ($category == null) $category = 'default';
 $display='music';
 
 global $amp_conf;
 
 if ($category == "default") {
-	$path_to_dir = $amp_conf['ASTVARLIBDIR']."/mohmp3"; //path to directory u want to read.
+	$path_to_dir = $path_to_moh_dir; //path to directory u want to read.
 } else {
-	$path_to_dir = $amp_conf['ASTVARLIBDIR']."/mohmp3/$category"; //path to directory u want to read.
+	$path_to_dir = $path_to_moh_dir."/$category"; //path to directory u want to read.
 }
 
 
@@ -67,7 +72,7 @@ switch ($action) {
 		//$fh = fopen("/tmp/music.log","a");
 		//fwrite($fh,print_r($_REQUEST,true));
 		music_rmdirr("$path_to_dir"); 
-		$path_to_dir = $amp_conf['ASTVARLIBDIR']."/mohmp3"; //path to directory u want to read.
+		$path_to_dir = $path_to_moh_dir;
 		$category='default';
 		createmusicconf();
 		needreload();
@@ -84,7 +89,7 @@ switch ($action) {
 
 <?php
 //get existing trunk info
-$tresults = music_list($amp_conf['ASTVARLIBDIR']."/mohmp3");
+$tresults = music_list();
 if (isset($tresults)) {
 	foreach ($tresults as $tresult) {
 		if ($tresult != "none") {
@@ -100,24 +105,25 @@ if (isset($tresults)) {
 <?php
 function createmusicconf() {
 	global $amp_conf;
+  global $path_to_moh_dir;
 
 	$File_Write="";
-	$tresults = music_list($amp_conf['ASTVARLIBDIR']."/mohmp3");
+	$tresults = music_list();
 	if (isset($tresults)) {
 		foreach ($tresults as $tresult)  {
 			// hack - but his is all a hack until redone, in functions, etc.
 			// this puts a none category to allow no music to be chosen
 			//
 			if ($tresult == "none") {
-	      $dir = $amp_conf['ASTVARLIBDIR']."/mohmp3/.nomusic_reserved";
+	      $dir = $path_to_moh_dir."/.nomusic_reserved";
 	      if (!is_dir($dir)) {
           makemusiccategory($dir);
         }
         touch($dir."/silence.wav");
 			} elseif ($tresult != "default" ) {
-				$dir = $amp_conf['ASTVARLIBDIR']."/mohmp3/{$tresult}/";
+				$dir = $path_to_moh_dir."/{$tresult}/";
 			} else {
-				$dir = $amp_conf['ASTVARLIBDIR']."/mohmp3/";
+				$dir = $path_to_moh_dir.'/';
 			}
 			if (file_exists("{$dir}.custom")) {
 				$application = file_get_contents("{$dir}.custom");
