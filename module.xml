@@ -43,6 +43,6 @@
 	<menuitems>
 		<music>Music on Hold</music>
 	</menuitems>
-	<location>release/2.6/music-2.6.0.2.tgz</location>
-	<md5sum>3564a327a4b5467fd6e7858b465b6d3e</md5sum>
+	<location>release/2.7/music-2.7.0.0.tgz</location>
+	<md5sum>a3808b02229e29922308f6c29d1997f8</md5sum>
 </module>
