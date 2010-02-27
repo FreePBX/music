@@ -335,12 +335,12 @@ function addcategory_onsubmit() {
 		<td><input type="text" name="category" value=""></td>
 	</tr>
 	<tr>
-		<td><a href="#" class="info"><?php echo _("Application:")?><span><?php echo _("This is the \"application=\" line used to provide the streaming details to Asterisk. See information on musiconhold.conf configuration for different audio and internet streaming source options.")?> </span></a></td>
+		<td><a href="#" class="info"><?php echo _("Application:")?><span><?php echo _("This is the \"application=\" line used to provide the streaming details to Asterisk. See information on musiconhold.conf configuration for different audio and Internet streaming source options.")?> </span></a></td>
 		<td><input type="text" name="stream" size="80" value=""></td>
 	</tr>
 	<tr>
 	<tr>
-		<td><a href="#" class="info"><?php echo _("Optional Format:")?><span><?php echo _("Optional value for \"format=\" line used to provide the format to Asterisk. This should be a format understood by Asterisk such as ulaw, and is specific to the streaming application you are using. See information on musiconhold.conf configuration for different audio and internet streaming source options.")?> </span></a></td>
+		<td><a href="#" class="info"><?php echo _("Optional Format:")?><span><?php echo _("Optional value for \"format=\" line used to provide the format to Asterisk. This should be a format understood by Asterisk such as ulaw, and is specific to the streaming application you are using. See information on musiconhold.conf configuration for different audio and Internet streaming source options.")?> </span></a></td>
 		<td><input type="text" name="format" size="6" value=""></td>
 	</tr>
 	<tr>
@@ -409,11 +409,11 @@ function addstream_onsubmit() {
 		<table>
 		<tr><td colspan="2"><h5><?php echo _("Edit Streaming Category").": $category"?><hr></h5></td></tr>
 		<tr>
-			<td><a href="#" class="info"><?php echo _("Application:")?><span><?php echo _("This is the \"application=\" line used to provide the streaming details to Asterisk. See information on musiconhold.conf configuration for different audio and internet streaming source options.")?> </span></a></td>
+			<td><a href="#" class="info"><?php echo _("Application:")?><span><?php echo _("This is the \"application=\" line used to provide the streaming details to Asterisk. See information on musiconhold.conf configuration for different audio and Internet streaming source options.")?> </span></a></td>
 			<td><input type="text" name="stream" size="80" value="<?php echo $application[0]?>"></td>
 		</tr>
 		<tr>
-			<td><a href="#" class="info"><?php echo _("Optional Format:")?><span><?php echo _("Optional value for \"format=\" line used to provide the format to Asterisk. This should be a format understood by Asterisk such as ulaw, and is specific to the streaming application you are using. See information on musiconhold.conf configuration for different audio and internet streaming source options.")?> </span></a></td>
+			<td><a href="#" class="info"><?php echo _("Optional Format:")?><span><?php echo _("Optional value for \"format=\" line used to provide the format to Asterisk. This should be a format understood by Asterisk such as ulaw, and is specific to the streaming application you are using. See information on musiconhold.conf configuration for different audio and Internet streaming source options.")?> </span></a></td>
 			<td><input type="text" name="format" size="6" value="<?php echo $format?>"></td>
 		</tr>
 		<tr>
