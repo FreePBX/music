@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-27 13:45+0100\n"
+"POT-Creation-Date: 2010-02-27 17:34+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,88 +28,70 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: music/install.php:36 music/page.music.php:143
 msgid "Cannot write to file"
 msgstr ""
 
-#: music/music.i18n.php:5 music/music.i18n.php:13
 msgid "Music on Hold"
 msgstr ""
 
-#: music/music.i18n.php:7
 msgid ""
 "Internal Options \n"
 "&\n"
 " Configuration"
 msgstr ""
 
-#: music/music.i18n.php:11
 msgid ""
 "Uploading and management of sound files (wav, mp3) to be used for on-hold "
 "music."
 msgstr ""
 
-#: music/page.music.php:87 music/page.music.php:291
 msgid "Add Music Category"
 msgstr ""
 
-#: music/page.music.php:88 music/page.music.php:332
 msgid "Add Streaming Category"
 msgstr ""
 
-#: music/page.music.php:96 music/page.music.php:382
 msgid "default"
 msgstr ""
 
-#: music/page.music.php:196
 msgid "Delete"
 msgstr ""
 
-#: music/page.music.php:282
 msgid "On Hold Music"
 msgstr ""
 
-#: music/page.music.php:293 music/page.music.php:334
 msgid "Category Name:"
 msgstr ""
 
-#: music/page.music.php:293 music/page.music.php:334
 msgid ""
 "Allows you to Set up Different Categories for music on hold.  This is useful "
 "if you would like to specify different Hold Music or Commercials for various "
 "ACD Queues."
 msgstr ""
 
-#: music/page.music.php:297 music/page.music.php:347 music/page.music.php:420
 msgid "Submit Changes"
 msgstr ""
 
-#: music/page.music.php:307 music/page.music.php:357
 msgid "Please enter a valid Category Name"
 msgstr ""
 
-#: music/page.music.php:308 music/page.music.php:359
 msgid ""
 "Categories: \\\"none\\\" and \\\"default\\\" are reserved names. Please "
 "enter a different name"
 msgstr ""
 
-#: music/page.music.php:338 music/page.music.php:412
 msgid "Application:"
 msgstr ""
 
-#: music/page.music.php:338 music/page.music.php:412
 msgid ""
 "This is the \"application=\" line used to provide the streaming details to "
 "Asterisk. See information on musiconhold.conf configuration for different "
 "audio and Internet streaming source options."
 msgstr ""
 
-#: music/page.music.php:343 music/page.music.php:416
 msgid "Optional Format:"
 msgstr ""
 
-#: music/page.music.php:343 music/page.music.php:416
 msgid ""
 "Optional value for \"format=\" line used to provide the format to Asterisk. "
 "This should be a format understood by Asterisk such as ulaw, and is specific "
@@ -117,45 +99,35 @@ msgid ""
 "conf configuration for different audio and Internet streaming source options."
 msgstr ""
 
-#: music/page.music.php:358 music/page.music.php:430
 msgid "Please enter a streaming application command and arguments"
 msgstr ""
 
-#: music/page.music.php:382
 msgid "Category:"
 msgstr ""
 
-#: music/page.music.php:398
 #, php-format
 msgid "Delete Music Category %s"
 msgstr ""
 
-#: music/page.music.php:398
 #, php-format
 msgid "Delete Streaming Category"
 msgstr ""
 
-#: music/page.music.php:410
 msgid "Edit Streaming Category"
 msgstr ""
 
-#: music/page.music.php:449
 msgid "Upload a .wav or .mp3 file:"
 msgstr ""
 
-#: music/page.music.php:454
 msgid "Upload"
 msgstr ""
 
-#: music/page.music.php:454
 msgid "Please wait until the page loads. Your file is being processed."
 msgstr ""
 
-#: music/page.music.php:468
 msgid "Volume Adjustment"
 msgstr ""
 
-#: music/page.music.php:468
 msgid ""
 "The volume adjustment is a linear value. Since loudness is logarithmic, the "
 "linear level will be less of an adjustment. You should test out the "
@@ -165,57 +137,44 @@ msgid ""
 "file"
 msgstr ""
 
-#: music/page.music.php:472
 msgid "Do not encode wav to mp3"
 msgstr ""
 
-#: music/page.music.php:481
 msgid "Disable Random Play"
 msgstr ""
 
-#: music/page.music.php:483
 msgid "Enable Random Play"
 msgstr ""
 
-#: music/page.music.php:493 music/page.music.php:495 music/page.music.php:509
 msgid "Error Processing"
 msgstr ""
 
-#: music/page.music.php:493
 msgid "No file provided"
 msgstr ""
 
-#: music/page.music.php:493
 msgid "Please select a file to upload"
 msgstr ""
 
-#: music/page.music.php:495
 msgid "Check"
 msgstr ""
 
-#: music/page.music.php:495
 msgid "in"
 msgstr ""
 
-#: music/page.music.php:510
 msgid "This is not a fatal error, your Music on Hold may still work."
 msgstr ""
 
-#: music/page.music.php:512
 msgid "Completed processing"
 msgstr ""
 
-#: music/page.music.php:530
 msgid ""
 "You must have at least one file for On Hold Music.  Please upload one before "
 "deleting this one."
 msgstr ""
 
-#: music/page.music.php:533
 msgid "Deleted"
 msgstr ""
 
-#: music/page.music.php:535
 #, php-format
 msgid "Error Deleting %s"
 msgstr ""
