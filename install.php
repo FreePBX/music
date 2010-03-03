@@ -30,7 +30,7 @@ if (isset($tresults)) {
 		}
 	}
 }
-$handle = fopen("/etc/asterisk/musiconhold_additional.conf", "w");
+$handle = fopen($amp_conf['ASTETCDIR']."/musiconhold_additional.conf", "w");
 
 if (fwrite($handle, $File_Write) === FALSE) {
 	echo _("Cannot write to file")." ($tmpfname)";
