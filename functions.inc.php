@@ -7,7 +7,7 @@ function music_list($path=null) {
     if (!isset($amp_conf['MOHDIR'])) {
       $amp_conf['MOHDIR'] = '/mohmp3';
     }
-    $path = $amp_conf['ASTVARLIBDIR'].$amp_conf['MOHDIR'];
+    $path = $amp_conf['ASTVARLIBDIR'].'/'.$amp_conf['MOHDIR'];
   }
 	$i = 1;
 	$arraycount = 0;

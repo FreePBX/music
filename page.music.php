@@ -20,7 +20,7 @@ $randoff = isset($_REQUEST['randoff'])?$_REQUEST['randoff']:'';
 $category = strtr(isset($_REQUEST['category'])?$_REQUEST['category']:''," ./\"\'\`", "------");
 
 // Determine default path to music directory, old default was mohmp3, now settable
-$path_to_moh_dir = $amp_conf['ASTVARLIBDIR'].$amp_conf['MOHDIR'];
+$path_to_moh_dir = $amp_conf['ASTVARLIBDIR'].'/'.$amp_conf['MOHDIR'];
 
 
 if ($category == null) $category = 'default';
