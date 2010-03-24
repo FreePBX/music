@@ -219,7 +219,8 @@ function process_mohfile($mohfile,$onlywav=false,$volume=false) {
 			$newmohfile = $path_to_dir."/wav_".$newname.".wav";
 			//We need to take the output of mpg123 to use in the sox conversion. If we used $origmohfile directly then we would be bypassing mpg123. The mpg123 might not be needed on some systems if we had the sox version with mp3 compiled in. The standard rpmforge sox rpm does not have mp3 included.
 			//$soxcmd = "sox \"".$origmohfile."\"";
-			$soxcmd = "sox \"".substr($origmohfile,0,strrpos($origmohfile,".")).".wav\"";
+      $source_file = substr($origmohfile,0,strrpos($origmohfile,".")).".wav";
+			$soxcmd = "sox \"".$source_file."\"";
 			$soxcmd .= " -r 8000 -c 1 \"".$newmohfile."\"";
 			if($volume){
 				$soxcmd .= " vol ".$volume;
@@ -229,8 +230,19 @@ function process_mohfile($mohfile,$onlywav=false,$volume=false) {
 			if ($returncode != 0) {
 				// try it again without the resample in case the input sample rate was the same
 				//
+        $output = array();
+        $returncode = 0;
 				exec("rm -rf \"".$newmohfile."\"");
 				exec($soxcmd."2>&1", $output, $returncode);
+        // if sox prints no warnings, then despite the return code we will assume it is good
+        if (empty($output)) {
+          if (copy($source_file,$newmohfile)) {
+            $returncode = 0;
+          } else {
+            $returncode = 1;
+            $output[] = _("sox failed to convert file and original could not be copied as a fall back");
+          }
+        }
 			}
 		}
 	} else { // AMPMPG123
