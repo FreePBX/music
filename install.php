@@ -21,7 +21,7 @@ if (isset($tresults)) {
       }
       touch($dir."/silence.wav");
     } else {
-		$dir = $asterisk_conf['astvarlibdir']."/mohmp3/{$tresult}/";
+      $dir = $path_to_moh_dir."/{$tresult}/";
 		}
 		if (file_exists("{$dir}.random")) {
 			$File_Write.="[{$tresult}]\nmode=files\ndirectory={$dir}\nrandom=yes\n";
