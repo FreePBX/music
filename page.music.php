@@ -457,7 +457,7 @@ function editstream_onsubmit() {
 	} else { // normal moh dir
 ?>
 
-	<form enctype="multipart/form-data" name="upload" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST"/>
+	<form enctype="multipart/form-data" name="upload" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
 		<?php echo _("Upload a .wav or .mp3 file:")?><br>
 		<input type="hidden" name="display" value="<?php echo $display?>">
 		<input type="hidden" name="category" value="<?php echo "$category" ?>">
