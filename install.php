@@ -17,7 +17,7 @@ if (isset($tresults)) {
 		} elseif ($tresult == "none") {
       $dir = $path_to_moh_dir."/.nomusic_reserved";
       if (!is_dir($dir)) {
-        mkdir("$dir", 0755); 
+        mkdir("$dir", 0755,true); 
       }
       touch($dir."/silence.wav");
     } else {
