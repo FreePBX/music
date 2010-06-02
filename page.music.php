@@ -17,7 +17,7 @@ $tabindex = 0;
 $action = isset($_REQUEST['action'])?$_REQUEST['action']:'';
 $randon = isset($_REQUEST['randon'])?$_REQUEST['randon']:'';
 $randoff = isset($_REQUEST['randoff'])?$_REQUEST['randoff']:'';
-$category = isset($_REQUEST['category'])?strtr(html_entity_decode($_REQUEST['category'],ENT_QUOTES)," ./\"\'\`", "------"):'';
+$category = isset($_REQUEST['category'])?htmlspecialchars(strtr($_REQUEST['category']," ./\"\'\`", "------")):'';
 
 // Determine default path to music directory, old default was mohmp3, now settable
 $path_to_moh_dir = $amp_conf['ASTVARLIBDIR'].'/'.$amp_conf['MOHDIR'];
