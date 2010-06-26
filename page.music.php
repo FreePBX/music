@@ -467,15 +467,15 @@ function editstream_onsubmit() {
 		<br />
 <?php
 	if ($amp_conf['AMPMPG123']) {
-?>
+?>		
 		<select name="volume" tabindex="<?php echo ++$tabindex;?>">
-			<option value="1.50">Volume 150%</option>
-			<option value="1.25">Volume 125%</option>
-			<option value="" selected>Volume 100%</option>
-			<option value=".75">Volume 75%</option>
-			<option value=".5">Volume 50%</option>
-			<option value=".25">Volume 25%</option>
-			<option value=".1">Volume 10%</option>
+			<option value="1.50"><?php echo _("Volume 150%")?></option>
+			<option value="1.25"><?php echo _("Volume 125%")?></option>
+			<option value="" selected><?php echo _("Volume 100%")?></option>
+			<option value=".75"><?php echo _("Volume 75%")?></option>
+			<option value=".5"><?php echo _("Volume 50%")?></option>
+			<option value=".25"><?php echo _("Volume 25%")?></option>
+			<option value=".1"><?php echo _("Volume 10%")?></option>
 		</select>
 		<a href="#" class="info"><?php echo "&nbsp;"._("Volume Adjustment")?><span> <?php echo _("The volume adjustment is a linear value. Since loudness is logarithmic, the linear level will be less of an adjustment. You should test out the installed music to assure it is at the correct volume. This feature will convert MP3 files to WAV files. If you do not have mpg123 installed, you can set the parameter: <strong>AMPMPG123=false</strong> in your amportal.conf file") ?></span></a>
 <?php

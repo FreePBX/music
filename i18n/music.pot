@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-27 17:34+0100\n"
+"POT-Creation-Date: 2010-06-26 12:48+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,6 +55,10 @@ msgid "default"
 msgstr ""
 
 msgid "Delete"
+msgstr ""
+
+msgid ""
+"sox failed to convert file and original could not be copied as a fall back"
 msgstr ""
 
 msgid "On Hold Music"
@@ -123,6 +127,27 @@ msgid "Upload"
 msgstr ""
 
 msgid "Please wait until the page loads. Your file is being processed."
+msgstr ""
+
+msgid "Volume 150%"
+msgstr ""
+
+msgid "Volume 125%"
+msgstr ""
+
+msgid "Volume 100%"
+msgstr ""
+
+msgid "Volume 75%"
+msgstr ""
+
+msgid "Volume 50%"
+msgstr ""
+
+msgid "Volume 25%"
+msgstr ""
+
+msgid "Volume 10%"
 msgstr ""
 
 msgid "Volume Adjustment"
