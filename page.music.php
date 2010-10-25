@@ -18,6 +18,8 @@ $action = isset($_REQUEST['action'])?$_REQUEST['action']:'';
 $randon = isset($_REQUEST['randon'])?$_REQUEST['randon']:'';
 $randoff = isset($_REQUEST['randoff'])?$_REQUEST['randoff']:'';
 $category = isset($_REQUEST['category'])?htmlspecialchars(strtr($_REQUEST['category']," ./\"\'\`", "------")):'';
+$volume = isset($_REQUEST['volume']) ? escapeshellcmd($_REQUEST['volume']) : '';
+if (isset($_FILES['mohfile']['name'])) {$_FILES['mohfile']['name'] = escapeshellcmd($_FILES['mohfile']['name']); }
 
 // Determine default path to music directory, old default was mohmp3, now settable
 $path_to_moh_dir = $amp_conf['ASTVARLIBDIR'].'/'.$amp_conf['MOHDIR'];
@@ -48,8 +50,8 @@ if (strlen($randoff)) {
 switch ($action) {
 	case "addednewstream":
 	case "editednewstream":
-		$stream = isset($_REQUEST['stream'])?$_REQUEST['stream']:'';
-		$format = isset($_REQUEST['format'])?trim($_REQUEST['format']):'';
+		$stream = isset($_REQUEST['stream'])?escapeshellcmd($_REQUEST['stream']):'';
+		$format = isset($_REQUEST['format'])?trim(escapeshellcmd($_REQUEST['format'])):'';
 		if ($format != "") {
 			$stream .= "\nformat=$format";
 		}
@@ -512,7 +514,7 @@ function editstream_onsubmit() {
 		move_uploaded_file($_FILES['mohfile']['tmp_name'], $path_to_dir."/orig_".$_FILES['mohfile']['name']);
 
 		if ($amp_conf['AMPMPG123']) {
-			$process_err = process_mohfile($_FILES['mohfile']['name'],true,$_REQUEST['volume']);
+			$process_err = process_mohfile($_FILES['mohfile']['name'],true,$volume);
 		} else {
 			$process_err = process_mohfile($_FILES['mohfile']['name'],($_REQUEST['onlywav'] != ''));
 		}
