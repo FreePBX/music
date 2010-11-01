@@ -18,8 +18,7 @@ $action = isset($_REQUEST['action'])?$_REQUEST['action']:'';
 $randon = isset($_REQUEST['randon'])?$_REQUEST['randon']:'';
 $randoff = isset($_REQUEST['randoff'])?$_REQUEST['randoff']:'';
 $category = isset($_REQUEST['category'])?htmlspecialchars(strtr($_REQUEST['category']," ./\"\'\`", "------")):'';
-$volume = isset($_REQUEST['volume']) ? escapeshellcmd($_REQUEST['volume']) : '';
-if (isset($_FILES['mohfile']['name'])) {$_FILES['mohfile']['name'] = escapeshellcmd($_FILES['mohfile']['name']); }
+$volume = isset($_REQUEST['volume']) && is_numeric($_REQUEST['volume']) ? $_REQUEST['volume'] : '';
 
 // Determine default path to music directory, old default was mohmp3, now settable
 $path_to_moh_dir = $amp_conf['ASTVARLIBDIR'].'/'.$amp_conf['MOHDIR'];
@@ -50,8 +49,8 @@ if (strlen($randoff)) {
 switch ($action) {
 	case "addednewstream":
 	case "editednewstream":
-		$stream = isset($_REQUEST['stream'])?escapeshellcmd($_REQUEST['stream']):'';
-		$format = isset($_REQUEST['format'])?trim(escapeshellcmd($_REQUEST['format'])):'';
+		$stream = isset($_REQUEST['stream'])?$_REQUEST['stream']:'';
+		$format = isset($_REQUEST['format'])?trim($_REQUEST['format']):'';
 		if ($format != "") {
 			$stream .= "\nformat=$format";
 		}
@@ -208,6 +207,7 @@ function process_mohfile($mohfile,$onlywav=false,$volume=false) {
 
 	$output = 0;
 	$returncode = 0;
+  $mohfile = escapeshellcmd($mohfile);
 	$origmohfile=$path_to_dir."/orig_".$mohfile;
 	if ($amp_conf['AMPMPG123']) {
 		if($onlywav) {
@@ -428,7 +428,7 @@ function addstream_onsubmit() {
 		</tr>
 		<tr>
 			<td><a href="#" class="info"><?php echo _("Optional Format:")?><span><?php echo _("Optional value for \"format=\" line used to provide the format to Asterisk. This should be a format understood by Asterisk such as ulaw, and is specific to the streaming application you are using. See information on musiconhold.conf configuration for different audio and Internet streaming source options.")?> </span></a></td>
-			<td><input type="text" name="format" size="6" value="<?php echo $format?>"></td>
+			<td><input type="text" name="format" size="6" value="<?php echo htmlentities($format)?>"></td>
 		</tr>
 		<tr>
 			<td colspan="2"><br><h6><input name="Submit" type="submit" value='<?php echo _("Submit Changes")?>' ></h6></td>		
@@ -506,7 +506,7 @@ function editstream_onsubmit() {
 		if (strlen($_FILES['mohfile']['name']) == 0) {
 			echo "<h5> PHP "._("Error Processing")."! "._("No file provided")." "._("Please select a file to upload")."</h5>";
 		} else {
-			echo "<h5> PHP "._("Error Processing")." ".$_FILES['mohfile']['name']."! "._("Check")." upload_max_filesize "._("in")." /etc/php.ini</h5>";
+			echo "<h5> PHP "._("Error Processing")." ".htmlentities($_FILES['mohfile']['name'])."! "._("Check")." upload_max_filesize "._("in")." /etc/php.ini</h5>";
 		}
 	}
 	if (isset($_FILES['mohfile']['tmp_name']) && is_uploaded_file($_FILES['mohfile']['tmp_name'])) {
@@ -520,10 +520,10 @@ function editstream_onsubmit() {
 		}
 
 		if (isset($process_err)) {
-			echo "<h5>"._("Error Processing").": \"$process_err\" for ".$_FILES['mohfile']['name']."!</h5>\n";
+			echo "<h5>"._("Error Processing").": \"$process_err\" for ".htmlentities($_FILES['mohfile']['name'])."!</h5>\n";
 			echo "<h5>"._("This is not a fatal error, your Music on Hold may still work.")."</h5>\n";
 		} else {
-			echo "<h5>"._("Completed processing")." ".$_FILES['mohfile']['name']."!</h5>";
+			echo "<h5>"._("Completed processing")." ".htmlentities($_FILES['mohfile']['name'])."!</h5>";
 		}
 		needreload();
 	}
