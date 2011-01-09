@@ -1,5 +1,6 @@
 <module>
 	<rawname>music</rawname>
+	<repo>standard</repo>
 	<name>Music on Hold</name>
 	<version>2.8.0.3</version>
 	<publisher>FreePBX</publisher>
