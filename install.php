@@ -40,6 +40,8 @@ if (fwrite($handle, $File_Write) === FALSE) {
 fclose($handle);
 
 
+$freepbx_conf =& freepbx_conf::create();
+
   // AMPMPG123
   //
   $set['value'] = true;
