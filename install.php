@@ -52,6 +52,7 @@ $freepbx_conf =& freepbx_conf::create();
   $set['module'] = 'music';
   $set['category'] = 'System Setup';
   $set['emptyok'] = 0;
+  $set['name'] = 'Convert Music Files to WAV';
   $set['description'] = 'When set to false, the MP3 files can be loaded and WAV files converted to MP3 in the MoH module. The default behavior of true assumes you have mpg123 loaded as well as sox and will convert MP3 files to WAV. This is highly recommended as MP3 files heavily tax the system and can cause instability on a busy phone system';
   $set['type'] = CONF_TYPE_BOOL;
   $freepbx_conf->define_conf_setting('AMPMPG123',$set,true);
