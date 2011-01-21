@@ -479,7 +479,7 @@ function editstream_onsubmit() {
 			<option value=".25"><?php echo _("Volume 25%")?></option>
 			<option value=".1"><?php echo _("Volume 10%")?></option>
 		</select>
-		<a href="#" class="info"><?php echo "&nbsp;"._("Volume Adjustment")?><span> <?php echo _("The volume adjustment is a linear value. Since loudness is logarithmic, the linear level will be less of an adjustment. You should test out the installed music to assure it is at the correct volume. This feature will convert MP3 files to WAV files. If you do not have mpg123 installed, you can set the parameter: <strong>Convert Music Files to WAV</strong> to false in General Settings/Advanced Settings") ?></span></a>
+		<a href="#" class="info"><?php echo "&nbsp;"._("Volume Adjustment")?><span> <?php echo _("The volume adjustment is a linear value. Since loudness is logarithmic, the linear level will be less of an adjustment. You should test out the installed music to assure it is at the correct volume. This feature will convert MP3 files to WAV files. If you do not have mpg123 installed, you can set the parameter: <strong>Convert Music Files to WAV</strong> to false in Advanced Settings") ?></span></a>
 <?php
 	} else { // AMPMPG123
 ?>
