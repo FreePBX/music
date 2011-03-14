@@ -1,7 +1,7 @@
 <?php
 global $asterisk_conf;
 global $amp_conf;
-require_once("modules/music/functions.inc.php");
+require_once(dirname(__FILE__).'/functions.inc.php');
 
 // In case there is an old version as part of the upgrade process, we will derive the current path
 //
