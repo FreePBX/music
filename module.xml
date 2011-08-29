@@ -7,50 +7,11 @@
 	<license>GPLv2+</license>
 	<candisable>no</candisable>
 	<canuninstall>no</canuninstall>
-	<type>setup</type>
-	<category>Internal Options &amp; Configuration</category>
+	<category>Settings</category>
 	<description>Uploading and management of sound files (wav, mp3) to be used for on-hold music.</description>
 	<changelog>
 		*2.9.0.1* #4740
 		*2.9.0.0* 2.9 Update
-		*2.8.0.3* #4604 (Security Bug)
-		*2.8.0.2* localization updates
-		*2.8.0.1* #4179
-		*2.8.0.0* #4309, #4310
-		*2.7.0.5* #4261
-		*2.7.0.4* #4157
-		*2.7.0.3* #4111
-		*2.7.0.2* #4087
-		*2.7.0.1* text tweaks
-		*2.7.0.0* #4051 allow moh subdir to be defined
-		*2.6.0.2* localizations
-		*2.6.0.1* 3436
-		*2.6.0.0* added publisher/lic
-		*2.5.1.4* #3711 and localizations
-		*2.5.1.3* #3380, #3443, localization updates
-		*2.5.1.2* #3346
-		*2.5.1.1* #3297, localization changes
-		*2.5.1* #3156 add option to put Streaming Sources as well as downloaded files as music category
-		*2.5.0.1* #3007 spelling
-		*2.5.0* #2773, #2845, #2928, added delete and add icons
-		*2.4.0.2* #2843 Russian Translation
-		*2.4.0.1* #2591 localization fixes
-		*2.4.0* it translations, bump for 2.4
-		*1.5.2* #1923 Add option to no encode wav to mp3 (but recode it to 8K samples)
-		*1.5.1.5* #2193 moh path hardcoded
-		*1.5.1.4* bump for rc1
-		*1.5.1.3* #1969 fix javascript validation, add canunninstall:no
-		*1.5.1.2* #2070 fix proper use of script tags
-		*1.5.1.1* added candisable = no for module admin
-		*1.5.1* Added a 'none' category that results in silence played
-		*1.5* Fixed upload bug, #1646 could not upload files
-		*1.4.2* List wav files
-		*1.4.1* Add redirect_standard() call to avoid #1616
-		*1.4* Fix an issue of a new install not having a working MOH until they visit the page.
-		*1.3.2* Add he_IL translation
-		*1.3.1* Changed name to Music on Hold (from On Hold Music) 
-		*1.3* Bumped version to assist upgraders from the 2.1 tree. No other changes.
-		*1.2* First release for FreePBX 2.2 - Fixed compatibility issue with new UI
 	</changelog>
 	<menuitems>
 		<music>Music on Hold</music>

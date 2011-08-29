@@ -83,7 +83,6 @@ switch ($action) {
 
 
 ?>
-</div>
 <div class="rnav"><ul>
     <li><a href="config.php?display=<?php echo urlencode($display)?>&action=add"><?php echo _("Add Music Category")?></a></li>
     <li><a href="config.php?display=<?php echo urlencode($display)?>&action=addstream"><?php echo _("Add Streaming Category")?></a></li>
@@ -292,7 +291,6 @@ function process_mohfile($mohfile,$onlywav=false,$volume=false) {
 
 ?>
 
-<div class="content">
 <h2><?php echo _("On Hold Music")?></h2>
 
 <?php
