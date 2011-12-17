@@ -1,4 +1,5 @@
 <?php
+if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 global $asterisk_conf;
 global $amp_conf;
 require_once(dirname(__FILE__).'/functions.inc.php');
