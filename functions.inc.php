@@ -10,12 +10,22 @@ class music_conf {
 	// return the output that goes in the file
 	function generateConf() {
 		global $amp_conf;
+		global $version; //asterisk version
 		$path_to_moh_dir = $amp_conf['ASTVARLIBDIR'].'/'.$amp_conf['MOHDIR'];
 		$output = "";
 
 		$File_Write="";
 		$tresults = music_list();
 		if (isset($tresults)) {
+
+			if (version_compare($version, "1.6.0", "ge")) {
+				$random = "sort=random\n";
+				$alpha = "sort=alpha\n";
+			} else {
+				$random = "random=yes\n";
+				$alpha = "";
+			}
+
 			foreach ($tresults as $tresult)  {
 				// hack - but his is all a hack until redone, in functions, etc.
 				// this puts a none category to allow no music to be chosen
@@ -35,9 +45,9 @@ class music_conf {
 					$application = file_get_contents("{$dir}.custom");
 					$File_Write.="[{$tresult}]\nmode=custom\napplication=$application\n";
 				} else if (file_exists("{$dir}.random")) {
-					$File_Write.="[{$tresult}]\nmode=files\ndirectory={$dir}\nrandom=yes\n";
+					$File_Write.="[{$tresult}]\nmode=files\ndirectory={$dir}\n$random";
 				} else {
-					$File_Write.="[{$tresult}]\nmode=files\ndirectory={$dir}\n";
+					$File_Write.="[{$tresult}]\nmode=files\ndirectory={$dir}\n$alpha";
 				}
 			}
 		}
