@@ -39,12 +39,10 @@ if ($category == "default") {
 
 if (strlen($randon)) {
 	touch($path_to_dir."/.random");
-	createmusicconf();
 	needreload();
 }
 if (strlen($randoff)) {
 	unlink($path_to_dir."/.random");
-	createmusicconf();
 	needreload();
 }
 switch ($action) {
@@ -56,17 +54,14 @@ switch ($action) {
 			$stream .= "\nformat=$format";
 		}
 		makestreamcatergory($path_to_dir,$stream);
-		createmusicconf();
 		needreload();
 		redirect_standard();
 	case "addednew":
-		makemusiccategory($path_to_dir); 
-		createmusicconf();
+		music_makemusiccategory($path_to_dir); 
 		needreload();
 		redirect_standard();
 	break;
 	case "addedfile":
-		createmusicconf();
 		needreload();
 //		redirect_standard();
 	break;
@@ -76,7 +71,6 @@ switch ($action) {
 		music_rmdirr("$path_to_dir"); 
 		$path_to_dir = $path_to_moh_dir;
 		$category='default';
-		createmusicconf();
 		needreload();
 		redirect_standard();
 	break;
@@ -104,63 +98,15 @@ if (isset($tresults)) {
 
 
 <?php
-function createmusicconf() {
-	global $amp_conf;
-  global $path_to_moh_dir;
-
-	$File_Write="";
-	$tresults = music_list();
-	if (isset($tresults)) {
-		foreach ($tresults as $tresult)  {
-			// hack - but his is all a hack until redone, in functions, etc.
-			// this puts a none category to allow no music to be chosen
-			//
-			if ($tresult == "none") {
-	      $dir = $path_to_moh_dir."/.nomusic_reserved";
-	      if (!is_dir($dir)) {
-          makemusiccategory($dir);
-        }
-        touch($dir."/silence.wav");
-			} elseif ($tresult != "default" ) {
-				$dir = $path_to_moh_dir."/{$tresult}/";
-			} else {
-				$dir = $path_to_moh_dir.'/';
-			}
-			if (file_exists("{$dir}.custom")) {
-				$application = file_get_contents("{$dir}.custom");
-				$File_Write.="[{$tresult}]\nmode=custom\napplication=$application\n";
-			} else if (file_exists("{$dir}.random")) {
-				$File_Write.="[{$tresult}]\nmode=files\ndirectory={$dir}\nrandom=yes\n";
-			} else {
-				$File_Write.="[{$tresult}]\nmode=files\ndirectory={$dir}\n";
-			}
-		}
-	}
-
-
-	$handle = fopen($amp_conf['ASTETCDIR']."/musiconhold_additional.conf", "w");
-
-	if (fwrite($handle, $File_Write) === FALSE) {
-		echo _("Cannot write to file")." ($tmpfname)";
-		exit;
-	}
-
-	fclose($handle);
-}
-
 function makestreamcatergory($path_to_dir,$stream) {
 	if (!is_dir($path_to_dir)) {
-		makemusiccategory($path_to_dir);
+		music_makemusiccategory($path_to_dir);
 	}
 	$fh=fopen("$path_to_dir/.custom","w");
 	fwrite($fh,$stream);
 	fclose($fh);
 }
 
-function makemusiccategory($path_to_dir) {
-	mkdir("$path_to_dir", 0755); 
-}
- 
 function build_list() {
 	global $path_to_dir;
 	$pattern = '';

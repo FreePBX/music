@@ -1,6 +1,54 @@
 <?php
 if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 
+class music_conf {
+
+	// return the filename to write
+	function get_filename() {
+		return "musiconhold_additional.conf";
+	}
+	// return the output that goes in the file
+	function generateConf() {
+		global $amp_conf;
+		$path_to_moh_dir = $amp_conf['ASTVARLIBDIR'].'/'.$amp_conf['MOHDIR'];
+		$output = "";
+
+		$File_Write="";
+		$tresults = music_list();
+		if (isset($tresults)) {
+			foreach ($tresults as $tresult)  {
+				// hack - but his is all a hack until redone, in functions, etc.
+				// this puts a none category to allow no music to be chosen
+				//
+				if ($tresult == "none") {
+					$dir = $path_to_moh_dir."/.nomusic_reserved";
+					if (!is_dir($dir)) {
+						music_makemusiccategory($dir);
+					}
+					touch($dir."/silence.wav");
+				} elseif ($tresult != "default" ) {
+					$dir = $path_to_moh_dir."/{$tresult}/";
+				} else {
+					$dir = $path_to_moh_dir.'/';
+				}
+				if (file_exists("{$dir}.custom")) {
+					$application = file_get_contents("{$dir}.custom");
+					$File_Write.="[{$tresult}]\nmode=custom\napplication=$application\n";
+				} else if (file_exists("{$dir}.random")) {
+					$File_Write.="[{$tresult}]\nmode=files\ndirectory={$dir}\nrandom=yes\n";
+				} else {
+					$File_Write.="[{$tresult}]\nmode=files\ndirectory={$dir}\n";
+				}
+			}
+		}
+		return $File_Write;
+	}
+}
+
+function music_makemusiccategory($path_to_dir) {
+	mkdir("$path_to_dir", 0755); 
+}
+ 
 function music_list($path=null) {
   if ($path === null) {
     global $amp_conf;
