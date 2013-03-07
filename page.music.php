@@ -57,7 +57,7 @@ switch ($action) {
 		needreload();
 		redirect_standard();
 	case "addednew":
-		music_makemusiccategory($path_to_dir); 
+		music_makemusiccategory($path_to_dir);
 		needreload();
 		redirect_standard();
 	break;
@@ -68,7 +68,7 @@ switch ($action) {
 	case "delete":
 		//$fh = fopen("/tmp/music.log","a");
 		//fwrite($fh,print_r($_REQUEST,true));
-		music_rmdirr("$path_to_dir"); 
+		music_rmdirr("$path_to_dir");
 		$path_to_dir = $path_to_moh_dir;
 		$category='default';
 		needreload();
@@ -112,22 +112,22 @@ function build_list() {
 	$pattern = '';
 	$handle=opendir($path_to_dir) ;
 	$extensions = array('mp3','MP3','wav','WAV'); // list of extensions to match
-	
+
 	//generate the pattern to look for.
 	$pattern = '/(\.'.implode('|\.',$extensions).')$/i';
-	
+
 	//store file names that match pattern in an array
 	$i = 0;
 	while (($file = readdir($handle))!==false) {
-		if ($file != "." && $file != "..") { 
+		if ($file != "." && $file != "..") {
 			if(preg_match($pattern,$file)) {
 				$file_array[$i] = $file; //pattern is matched store it in file_array.
-				$i++;		
+				$i++;
 			}
-		} 
+		}
 	}
-	closedir($handle); 
-	
+	closedir($handle);
+
 	return (isset($file_array))?$file_array:null;  //return the size of the array
 }
 
@@ -173,7 +173,7 @@ function process_mohfile($mohfile,$onlywav=false,$volume=false) {
 			if($volume){
 				$soxcmd .= " vol ".$volume;
 			}
-			$soxresample = " resample -ql ";
+			$soxresample = " rate -ql ";
 			exec($soxcmd.$soxresample."2>&1", $output, $returncode);
 			if ($returncode != 0) {
 				// try it again without the resample in case the input sample rate was the same
@@ -208,13 +208,13 @@ function process_mohfile($mohfile,$onlywav=false,$volume=false) {
 		} else {
 			$newmohfile = $path_to_dir."/wav_".$newname;
 			$soxcmd = "sox \"".$origmohfile."\" -r 8000 -c 1 \"".$newmohfile."\" ";
-			$soxresample = "resample -ql ";
-			exec($soxcmd.$soxresample."2>&1", $output, $returncode);                                                      
-			if ($returncode != 0) {                                                                                       
-				// try it again without the resample in case the input sample rate was the same                             
-				//                                                                                                          
-				exec("rm -rf \"".$newmohfile."\"");                                                                         
-				exec($soxcmd."2>&1", $output, $returncode);                                                                 
+			$soxresample = "rate -ql ";
+			exec($soxcmd.$soxresample."2>&1", $output, $returncode);
+			if ($returncode != 0) {
+				// try it again without the resample in case the input sample rate was the same
+				//
+				exec("rm -rf \"".$newmohfile."\"");
+				exec($soxcmd."2>&1", $output, $returncode);
 			}
 		}
 	} // AMPMPG123
@@ -225,7 +225,7 @@ function process_mohfile($mohfile,$onlywav=false,$volume=false) {
 	$rmcmd="rm -f \"". $origmohfile."\"";
 	exec($rmcmd);
 	if ($amp_conf['AMPMPG123']) {
-		// If this started as an mp3, we converted it to a wav and then transcoded it from there, 
+		// If this started as an mp3, we converted it to a wav and then transcoded it from there,
 		// so we have two "original" files to delete
 		//
 		if (strpos($origmohfile,'.mp3') | strpos($origmohfile,'.MP3') !== false)  {
@@ -253,7 +253,7 @@ if ($action == 'add') {
 		<td><input type="text" name="category" value=""></td>
 	</tr>
 	<tr>
-		<td colspan="2"><br><h6><input name="Submit" type="submit" value='<?php echo _("Submit Changes")?>' ></h6></td>		
+		<td colspan="2"><br><h6><input name="Submit" type="submit" value='<?php echo _("Submit Changes")?>' ></h6></td>
 	</tr>
 	</table>
 <script language="javascript">
@@ -271,7 +271,7 @@ function addcategory_onsubmit() {
 		return warnInvalid(theForm.category, msgInvalidCategoryName);
 	if (theForm.category.value == "default" || theForm.category.value == "none" || theForm.category.value == ".nomusic_reserved")
 		return warnInvalid(theForm.category, msgReservedCategoryName);
-	
+
 	return true;
 }
 
@@ -303,7 +303,7 @@ function addcategory_onsubmit() {
 		<td><input type="text" name="format" size="6" value=""></td>
 	</tr>
 	<tr>
-		<td colspan="2"><br><h6><input name="Submit" type="submit" value='<?php echo _("Submit Changes")?>' ></h6></td>		
+		<td colspan="2"><br><h6><input name="Submit" type="submit" value='<?php echo _("Submit Changes")?>' ></h6></td>
 	</tr>
 	</table>
 <script language="javascript">
@@ -324,7 +324,7 @@ function addstream_onsubmit() {
 		return warnInvalid(theForm.category, msgReservedCategoryName);
 	if (isEmpty(theForm.stream.value))
 		return warnInvalid(theForm.stream, msgInvalidStreamName);
-	
+
 	return true;
 }
 
@@ -339,7 +339,7 @@ function addstream_onsubmit() {
 ?>
 
 	<h5><?php echo _("Category:")?> <?php echo $category=="default"?_("default"):$category;?></h5>
-<?php  
+<?php
 	if (file_exists("{$path_to_dir}/.custom")) {
 		$application = file_get_contents("{$path_to_dir}/.custom");
 		$application = explode("\n",$application);
@@ -358,7 +358,7 @@ function addstream_onsubmit() {
 		$label = '<span><img width="16" height="16" border="0" title="'.$tlabel.'" alt="" src="images/core_delete.png"/>&nbsp;'.$tlabel.'</span>';
 ?>
 		<p><a href="<?php echo $delURL ?>"><?php echo $label; ?></a></p>
-<?php  
+<?php
 	}
 	if ($application !== false) {
 	?>
@@ -376,7 +376,7 @@ function addstream_onsubmit() {
 			<td><input type="text" name="format" size="6" value="<?php echo htmlentities($format)?>"></td>
 		</tr>
 		<tr>
-			<td colspan="2"><br><h6><input name="Submit" type="submit" value='<?php echo _("Submit Changes")?>' ></h6></td>		
+			<td colspan="2"><br><h6><input name="Submit" type="submit" value='<?php echo _("Submit Changes")?>' ></h6></td>
 		</tr>
 		</table>
 <script language="javascript">
@@ -391,7 +391,7 @@ function editstream_onsubmit() {
 	defaultEmptyOK = false;
 	if (isEmpty(theForm.stream.value))
 		return warnInvalid(theForm.stream, msgInvalidStreamName);
-	
+
 	return true;
 }
 //-->
@@ -414,7 +414,7 @@ function editstream_onsubmit() {
 		<br />
 <?php
 	if ($amp_conf['AMPMPG123']) {
-?>		
+?>
 		<select name="volume" tabindex="<?php echo ++$tabindex;?>">
 			<option value="1.50"><?php echo _("Volume 150%")?></option>
 			<option value="1.25"><?php echo _("Volume 125%")?></option>
@@ -435,7 +435,7 @@ function editstream_onsubmit() {
 	</form>
 	<br />
 	<form name="randomon" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
-	<?php 
+	<?php
 		if (file_exists("{$path_to_dir}/.random")) {
 			?> <input type="submit" name="randoff" value="<?php echo _("Disable Random Play");?>"> <?php
 		} else {
@@ -482,8 +482,8 @@ function editstream_onsubmit() {
 	if (isset($_REQUEST['del'])) {
 		$del = $_REQUEST['del'];
 		if (strpos($del, "\"") || strpos($del, "\'") || strpos($del, "\;")) {
-			print "You're trying to use an invalid character. Please don't.\n"; 
-			exit; 
+			print "You're trying to use an invalid character. Please don't.\n";
+			exit;
 		}
 		if (($numf == 1) && ($category == "default") ){
 			echo "<h5>"._("You must have at least one file for On Hold Music.  Please upload one before deleting this one.")."</h5>";
