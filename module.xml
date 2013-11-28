@@ -19,4 +19,4 @@
 	</menuitems>
 	<location>release/2.10/music-2.10.0.0.tgz</location>
 	<md5sum>10834cece01cb0804869b2b5f1f2e380</md5sum>
-</module>
+<supported><version>2.10</version></supported></module>
