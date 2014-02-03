@@ -1,15 +1,15 @@
 <module>
-	<rawname>music</rawname>
-	<repo>standard</repo>
-	<name>Music on Hold</name>
-	<version>2.11.0.1</version>
-	<publisher>FreePBX</publisher>
-	<license>GPLv2+</license>
-	<candisable>no</candisable>
-	<canuninstall>no</canuninstall>
-	<category>Settings</category>
-	<description>Uploading and management of sound files (wav, mp3) to be used for on-hold music.</description>
-	<changelog>
+  <rawname>music</rawname>
+  <repo>standard</repo>
+  <name>Music on Hold</name>
+  <version>2.11.0.1</version>
+  <publisher>FreePBX</publisher>
+  <license>GPLv2+</license>
+  <candisable>no</candisable>
+  <canuninstall>no</canuninstall>
+  <category>Settings</category>
+  <description>Uploading and management of sound files (wav, mp3) to be used for on-hold music.</description>
+  <changelog>
 		*2.11.0.1* Use rate instead of resample for sox resampling #6347
 		*2.10.0.2* #5337, #4919
 		*2.10.0.1* #5478 
@@ -17,9 +17,12 @@
 		*2.9.0.1* #4740
 		*2.9.0.0* 2.9 Update
 	</changelog>
-	<menuitems>
-		<music>Music on Hold</music>
-	</menuitems>
-	<location>release/2.11/music-2.11.0.1.tgz</location>
-	<md5sum>787dc2e298cb49636534f9b7ae7114a0</md5sum>
+  <menuitems>
+    <music>Music on Hold</music>
+  </menuitems>
+  <location>release/2.11/music-2.11.0.1.tgz</location>
+  <md5sum>787dc2e298cb49636534f9b7ae7114a0</md5sum>
+  <supported>
+    <version>2.10</version>
+  </supported>
 </module>
