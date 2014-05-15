@@ -1,7 +1,8 @@
 <?php
 // vim: set ai ts=4 sw=4 ft=php:
-
-include(__DIR__.'/functions.inc.php');
+if(!function_exists('music_list')) {
+	include(__DIR__.'/functions.inc.php');
+}
 class Music implements BMO {
 
 	public function __construct($freepbx = null) {
