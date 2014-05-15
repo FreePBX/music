@@ -56,9 +56,9 @@ class music_conf {
 }
 
 function music_makemusiccategory($path_to_dir) {
-	mkdir("$path_to_dir", 0755); 
+	mkdir("$path_to_dir", 0755);
 }
- 
+
 function music_list($path=null) {
   if ($path === null) {
     global $amp_conf;
@@ -74,14 +74,14 @@ function music_list($path=null) {
 
 	if (is_dir($path)){
 		if ($handle = opendir($path)){
-			while (false !== ($file = readdir($handle))){ 
-				if ( ($file != ".") && ($file != "..") && ($file != "CVS") && ($file != ".svn") && ($file != ".nomusic_reserved" ) )
+			while (false !== ($file = readdir($handle))){
+				if ( ($file != ".") && ($file != "..") && ($file != "CVS") && ($file != ".svn") && ($file != ".git") && ($file != ".nomusic_reserved" ) )
 				{
 					if (is_dir("$path/$file"))
 						$filearray[($i++)] = "$file";
 				}
 			}
-		closedir($handle); 
+		closedir($handle);
 		}
 	}
 	if (isset($filearray)) {
@@ -103,12 +103,12 @@ function music_rmdirr($dirname)
 		print "$dirname Doesn't exist\n";
 		return false;
 	}
- 
+
 	// Simple delete for a file
 	if (is_file($dirname)) {
 		return unlink($dirname);
 	}
- 
+
 	// Loop through the folder
 	$dir = dir($dirname);
 	while (false !== $entry = $dir->read()) {
@@ -116,11 +116,11 @@ function music_rmdirr($dirname)
 		if ($entry == '.' || $entry == '..') {
 			continue;
 		}
- 
+
 		// Recurse
 		music_rmdirr("$dirname/$entry");
 	}
- 
+
 	// Clean up
 	$dir->close();
 	return rmdir($dirname);
