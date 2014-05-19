@@ -1,7 +1,6 @@
 <?php /* $Id$ */
 if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 
-<?php
 $tabindex = 0;
 $action = isset($_REQUEST['action'])?$_REQUEST['action']:'';
 $randon = isset($_REQUEST['randon'])?$_REQUEST['randon']:'';
@@ -494,4 +493,3 @@ function editstream_onsubmit() {
 <?php
 }
 ?>
-
