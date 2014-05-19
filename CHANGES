@@ -1,2 +1,0 @@
-[2.11.0.1]
- * Use rate instead of resample for sox resampling (#6347) --dpilon
