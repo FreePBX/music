@@ -230,7 +230,7 @@ function process_mohfile($mohfile,$onlywav=false,$volume=false) {
 <?php
 if ($action == 'add') {
 	?>
-	<form name="addcategory" action="<?php $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return addcategory_onsubmit();">
+	<form name="addcategory" action="" method="post" onsubmit="return addcategory_onsubmit();">
 	<input type="hidden" name="display" value="<?php echo $display?>">
 	<input type="hidden" name="action" value="addednew">
 	<table>
@@ -271,7 +271,7 @@ function addcategory_onsubmit() {
 <?php
 	} else if ($action == 'addstream') {
 	?>
-	<form name="addstream" action="<?php $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return addstream_onsubmit();">
+	<form name="addstream" action="" method="post" onsubmit="return addstream_onsubmit();">
 	<input type="hidden" name="display" value="<?php echo $display?>">
 	<input type="hidden" name="action" value="addednewstream">
 	<table>
@@ -340,7 +340,7 @@ function addstream_onsubmit() {
 		$application = false;
 	}
 	if ($category!="default") {
-		$delURL = $_SERVER['PHP_SELF'].'?display='.urlencode($display).'&action=delete&category='.urlencode($category);
+		$delURL = '?display='.urlencode($display).'&action=delete&category='.urlencode($category);
 		$tlabel = sprintf(($application === false)?_("Delete Music Category %s"):_("Delete Streaming Category"),$category);
 		$label = '<span><img width="16" height="16" border="0" title="'.$tlabel.'" alt="" src="images/core_delete.png"/>&nbsp;'.$tlabel.'</span>';
 ?>
@@ -349,7 +349,7 @@ function addstream_onsubmit() {
 	}
 	if ($application !== false) {
 	?>
-		<form name="editstream" action="<?php $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return editstream_onsubmit();">
+		<form name="editstream" action="" method="post" onsubmit="return editstream_onsubmit();">
 		<input type="hidden" name="display" value="<?php echo $display?>">
 		<input type="hidden" name="action" value="editednewstream">
 		<table>
@@ -391,7 +391,7 @@ function editstream_onsubmit() {
 	} else { // normal moh dir
 ?>
 
-	<form enctype="multipart/form-data" name="upload" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
+	<form enctype="multipart/form-data" name="upload" action="" method="POST">
 		<?php echo _("Upload a .wav or .mp3 file:")?><br>
 		<input type="hidden" name="display" value="<?php echo $display?>">
 		<input type="hidden" name="category" value="<?php echo "$category" ?>">
@@ -421,7 +421,7 @@ function editstream_onsubmit() {
 ?>
 	</form>
 	<br />
-	<form name="randomon" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+	<form name="randomon" action="" method="post">
 	<?php
 		if (file_exists("{$path_to_dir}/.random")) {
 			?> <input type="submit" name="randoff" value="<?php echo _("Disable Random Play");?>"> <?php
