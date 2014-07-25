@@ -20,12 +20,16 @@ msgstr ""
 "Project-Id-Version: freePBX 2.5.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-09-23 09:52+0000\n"
-"PO-Revision-Date: 2009-05-11 20:07-0300\n"
-"Last-Translator: Marcelo Araujo <marcelo.araujo@voffice.com.br>\n"
-"Language-Team: MidiVTS Team <team@midivts.org>\n"
+"PO-Revision-Date: 2014-07-26 00:23+0200\n"
+"Last-Translator: Rafael <rafael@ibinetwork.com.br>\n"
+"Language-Team: Portuguese (Brazil) "
+"<http://git.freepbx.org/projects/freepbx/music/pt_BR/>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 1.10-dev\n"
 "X-Poedit-Language: Portuguese\n"
 "X-Poedit-Country: BRAZIL\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -36,19 +40,23 @@ msgstr "Impossível gravar para arquivo"
 msgid "Music on Hold"
 msgstr "Música em espera"
 
+#, fuzzy
 msgid "Settings"
-msgstr ""
+msgstr "Configurações"
 
 msgid ""
 "Uploading and management of sound files (wav, mp3) to be used for on-hold "
 "music."
 msgstr ""
+"Enviar e gerenciar arquivos de som (wav, mp3) para ser usado como musica de "
+"espera."
 
 msgid "Convert Music Files to WAV"
-msgstr ""
+msgstr "Converter Arquivos de Musica para WAV"
 
+#, fuzzy
 msgid "System Setup"
-msgstr ""
+msgstr "Configuração do Sistema"
 
 msgid ""
 "When set to false, the MP3 files can be loaded and WAV files converted to "
@@ -68,7 +76,7 @@ msgid "default"
 msgstr "padrão"
 
 msgid "Delete"
-msgstr "Excluír"
+msgstr "Apagar"
 
 msgid ""
 "sox failed to convert file and original could not be copied as a fall back"
@@ -89,8 +97,9 @@ msgstr ""
 "é útil se você quiser especificar uma música em espera diferente ou "
 "comerciais para várias fila do DAC."
 
+#, fuzzy
 msgid "Submit Changes"
-msgstr "Aplicar mudanças"
+msgstr "Enviar Alterações"
 
 msgid "Please enter a valid Category Name"
 msgstr "Por favor, entre com um nome de categoria válido"
@@ -136,48 +145,55 @@ msgstr "Categoria:"
 
 #, php-format
 msgid "Delete Music Category %s"
-msgstr "Remover a categoria de música %s"
+msgstr "Apagar a categoria de música %s"
 
 #, php-format
 msgid "Delete Streaming Category"
-msgstr "Excluír a categoria de streaming"
+msgstr "Apagar a categoria de streaming"
 
 msgid "Edit Streaming Category"
 msgstr "Editar a categoria de streaming."
 
 msgid "Upload a .wav or .mp3 file:"
-msgstr "Executar o Upload de um arquivo .wav ou .mp3:"
+msgstr "Enviar um arquivo .wav ou .mp3:"
 
 msgid "Upload"
-msgstr "Upload"
+msgstr "Enviar"
 
 msgid "Please wait until the page loads. Your file is being processed."
 msgstr ""
-"Por favor aguarde até a página carregar. Seu arquivo está sendo processado. "
+"Por favor aguarde até a página carregar. Seu arquivo está sendo processado."
 
+#, fuzzy
 msgid "Volume 150%"
-msgstr ""
+msgstr "Volume 150%"
 
+#, fuzzy
 msgid "Volume 125%"
-msgstr ""
+msgstr "Volume 125%"
 
+#, fuzzy
 msgid "Volume 100%"
-msgstr ""
+msgstr "Volume 100%"
 
+#, fuzzy
 msgid "Volume 75%"
-msgstr ""
+msgstr "Volume 75%"
 
+#, fuzzy
 msgid "Volume 50%"
-msgstr ""
+msgstr "Volume 50%"
 
+#, fuzzy
 msgid "Volume 25%"
-msgstr ""
+msgstr "Volume 25%"
 
+#, fuzzy
 msgid "Volume 10%"
-msgstr ""
+msgstr "Volume 10%"
 
 msgid "Volume Adjustment"
-msgstr "Ajuste de volume"
+msgstr "Ajustar Volume"
 
 msgid ""
 "The volume adjustment is a linear value. Since loudness is logarithmic, the "
@@ -204,7 +220,7 @@ msgid "No file provided"
 msgstr "Nenhum arquivo fornecido"
 
 msgid "Please select a file to upload"
-msgstr "Por favor selecionar o arquivo para executar upload"
+msgstr "Por favor selecionar o arquivo para envio"
 
 msgid "Check"
 msgstr "Selecionar"
@@ -226,11 +242,11 @@ msgstr ""
 "upload de um antes de excluír este. "
 
 msgid "Deleted"
-msgstr "Excluído"
+msgstr "Apagado"
 
 #, php-format
 msgid "Error Deleting %s"
-msgstr "Erro excluíndo %s"
+msgstr "Erro apagando %s"
 
 #~ msgid ""
 #~ "The volume adjustment is a linear value. Since loudness is logarithmic, "
