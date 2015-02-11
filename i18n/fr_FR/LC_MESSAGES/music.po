@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-23 09:52+0000\n"
+"POT-Creation-Date: 2015-02-11 18:02-0500\n"
 "PO-Revision-Date: 2009-04-20 22:53+0100\n"
 "Last-Translator: Séverine GUTIERREZ <severine@medialsace.fr>\n"
 "Language-Team: Français <LL@li.org>\n"
@@ -28,56 +28,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "Cannot write to file"
-msgstr "Impossible d'écrire dans le fichier"
-
-msgid "Music on Hold"
-msgstr "Musique d'Attente"
-
-msgid "Settings"
-msgstr ""
-
-msgid ""
-"Uploading and management of sound files (wav, mp3) to be used for on-hold "
-"music."
-msgstr ""
-
-msgid "Convert Music Files to WAV"
-msgstr ""
-
-msgid "System Setup"
-msgstr ""
-
-msgid ""
-"When set to false, the MP3 files can be loaded and WAV files converted to "
-"MP3 in the MoH module. The default behavior of true assumes you have mpg123 "
-"loaded as well as sox and will convert MP3 files to WAV. This is highly "
-"recommended as MP3 files heavily tax the system and can cause instability on "
-"a busy phone system"
-msgstr ""
-
+#: /usr/src/freepbx/music/page.music.php:69
+#: /usr/src/freepbx/music/page.music.php:237
 msgid "Add Music Category"
 msgstr "Ajouer une Catégorie de Musique"
 
+#: /usr/src/freepbx/music/page.music.php:70
+#: /usr/src/freepbx/music/page.music.php:278
 msgid "Add Streaming Category"
 msgstr "Ajouter une Catégorie de Sreaming"
 
-msgid "default"
-msgstr "par défaut"
-
-msgid "Delete"
-msgstr "Supprimer"
-
-msgid ""
-"sox failed to convert file and original could not be copied as a fall back"
-msgstr ""
-
-msgid "On Hold Music"
-msgstr "Musique d'Attente"
-
-msgid "Category Name:"
-msgstr "Nom de la Catégorie :"
-
+#: /usr/src/freepbx/music/page.music.php:239
+#: /usr/src/freepbx/music/page.music.php:280
 msgid ""
 "Allows you to Set up Different Categories for music on hold.  This is useful "
 "if you would like to specify different Hold Music or Commercials for various "
@@ -87,12 +49,17 @@ msgstr ""
 "C'est utile si vous voulez spécifier différentes musiques d'attentes ou "
 "publicités pour diverses Files d'Attente."
 
-msgid "Submit Changes"
-msgstr "Appliquer les Modifications"
+#: /usr/src/freepbx/music/page.music.php:284
+#: /usr/src/freepbx/music/page.music.php:358
+msgid "Application:"
+msgstr "Application :"
 
-msgid "Please enter a valid Category Name"
-msgstr "Veuillez entrer un Nom de Catégorie valide"
+#: /usr/src/freepbx/music/install.php:37
+msgid "Cannot write to file"
+msgstr "Impossible d'écrire dans le fichier"
 
+#: /usr/src/freepbx/music/page.music.php:254
+#: /usr/src/freepbx/music/page.music.php:305
 msgid ""
 "Categories: \\\"none\\\" and \\\"default\\\" are reserved names. Please "
 "enter a different name"
@@ -100,22 +67,83 @@ msgstr ""
 "Catégories : \\\"none\\\" et \\\"default\\\" sont des noms réservés. "
 "Veuillez entrer un nom différent."
 
-msgid "Application:"
-msgstr "Application :"
+#: /usr/src/freepbx/music/page.music.php:239
+#: /usr/src/freepbx/music/page.music.php:280
+msgid "Category Name:"
+msgstr "Nom de la Catégorie :"
 
-msgid ""
-"This is the \"application=\" line used to provide the streaming details to "
-"Asterisk. See information on musiconhold.conf configuration for different "
-"audio and Internet streaming source options."
-msgstr ""
-"Il s'agit de la ligne \"application=\" utilisée pour fournir les détails de "
-"streaming à Asterisk. Voir les informations dans la configuration "
-"musiconhold.conf pour différentes options de source de streaming audio et "
-"Internet."
+#: /usr/src/freepbx/music/page.music.php:328
+msgid "Category:"
+msgstr "Catégorie :"
 
+#: /usr/src/freepbx/music/page.music.php:441
+msgid "Check"
+msgstr "Contôler"
+
+#: /usr/src/freepbx/music/page.music.php:458
+msgid "Completed processing"
+msgstr "Traitement Terminé"
+
+#: /usr/src/freepbx/music/page.music.php:130
+msgid "Delete"
+msgstr "Supprimer"
+
+#: /usr/src/freepbx/music/page.music.php:344
+#, php-format
+msgid "Delete Music Category %s"
+msgstr "Supprimer la Catégorie de Musique %s"
+
+#: /usr/src/freepbx/music/page.music.php:344
+#, php-format
+msgid "Delete Streaming Category"
+msgstr "Supprimer la Catégorie de Streaming"
+
+#: /usr/src/freepbx/music/page.music.php:479
+msgid "Deleted"
+msgstr "Supprimé"
+
+#: /usr/src/freepbx/music/page.music.php:427
+msgid "Disable Random Play"
+msgstr "Désactiver Lecture Aléatoire"
+
+#: /usr/src/freepbx/music/page.music.php:418
+msgid "Do not encode wav to mp3"
+msgstr "Ne pas encoder wav en mp3"
+
+#: /usr/src/freepbx/music/page.music.php:356
+msgid "Edit Streaming Category"
+msgstr "Editer la Catégorie Streaming"
+
+#: /usr/src/freepbx/music/page.music.php:429
+msgid "Enable Random Play"
+msgstr "Activer Lecture Aléatoire"
+
+#: /usr/src/freepbx/music/page.music.php:481
+#, php-format
+msgid "Error Deleting %s"
+msgstr "Erreur lors de la Suppression de %s"
+
+#: /usr/src/freepbx/music/page.music.php:439
+#: /usr/src/freepbx/music/page.music.php:441
+#: /usr/src/freepbx/music/page.music.php:455
+msgid "Error Processing"
+msgstr "Erreur pendant le Traitement"
+
+#: /usr/src/freepbx/music/page.music.php:439
+msgid "No file provided"
+msgstr "Pas de fichier fourni"
+
+#: /usr/src/freepbx/music/page.music.php:228
+msgid "On Hold Music"
+msgstr "Musique d'Attente"
+
+#: /usr/src/freepbx/music/page.music.php:289
+#: /usr/src/freepbx/music/page.music.php:362
 msgid "Optional Format:"
 msgstr "Format Optionnel :"
 
+#: /usr/src/freepbx/music/page.music.php:289
+#: /usr/src/freepbx/music/page.music.php:362
 msgid ""
 "Optional value for \"format=\" line used to provide the format to Asterisk. "
 "This should be a format understood by Asterisk such as ulaw, and is specific "
@@ -128,59 +156,34 @@ msgstr ""
 "informations dans la configuration musiconhold.conf pour différentes options "
 "de source de streaming audio et Internet."
 
+#: /usr/src/freepbx/music/page.music.php:304
+#: /usr/src/freepbx/music/page.music.php:376
 msgid "Please enter a streaming application command and arguments"
 msgstr ""
 "Veuillez entrer une commande d'application de streaming et des arguments"
 
-msgid "Category:"
-msgstr "Catégorie :"
+#: /usr/src/freepbx/music/page.music.php:253
+#: /usr/src/freepbx/music/page.music.php:303
+msgid "Please enter a valid Category Name"
+msgstr "Veuillez entrer un Nom de Catégorie valide"
 
-#, php-format
-msgid "Delete Music Category %s"
-msgstr "Supprimer la Catégorie de Musique %s"
+#: /usr/src/freepbx/music/page.music.php:439
+msgid "Please select a file to upload"
+msgstr "Veuillez sélectionner un fichier à uploader"
 
-#, php-format
-msgid "Delete Streaming Category"
-msgstr "Supprimer la Catégorie de Streaming"
-
-msgid "Edit Streaming Category"
-msgstr "Editer la Catégorie Streaming"
-
-msgid "Upload a .wav or .mp3 file:"
-msgstr "Uploader un fichier .wav ou .mp3 :"
-
-msgid "Upload"
-msgstr "Uploader"
-
+#: /usr/src/freepbx/music/page.music.php:400
 msgid "Please wait until the page loads. Your file is being processed."
 msgstr ""
 "Veuillez patienter pendant le chargement de la page. Votre fichier est en "
 "cours de traitement."
 
-msgid "Volume 150%"
-msgstr ""
+#: /usr/src/freepbx/music/page.music.php:243
+#: /usr/src/freepbx/music/page.music.php:293
+#: /usr/src/freepbx/music/page.music.php:366
+msgid "Submit Changes"
+msgstr "Appliquer les Modifications"
 
-msgid "Volume 125%"
-msgstr ""
-
-msgid "Volume 100%"
-msgstr ""
-
-msgid "Volume 75%"
-msgstr ""
-
-msgid "Volume 50%"
-msgstr ""
-
-msgid "Volume 25%"
-msgstr ""
-
-msgid "Volume 10%"
-msgstr ""
-
-msgid "Volume Adjustment"
-msgstr "Réglage du Volume"
-
+#: /usr/src/freepbx/music/page.music.php:414
 msgid ""
 "The volume adjustment is a linear value. Since loudness is logarithmic, the "
 "linear level will be less of an adjustment. You should test out the "
@@ -190,38 +193,65 @@ msgid ""
 "Advanced Settings"
 msgstr ""
 
-msgid "Do not encode wav to mp3"
-msgstr "Ne pas encoder wav en mp3"
-
-msgid "Disable Random Play"
-msgstr "Désactiver Lecture Aléatoire"
-
-msgid "Enable Random Play"
-msgstr "Activer Lecture Aléatoire"
-
-msgid "Error Processing"
-msgstr "Erreur pendant le Traitement"
-
-msgid "No file provided"
-msgstr "Pas de fichier fourni"
-
-msgid "Please select a file to upload"
-msgstr "Veuillez sélectionner un fichier à uploader"
-
-msgid "Check"
-msgstr "Contôler"
-
-msgid "in"
-msgstr "dans"
-
+#: /usr/src/freepbx/music/page.music.php:456
 msgid "This is not a fatal error, your Music on Hold may still work."
 msgstr ""
 "Ce n'est pas une erreur fatale, votre Musique d'Attente fonctionnera peut-"
 "être encore."
 
-msgid "Completed processing"
-msgstr "Traitement Terminé"
+#: /usr/src/freepbx/music/page.music.php:284
+#: /usr/src/freepbx/music/page.music.php:358
+msgid ""
+"This is the \"application=\" line used to provide the streaming details to "
+"Asterisk. See information on musiconhold.conf configuration for different "
+"audio and Internet streaming source options."
+msgstr ""
+"Il s'agit de la ligne \"application=\" utilisée pour fournir les détails de "
+"streaming à Asterisk. Voir les informations dans la configuration "
+"musiconhold.conf pour différentes options de source de streaming audio et "
+"Internet."
 
+#: /usr/src/freepbx/music/page.music.php:400
+msgid "Upload"
+msgstr "Uploader"
+
+#: /usr/src/freepbx/music/page.music.php:395
+msgid "Upload a .wav or .mp3 file:"
+msgstr "Uploader un fichier .wav ou .mp3 :"
+
+#: /usr/src/freepbx/music/page.music.php:412
+msgid "Volume 10%"
+msgstr ""
+
+#: /usr/src/freepbx/music/page.music.php:408
+msgid "Volume 100%"
+msgstr ""
+
+#: /usr/src/freepbx/music/page.music.php:407
+msgid "Volume 125%"
+msgstr ""
+
+#: /usr/src/freepbx/music/page.music.php:406
+msgid "Volume 150%"
+msgstr ""
+
+#: /usr/src/freepbx/music/page.music.php:411
+msgid "Volume 25%"
+msgstr ""
+
+#: /usr/src/freepbx/music/page.music.php:410
+msgid "Volume 50%"
+msgstr ""
+
+#: /usr/src/freepbx/music/page.music.php:409
+msgid "Volume 75%"
+msgstr ""
+
+#: /usr/src/freepbx/music/page.music.php:414
+msgid "Volume Adjustment"
+msgstr "Réglage du Volume"
+
+#: /usr/src/freepbx/music/page.music.php:476
 msgid ""
 "You must have at least one file for On Hold Music.  Please upload one before "
 "deleting this one."
@@ -229,12 +259,22 @@ msgstr ""
 "Vous devez avoir au moins un fichier pour la Musique d'Attente. Veuillez "
 "uploader un autre fichier avant de supprimer celui-ci."
 
-msgid "Deleted"
-msgstr "Supprimé"
+#: /usr/src/freepbx/music/page.music.php:78
+#: /usr/src/freepbx/music/page.music.php:328
+msgid "default"
+msgstr "par défaut"
 
-#, php-format
-msgid "Error Deleting %s"
-msgstr "Erreur lors de la Suppression de %s"
+#: /usr/src/freepbx/music/page.music.php:441
+msgid "in"
+msgstr "dans"
+
+#: /usr/src/freepbx/music/page.music.php:178
+msgid ""
+"sox failed to convert file and original could not be copied as a fall back"
+msgstr ""
+
+#~ msgid "Music on Hold"
+#~ msgstr "Musique d'Attente"
 
 #~ msgid ""
 #~ "The volume adjustment is a linear value. Since loudness is logarithmic, "
