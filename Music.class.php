@@ -81,7 +81,12 @@ class Music implements BMO {
 				switch ($request['jdata']) {
 					case 'music':
 						$mohclass = $request['mohclass']?$request['mohclass']:'default';
-
+						if ($mohclass == "default") {
+							$path_to_dir = $this->mohdir; //path to directory u want to read.
+						} else {
+							$path_to_dir = $this->mohdir.'/'.$mohclass; //path to directory u want to read.
+						}
+						echo json_encode($this->fileList($path_to_dir));
 						exit();
 					break;
 					case 'grid':
@@ -116,5 +121,29 @@ class Music implements BMO {
 
 	public function getAllMusic() {
 		return music_list();
+	}
+	/**
+	 * Get a list of mp3(MP3),wav(WAV) files from the provided directory.
+	 * @param  string $path path to directory, webroot user must have read permissions 
+	 * @return array       	list of files or null
+	 */
+	public function fileList($path){
+		$pattern = '';
+		$handle=opendir($path_to_dir) ;
+		$extensions = array('mp3','MP3','wav','WAV'); // list of extensions to match
+		//generate the pattern to look for.
+		$pattern = '/(\.'.implode('|\.',$extensions).')$/i';
+		//store file names that match pattern in an array
+		$i = 0;
+		while (($file = readdir($handle))!==false) {
+			if ($file != "." && $file != "..") {
+				if(preg_match($pattern,$file)) {
+					$file_array[$i] = $file; //pattern is matched store it in file_array.
+					$i++;
+				}
+			}
+		}
+		closedir($handle);
+		return (isset($file_array))?$file_array:null;  //return the size of the array
 	}
 }
