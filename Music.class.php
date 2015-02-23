@@ -12,8 +12,10 @@ class Music implements BMO {
 
 		$this->FreePBX = $freepbx;
 		$this->db = $freepbx->Database;
-		$this->varlibdir = $freepbx->Config->get('MOHDIR');
-		$this->mohdir = $freepbx->Config->get('ASTVARLIBDIR');
+		$this->mohdir = $freepbx->Config->get('MOHDIR');
+		$this->varlibdir = $freepbx->Config->get('ASTVARLIBDIR');
+		$this->mohpath = $this->varlibdir.'/'.$this->mohdir;
+		$this->mpg123 = $freepbx->Config->get('AMPMPG123');
 	}
 
 	public function doConfigPageInit($page) {
@@ -25,7 +27,7 @@ class Music implements BMO {
 		$volume = isset($request['volume']) && is_numeric($request['volume']) ? $request['volume'] : '';
 
 		// Determine default path to music directory, old default was mohmp3, now settable
-		$path_to_moh_dir = $this->varlibdir.'/'.$this->mohdir;
+		$path_to_moh_dir = $this->varlibdir.'/'.$this->mohpath;
 
 
 		if ($category == null) $category = 'default';
@@ -55,7 +57,7 @@ class Music implements BMO {
 				if ($format != "") {
 					$stream .= "\nformat=$format";
 				}
-				makestreamcatergory($path_to_dir,$stream);
+				music_makestreamcatergory($path_to_dir,$stream);
 				needreload();
 			case "addednew":
 				music_makemusiccategory($path_to_dir);
@@ -82,9 +84,9 @@ class Music implements BMO {
 					case 'music':
 						$mohclass = $request['mohclass']?$request['mohclass']:'default';
 						if ($mohclass == "default") {
-							$path_to_dir = $this->mohdir; //path to directory u want to read.
+							$path_to_dir = $this->mohpath; //path to directory u want to read.
 						} else {
-							$path_to_dir = $this->mohdir.'/'.$mohclass; //path to directory u want to read.
+							$path_to_dir = $this->mohpath.'/'.$mohclass; //path to directory u want to read.
 						}
 						echo json_encode($this->fileList($path_to_dir));
 						exit();
@@ -129,7 +131,7 @@ class Music implements BMO {
 	 */
 	public function fileList($path){
 		$pattern = '';
-		$handle=opendir($path_to_dir) ;
+		$handle=opendir($path) ;
 		$extensions = array('mp3','MP3','wav','WAV'); // list of extensions to match
 		//generate the pattern to look for.
 		$pattern = '/(\.'.implode('|\.',$extensions).')$/i';
