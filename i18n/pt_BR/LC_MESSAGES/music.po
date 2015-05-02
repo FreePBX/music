@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: freePBX 2.5.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 19:43-0500\n"
-"PO-Revision-Date: 2015-05-02 11:55+0200\n"
+"PO-Revision-Date: 2015-05-02 11:57+0200\n"
 "Last-Translator: Renato <fiuza@tecnologia.inf.br>\n"
 "Language-Team: Portuguese (Brazil) "
 "<http://weblate.freepbx.org/projects/freepbx/music/pt_BR/>\n"
@@ -116,7 +116,7 @@ msgstr "Não codificar de wav para mp3"
 
 #: page.music.php:356
 msgid "Edit Streaming Category"
-msgstr "Editar a categoria de streaming."
+msgstr "Editar Categoria Transmissão"
 
 #: page.music.php:429
 msgid "Enable Random Play"
@@ -157,7 +157,7 @@ msgstr ""
 "Valor opcional para a linha \"format=\" usada para prover o formato para o "
 "Asterisk. Isto deve ser um formato entendido pelo Asterisk como o ulaw e é "
 "específica para a aplicações de streaming. Veja a informação no arquivo "
-"musiconhold.conf para diferentes opções de streaming de Internet e audio. "
+"musiconhold.conf para diferentes opções de streaming de Internet e audio."
 
 #: page.music.php:304 page.music.php:376
 msgid "Please enter a streaming application command and arguments"
@@ -206,7 +206,7 @@ msgstr ""
 
 #: page.music.php:456
 msgid "This is not a fatal error, your Music on Hold may still work."
-msgstr "Este não é um erro fatal, sua música em espera ainda pode funcionar. "
+msgstr "Este não é um erro fatal, sua música em espera ainda pode funcionar."
 
 #: page.music.php:284 page.music.php:358
 msgid ""
@@ -285,8 +285,8 @@ msgid ""
 "You must have at least one file for On Hold Music.  Please upload one before "
 "deleting this one."
 msgstr ""
-"Você deve ter pelo menos um arquivo para música em espera. Por favor, faça o "
-"upload de um antes de excluír este. "
+"Você deve ter pelo menos um arquivo para Música em Espera. Por favor, faça o "
+"upload de um antes de excluír este."
 
 #: page.music.php:78 page.music.php:328
 msgid "default"
