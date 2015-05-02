@@ -20,16 +20,16 @@ msgstr ""
 "Project-Id-Version: freePBX 2.5.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 19:43-0500\n"
-"PO-Revision-Date: 2014-07-26 00:23+0200\n"
-"Last-Translator: Rafael <rafael@ibinetwork.com.br>\n"
-"Language-Team: Portuguese (Brazil) <http://git.freepbx.org/projects/freepbx/"
-"music/pt_BR/>\n"
+"PO-Revision-Date: 2015-05-02 11:55+0200\n"
+"Last-Translator: Renato <fiuza@tecnologia.inf.br>\n"
+"Language-Team: Portuguese (Brazil) "
+"<http://weblate.freepbx.org/projects/freepbx/music/pt_BR/>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 1.10-dev\n"
+"X-Generator: Weblate 2.2-dev\n"
 "X-Poedit-Language: Portuguese\n"
 "X-Poedit-Country: BRAZIL\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -177,17 +177,14 @@ msgstr ""
 "Por favor aguarde até a página carregar. Seu arquivo está sendo processado."
 
 #: music.i18n.php:4
-#, fuzzy
 msgid "Settings"
 msgstr "Configurações"
 
 #: page.music.php:243 page.music.php:293 page.music.php:366
-#, fuzzy
 msgid "Submit Changes"
-msgstr "Enviar Alterações"
+msgstr "Enviar Mudanças"
 
 #: music.i18n.php:10
-#, fuzzy
 msgid "System Setup"
 msgstr "Configuração do Sistema"
 
@@ -200,6 +197,12 @@ msgid ""
 "set the parameter: <strong>Convert Music Files to WAV</strong> to false in "
 "Advanced Settings"
 msgstr ""
+"O ajuste de volume é um valor linear. Desde que a sonoridade é logarítmica, "
+"o nível linear será menos de um ajuste. Você deve testar a música instalada "
+"para assegurar que ela está com o volume correto. Esta função converterá "
+"arquivos MP3 para WAV. Se você nao tem mpg123 instalado, você pode definir o "
+"parâmetro: <strong>Converter Arquivos De Música para WAV</strong> para falso "
+"em Configurações Avançadas"
 
 #: page.music.php:456
 msgid "This is not a fatal error, your Music on Hold may still work."
@@ -232,39 +235,32 @@ msgstr ""
 "espera."
 
 #: page.music.php:412
-#, fuzzy
 msgid "Volume 10%"
-msgstr "Volume 10%"
+msgstr "Volume  10%"
 
 #: page.music.php:408
-#, fuzzy
 msgid "Volume 100%"
-msgstr "Volume 100%"
+msgstr "Volume  100%"
 
 #: page.music.php:407
-#, fuzzy
 msgid "Volume 125%"
-msgstr "Volume 125%"
+msgstr "Volume  125%"
 
 #: page.music.php:406
-#, fuzzy
 msgid "Volume 150%"
-msgstr "Volume 150%"
+msgstr "Volume  150%"
 
 #: page.music.php:411
-#, fuzzy
 msgid "Volume 25%"
-msgstr "Volume 25%"
+msgstr "Volume  25%"
 
 #: page.music.php:410
-#, fuzzy
 msgid "Volume 50%"
-msgstr "Volume 50%"
+msgstr "Volume  50%"
 
 #: page.music.php:409
-#, fuzzy
 msgid "Volume 75%"
-msgstr "Volume 75%"
+msgstr "Volume  75%"
 
 #: page.music.php:414
 msgid "Volume Adjustment"
@@ -278,6 +274,11 @@ msgid ""
 "recommended as MP3 files heavily tax the system and can cause instability on "
 "a busy phone system"
 msgstr ""
+"Quando definir para falso, os arquivos MP3 podem ser carregados e arquivos "
+"WAV convertidos para MP3 no módulo MoH. O comportamento padrão de verdadeiro "
+"assume que você tenha mpg123 carregado bem como sox e converterá arquivos "
+"MP3 para WAV. Isto é altamente recomendado como arquivos MP3 carregam muito "
+"o sistema e podem causar instabilidade num sistema de telefone lotado"
 
 #: page.music.php:476
 msgid ""
@@ -299,6 +300,8 @@ msgstr "em"
 msgid ""
 "sox failed to convert file and original could not be copied as a fall back"
 msgstr ""
+"sox falhou em converter arquivo e o original não pôde ser copiado como um "
+"substituto"
 
 #~ msgid ""
 #~ "The volume adjustment is a linear value. Since loudness is logarithmic, "
