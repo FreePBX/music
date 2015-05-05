@@ -1,8 +1,9 @@
-<?php
-//	License for all code of this FreePBX module can be found in the license file inside the module directory
-//	Copyright 2015 Sangoma Technologies.
-//
-extract($request);
-$file_array = array();
-$file_array = music_build_list();
-music_draw_list($file_array, $path_to_dir, $category);
+<table id="musicgrid" data-url="ajax.php?module=music&command=getJSON&jdata=musiclist&category=<?php echo $_REQUEST['category']?>" data-cache="false" data-height="299" data-toggle="table" class="table table-striped">
+	<thead>
+		<tr>
+			<th data-field="filename" class="col-md-8"><?php echo _("File")?></th>
+			<th data-field="extension" class="col-md-2"><?php echo _("Type")?></th>
+			<th data-field="link" data-formatter="musicFormat" class="col-md-2"><?php echo _("Action")?></th>
+		</tr>
+	</thead>
+</table>

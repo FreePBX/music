@@ -76,61 +76,72 @@ if ($category == "default") {
 } else {
 	$path_to_dir = $mh->mohpath."/$category"; //path to directory u want to read.
 }
-if (file_exists("{$path_to_dir}/.random")) {
-			?> <input type="submit" name="randoff" value="<?php echo _("Disable Random Play");?>"> <?php
-		} else {
-			?> <input type="submit" name="randon" value="<?php echo _("Enable Random Play");?>"> <?php
-		}
+
+$randomplay = file_exists("{$path_to_dir}/.random");
+
 ?>
-<ul class="nav nav-tabs" role="tablist">
-	<li role="presentation" data-name="music" class="active">
-		<a href="#music" aria-controls="music" role="tab" data-toggle="tab">
-			<?php echo _("music")?>
-		</a>
-	</li>
-	<li role="presentation" data-name="settings" class="change-tab">
-		<a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">
-			<?php echo _("Settings")?>
-		</a>
-	</li>
-</ul>
-<div class="tab-content display">
-	<div role="tabpanel" id="tab1" class="tab-pane active">
-		<form enctype="multipart/form-data" name="upload" action="" method="POST">
-		<input type="hidden" name="display" value="<?php echo $display?>">
-		<input type="hidden" name="category" value="<?php echo "$category" ?>">
-		<input type="hidden" name="action" value="addedfile">
-		<!--Upload File-->
-		<div class="element-container">
+<!--Enable Random Play-->
+<div class="element-container">
+	<div class="row">
+		<div class="col-md-12">
 			<div class="row">
-				<div class="col-md-12">
-					<div class="row">
-						<div class="form-group">
-							<div class="col-md-3">
-								<label class="control-label" for="mohfile"><?php echo _("Upload File") ?></label>
-								<i class="fa fa-question-circle fpbx-help-icon" data-for="mohfile"></i>
-							</div>
-							<div class="col-md-9">
-								<input type="file" name="mohfile" id="mohfile"/>
-							</div>
-						</div>
+				<div class="form-group">
+					<div class="col-md-3">
+						<label class="control-label" for="erand"><?php echo _("Enable Random Play") ?></label>
+						<i class="fa fa-question-circle fpbx-help-icon" data-for="erand"></i>
+					</div>
+					<div class="col-md-9 radioset">
+						<input type="radio" name="erand" id="erandyes" value="yes" <?php echo ($randomplay?"CHECKED":"") ?>>
+						<label for="erandyes"><?php echo _("Yes");?></label>
+						<input type="radio" name="erand" id="erandno" value="no" <?php echo ($randomplay?"":"CHECKED") ?>>
+						<label for="erandno"><?php echo _("No");?></label>
 					</div>
 				</div>
 			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<span id="erand-help" class="help-block fpbx-help-block"><?php echo _("Enable random playback of music for this category")?></span>
+		</div>
+	</div>
+</div>
+<!--END Enable Random Play-->
+<form enctype="multipart/form-data" name="upload" action="" method="POST">
+<input type="hidden" name="display" value="<?php echo $display?>">
+<input type="hidden" name="category" value="<?php echo "$category" ?>">
+<input type="hidden" name="action" value="addedfile">
+<!--Upload File-->
+<div class="element-container">
+	<div class="row">
+		<div class="col-md-12">
 			<div class="row">
-				<div class="col-md-12">
-					<span id="mohfile-help" class="help-block fpbx-help-block"><?php echo _("")?></span>
+				<div class="form-group">
+					<div class="col-md-3">
+						<label class="control-label" for="mohfile"><?php echo _("Upload File") ?></label>
+						<i class="fa fa-question-circle fpbx-help-icon" data-for="mohfile"></i>
+					</div>
+					<div class="col-md-9">
+						<span class="btn btn-default btn-file">
+						    <?php echo _("Browse")?>
+						    <input type="file" class="form-control" name="mohfile" id="mohfile">
+						</span>
+						<span class="filename"></span>
+					</div>
 				</div>
 			</div>
 		</div>
-		<!--END Upload File-->
-		<input type="button" class="form-control" value="<?php echo _("Upload")?>" onclick="document.upload.submit(upload);alert('<?php echo addslashes(_("Please wait until the page loads. Your file is being processed."))?>');" tabindex="<?php echo ++$tabindex;?>"/>
 	</div>
-	<div role="tabpanel" id="casettings" class="tab-pane">
-		Tab2 Content		
+	<div class="row">
+		<div class="col-md-12">
+			<span id="mohfile-help" class="help-block fpbx-help-block"><?php echo _("")?></span>
+		</div>
 	</div>
 </div>
-
-<input type="button" value="<?php echo _("Upload")?>" onclick="document.upload.submit(upload);alert('<?php echo addslashes(_("Please wait until the page loads. Your file is being processed."))?>');" tabindex="<?php echo ++$tabindex;?>"/>
+<!--END Upload File-->
 <?php echo $mpg123html ?>
+<input type="button" value="<?php echo _("Upload")?>" onclick="document.upload.submit(upload);alert('<?php echo addslashes(_("Please wait until the page loads. Your file is being processed."))?>');" tabindex="<?php echo ++$tabindex;?>"/>
 </form>
+<br/>
+<hr/>
+<br/>

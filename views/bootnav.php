@@ -1,0 +1,2 @@
+<a href="?display=music&view=form&action=add" class="list-group-item"><i class="fa fa-plus"></i> <?php echo _("Add Category")?></a>
+<a href="?display=music&view=form&action=addstream" class="list-group-item"><i class="fa fa-plus"></i> <?php echo _("Add Streaming Category")?></a>

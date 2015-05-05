@@ -1,9 +1,11 @@
 <?php
+namespace FreePBX\modules;
 // vim: set ai ts=4 sw=4 ft=php:
 if(!function_exists('music_list')) {
 	include(__DIR__.'/functions.inc.php');
 }
-class Music implements BMO {
+
+class Music implements \BMO {
 
 	public function __construct($freepbx = null) {
 		if ($freepbx == null) {
@@ -62,13 +64,9 @@ class Music implements BMO {
 			case "addednew":
 				music_makemusiccategory($path_to_dir);
 				needreload();
-				//TODO: This needs to be removed when we fix BMO Redirects
-				//redirect_standard();
 			break;
 			case "addedfile":
-				needreload();
-				//TODO: This needs to be removed when we fix BMO Redirects
-		//		redirect_standard();
+				needreload();;
 			break;
 			case "delete":
 				//$fh = fopen("/tmp/music.log","a");
@@ -78,35 +76,11 @@ class Music implements BMO {
 				$category='default';
 				needreload();
 			break;
-			case 'getJSON':
-				header('Content-Type: application/json');
-				switch ($request['jdata']) {
-					case 'music':
-						$mohclass = $request['mohclass']?$request['mohclass']:'default';
-						if ($mohclass == "default") {
-							$path_to_dir = $this->mohpath; //path to directory u want to read.
-						} else {
-							$path_to_dir = $this->mohpath.'/'.$mohclass; //path to directory u want to read.
-						}
-						echo json_encode($this->fileList($path_to_dir));
-						exit();
-					break;
-					case 'grid':
-						echo json_encode(music_list());
-						exit();
-					break;
-					default:
-						echo json_encode(array('error' => _("Bad Query")));
-						exit();
-					break;
-				}
-			break;
 		}
-
 	}
 
 	public function install() {
-
+		debug("JERE");
 	}
 	public function uninstall() {
 
@@ -119,6 +93,59 @@ class Music implements BMO {
 	}
 	public function genConfig() {
 
+	}
+	public function getCategories(){
+		$cats = array();
+		$cats[] = array('category' => 'default', 'type' => _('Standard'), 'link' => array('category' => 'default', 'type' =>'standard'));
+		foreach(glob($this->mohpath, GLOB_ONLYDIR) as $dir) {
+			$dir = str_replace($this->mohpath, '', $dir);
+			if(empty($dir)){continue;}
+			$cats[] = array('category' => $dir, 'type' => _('Standard'), 'link' => array('category' => urldecode($dir), 'type' =>'standard'));
+		}
+		if (file_exists($this->mohpath . '/.custom')) {
+			$application = file_get_contents($this->mohpath.'/.custom');
+			$application = explode("\n",$application);
+			if (isset($application[0])) {
+				$cats[] = array('category' => $application[0], 'type' => _('Streaming'), 'link' => array('category' => urldecode($application[0]), 'type' =>'streaming'));
+			}
+		}
+		return $cats;
+	}
+	public function ajaxRequest($req, &$setting) {
+		//The ajax request
+		if ($req == "getJSON") {
+			//Tell BMO This command is valid. If you are doing a lot of actions use a switch
+			return true;
+		}else{
+			//Deny everything else
+			return false;
+		}	
+	}
+	//This handles the AJAX via ajax.php?module=helloworld&command=getJSON&jdata=grid
+	public function ajaxHandler() {
+		if($_REQUEST['command'] == 'getJSON'){
+			switch ($_REQUEST['jdata']) {
+				case 'categories':
+					return $this->getCategories();
+				break;
+				case 'musiclist':
+					$path = $this->mohpath;
+					if($_REQUEST['category'] != 'default'){
+						$path .= '/'.$_REQUEST['category'];
+					}
+					$files = array();
+					foreach ($this->fileList($path) as $value){
+						$fp = pathinfo($path .'/'.$value);
+						$oi = array('link' => array('category' => $_REQUEST['category'], 'filename' => $value));
+						$files[] = array_merge($fp,$oi);
+					}
+					return $files;
+				break;
+				default:
+					print json_encode(_("Invalid Request"));
+				break;
+			}
+		}
 	}
 
 	public function getAllMusic() {
@@ -147,5 +174,49 @@ class Music implements BMO {
 		}
 		closedir($handle);
 		return (isset($file_array))?$file_array:null;  //return the size of the array
+	}
+	public function deleteFile($category, $filename){
+		$path = $this->mohpath;
+		if($category != 'default'){
+			$path .= '/'.$category;
+		}
+		unlink($path . '/' . basename($filename));
+	}
+	public function getActionBar($request) {
+		$buttons = array();
+		switch($request['display']) {
+			case 'music':
+				$buttons = array(
+					'delete' => array(
+						'name' => 'delete',
+						'id' => 'delete',
+						'value' => _('Delete')
+					),
+					'reset' => array(
+						'name' => 'reset',
+						'id' => 'reset',
+						'value' => _('Reset')
+					),
+					'submit' => array(
+						'name' => 'submit',
+						'id' => 'submit',
+						'value' => _('Submit')
+					)
+				);
+				if (empty($request['category'])||$request['category'] == 'default') {
+					unset($buttons['delete']);
+				}
+				switch ($request['action']) {
+					case 'add':
+					case 'addstreaming':
+						return true;
+					break;
+					default:
+						$buttons = array();
+					break;
+				}
+			break;
+		}
+		return $buttons;
 	}
 }
