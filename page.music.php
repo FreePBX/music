@@ -5,13 +5,19 @@
 if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 
 $mh = \FreePBX::create()->Music;
-
+$message='';
+if(isset($mh->message)){
+	$message = '<div class="well well-info">'.$mh->message.'</div>';
+}
 $heading = _("On Hold Music");
 $request = $_REQUEST;
+$request['view'] = isset($request['view'])?$request['view']:'';
+$request['action'] = isset($request['action'])?$request['action']:'';
 switch ($request['view']) {
 	case 'form':
 		switch($request["action"]){
 			case "edit":
+			case "addedfile":
 				$heading .= ' - '.$request['category'];
 				$content = load_view(__DIR__.'/views/updatecat.php', array('request' => $request, 'mh' => $mh));
 				$content .= load_view(__DIR__.'/views/musiclist.php', array('request' => $request, 'mh' => $mh));
@@ -34,6 +40,7 @@ switch ($request['view']) {
 ?>
 <div class="container-fluid">
 	<h1><?php echo $heading?></h1>
+	<?php echo isset($message)?$message:''?>
 	<div class = "display full-border">
 		<div class="row">
 			<div class="col-sm-9">

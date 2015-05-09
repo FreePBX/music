@@ -29,7 +29,7 @@ class Music implements \BMO {
 		$volume = isset($request['volume']) && is_numeric($request['volume']) ? $request['volume'] : '';
 
 		// Determine default path to music directory, old default was mohmp3, now settable
-		$path_to_moh_dir = $this->varlibdir.'/'.$this->mohpath;
+		$path_to_moh_dir = $this->mohpath;
 
 
 		if ($category == null) $category = 'default';
@@ -63,10 +63,28 @@ class Music implements \BMO {
 				needreload();
 			case "addednew":
 				music_makemusiccategory($path_to_dir);
-				needreload();
+				$_REQUEST['action'] = 'edit';
+				$_REQUEST['category'] = $category;
 			break;
 			case "addedfile":
-				needreload();;
+				$fileTypes = array("audio/wav", "audio/mpeg3");
+				if(empty($_FILES)){
+					$this->message = _("No file provided");
+					break;
+				}
+				if(in_array($_FILES['mohfile']['type'], $fileTypes)){
+				$file = $_FILES['mohfile'];
+				if(move_uploaded_file($_FILES["mohfile"]["tmp_name"], $path_to_dir.'/'.$_FILES["mohfile"]["name"])){
+					$this->message = _("File upload success");
+				}else{
+					$this->message = _("File seemed valid but could not move it to it's path");
+				}
+
+			}else{
+				$this->message = _("Filetype not Supported Upload Failed");
+				break;
+			}
+				needreload();
 			break;
 			case "delete":
 				//$fh = fopen("/tmp/music.log","a");
@@ -80,7 +98,6 @@ class Music implements \BMO {
 	}
 
 	public function install() {
-		debug("JERE");
 	}
 	public function uninstall() {
 
@@ -97,8 +114,8 @@ class Music implements \BMO {
 	public function getCategories(){
 		$cats = array();
 		$cats[] = array('category' => 'default', 'type' => _('Standard'), 'link' => array('category' => 'default', 'type' =>'standard'));
-		foreach(glob($this->mohpath, GLOB_ONLYDIR) as $dir) {
-			$dir = str_replace($this->mohpath, '', $dir);
+		foreach(glob($this->mohpath.'/*', GLOB_ONLYDIR) as $dir) {
+			$dir = str_replace($this->mohpath.'/', '', $dir);
 			if(empty($dir)){continue;}
 			$cats[] = array('category' => $dir, 'type' => _('Standard'), 'link' => array('category' => urldecode($dir), 'type' =>'standard'));
 		}
@@ -119,7 +136,7 @@ class Music implements \BMO {
 		}else{
 			//Deny everything else
 			return false;
-		}	
+		}
 	}
 	//This handles the AJAX via ajax.php?module=helloworld&command=getJSON&jdata=grid
 	public function ajaxHandler() {
@@ -153,7 +170,7 @@ class Music implements \BMO {
 	}
 	/**
 	 * Get a list of mp3(MP3),wav(WAV) files from the provided directory.
-	 * @param  string $path path to directory, webroot user must have read permissions 
+	 * @param  string $path path to directory, webroot user must have read permissions
 	 * @return array       	list of files or null
 	 */
 	public function fileList($path){
@@ -173,7 +190,7 @@ class Music implements \BMO {
 			}
 		}
 		closedir($handle);
-		return (isset($file_array))?$file_array:null;  //return the size of the array
+		return (isset($file_array))?$file_array:array();  //return the size of the array
 	}
 	public function deleteFile($category, $filename){
 		$path = $this->mohpath;
@@ -203,15 +220,17 @@ class Music implements \BMO {
 						'value' => _('Submit')
 					)
 				);
-				if (empty($request['category'])||$request['category'] == 'default') {
+				if (empty($request['category'])||($request['category'] == 'default')) {
 					unset($buttons['delete']);
 				}
+				$request['action'] = isset($requets['action'])?$request['action']:'';
 				switch ($request['action']) {
 					case 'add':
 					case 'addstreaming':
-						return true;
+						/*if we match the above case(s) nothing to do*/
 					break;
 					default:
+						/*If we don't match we return an empty array a.k.a no buttons*/
 						$buttons = array();
 					break;
 				}

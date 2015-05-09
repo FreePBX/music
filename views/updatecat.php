@@ -140,7 +140,7 @@ $randomplay = file_exists("{$path_to_dir}/.random");
 </div>
 <!--END Upload File-->
 <?php echo $mpg123html ?>
-<input type="button" value="<?php echo _("Upload")?>" onclick="document.upload.submit(upload);alert('<?php echo addslashes(_("Please wait until the page loads. Your file is being processed."))?>');" tabindex="<?php echo ++$tabindex;?>"/>
+<input type="button" value="<?php echo _("Upload")?>" onclick="document.upload.submit(upload);alert('<?php echo addslashes(_("Please wait until the page loads. Your file is being processed."))?>');/>
 </form>
 <br/>
 <hr/>
