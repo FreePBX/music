@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX musik\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 19:43-0500\n"
+"POT-Creation-Date: 2015-05-22 16:32-0400\n"
 "PO-Revision-Date: 2011-03-20 00:00+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: \n"
@@ -29,15 +29,23 @@ msgstr ""
 "X-Poedit-Language: Swedish\n"
 "X-Poedit-Country: SWEDEN\n"
 
-#: page.music.php:69 page.music.php:237
-msgid "Add Music Category"
-msgstr "Lägg till musikkategori"
+#: views/musiclist.php:6
+msgid "Action"
+msgstr ""
 
-#: page.music.php:70 page.music.php:278
+#: views/grid.php:6
+msgid "Actions"
+msgstr ""
+
+#: views/bootnav.php:1
+msgid "Add Category"
+msgstr ""
+
+#: views/bootnav.php:2
 msgid "Add Streaming Category"
 msgstr "Lägg till strömkategori"
 
-#: page.music.php:239 page.music.php:280
+#: views/addcatform.php:27 views/addstreamform.php:55
 msgid ""
 "Allows you to Set up Different Categories for music on hold.  This is useful "
 "if you would like to specify different Hold Music or Commercials for various "
@@ -47,15 +55,19 @@ msgstr ""
 "användbart för att specificera olika typer av pausmusik eller reklam för "
 "köer."
 
-#: page.music.php:284 page.music.php:358
-msgid "Application:"
-msgstr "Applikation:"
+#: views/addstreamform.php:67
+msgid "Application"
+msgstr ""
+
+#: views/updatecat.php:126
+msgid "Browse"
+msgstr ""
 
 #: install.php:37
 msgid "Cannot write to file"
 msgstr "Kan inte skriva till fil"
 
-#: page.music.php:254 page.music.php:305
+#: assets/js/music.js:33
 msgid ""
 "Categories: \\\"none\\\" and \\\"default\\\" are reserved names. Please "
 "enter a different name"
@@ -63,86 +75,67 @@ msgstr ""
 "Kategorierna \\\"none\\\" och \\\"default\\\" är reserverade namn. Skriv in "
 "ett annat namn"
 
-#: page.music.php:239 page.music.php:280
-msgid "Category Name:"
-msgstr "Kategorinamn:"
+#: views/grid.php:4
+msgid "Category"
+msgstr ""
 
-#: page.music.php:328
-msgid "Category:"
-msgstr "Kategori:"
+#: views/addcatform.php:15 views/addstreamform.php:43
+msgid "Category Name"
+msgstr ""
 
-#: page.music.php:441
-msgid "Check"
-msgstr "Kontrollera"
-
-#: page.music.php:458
-msgid "Completed processing"
-msgstr "Färdig med bearbetning"
-
-#: music.i18n.php:8
-msgid "Convert Music Files to WAV"
-msgstr "Komvertera musikfiler till WAV"
-
-#: page.music.php:130
+#: Music.class.php:210
 msgid "Delete"
 msgstr "Ta bort"
 
-#: page.music.php:344
-#, php-format
-msgid "Delete Music Category %s"
-msgstr "Ta bort kategorin %s"
-
-#: page.music.php:344
-#, php-format
-msgid "Delete Streaming Category"
-msgstr "Ta bort strömmande kategori"
-
-#: page.music.php:479
-msgid "Deleted"
-msgstr "Borttagen"
-
-#: page.music.php:427
-msgid "Disable Random Play"
-msgstr "Avaktivera slumpmässig uppspelning"
-
-#: page.music.php:418
-msgid "Do not encode wav to mp3"
-msgstr "Koda inte om wav till mp3"
-
-#: page.music.php:356
-msgid "Edit Streaming Category"
-msgstr "Redigera strömmande kategori"
-
-#: page.music.php:429
+#: views/updatecat.php:90
 msgid "Enable Random Play"
 msgstr "Aktivera slumpmässig uppspelning"
 
-#: page.music.php:481
-#, php-format
-msgid "Error Deleting %s"
-msgstr "Fel uppstod när %s togs bort"
+#: views/updatecat.php:105
+msgid "Enable random playback of music for this category"
+msgstr ""
 
-#: page.music.php:439 page.music.php:441 page.music.php:455
-msgid "Error Processing"
-msgstr "Fel vid hantering av"
+#: views/updatecat.php:50
+msgid "Encode wav to mp3"
+msgstr ""
 
-#: music.i18n.php:3 music.i18n.php:6
-msgid "Music on Hold"
-msgstr "Pausmusik"
+#: views/musiclist.php:4
+msgid "File"
+msgstr ""
 
-#: page.music.php:439
+#: Music.class.php:80
+msgid "File seemed valid but could not move it to it's path"
+msgstr ""
+
+#: Music.class.php:78
+msgid "File upload success"
+msgstr ""
+
+#: Music.class.php:84
+msgid "Filetype not Supported Upload Failed"
+msgstr ""
+
+#: Music.class.php:162
+msgid "Invalid Request"
+msgstr ""
+
+#: views/updatecat.php:58 views/updatecat.php:97
+msgid "No"
+msgstr ""
+
+#: Music.class.php:72
 msgid "No file provided"
 msgstr "Ingen fil angiven"
 
-#: page.music.php:228
+#: page.music.php:12
 msgid "On Hold Music"
 msgstr "Pausmusik"
 
-#: page.music.php:289 page.music.php:362
-msgid "Optional Format:"
-msgstr "Valfritt format:"
+#: views/addstreamform.php:92
+msgid "Optional Format"
+msgstr ""
 
-#: page.music.php:289 page.music.php:362
+#: views/addstreamform.php:104
 msgid ""
 "Optional value for \"format=\" line used to provide the format to Asterisk. "
 "This should be a format understood by Asterisk such as ulaw, and is specific "
@@ -154,37 +147,35 @@ msgstr ""
 "applikation av strömmande ljud du anger. Titta i filen musiconhold.conf för "
 "olika ljudformat och strömmande media från Internet."
 
-#: page.music.php:304 page.music.php:376
-msgid "Please enter a streaming application command and arguments"
-msgstr ""
-"Skriv in en applikation för strömmande media och eventuella argument denna "
-"applikation behöver"
-
-#: page.music.php:253 page.music.php:303
+#: assets/js/music.js:32
 msgid "Please enter a valid Category Name"
 msgstr "Skriv in ett giltigt kategorinamn"
 
-#: page.music.php:439
-msgid "Please select a file to upload"
-msgstr "Välj en fil att ladda upp"
-
-#: page.music.php:400
+#: views/updatecat.php:143
 msgid "Please wait until the page loads. Your file is being processed."
 msgstr "Vänta medan sidan laddas och din fil hanteras."
 
-#: music.i18n.php:4
-msgid "Settings"
+#: Music.class.php:215
+msgid "Reset"
 msgstr ""
 
-#: page.music.php:243 page.music.php:293 page.music.php:366
-msgid "Submit Changes"
-msgstr "Spara ändringar"
+#: views/updatecat.php:67
+msgid "Should wav encode to mp3"
+msgstr ""
 
-#: music.i18n.php:10
-msgid "System Setup"
-msgstr "Systeminställningar"
+#: Music.class.php:116 Music.class.php:120
+msgid "Standard"
+msgstr ""
 
-#: page.music.php:414
+#: Music.class.php:126 assets/js/music.js:46
+msgid "Streaming"
+msgstr ""
+
+#: Music.class.php:220
+msgid "Submit"
+msgstr ""
+
+#: views/updatecat.php:35
 msgid ""
 "The volume adjustment is a linear value. Since loudness is logarithmic, the "
 "linear level will be less of an adjustment. You should test out the "
@@ -200,11 +191,7 @@ msgstr ""
 "installerat mpg123 kan du sätta parametern: <strong>Konvertera musikfiler "
 "till WAV</strong> till falskt i Avancerade inställningar"
 
-#: page.music.php:456
-msgid "This is not a fatal error, your Music on Hold may still work."
-msgstr "Detta är inget kritiskt fel, din pausmusik kommer kanske att fungera."
-
-#: page.music.php:284 page.music.php:358
+#: views/addstreamform.php:79
 msgid ""
 "This is the \"application=\" line used to provide the streaming details to "
 "Asterisk. See information on musiconhold.conf configuration for different "
@@ -214,89 +201,164 @@ msgstr ""
 "strömmande ljud. Titta i filen musiconhold.conf för olika ljudformat och "
 "strömmande media från Internet."
 
-#: page.music.php:400
+#: views/grid.php:5 views/musiclist.php:5
+msgid "Type"
+msgstr ""
+
+#: views/updatecat.php:143
 msgid "Upload"
 msgstr "Ladda upp"
 
-#: page.music.php:395
-msgid "Upload a .wav or .mp3 file:"
-msgstr "Ladda upp en .wav eller .mp3 fil:"
-
-#: music.i18n.php:5
-msgid ""
-"Uploading and management of sound files (wav, mp3) to be used for on-hold "
-"music."
+#: views/updatecat.php:121
+msgid "Upload File"
 msgstr ""
-"Modul för att ladda upp och underhålla ljudfiler (wav, mp3) för användning "
-"till pausmusik"
 
-#: page.music.php:412
+#: views/updatecat.php:26
 msgid "Volume 10%"
 msgstr "10% volym"
 
-#: page.music.php:408
+#: views/updatecat.php:22
 msgid "Volume 100%"
 msgstr "100% volym"
 
-#: page.music.php:407
+#: views/updatecat.php:21
 msgid "Volume 125%"
 msgstr "125% volym"
 
-#: page.music.php:406
+#: views/updatecat.php:20
 msgid "Volume 150%"
 msgstr "150% volym"
 
-#: page.music.php:411
+#: views/updatecat.php:25
 msgid "Volume 25%"
 msgstr "25% volym"
 
-#: page.music.php:410
+#: views/updatecat.php:24
 msgid "Volume 50%"
 msgstr "50% volym"
 
-#: page.music.php:409
+#: views/updatecat.php:23
 msgid "Volume 75%"
 msgstr "75% volym"
 
-#: page.music.php:414
+#: views/updatecat.php:15
 msgid "Volume Adjustment"
 msgstr "Justera volym"
 
-#: music.i18n.php:12
-msgid ""
-"When set to false, the MP3 files can be loaded and WAV files converted to "
-"MP3 in the MoH module. The default behavior of true assumes you have mpg123 "
-"loaded as well as sox and will convert MP3 files to WAV. This is highly "
-"recommended as MP3 files heavily tax the system and can cause instability on "
-"a busy phone system"
+#: views/updatecat.php:56 views/updatecat.php:95
+msgid "Yes"
 msgstr ""
-"Om denna inställning är falsk kam MP3 filer laddas och WAV-filer konverteras "
-"till MP3 i Pausmusik-modulen. Standardvalet, sant, förutsätter att du har "
-"installerat både mpg123 och sox som kommer att komvertera MP3 till WAV. "
-"Detta är startkt rekommenderat då MP3-filer belastar systemet och kan orsaka "
-"stabilitetsproblem."
 
-#: page.music.php:476
-msgid ""
-"You must have at least one file for On Hold Music.  Please upload one before "
-"deleting this one."
-msgstr ""
-"Du måste minst ha en fil för pausmusik. Ladda upp en före du tar bort denna."
+#~ msgid "Add Music Category"
+#~ msgstr "Lägg till musikkategori"
 
-#: page.music.php:78 page.music.php:328
-msgid "default"
-msgstr "default"
+#~ msgid "Application:"
+#~ msgstr "Applikation:"
 
-#: page.music.php:441
-msgid "in"
-msgstr "i"
+#~ msgid "Category Name:"
+#~ msgstr "Kategorinamn:"
 
-#: page.music.php:178
-msgid ""
-"sox failed to convert file and original could not be copied as a fall back"
-msgstr ""
-"sox kunde inte konvertera filen och originalfilen kunde inte kopieras som en "
-"reservlösning"
+#~ msgid "Category:"
+#~ msgstr "Kategori:"
+
+#~ msgid "Check"
+#~ msgstr "Kontrollera"
+
+#~ msgid "Completed processing"
+#~ msgstr "Färdig med bearbetning"
+
+#~ msgid "Convert Music Files to WAV"
+#~ msgstr "Komvertera musikfiler till WAV"
+
+#~ msgid "Delete Music Category %s"
+#~ msgstr "Ta bort kategorin %s"
+
+#~ msgid "Delete Streaming Category"
+#~ msgstr "Ta bort strömmande kategori"
+
+#~ msgid "Deleted"
+#~ msgstr "Borttagen"
+
+#~ msgid "Disable Random Play"
+#~ msgstr "Avaktivera slumpmässig uppspelning"
+
+#~ msgid "Do not encode wav to mp3"
+#~ msgstr "Koda inte om wav till mp3"
+
+#~ msgid "Edit Streaming Category"
+#~ msgstr "Redigera strömmande kategori"
+
+#~ msgid "Error Deleting %s"
+#~ msgstr "Fel uppstod när %s togs bort"
+
+#~ msgid "Error Processing"
+#~ msgstr "Fel vid hantering av"
+
+#~ msgid "Music on Hold"
+#~ msgstr "Pausmusik"
+
+#~ msgid "Optional Format:"
+#~ msgstr "Valfritt format:"
+
+#~ msgid "Please enter a streaming application command and arguments"
+#~ msgstr ""
+#~ "Skriv in en applikation för strömmande media och eventuella argument "
+#~ "denna applikation behöver"
+
+#~ msgid "Please select a file to upload"
+#~ msgstr "Välj en fil att ladda upp"
+
+#~ msgid "Submit Changes"
+#~ msgstr "Spara ändringar"
+
+#~ msgid "System Setup"
+#~ msgstr "Systeminställningar"
+
+#~ msgid "This is not a fatal error, your Music on Hold may still work."
+#~ msgstr ""
+#~ "Detta är inget kritiskt fel, din pausmusik kommer kanske att fungera."
+
+#~ msgid "Upload a .wav or .mp3 file:"
+#~ msgstr "Ladda upp en .wav eller .mp3 fil:"
+
+#~ msgid ""
+#~ "Uploading and management of sound files (wav, mp3) to be used for on-hold "
+#~ "music."
+#~ msgstr ""
+#~ "Modul för att ladda upp och underhålla ljudfiler (wav, mp3) för "
+#~ "användning till pausmusik"
+
+#~ msgid ""
+#~ "When set to false, the MP3 files can be loaded and WAV files converted to "
+#~ "MP3 in the MoH module. The default behavior of true assumes you have "
+#~ "mpg123 loaded as well as sox and will convert MP3 files to WAV. This is "
+#~ "highly recommended as MP3 files heavily tax the system and can cause "
+#~ "instability on a busy phone system"
+#~ msgstr ""
+#~ "Om denna inställning är falsk kam MP3 filer laddas och WAV-filer "
+#~ "konverteras till MP3 i Pausmusik-modulen. Standardvalet, sant, "
+#~ "förutsätter att du har installerat både mpg123 och sox som kommer att "
+#~ "komvertera MP3 till WAV. Detta är startkt rekommenderat då MP3-filer "
+#~ "belastar systemet och kan orsaka stabilitetsproblem."
+
+#~ msgid ""
+#~ "You must have at least one file for On Hold Music.  Please upload one "
+#~ "before deleting this one."
+#~ msgstr ""
+#~ "Du måste minst ha en fil för pausmusik. Ladda upp en före du tar bort "
+#~ "denna."
+
+#~ msgid "default"
+#~ msgstr "default"
+
+#~ msgid "in"
+#~ msgstr "i"
+
+#~ msgid ""
+#~ "sox failed to convert file and original could not be copied as a fall back"
+#~ msgstr ""
+#~ "sox kunde inte konvertera filen och originalfilen kunde inte kopieras som "
+#~ "en reservlösning"
 
 #~ msgid "Internal Options & Configuration"
 #~ msgstr "Interna val och konfigurationer"

@@ -7,28 +7,36 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 19:43-0500\n"
+"POT-Creation-Date: 2015-05-22 16:32-0400\n"
 "PO-Revision-Date: 2015-04-23 16:48+0200\n"
 "Last-Translator: Yuriy <alliancesko@gmail.com>\n"
-"Language-Team: Russian "
-"<http://weblate.freepbx.org/projects/freepbx/music/ru_RU/>\n"
-"Language: ru_RU\n"
+"Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/music/"
+"ru_RU/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Language: ru_RU\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
-#: page.music.php:69 page.music.php:237
-msgid "Add Music Category"
-msgstr "Добавить категорию музыки"
+#: views/musiclist.php:6
+msgid "Action"
+msgstr ""
 
-#: page.music.php:70 page.music.php:278
+#: views/grid.php:6
+msgid "Actions"
+msgstr ""
+
+#: views/bootnav.php:1
+msgid "Add Category"
+msgstr ""
+
+#: views/bootnav.php:2
 msgid "Add Streaming Category"
 msgstr "Добавить категорию потока"
 
-#: page.music.php:239 page.music.php:280
+#: views/addcatform.php:27 views/addstreamform.php:55
 msgid ""
 "Allows you to Set up Different Categories for music on hold.  This is useful "
 "if you would like to specify different Hold Music or Commercials for various "
@@ -38,15 +46,19 @@ msgstr ""
 "для использования различной Музыки в ожидании при перенаправлении звонка и "
 "Очереди."
 
-#: page.music.php:284 page.music.php:358
-msgid "Application:"
-msgstr "Приложение:"
+#: views/addstreamform.php:67
+msgid "Application"
+msgstr ""
+
+#: views/updatecat.php:126
+msgid "Browse"
+msgstr ""
 
 #: install.php:37
 msgid "Cannot write to file"
 msgstr "Невозможно записать в файл"
 
-#: page.music.php:254 page.music.php:305
+#: assets/js/music.js:33
 msgid ""
 "Categories: \\\"none\\\" and \\\"default\\\" are reserved names. Please "
 "enter a different name"
@@ -54,86 +66,67 @@ msgstr ""
 "Категории: \\\"none\\\" и \\\"default\\\" это зарезервированные имена. "
 "Выберите другое название"
 
-#: page.music.php:239 page.music.php:280
-msgid "Category Name:"
-msgstr "Название категории:"
+#: views/grid.php:4
+msgid "Category"
+msgstr ""
 
-#: page.music.php:328
-msgid "Category:"
-msgstr "Категория:"
+#: views/addcatform.php:15 views/addstreamform.php:43
+msgid "Category Name"
+msgstr ""
 
-#: page.music.php:441
-msgid "Check"
-msgstr "Проверить"
-
-#: page.music.php:458
-msgid "Completed processing"
-msgstr "Действие завершено"
-
-#: music.i18n.php:8
-msgid "Convert Music Files to WAV"
-msgstr "Конвертировать  музыкальные файлы в WAV"
-
-#: page.music.php:130
+#: Music.class.php:210
 msgid "Delete"
 msgstr "Удалить"
 
-#: page.music.php:344
-#, php-format
-msgid "Delete Music Category %s"
-msgstr "Удалить категорию музыки %s"
-
-#: page.music.php:344
-#, php-format
-msgid "Delete Streaming Category"
-msgstr "Удалить категорию потокового вещания"
-
-#: page.music.php:479
-msgid "Deleted"
-msgstr "Удалено"
-
-#: page.music.php:427
-msgid "Disable Random Play"
-msgstr "Отменить случайное воспроизведение"
-
-#: page.music.php:418
-msgid "Do not encode wav to mp3"
-msgstr "Не конвертировать в mp3"
-
-#: page.music.php:356
-msgid "Edit Streaming Category"
-msgstr "Редактировать категорию потокового вещания"
-
-#: page.music.php:429
+#: views/updatecat.php:90
 msgid "Enable Random Play"
 msgstr "Случайная выборка при воспроизведении"
 
-#: page.music.php:481
-#, php-format
-msgid "Error Deleting %s"
-msgstr "Ошибка при удалении %s"
+#: views/updatecat.php:105
+msgid "Enable random playback of music for this category"
+msgstr ""
 
-#: page.music.php:439 page.music.php:441 page.music.php:455
-msgid "Error Processing"
-msgstr "Ошибка при совершении действия"
+#: views/updatecat.php:50
+msgid "Encode wav to mp3"
+msgstr ""
 
-#: music.i18n.php:3 music.i18n.php:6
-msgid "Music on Hold"
-msgstr "Музыка в ожидании"
+#: views/musiclist.php:4
+msgid "File"
+msgstr ""
 
-#: page.music.php:439
+#: Music.class.php:80
+msgid "File seemed valid but could not move it to it's path"
+msgstr ""
+
+#: Music.class.php:78
+msgid "File upload success"
+msgstr ""
+
+#: Music.class.php:84
+msgid "Filetype not Supported Upload Failed"
+msgstr ""
+
+#: Music.class.php:162
+msgid "Invalid Request"
+msgstr ""
+
+#: views/updatecat.php:58 views/updatecat.php:97
+msgid "No"
+msgstr ""
+
+#: Music.class.php:72
 msgid "No file provided"
 msgstr "Не указан файл"
 
-#: page.music.php:228
+#: page.music.php:12
 msgid "On Hold Music"
 msgstr "Музыка в ожидании"
 
-#: page.music.php:289 page.music.php:362
-msgid "Optional Format:"
-msgstr "Дополнительный формат:"
+#: views/addstreamform.php:92
+msgid "Optional Format"
+msgstr ""
 
-#: page.music.php:289 page.music.php:362
+#: views/addstreamform.php:104
 msgid ""
 "Optional value for \"format=\" line used to provide the format to Asterisk. "
 "This should be a format understood by Asterisk such as ulaw, and is specific "
@@ -146,35 +139,35 @@ msgstr ""
 "Посмотрите дополнительную информацию в конфигурации musiconhold.conf для "
 "выбора других опций для аудио- и потокового вещания из интернет."
 
-#: page.music.php:304 page.music.php:376
-msgid "Please enter a streaming application command and arguments"
-msgstr "Введите команду вызова потокового вещания и аргументы"
-
-#: page.music.php:253 page.music.php:303
+#: assets/js/music.js:32
 msgid "Please enter a valid Category Name"
 msgstr "Введите правильное название для категории"
 
-#: page.music.php:439
-msgid "Please select a file to upload"
-msgstr "Укажите файл для загрузки"
-
-#: page.music.php:400
+#: views/updatecat.php:143
 msgid "Please wait until the page loads. Your file is being processed."
 msgstr "Дождитесь, пока страница загрузится. Ваш файл обрабатывается."
 
-#: music.i18n.php:4
-msgid "Settings"
-msgstr "Настройки"
+#: Music.class.php:215
+msgid "Reset"
+msgstr ""
 
-#: page.music.php:243 page.music.php:293 page.music.php:366
-msgid "Submit Changes"
-msgstr "Применить изменения"
+#: views/updatecat.php:67
+msgid "Should wav encode to mp3"
+msgstr ""
 
-#: music.i18n.php:10
-msgid "System Setup"
-msgstr "Системные установки"
+#: Music.class.php:116 Music.class.php:120
+msgid "Standard"
+msgstr ""
 
-#: page.music.php:414
+#: Music.class.php:126 assets/js/music.js:46
+msgid "Streaming"
+msgstr ""
+
+#: Music.class.php:220
+msgid "Submit"
+msgstr ""
+
+#: views/updatecat.php:35
 msgid ""
 "The volume adjustment is a linear value. Since loudness is logarithmic, the "
 "linear level will be less of an adjustment. You should test out the "
@@ -187,15 +180,11 @@ msgstr ""
 "логарифмическая, линейный уровень будет ниже чем настроенный. Вы должные "
 "протестировать установленную музыку, что бы убедиться в том, что громкость "
 "установленная правильно. Этот функция конвертирует mp3 файлы в wav файлы. "
-"Если у вас не установлен mpg123, вы можете установить параметр: <strong>"
-"Конвертировать музыкальные файлы в WAV</strong> в значение false в "
+"Если у вас не установлен mpg123, вы можете установить параметр: "
+"<strong>Конвертировать музыкальные файлы в WAV</strong> в значение false в "
 "дополнительных настройках"
 
-#: page.music.php:456
-msgid "This is not a fatal error, your Music on Hold may still work."
-msgstr "Это не критическая ошибка, Музыка в ожидании может работать."
-
-#: page.music.php:284 page.music.php:358
+#: views/addstreamform.php:79
 msgid ""
 "This is the \"application=\" line used to provide the streaming details to "
 "Asterisk. See information on musiconhold.conf configuration for different "
@@ -205,90 +194,164 @@ msgstr ""
 "Астериск. Посмотрите дополнительную информацию в конфигурации musiconhold."
 "conf для выбора других опций для аудио- и потокового вещания из интернет."
 
-#: page.music.php:400
+#: views/grid.php:5 views/musiclist.php:5
+msgid "Type"
+msgstr ""
+
+#: views/updatecat.php:143
 msgid "Upload"
 msgstr "Загрузить"
 
-#: page.music.php:395
-msgid "Upload a .wav or .mp3 file:"
-msgstr "Загрузить файл .wav или .mp3:"
-
-#: music.i18n.php:5
-msgid ""
-"Uploading and management of sound files (wav, mp3) to be used for on-hold "
-"music."
+#: views/updatecat.php:121
+msgid "Upload File"
 msgstr ""
-"Загрузка и управление звуковыми файлами (wav, mp3) для использования как "
-"музыка в ожидании."
 
-#: page.music.php:412
+#: views/updatecat.php:26
 msgid "Volume 10%"
 msgstr "Громкость 10%"
 
-#: page.music.php:408
+#: views/updatecat.php:22
 msgid "Volume 100%"
 msgstr "Громкость 100%"
 
-#: page.music.php:407
+#: views/updatecat.php:21
 msgid "Volume 125%"
 msgstr "Громкость 125%"
 
-#: page.music.php:406
+#: views/updatecat.php:20
 msgid "Volume 150%"
 msgstr "Громкость 150%"
 
-#: page.music.php:411
+#: views/updatecat.php:25
 msgid "Volume 25%"
 msgstr "Громкость 25%"
 
-#: page.music.php:410
+#: views/updatecat.php:24
 msgid "Volume 50%"
 msgstr "Громкость 50%"
 
-#: page.music.php:409
+#: views/updatecat.php:23
 msgid "Volume 75%"
 msgstr "Громкость 75%"
 
-#: page.music.php:414
+#: views/updatecat.php:15
 msgid "Volume Adjustment"
 msgstr "Настройка громкости"
 
-#: music.i18n.php:12
-msgid ""
-"When set to false, the MP3 files can be loaded and WAV files converted to "
-"MP3 in the MoH module. The default behavior of true assumes you have mpg123 "
-"loaded as well as sox and will convert MP3 files to WAV. This is highly "
-"recommended as MP3 files heavily tax the system and can cause instability on "
-"a busy phone system"
+#: views/updatecat.php:56 views/updatecat.php:95
+msgid "Yes"
 msgstr ""
-"Когда установлена в false, файлы mp3 могут быть загружены и WAV файлы "
-"конвертированы в mp3 в модуле Музыка в ожидании. Режим по умолчанию "
-"предполагает, что у вас загружен mpg123, так же как и sox, и он будет "
-"конвертировать mp3 в wav. Это крайне рекомендуется, т.к. mp3 файлы сильно "
-"нагружают систему и могут привести к ее не стабильной работе"
 
-#: page.music.php:476
-msgid ""
-"You must have at least one file for On Hold Music.  Please upload one before "
-"deleting this one."
-msgstr ""
-"Должен быть по крайней мере один файл для Музыки в ожидании. Загрузите какой-"
-"либо файл перед удалением текущего."
+#~ msgid "Add Music Category"
+#~ msgstr "Добавить категорию музыки"
 
-#: page.music.php:78 page.music.php:328
-msgid "default"
-msgstr "по умолчанию"
+#~ msgid "Application:"
+#~ msgstr "Приложение:"
 
-#: page.music.php:441
-msgid "in"
-msgstr "в"
+#~ msgid "Category Name:"
+#~ msgstr "Название категории:"
 
-#: page.music.php:178
-msgid ""
-"sox failed to convert file and original could not be copied as a fall back"
-msgstr ""
-"sox не удалось конвертировать файл и оригинал не может быть скопирован как "
-"резервная копия"
+#~ msgid "Category:"
+#~ msgstr "Категория:"
+
+#~ msgid "Check"
+#~ msgstr "Проверить"
+
+#~ msgid "Completed processing"
+#~ msgstr "Действие завершено"
+
+#~ msgid "Convert Music Files to WAV"
+#~ msgstr "Конвертировать  музыкальные файлы в WAV"
+
+#~ msgid "Delete Music Category %s"
+#~ msgstr "Удалить категорию музыки %s"
+
+#~ msgid "Delete Streaming Category"
+#~ msgstr "Удалить категорию потокового вещания"
+
+#~ msgid "Deleted"
+#~ msgstr "Удалено"
+
+#~ msgid "Disable Random Play"
+#~ msgstr "Отменить случайное воспроизведение"
+
+#~ msgid "Do not encode wav to mp3"
+#~ msgstr "Не конвертировать в mp3"
+
+#~ msgid "Edit Streaming Category"
+#~ msgstr "Редактировать категорию потокового вещания"
+
+#~ msgid "Error Deleting %s"
+#~ msgstr "Ошибка при удалении %s"
+
+#~ msgid "Error Processing"
+#~ msgstr "Ошибка при совершении действия"
+
+#~ msgid "Music on Hold"
+#~ msgstr "Музыка в ожидании"
+
+#~ msgid "Optional Format:"
+#~ msgstr "Дополнительный формат:"
+
+#~ msgid "Please enter a streaming application command and arguments"
+#~ msgstr "Введите команду вызова потокового вещания и аргументы"
+
+#~ msgid "Please select a file to upload"
+#~ msgstr "Укажите файл для загрузки"
+
+#~ msgid "Settings"
+#~ msgstr "Настройки"
+
+#~ msgid "Submit Changes"
+#~ msgstr "Применить изменения"
+
+#~ msgid "System Setup"
+#~ msgstr "Системные установки"
+
+#~ msgid "This is not a fatal error, your Music on Hold may still work."
+#~ msgstr "Это не критическая ошибка, Музыка в ожидании может работать."
+
+#~ msgid "Upload a .wav or .mp3 file:"
+#~ msgstr "Загрузить файл .wav или .mp3:"
+
+#~ msgid ""
+#~ "Uploading and management of sound files (wav, mp3) to be used for on-hold "
+#~ "music."
+#~ msgstr ""
+#~ "Загрузка и управление звуковыми файлами (wav, mp3) для использования как "
+#~ "музыка в ожидании."
+
+#~ msgid ""
+#~ "When set to false, the MP3 files can be loaded and WAV files converted to "
+#~ "MP3 in the MoH module. The default behavior of true assumes you have "
+#~ "mpg123 loaded as well as sox and will convert MP3 files to WAV. This is "
+#~ "highly recommended as MP3 files heavily tax the system and can cause "
+#~ "instability on a busy phone system"
+#~ msgstr ""
+#~ "Когда установлена в false, файлы mp3 могут быть загружены и WAV файлы "
+#~ "конвертированы в mp3 в модуле Музыка в ожидании. Режим по умолчанию "
+#~ "предполагает, что у вас загружен mpg123, так же как и sox, и он будет "
+#~ "конвертировать mp3 в wav. Это крайне рекомендуется, т.к. mp3 файлы сильно "
+#~ "нагружают систему и могут привести к ее не стабильной работе"
+
+#~ msgid ""
+#~ "You must have at least one file for On Hold Music.  Please upload one "
+#~ "before deleting this one."
+#~ msgstr ""
+#~ "Должен быть по крайней мере один файл для Музыки в ожидании. Загрузите "
+#~ "какой-либо файл перед удалением текущего."
+
+#~ msgid "default"
+#~ msgstr "по умолчанию"
+
+#~ msgid "in"
+#~ msgstr "в"
+
+#~ msgid ""
+#~ "sox failed to convert file and original could not be copied as a fall back"
+#~ msgstr ""
+#~ "sox не удалось конвертировать файл и оригинал не может быть скопирован "
+#~ "как резервная копия"
 
 #~ msgid ""
 #~ "The volume adjustment is a linear value. Since loudness is logarithmic, "

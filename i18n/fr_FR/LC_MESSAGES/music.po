@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 19:43-0500\n"
+"POT-Creation-Date: 2015-05-22 16:32-0400\n"
 "PO-Revision-Date: 2009-04-20 22:53+0100\n"
 "Last-Translator: Séverine GUTIERREZ <severine@medialsace.fr>\n"
 "Language-Team: Français <LL@li.org>\n"
@@ -28,15 +28,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: page.music.php:69 page.music.php:237
-msgid "Add Music Category"
-msgstr "Ajouer une Catégorie de Musique"
+#: views/musiclist.php:6
+msgid "Action"
+msgstr ""
 
-#: page.music.php:70 page.music.php:278
+#: views/grid.php:6
+msgid "Actions"
+msgstr ""
+
+#: views/bootnav.php:1
+msgid "Add Category"
+msgstr ""
+
+#: views/bootnav.php:2
 msgid "Add Streaming Category"
 msgstr "Ajouter une Catégorie de Sreaming"
 
-#: page.music.php:239 page.music.php:280
+#: views/addcatform.php:27 views/addstreamform.php:55
 msgid ""
 "Allows you to Set up Different Categories for music on hold.  This is useful "
 "if you would like to specify different Hold Music or Commercials for various "
@@ -46,15 +54,19 @@ msgstr ""
 "C'est utile si vous voulez spécifier différentes musiques d'attentes ou "
 "publicités pour diverses Files d'Attente."
 
-#: page.music.php:284 page.music.php:358
-msgid "Application:"
-msgstr "Application :"
+#: views/addstreamform.php:67
+msgid "Application"
+msgstr ""
+
+#: views/updatecat.php:126
+msgid "Browse"
+msgstr ""
 
 #: install.php:37
 msgid "Cannot write to file"
 msgstr "Impossible d'écrire dans le fichier"
 
-#: page.music.php:254 page.music.php:305
+#: assets/js/music.js:33
 msgid ""
 "Categories: \\\"none\\\" and \\\"default\\\" are reserved names. Please "
 "enter a different name"
@@ -62,86 +74,67 @@ msgstr ""
 "Catégories : \\\"none\\\" et \\\"default\\\" sont des noms réservés. "
 "Veuillez entrer un nom différent."
 
-#: page.music.php:239 page.music.php:280
-msgid "Category Name:"
-msgstr "Nom de la Catégorie :"
-
-#: page.music.php:328
-msgid "Category:"
-msgstr "Catégorie :"
-
-#: page.music.php:441
-msgid "Check"
-msgstr "Contôler"
-
-#: page.music.php:458
-msgid "Completed processing"
-msgstr "Traitement Terminé"
-
-#: music.i18n.php:8
-msgid "Convert Music Files to WAV"
+#: views/grid.php:4
+msgid "Category"
 msgstr ""
 
-#: page.music.php:130
+#: views/addcatform.php:15 views/addstreamform.php:43
+msgid "Category Name"
+msgstr ""
+
+#: Music.class.php:210
 msgid "Delete"
 msgstr "Supprimer"
 
-#: page.music.php:344
-#, php-format
-msgid "Delete Music Category %s"
-msgstr "Supprimer la Catégorie de Musique %s"
-
-#: page.music.php:344
-#, php-format
-msgid "Delete Streaming Category"
-msgstr "Supprimer la Catégorie de Streaming"
-
-#: page.music.php:479
-msgid "Deleted"
-msgstr "Supprimé"
-
-#: page.music.php:427
-msgid "Disable Random Play"
-msgstr "Désactiver Lecture Aléatoire"
-
-#: page.music.php:418
-msgid "Do not encode wav to mp3"
-msgstr "Ne pas encoder wav en mp3"
-
-#: page.music.php:356
-msgid "Edit Streaming Category"
-msgstr "Editer la Catégorie Streaming"
-
-#: page.music.php:429
+#: views/updatecat.php:90
 msgid "Enable Random Play"
 msgstr "Activer Lecture Aléatoire"
 
-#: page.music.php:481
-#, php-format
-msgid "Error Deleting %s"
-msgstr "Erreur lors de la Suppression de %s"
+#: views/updatecat.php:105
+msgid "Enable random playback of music for this category"
+msgstr ""
 
-#: page.music.php:439 page.music.php:441 page.music.php:455
-msgid "Error Processing"
-msgstr "Erreur pendant le Traitement"
+#: views/updatecat.php:50
+msgid "Encode wav to mp3"
+msgstr ""
 
-#: music.i18n.php:3 music.i18n.php:6
-msgid "Music on Hold"
-msgstr "Musique d'Attente"
+#: views/musiclist.php:4
+msgid "File"
+msgstr ""
 
-#: page.music.php:439
+#: Music.class.php:80
+msgid "File seemed valid but could not move it to it's path"
+msgstr ""
+
+#: Music.class.php:78
+msgid "File upload success"
+msgstr ""
+
+#: Music.class.php:84
+msgid "Filetype not Supported Upload Failed"
+msgstr ""
+
+#: Music.class.php:162
+msgid "Invalid Request"
+msgstr ""
+
+#: views/updatecat.php:58 views/updatecat.php:97
+msgid "No"
+msgstr ""
+
+#: Music.class.php:72
 msgid "No file provided"
 msgstr "Pas de fichier fourni"
 
-#: page.music.php:228
+#: page.music.php:12
 msgid "On Hold Music"
 msgstr "Musique d'Attente"
 
-#: page.music.php:289 page.music.php:362
-msgid "Optional Format:"
-msgstr "Format Optionnel :"
+#: views/addstreamform.php:92
+msgid "Optional Format"
+msgstr ""
 
-#: page.music.php:289 page.music.php:362
+#: views/addstreamform.php:104
 msgid ""
 "Optional value for \"format=\" line used to provide the format to Asterisk. "
 "This should be a format understood by Asterisk such as ulaw, and is specific "
@@ -154,38 +147,37 @@ msgstr ""
 "informations dans la configuration musiconhold.conf pour différentes options "
 "de source de streaming audio et Internet."
 
-#: page.music.php:304 page.music.php:376
-msgid "Please enter a streaming application command and arguments"
-msgstr ""
-"Veuillez entrer une commande d'application de streaming et des arguments"
-
-#: page.music.php:253 page.music.php:303
+#: assets/js/music.js:32
 msgid "Please enter a valid Category Name"
 msgstr "Veuillez entrer un Nom de Catégorie valide"
 
-#: page.music.php:439
-msgid "Please select a file to upload"
-msgstr "Veuillez sélectionner un fichier à uploader"
-
-#: page.music.php:400
+#: views/updatecat.php:143
 msgid "Please wait until the page loads. Your file is being processed."
 msgstr ""
 "Veuillez patienter pendant le chargement de la page. Votre fichier est en "
 "cours de traitement."
 
-#: music.i18n.php:4
-msgid "Settings"
+#: Music.class.php:215
+msgid "Reset"
 msgstr ""
 
-#: page.music.php:243 page.music.php:293 page.music.php:366
-msgid "Submit Changes"
-msgstr "Appliquer les Modifications"
-
-#: music.i18n.php:10
-msgid "System Setup"
+#: views/updatecat.php:67
+msgid "Should wav encode to mp3"
 msgstr ""
 
-#: page.music.php:414
+#: Music.class.php:116 Music.class.php:120
+msgid "Standard"
+msgstr ""
+
+#: Music.class.php:126 assets/js/music.js:46
+msgid "Streaming"
+msgstr ""
+
+#: Music.class.php:220
+msgid "Submit"
+msgstr ""
+
+#: views/updatecat.php:35
 msgid ""
 "The volume adjustment is a linear value. Since loudness is logarithmic, the "
 "linear level will be less of an adjustment. You should test out the "
@@ -195,13 +187,7 @@ msgid ""
 "Advanced Settings"
 msgstr ""
 
-#: page.music.php:456
-msgid "This is not a fatal error, your Music on Hold may still work."
-msgstr ""
-"Ce n'est pas une erreur fatale, votre Musique d'Attente fonctionnera peut-"
-"être encore."
-
-#: page.music.php:284 page.music.php:358
+#: views/addstreamform.php:79
 msgid ""
 "This is the \"application=\" line used to provide the streaming details to "
 "Asterisk. See information on musiconhold.conf configuration for different "
@@ -212,81 +198,132 @@ msgstr ""
 "musiconhold.conf pour différentes options de source de streaming audio et "
 "Internet."
 
-#: page.music.php:400
+#: views/grid.php:5 views/musiclist.php:5
+msgid "Type"
+msgstr ""
+
+#: views/updatecat.php:143
 msgid "Upload"
 msgstr "Uploader"
 
-#: page.music.php:395
-msgid "Upload a .wav or .mp3 file:"
-msgstr "Uploader un fichier .wav ou .mp3 :"
-
-#: music.i18n.php:5
-msgid ""
-"Uploading and management of sound files (wav, mp3) to be used for on-hold "
-"music."
+#: views/updatecat.php:121
+msgid "Upload File"
 msgstr ""
 
-#: page.music.php:412
+#: views/updatecat.php:26
 msgid "Volume 10%"
 msgstr ""
 
-#: page.music.php:408
+#: views/updatecat.php:22
 msgid "Volume 100%"
 msgstr ""
 
-#: page.music.php:407
+#: views/updatecat.php:21
 msgid "Volume 125%"
 msgstr ""
 
-#: page.music.php:406
+#: views/updatecat.php:20
 msgid "Volume 150%"
 msgstr ""
 
-#: page.music.php:411
+#: views/updatecat.php:25
 msgid "Volume 25%"
 msgstr ""
 
-#: page.music.php:410
+#: views/updatecat.php:24
 msgid "Volume 50%"
 msgstr ""
 
-#: page.music.php:409
+#: views/updatecat.php:23
 msgid "Volume 75%"
 msgstr ""
 
-#: page.music.php:414
+#: views/updatecat.php:15
 msgid "Volume Adjustment"
 msgstr "Réglage du Volume"
 
-#: music.i18n.php:12
-msgid ""
-"When set to false, the MP3 files can be loaded and WAV files converted to "
-"MP3 in the MoH module. The default behavior of true assumes you have mpg123 "
-"loaded as well as sox and will convert MP3 files to WAV. This is highly "
-"recommended as MP3 files heavily tax the system and can cause instability on "
-"a busy phone system"
+#: views/updatecat.php:56 views/updatecat.php:95
+msgid "Yes"
 msgstr ""
 
-#: page.music.php:476
-msgid ""
-"You must have at least one file for On Hold Music.  Please upload one before "
-"deleting this one."
-msgstr ""
-"Vous devez avoir au moins un fichier pour la Musique d'Attente. Veuillez "
-"uploader un autre fichier avant de supprimer celui-ci."
+#~ msgid "Add Music Category"
+#~ msgstr "Ajouer une Catégorie de Musique"
 
-#: page.music.php:78 page.music.php:328
-msgid "default"
-msgstr "par défaut"
+#~ msgid "Application:"
+#~ msgstr "Application :"
 
-#: page.music.php:441
-msgid "in"
-msgstr "dans"
+#~ msgid "Category Name:"
+#~ msgstr "Nom de la Catégorie :"
 
-#: page.music.php:178
-msgid ""
-"sox failed to convert file and original could not be copied as a fall back"
-msgstr ""
+#~ msgid "Category:"
+#~ msgstr "Catégorie :"
+
+#~ msgid "Check"
+#~ msgstr "Contôler"
+
+#~ msgid "Completed processing"
+#~ msgstr "Traitement Terminé"
+
+#~ msgid "Delete Music Category %s"
+#~ msgstr "Supprimer la Catégorie de Musique %s"
+
+#~ msgid "Delete Streaming Category"
+#~ msgstr "Supprimer la Catégorie de Streaming"
+
+#~ msgid "Deleted"
+#~ msgstr "Supprimé"
+
+#~ msgid "Disable Random Play"
+#~ msgstr "Désactiver Lecture Aléatoire"
+
+#~ msgid "Do not encode wav to mp3"
+#~ msgstr "Ne pas encoder wav en mp3"
+
+#~ msgid "Edit Streaming Category"
+#~ msgstr "Editer la Catégorie Streaming"
+
+#~ msgid "Error Deleting %s"
+#~ msgstr "Erreur lors de la Suppression de %s"
+
+#~ msgid "Error Processing"
+#~ msgstr "Erreur pendant le Traitement"
+
+#~ msgid "Music on Hold"
+#~ msgstr "Musique d'Attente"
+
+#~ msgid "Optional Format:"
+#~ msgstr "Format Optionnel :"
+
+#~ msgid "Please enter a streaming application command and arguments"
+#~ msgstr ""
+#~ "Veuillez entrer une commande d'application de streaming et des arguments"
+
+#~ msgid "Please select a file to upload"
+#~ msgstr "Veuillez sélectionner un fichier à uploader"
+
+#~ msgid "Submit Changes"
+#~ msgstr "Appliquer les Modifications"
+
+#~ msgid "This is not a fatal error, your Music on Hold may still work."
+#~ msgstr ""
+#~ "Ce n'est pas une erreur fatale, votre Musique d'Attente fonctionnera peut-"
+#~ "être encore."
+
+#~ msgid "Upload a .wav or .mp3 file:"
+#~ msgstr "Uploader un fichier .wav ou .mp3 :"
+
+#~ msgid ""
+#~ "You must have at least one file for On Hold Music.  Please upload one "
+#~ "before deleting this one."
+#~ msgstr ""
+#~ "Vous devez avoir au moins un fichier pour la Musique d'Attente. Veuillez "
+#~ "uploader un autre fichier avant de supprimer celui-ci."
+
+#~ msgid "default"
+#~ msgstr "par défaut"
+
+#~ msgid "in"
+#~ msgstr "dans"
 
 #~ msgid ""
 #~ "The volume adjustment is a linear value. Since loudness is logarithmic, "

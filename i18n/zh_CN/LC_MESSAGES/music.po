@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 19:43-0500\n"
+"POT-Creation-Date: 2015-05-22 16:32-0400\n"
 "PO-Revision-Date: 2009-01-31 13:24+0800\n"
 "Last-Translator: 周征晟 <zhougongjizhe@163.com>\n"
 "Language-Team: EdwardBadBoy <zhougongjizhe@163.com>\n"
@@ -18,15 +18,23 @@ msgstr ""
 "X-Poedit-Country: CHINA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: page.music.php:69 page.music.php:237
-msgid "Add Music Category"
-msgstr "添加音乐类别"
+#: views/musiclist.php:6
+msgid "Action"
+msgstr ""
 
-#: page.music.php:70 page.music.php:278
+#: views/grid.php:6
+msgid "Actions"
+msgstr ""
+
+#: views/bootnav.php:1
+msgid "Add Category"
+msgstr ""
+
+#: views/bootnav.php:2
 msgid "Add Streaming Category"
 msgstr "添加流媒体类别"
 
-#: page.music.php:239 page.music.php:280
+#: views/addcatform.php:27 views/addstreamform.php:55
 msgid ""
 "Allows you to Set up Different Categories for music on hold.  This is useful "
 "if you would like to specify different Hold Music or Commercials for various "
@@ -35,101 +43,86 @@ msgstr ""
 "允许你设置一种不同的等待音乐类别。如果你想在不同的ACD广告上指定不同的等待音"
 "乐，这将很有用。"
 
-#: page.music.php:284 page.music.php:358
-msgid "Application:"
-msgstr "应用"
+#: views/addstreamform.php:67
+msgid "Application"
+msgstr ""
+
+#: views/updatecat.php:126
+msgid "Browse"
+msgstr ""
 
 #: install.php:37
 msgid "Cannot write to file"
 msgstr "无法写入文件"
 
-#: page.music.php:254 page.music.php:305
+#: assets/js/music.js:33
 msgid ""
 "Categories: \\\"none\\\" and \\\"default\\\" are reserved names. Please "
 "enter a different name"
 msgstr ""
 "类别：“none”（无）和“default”（默认）是系统保留的名称，请输入不同的名称。"
 
-#: page.music.php:239 page.music.php:280
-msgid "Category Name:"
-msgstr "类别名称"
-
-#: page.music.php:328
-msgid "Category:"
-msgstr "类别："
-
-#: page.music.php:441
-msgid "Check"
-msgstr "检查"
-
-#: page.music.php:458
-msgid "Completed processing"
-msgstr "完成处理"
-
-#: music.i18n.php:8
-msgid "Convert Music Files to WAV"
+#: views/grid.php:4
+msgid "Category"
 msgstr ""
 
-#: page.music.php:130
+#: views/addcatform.php:15 views/addstreamform.php:43
+msgid "Category Name"
+msgstr ""
+
+#: Music.class.php:210
 msgid "Delete"
 msgstr "删除"
 
-#: page.music.php:344
-#, php-format
-msgid "Delete Music Category %s"
-msgstr "删除音乐类别 %s"
-
-#: page.music.php:344
-#, php-format
-msgid "Delete Streaming Category"
-msgstr "删除流类别"
-
-#: page.music.php:479
-msgid "Deleted"
-msgstr "已删除"
-
-#: page.music.php:427
-msgid "Disable Random Play"
-msgstr "禁用随机播放"
-
-#: page.music.php:418
-msgid "Do not encode wav to mp3"
-msgstr "不要把wav编码成mp3"
-
-#: page.music.php:356
-msgid "Edit Streaming Category"
-msgstr "编辑流类别"
-
-#: page.music.php:429
+#: views/updatecat.php:90
 msgid "Enable Random Play"
 msgstr "启用随机播放"
 
-#: page.music.php:481
-#, php-format
-msgid "Error Deleting %s"
-msgstr "在删除 %s 时发生错误"
+#: views/updatecat.php:105
+msgid "Enable random playback of music for this category"
+msgstr ""
 
-#: page.music.php:439 page.music.php:441 page.music.php:455
-msgid "Error Processing"
-msgstr "处理中发生错误"
+#: views/updatecat.php:50
+msgid "Encode wav to mp3"
+msgstr ""
 
-#: music.i18n.php:3 music.i18n.php:6
-msgid "Music on Hold"
-msgstr "等待音乐"
+#: views/musiclist.php:4
+msgid "File"
+msgstr ""
 
-#: page.music.php:439
+#: Music.class.php:80
+msgid "File seemed valid but could not move it to it's path"
+msgstr ""
+
+#: Music.class.php:78
+msgid "File upload success"
+msgstr ""
+
+#: Music.class.php:84
+msgid "Filetype not Supported Upload Failed"
+msgstr ""
+
+#: Music.class.php:162
+msgid "Invalid Request"
+msgstr ""
+
+#: views/updatecat.php:58 views/updatecat.php:97
+msgid "No"
+msgstr ""
+
+#: Music.class.php:72
 msgid "No file provided"
 msgstr "没有选择文件"
 
-#: page.music.php:228
+#: page.music.php:12
 msgid "On Hold Music"
 msgstr "等待音乐"
 
-#: page.music.php:289 page.music.php:362
-msgid "Optional Format:"
-msgstr "可选的格式："
+#: views/addstreamform.php:92
+msgid "Optional Format"
+msgstr ""
 
-#: page.music.php:289 page.music.php:362
+#: views/addstreamform.php:104
 msgid ""
 "Optional value for \"format=\" line used to provide the format to Asterisk. "
 "This should be a format understood by Asterisk such as ulaw, and is specific "
@@ -140,35 +133,35 @@ msgstr ""
 "Asterisk支持的格式，例如ulaw，并且特定于你使用的流应用。可在musiconhold.conf"
 "中查看更详细的信息，和不同的音频及因特网流的源的选项。"
 
-#: page.music.php:304 page.music.php:376
-msgid "Please enter a streaming application command and arguments"
-msgstr "请输入一个流应用程序的命令和参数"
-
-#: page.music.php:253 page.music.php:303
+#: assets/js/music.js:32
 msgid "Please enter a valid Category Name"
 msgstr "请输入有效的类别名称"
 
-#: page.music.php:439
-msgid "Please select a file to upload"
-msgstr "请选择一个文件以上传"
-
-#: page.music.php:400
+#: views/updatecat.php:143
 msgid "Please wait until the page loads. Your file is being processed."
 msgstr "页面正在装载，请等待，你的文件正在处理中。"
 
-#: music.i18n.php:4
-msgid "Settings"
+#: Music.class.php:215
+msgid "Reset"
 msgstr ""
 
-#: page.music.php:243 page.music.php:293 page.music.php:366
-msgid "Submit Changes"
-msgstr "提交更改"
-
-#: music.i18n.php:10
-msgid "System Setup"
+#: views/updatecat.php:67
+msgid "Should wav encode to mp3"
 msgstr ""
 
-#: page.music.php:414
+#: Music.class.php:116 Music.class.php:120
+msgid "Standard"
+msgstr ""
+
+#: Music.class.php:126 assets/js/music.js:46
+msgid "Streaming"
+msgstr ""
+
+#: Music.class.php:220
+msgid "Submit"
+msgstr ""
+
+#: views/updatecat.php:35
 msgid ""
 "The volume adjustment is a linear value. Since loudness is logarithmic, the "
 "linear level will be less of an adjustment. You should test out the "
@@ -178,11 +171,7 @@ msgid ""
 "Advanced Settings"
 msgstr ""
 
-#: page.music.php:456
-msgid "This is not a fatal error, your Music on Hold may still work."
-msgstr "这不是一个致命的错误，你的等待音乐功能仍能工作。"
-
-#: page.music.php:284 page.music.php:358
+#: views/addstreamform.php:79
 msgid ""
 "This is the \"application=\" line used to provide the streaming details to "
 "Asterisk. See information on musiconhold.conf configuration for different "
@@ -192,79 +181,127 @@ msgstr ""
 "体流的细节。可在musiconhold.conf中查看更详细的信息，和不同的音频及因特网流的"
 "源的选项。"
 
-#: page.music.php:400
+#: views/grid.php:5 views/musiclist.php:5
+msgid "Type"
+msgstr ""
+
+#: views/updatecat.php:143
 msgid "Upload"
 msgstr "上传"
 
-#: page.music.php:395
-msgid "Upload a .wav or .mp3 file:"
-msgstr "上传.wav或.mp3文件："
-
-#: music.i18n.php:5
-msgid ""
-"Uploading and management of sound files (wav, mp3) to be used for on-hold "
-"music."
+#: views/updatecat.php:121
+msgid "Upload File"
 msgstr ""
 
-#: page.music.php:412
+#: views/updatecat.php:26
 msgid "Volume 10%"
 msgstr ""
 
-#: page.music.php:408
+#: views/updatecat.php:22
 msgid "Volume 100%"
 msgstr ""
 
-#: page.music.php:407
+#: views/updatecat.php:21
 msgid "Volume 125%"
 msgstr ""
 
-#: page.music.php:406
+#: views/updatecat.php:20
 msgid "Volume 150%"
 msgstr ""
 
-#: page.music.php:411
+#: views/updatecat.php:25
 msgid "Volume 25%"
 msgstr ""
 
-#: page.music.php:410
+#: views/updatecat.php:24
 msgid "Volume 50%"
 msgstr ""
 
-#: page.music.php:409
+#: views/updatecat.php:23
 msgid "Volume 75%"
 msgstr ""
 
-#: page.music.php:414
+#: views/updatecat.php:15
 msgid "Volume Adjustment"
 msgstr "调整音量"
 
-#: music.i18n.php:12
-msgid ""
-"When set to false, the MP3 files can be loaded and WAV files converted to "
-"MP3 in the MoH module. The default behavior of true assumes you have mpg123 "
-"loaded as well as sox and will convert MP3 files to WAV. This is highly "
-"recommended as MP3 files heavily tax the system and can cause instability on "
-"a busy phone system"
+#: views/updatecat.php:56 views/updatecat.php:95
+msgid "Yes"
 msgstr ""
 
-#: page.music.php:476
-msgid ""
-"You must have at least one file for On Hold Music.  Please upload one before "
-"deleting this one."
-msgstr "你必须为等待音乐设置至少一个文件。请先上传一个，再删除此文件。"
+#~ msgid "Add Music Category"
+#~ msgstr "添加音乐类别"
 
-#: page.music.php:78 page.music.php:328
-msgid "default"
-msgstr "默认"
+#~ msgid "Application:"
+#~ msgstr "应用"
 
-#: page.music.php:441
-msgid "in"
-msgstr "在"
+#~ msgid "Category Name:"
+#~ msgstr "类别名称"
 
-#: page.music.php:178
-msgid ""
-"sox failed to convert file and original could not be copied as a fall back"
-msgstr ""
+#~ msgid "Category:"
+#~ msgstr "类别："
+
+#~ msgid "Check"
+#~ msgstr "检查"
+
+#~ msgid "Completed processing"
+#~ msgstr "完成处理"
+
+#~ msgid "Delete Music Category %s"
+#~ msgstr "删除音乐类别 %s"
+
+#~ msgid "Delete Streaming Category"
+#~ msgstr "删除流类别"
+
+#~ msgid "Deleted"
+#~ msgstr "已删除"
+
+#~ msgid "Disable Random Play"
+#~ msgstr "禁用随机播放"
+
+#~ msgid "Do not encode wav to mp3"
+#~ msgstr "不要把wav编码成mp3"
+
+#~ msgid "Edit Streaming Category"
+#~ msgstr "编辑流类别"
+
+#~ msgid "Error Deleting %s"
+#~ msgstr "在删除 %s 时发生错误"
+
+#~ msgid "Error Processing"
+#~ msgstr "处理中发生错误"
+
+#~ msgid "Music on Hold"
+#~ msgstr "等待音乐"
+
+#~ msgid "Optional Format:"
+#~ msgstr "可选的格式："
+
+#~ msgid "Please enter a streaming application command and arguments"
+#~ msgstr "请输入一个流应用程序的命令和参数"
+
+#~ msgid "Please select a file to upload"
+#~ msgstr "请选择一个文件以上传"
+
+#~ msgid "Submit Changes"
+#~ msgstr "提交更改"
+
+#~ msgid "This is not a fatal error, your Music on Hold may still work."
+#~ msgstr "这不是一个致命的错误，你的等待音乐功能仍能工作。"
+
+#~ msgid "Upload a .wav or .mp3 file:"
+#~ msgstr "上传.wav或.mp3文件："
+
+#~ msgid ""
+#~ "You must have at least one file for On Hold Music.  Please upload one "
+#~ "before deleting this one."
+#~ msgstr "你必须为等待音乐设置至少一个文件。请先上传一个，再删除此文件。"
+
+#~ msgid "default"
+#~ msgstr "默认"
+
+#~ msgid "in"
+#~ msgstr "在"
 
 #~ msgid ""
 #~ "The volume adjustment is a linear value. Since loudness is logarithmic, "
@@ -274,6 +311,7 @@ msgstr ""
 #~ "can set the parameter: <strong>AMPMPG123=false</strong> in your amportal."
 #~ "conf file"
 #~ msgstr ""
-#~ "此处调整音量的大小设置的是一个线性值。由于人对响度的感知是对数性的，所以光看线性值的调整是不足的。你应该试听一下安装好的音乐以确保它的音量适中。此功能会将"
-#~ "MP3文件转换成WAV文件。如果你没有安装mpg123，请在amportal.conf文件中设置参数：<strong>AMPMPG123=false</s"
-#~ "trong>"
+#~ "此处调整音量的大小设置的是一个线性值。由于人对响度的感知是对数性的，所以光"
+#~ "看线性值的调整是不足的。你应该试听一下安装好的音乐以确保它的音量适中。此功"
+#~ "能会将MP3文件转换成WAV文件。如果你没有安装mpg123，请在amportal.conf文件中"
+#~ "设置参数：<strong>AMPMPG123=false</strong>"
