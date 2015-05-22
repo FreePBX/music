@@ -2,7 +2,7 @@
   <rawname>music</rawname>
   <repo>standard</repo>
   <name>Music on Hold</name>
-  <version>12.0.1</version>
+  <version>13.0.1alpha1</version>
 	<publisher>Schmooze Com Inc</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -10,7 +10,8 @@
   <canuninstall>no</canuninstall>
   <category>Settings</category>
   <description>Uploading and management of sound files (wav, mp3) to be used for on-hold music.</description>
-  <changelog>
+	<changelog>
+		*13.0.1alpha1* Visual Styling Changes
 		*12.0.1* BMO Object
 		*2.11.0.2* Include license file
 		*2.11.0.1* Use rate instead of resample for sox resampling #6347
@@ -26,6 +27,6 @@
   <location>release/2.11/music-2.11.0.1.tgz</location>
   <md5sum>787dc2e298cb49636534f9b7ae7114a0</md5sum>
   <supported>
-    <version>12.0</version>
+    <version>13.0</version>
   </supported>
 </module>
