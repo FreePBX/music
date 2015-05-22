@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX musik\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-11 18:02-0500\n"
+"POT-Creation-Date: 2015-02-20 19:43-0500\n"
 "PO-Revision-Date: 2011-03-20 00:00+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: \n"
@@ -29,18 +29,15 @@ msgstr ""
 "X-Poedit-Language: Swedish\n"
 "X-Poedit-Country: SWEDEN\n"
 
-#: /usr/src/freepbx/music/page.music.php:69
-#: /usr/src/freepbx/music/page.music.php:237
+#: page.music.php:69 page.music.php:237
 msgid "Add Music Category"
 msgstr "Lägg till musikkategori"
 
-#: /usr/src/freepbx/music/page.music.php:70
-#: /usr/src/freepbx/music/page.music.php:278
+#: page.music.php:70 page.music.php:278
 msgid "Add Streaming Category"
 msgstr "Lägg till strömkategori"
 
-#: /usr/src/freepbx/music/page.music.php:239
-#: /usr/src/freepbx/music/page.music.php:280
+#: page.music.php:239 page.music.php:280
 msgid ""
 "Allows you to Set up Different Categories for music on hold.  This is useful "
 "if you would like to specify different Hold Music or Commercials for various "
@@ -50,17 +47,15 @@ msgstr ""
 "användbart för att specificera olika typer av pausmusik eller reklam för "
 "köer."
 
-#: /usr/src/freepbx/music/page.music.php:284
-#: /usr/src/freepbx/music/page.music.php:358
+#: page.music.php:284 page.music.php:358
 msgid "Application:"
 msgstr "Applikation:"
 
-#: /usr/src/freepbx/music/install.php:37
+#: install.php:37
 msgid "Cannot write to file"
 msgstr "Kan inte skriva till fil"
 
-#: /usr/src/freepbx/music/page.music.php:254
-#: /usr/src/freepbx/music/page.music.php:305
+#: page.music.php:254 page.music.php:305
 msgid ""
 "Categories: \\\"none\\\" and \\\"default\\\" are reserved names. Please "
 "enter a different name"
@@ -68,83 +63,86 @@ msgstr ""
 "Kategorierna \\\"none\\\" och \\\"default\\\" är reserverade namn. Skriv in "
 "ett annat namn"
 
-#: /usr/src/freepbx/music/page.music.php:239
-#: /usr/src/freepbx/music/page.music.php:280
+#: page.music.php:239 page.music.php:280
 msgid "Category Name:"
 msgstr "Kategorinamn:"
 
-#: /usr/src/freepbx/music/page.music.php:328
+#: page.music.php:328
 msgid "Category:"
 msgstr "Kategori:"
 
-#: /usr/src/freepbx/music/page.music.php:441
+#: page.music.php:441
 msgid "Check"
 msgstr "Kontrollera"
 
-#: /usr/src/freepbx/music/page.music.php:458
+#: page.music.php:458
 msgid "Completed processing"
 msgstr "Färdig med bearbetning"
 
-#: /usr/src/freepbx/music/page.music.php:130
+#: music.i18n.php:8
+msgid "Convert Music Files to WAV"
+msgstr "Komvertera musikfiler till WAV"
+
+#: page.music.php:130
 msgid "Delete"
 msgstr "Ta bort"
 
-#: /usr/src/freepbx/music/page.music.php:344
+#: page.music.php:344
 #, php-format
 msgid "Delete Music Category %s"
 msgstr "Ta bort kategorin %s"
 
-#: /usr/src/freepbx/music/page.music.php:344
+#: page.music.php:344
 #, php-format
 msgid "Delete Streaming Category"
 msgstr "Ta bort strömmande kategori"
 
-#: /usr/src/freepbx/music/page.music.php:479
+#: page.music.php:479
 msgid "Deleted"
 msgstr "Borttagen"
 
-#: /usr/src/freepbx/music/page.music.php:427
+#: page.music.php:427
 msgid "Disable Random Play"
 msgstr "Avaktivera slumpmässig uppspelning"
 
-#: /usr/src/freepbx/music/page.music.php:418
+#: page.music.php:418
 msgid "Do not encode wav to mp3"
 msgstr "Koda inte om wav till mp3"
 
-#: /usr/src/freepbx/music/page.music.php:356
+#: page.music.php:356
 msgid "Edit Streaming Category"
 msgstr "Redigera strömmande kategori"
 
-#: /usr/src/freepbx/music/page.music.php:429
+#: page.music.php:429
 msgid "Enable Random Play"
 msgstr "Aktivera slumpmässig uppspelning"
 
-#: /usr/src/freepbx/music/page.music.php:481
+#: page.music.php:481
 #, php-format
 msgid "Error Deleting %s"
 msgstr "Fel uppstod när %s togs bort"
 
-#: /usr/src/freepbx/music/page.music.php:439
-#: /usr/src/freepbx/music/page.music.php:441
-#: /usr/src/freepbx/music/page.music.php:455
+#: page.music.php:439 page.music.php:441 page.music.php:455
 msgid "Error Processing"
 msgstr "Fel vid hantering av"
 
-#: /usr/src/freepbx/music/page.music.php:439
+#: music.i18n.php:3 music.i18n.php:6
+msgid "Music on Hold"
+msgstr "Pausmusik"
+
+#: page.music.php:439
 msgid "No file provided"
 msgstr "Ingen fil angiven"
 
-#: /usr/src/freepbx/music/page.music.php:228
+#: page.music.php:228
 msgid "On Hold Music"
 msgstr "Pausmusik"
 
-#: /usr/src/freepbx/music/page.music.php:289
-#: /usr/src/freepbx/music/page.music.php:362
+#: page.music.php:289 page.music.php:362
 msgid "Optional Format:"
 msgstr "Valfritt format:"
 
-#: /usr/src/freepbx/music/page.music.php:289
-#: /usr/src/freepbx/music/page.music.php:362
+#: page.music.php:289 page.music.php:362
 msgid ""
 "Optional value for \"format=\" line used to provide the format to Asterisk. "
 "This should be a format understood by Asterisk such as ulaw, and is specific "
@@ -156,33 +154,37 @@ msgstr ""
 "applikation av strömmande ljud du anger. Titta i filen musiconhold.conf för "
 "olika ljudformat och strömmande media från Internet."
 
-#: /usr/src/freepbx/music/page.music.php:304
-#: /usr/src/freepbx/music/page.music.php:376
+#: page.music.php:304 page.music.php:376
 msgid "Please enter a streaming application command and arguments"
 msgstr ""
 "Skriv in en applikation för strömmande media och eventuella argument denna "
 "applikation behöver"
 
-#: /usr/src/freepbx/music/page.music.php:253
-#: /usr/src/freepbx/music/page.music.php:303
+#: page.music.php:253 page.music.php:303
 msgid "Please enter a valid Category Name"
 msgstr "Skriv in ett giltigt kategorinamn"
 
-#: /usr/src/freepbx/music/page.music.php:439
+#: page.music.php:439
 msgid "Please select a file to upload"
 msgstr "Välj en fil att ladda upp"
 
-#: /usr/src/freepbx/music/page.music.php:400
+#: page.music.php:400
 msgid "Please wait until the page loads. Your file is being processed."
 msgstr "Vänta medan sidan laddas och din fil hanteras."
 
-#: /usr/src/freepbx/music/page.music.php:243
-#: /usr/src/freepbx/music/page.music.php:293
-#: /usr/src/freepbx/music/page.music.php:366
+#: music.i18n.php:4
+msgid "Settings"
+msgstr ""
+
+#: page.music.php:243 page.music.php:293 page.music.php:366
 msgid "Submit Changes"
 msgstr "Spara ändringar"
 
-#: /usr/src/freepbx/music/page.music.php:414
+#: music.i18n.php:10
+msgid "System Setup"
+msgstr "Systeminställningar"
+
+#: page.music.php:414
 msgid ""
 "The volume adjustment is a linear value. Since loudness is logarithmic, the "
 "linear level will be less of an adjustment. You should test out the "
@@ -198,12 +200,11 @@ msgstr ""
 "installerat mpg123 kan du sätta parametern: <strong>Konvertera musikfiler "
 "till WAV</strong> till falskt i Avancerade inställningar"
 
-#: /usr/src/freepbx/music/page.music.php:456
+#: page.music.php:456
 msgid "This is not a fatal error, your Music on Hold may still work."
 msgstr "Detta är inget kritiskt fel, din pausmusik kommer kanske att fungera."
 
-#: /usr/src/freepbx/music/page.music.php:284
-#: /usr/src/freepbx/music/page.music.php:358
+#: page.music.php:284 page.music.php:358
 msgid ""
 "This is the \"application=\" line used to provide the streaming details to "
 "Asterisk. See information on musiconhold.conf configuration for different "
@@ -213,97 +214,89 @@ msgstr ""
 "strömmande ljud. Titta i filen musiconhold.conf för olika ljudformat och "
 "strömmande media från Internet."
 
-#: /usr/src/freepbx/music/page.music.php:400
+#: page.music.php:400
 msgid "Upload"
 msgstr "Ladda upp"
 
-#: /usr/src/freepbx/music/page.music.php:395
+#: page.music.php:395
 msgid "Upload a .wav or .mp3 file:"
 msgstr "Ladda upp en .wav eller .mp3 fil:"
 
-#: /usr/src/freepbx/music/page.music.php:412
+#: music.i18n.php:5
+msgid ""
+"Uploading and management of sound files (wav, mp3) to be used for on-hold "
+"music."
+msgstr ""
+"Modul för att ladda upp och underhålla ljudfiler (wav, mp3) för användning "
+"till pausmusik"
+
+#: page.music.php:412
 msgid "Volume 10%"
 msgstr "10% volym"
 
-#: /usr/src/freepbx/music/page.music.php:408
+#: page.music.php:408
 msgid "Volume 100%"
 msgstr "100% volym"
 
-#: /usr/src/freepbx/music/page.music.php:407
+#: page.music.php:407
 msgid "Volume 125%"
 msgstr "125% volym"
 
-#: /usr/src/freepbx/music/page.music.php:406
+#: page.music.php:406
 msgid "Volume 150%"
 msgstr "150% volym"
 
-#: /usr/src/freepbx/music/page.music.php:411
+#: page.music.php:411
 msgid "Volume 25%"
 msgstr "25% volym"
 
-#: /usr/src/freepbx/music/page.music.php:410
+#: page.music.php:410
 msgid "Volume 50%"
 msgstr "50% volym"
 
-#: /usr/src/freepbx/music/page.music.php:409
+#: page.music.php:409
 msgid "Volume 75%"
 msgstr "75% volym"
 
-#: /usr/src/freepbx/music/page.music.php:414
+#: page.music.php:414
 msgid "Volume Adjustment"
 msgstr "Justera volym"
 
-#: /usr/src/freepbx/music/page.music.php:476
+#: music.i18n.php:12
+msgid ""
+"When set to false, the MP3 files can be loaded and WAV files converted to "
+"MP3 in the MoH module. The default behavior of true assumes you have mpg123 "
+"loaded as well as sox and will convert MP3 files to WAV. This is highly "
+"recommended as MP3 files heavily tax the system and can cause instability on "
+"a busy phone system"
+msgstr ""
+"Om denna inställning är falsk kam MP3 filer laddas och WAV-filer konverteras "
+"till MP3 i Pausmusik-modulen. Standardvalet, sant, förutsätter att du har "
+"installerat både mpg123 och sox som kommer att komvertera MP3 till WAV. "
+"Detta är startkt rekommenderat då MP3-filer belastar systemet och kan orsaka "
+"stabilitetsproblem."
+
+#: page.music.php:476
 msgid ""
 "You must have at least one file for On Hold Music.  Please upload one before "
 "deleting this one."
 msgstr ""
 "Du måste minst ha en fil för pausmusik. Ladda upp en före du tar bort denna."
 
-#: /usr/src/freepbx/music/page.music.php:78
-#: /usr/src/freepbx/music/page.music.php:328
+#: page.music.php:78 page.music.php:328
 msgid "default"
 msgstr "default"
 
-#: /usr/src/freepbx/music/page.music.php:441
+#: page.music.php:441
 msgid "in"
 msgstr "i"
 
-#: /usr/src/freepbx/music/page.music.php:178
+#: page.music.php:178
 msgid ""
 "sox failed to convert file and original could not be copied as a fall back"
 msgstr ""
 "sox kunde inte konvertera filen och originalfilen kunde inte kopieras som en "
 "reservlösning"
-
-#~ msgid "Music on Hold"
-#~ msgstr "Pausmusik"
-
-#~ msgid ""
-#~ "Uploading and management of sound files (wav, mp3) to be used for on-hold "
-#~ "music."
-#~ msgstr ""
-#~ "Modul för att ladda upp och underhålla ljudfiler (wav, mp3) för "
-#~ "användning till pausmusik"
-
-#~ msgid "Convert Music Files to WAV"
-#~ msgstr "Komvertera musikfiler till WAV"
-
-#~ msgid "System Setup"
-#~ msgstr "Systeminställningar"
-
-#~ msgid ""
-#~ "When set to false, the MP3 files can be loaded and WAV files converted to "
-#~ "MP3 in the MoH module. The default behavior of true assumes you have "
-#~ "mpg123 loaded as well as sox and will convert MP3 files to WAV. This is "
-#~ "highly recommended as MP3 files heavily tax the system and can cause "
-#~ "instability on a busy phone system"
-#~ msgstr ""
-#~ "Om denna inställning är falsk kam MP3 filer laddas och WAV-filer "
-#~ "konverteras till MP3 i Pausmusik-modulen. Standardvalet, sant, "
-#~ "förutsätter att du har installerat både mpg123 och sox som kommer att "
-#~ "komvertera MP3 till WAV. Detta är startkt rekommenderat då MP3-filer "
-#~ "belastar systemet och kan orsaka stabilitetsproblem."
 
 #~ msgid "Internal Options & Configuration"
 #~ msgstr "Interna val och konfigurationer"

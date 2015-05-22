@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-11 18:02-0500\n"
+"POT-Creation-Date: 2015-02-20 19:43-0500\n"
 "PO-Revision-Date: 2014-07-22 12:02+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/music/bg/"
@@ -22,18 +22,15 @@ msgstr ""
 "X-Poedit-Country: BULGARIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: /usr/src/freepbx/music/page.music.php:69
-#: /usr/src/freepbx/music/page.music.php:237
+#: page.music.php:69 page.music.php:237
 msgid "Add Music Category"
 msgstr "Добави Музикална Категория"
 
-#: /usr/src/freepbx/music/page.music.php:70
-#: /usr/src/freepbx/music/page.music.php:278
+#: page.music.php:70 page.music.php:278
 msgid "Add Streaming Category"
 msgstr "Добави Поточна Категория"
 
-#: /usr/src/freepbx/music/page.music.php:239
-#: /usr/src/freepbx/music/page.music.php:280
+#: page.music.php:239 page.music.php:280
 msgid ""
 "Allows you to Set up Different Categories for music on hold.  This is useful "
 "if you would like to specify different Hold Music or Commercials for various "
@@ -43,17 +40,15 @@ msgstr ""
 "полезно ако желаете да определите различни Задържания, Музикални или "
 "Рекламни за някои ACD Опашки."
 
-#: /usr/src/freepbx/music/page.music.php:284
-#: /usr/src/freepbx/music/page.music.php:358
+#: page.music.php:284 page.music.php:358
 msgid "Application:"
 msgstr "Приложение:"
 
-#: /usr/src/freepbx/music/install.php:37
+#: install.php:37
 msgid "Cannot write to file"
 msgstr "Грешка при запис на файл"
 
-#: /usr/src/freepbx/music/page.music.php:254
-#: /usr/src/freepbx/music/page.music.php:305
+#: page.music.php:254 page.music.php:305
 msgid ""
 "Categories: \\\"none\\\" and \\\"default\\\" are reserved names. Please "
 "enter a different name"
@@ -61,83 +56,86 @@ msgstr ""
 "Категории: \\\"none\\\" и \\\"default\\\" са резервирани имена. Моля "
 "въведете различно име"
 
-#: /usr/src/freepbx/music/page.music.php:239
-#: /usr/src/freepbx/music/page.music.php:280
+#: page.music.php:239 page.music.php:280
 msgid "Category Name:"
 msgstr "Име на Категория:"
 
-#: /usr/src/freepbx/music/page.music.php:328
+#: page.music.php:328
 msgid "Category:"
 msgstr "Категория:"
 
-#: /usr/src/freepbx/music/page.music.php:441
+#: page.music.php:441
 msgid "Check"
 msgstr "Провери"
 
-#: /usr/src/freepbx/music/page.music.php:458
+#: page.music.php:458
 msgid "Completed processing"
 msgstr "Завършено обработване"
 
-#: /usr/src/freepbx/music/page.music.php:130
+#: music.i18n.php:8
+msgid "Convert Music Files to WAV"
+msgstr "Конвертиране на Музикални Файлове в WAV"
+
+#: page.music.php:130
 msgid "Delete"
 msgstr "Изтрий"
 
-#: /usr/src/freepbx/music/page.music.php:344
+#: page.music.php:344
 #, php-format
 msgid "Delete Music Category %s"
 msgstr "Изтрий Музикална Категория  %s"
 
-#: /usr/src/freepbx/music/page.music.php:344
+#: page.music.php:344
 #, php-format
 msgid "Delete Streaming Category"
 msgstr "Изтрий Поточна Категория"
 
-#: /usr/src/freepbx/music/page.music.php:479
+#: page.music.php:479
 msgid "Deleted"
 msgstr "Изтрит"
 
-#: /usr/src/freepbx/music/page.music.php:427
+#: page.music.php:427
 msgid "Disable Random Play"
 msgstr "Забрани Случайно Възпроизвеждане"
 
-#: /usr/src/freepbx/music/page.music.php:418
+#: page.music.php:418
 msgid "Do not encode wav to mp3"
 msgstr "Не преобразувай wav на mp3"
 
-#: /usr/src/freepbx/music/page.music.php:356
+#: page.music.php:356
 msgid "Edit Streaming Category"
 msgstr "Редактирай Поточна Категория"
 
-#: /usr/src/freepbx/music/page.music.php:429
+#: page.music.php:429
 msgid "Enable Random Play"
 msgstr "Разреши Случайно Възпроизвеждане"
 
-#: /usr/src/freepbx/music/page.music.php:481
+#: page.music.php:481
 #, php-format
 msgid "Error Deleting %s"
 msgstr "Грешка при Изтриване %s"
 
-#: /usr/src/freepbx/music/page.music.php:439
-#: /usr/src/freepbx/music/page.music.php:441
-#: /usr/src/freepbx/music/page.music.php:455
+#: page.music.php:439 page.music.php:441 page.music.php:455
 msgid "Error Processing"
 msgstr "Грешка при Обработване"
 
-#: /usr/src/freepbx/music/page.music.php:439
+#: music.i18n.php:3 music.i18n.php:6
+msgid "Music on Hold"
+msgstr "Музика при Задържане"
+
+#: page.music.php:439
 msgid "No file provided"
 msgstr "Не е предоставен файл"
 
-#: /usr/src/freepbx/music/page.music.php:228
+#: page.music.php:228
 msgid "On Hold Music"
 msgstr "Музика при Задържане"
 
-#: /usr/src/freepbx/music/page.music.php:289
-#: /usr/src/freepbx/music/page.music.php:362
+#: page.music.php:289 page.music.php:362
 msgid "Optional Format:"
 msgstr "Допълнителен Формат:"
 
-#: /usr/src/freepbx/music/page.music.php:289
-#: /usr/src/freepbx/music/page.music.php:362
+#: page.music.php:289 page.music.php:362
 msgid ""
 "Optional value for \"format=\" line used to provide the format to Asterisk. "
 "This should be a format understood by Asterisk such as ulaw, and is specific "
@@ -150,31 +148,35 @@ msgstr ""
 "на musiconhold.conf за различните опции за аудио и интернет поточни "
 "източници."
 
-#: /usr/src/freepbx/music/page.music.php:304
-#: /usr/src/freepbx/music/page.music.php:376
+#: page.music.php:304 page.music.php:376
 msgid "Please enter a streaming application command and arguments"
 msgstr "Моля въведете командите и аргументите за поточното приложения"
 
-#: /usr/src/freepbx/music/page.music.php:253
-#: /usr/src/freepbx/music/page.music.php:303
+#: page.music.php:253 page.music.php:303
 msgid "Please enter a valid Category Name"
 msgstr "Моля въведете правилно Име на Категория"
 
-#: /usr/src/freepbx/music/page.music.php:439
+#: page.music.php:439
 msgid "Please select a file to upload"
 msgstr "Моля изберете файл за добавяне"
 
-#: /usr/src/freepbx/music/page.music.php:400
+#: page.music.php:400
 msgid "Please wait until the page loads. Your file is being processed."
 msgstr "Моля изчакайте докато страницата се презареди. Вашият файл се качва."
 
-#: /usr/src/freepbx/music/page.music.php:243
-#: /usr/src/freepbx/music/page.music.php:293
-#: /usr/src/freepbx/music/page.music.php:366
+#: music.i18n.php:4
+msgid "Settings"
+msgstr "Настройки"
+
+#: page.music.php:243 page.music.php:293 page.music.php:366
 msgid "Submit Changes"
 msgstr "Приеми Промените"
 
-#: /usr/src/freepbx/music/page.music.php:414
+#: music.i18n.php:10
+msgid "System Setup"
+msgstr "Общи Настройки"
+
+#: page.music.php:414
 msgid ""
 "The volume adjustment is a linear value. Since loudness is logarithmic, the "
 "linear level will be less of an adjustment. You should test out the "
@@ -190,13 +192,12 @@ msgstr ""
 "параметър: <strong>Convert Music Files to WAV</strong> на false в "
 "Допълнителни Настройки"
 
-#: /usr/src/freepbx/music/page.music.php:456
+#: page.music.php:456
 msgid "This is not a fatal error, your Music on Hold may still work."
 msgstr ""
 "Това не е фатална грешка, вашата Музика при Задържане може още да работи."
 
-#: /usr/src/freepbx/music/page.music.php:284
-#: /usr/src/freepbx/music/page.music.php:358
+#: page.music.php:284 page.music.php:358
 msgid ""
 "This is the \"application=\" line used to provide the streaming details to "
 "Asterisk. See information on musiconhold.conf configuration for different "
@@ -206,47 +207,70 @@ msgstr ""
 "Астериск. Вижте информацията в настройките на musiconhold.conf за различните "
 "опции за аудио и интернет поточни източници."
 
-#: /usr/src/freepbx/music/page.music.php:400
+#: page.music.php:400
 msgid "Upload"
 msgstr "Добави"
 
-#: /usr/src/freepbx/music/page.music.php:395
+#: page.music.php:395
 msgid "Upload a .wav or .mp3 file:"
 msgstr "Добави .wav или .mp3 файл:"
 
-#: /usr/src/freepbx/music/page.music.php:412
+#: music.i18n.php:5
+msgid ""
+"Uploading and management of sound files (wav, mp3) to be used for on-hold "
+"music."
+msgstr ""
+"Качване и управление на звукови файлове (wav, mp3), които да се използват за "
+"музика при задържане."
+
+#: page.music.php:412
 msgid "Volume 10%"
 msgstr "Ниво 10%"
 
-#: /usr/src/freepbx/music/page.music.php:408
+#: page.music.php:408
 msgid "Volume 100%"
 msgstr "Ниво 100%"
 
-#: /usr/src/freepbx/music/page.music.php:407
+#: page.music.php:407
 msgid "Volume 125%"
 msgstr "Ниво 125%"
 
-#: /usr/src/freepbx/music/page.music.php:406
+#: page.music.php:406
 msgid "Volume 150%"
 msgstr "Ниво 150%"
 
-#: /usr/src/freepbx/music/page.music.php:411
+#: page.music.php:411
 msgid "Volume 25%"
 msgstr "Ниво 25%"
 
-#: /usr/src/freepbx/music/page.music.php:410
+#: page.music.php:410
 msgid "Volume 50%"
 msgstr "Ниво 50%"
 
-#: /usr/src/freepbx/music/page.music.php:409
+#: page.music.php:409
 msgid "Volume 75%"
 msgstr "Ниво 75%"
 
-#: /usr/src/freepbx/music/page.music.php:414
+#: page.music.php:414
 msgid "Volume Adjustment"
 msgstr "Настройка на Усилването"
 
-#: /usr/src/freepbx/music/page.music.php:476
+#: music.i18n.php:12
+msgid ""
+"When set to false, the MP3 files can be loaded and WAV files converted to "
+"MP3 in the MoH module. The default behavior of true assumes you have mpg123 "
+"loaded as well as sox and will convert MP3 files to WAV. This is highly "
+"recommended as MP3 files heavily tax the system and can cause instability on "
+"a busy phone system"
+msgstr ""
+"Когато е установено невярно, в модул Музика при Задържане могат да се качват "
+"MP3 файлове и WAV файловете се конвертират на MP3. Установеното по "
+"подразбиране вярно предполага че имате инсталирани mpg123 и sox и ще "
+"конвертира MP3 файловете на WAV. Това е препоръчително тъй като MP3 "
+"файловете използват повече ресурси от системата и може да доведе до "
+"нестабилност на натоварена телефонна система"
+
+#: page.music.php:476
 msgid ""
 "You must have at least one file for On Hold Music.  Please upload one before "
 "deleting this one."
@@ -254,54 +278,20 @@ msgstr ""
 "Трябва да имате поне един файл за Музика при Задържане. Моля добавете един "
 "преди да изтриете този."
 
-#: /usr/src/freepbx/music/page.music.php:78
-#: /usr/src/freepbx/music/page.music.php:328
+#: page.music.php:78 page.music.php:328
 msgid "default"
 msgstr "по-подразбиране"
 
-#: /usr/src/freepbx/music/page.music.php:441
+#: page.music.php:441
 msgid "in"
 msgstr "в"
 
-#: /usr/src/freepbx/music/page.music.php:178
+#: page.music.php:178
 msgid ""
 "sox failed to convert file and original could not be copied as a fall back"
 msgstr ""
 "sox се провали при конвертирането на файла и оригиналния не може да се "
 "копира за възстановяване"
-
-#~ msgid "Music on Hold"
-#~ msgstr "Музика при Задържане"
-
-#~ msgid "Settings"
-#~ msgstr "Настройки"
-
-#~ msgid ""
-#~ "Uploading and management of sound files (wav, mp3) to be used for on-hold "
-#~ "music."
-#~ msgstr ""
-#~ "Качване и управление на звукови файлове (wav, mp3), които да се използват "
-#~ "за музика при задържане."
-
-#~ msgid "Convert Music Files to WAV"
-#~ msgstr "Конвертиране на Музикални Файлове в WAV"
-
-#~ msgid "System Setup"
-#~ msgstr "Общи Настройки"
-
-#~ msgid ""
-#~ "When set to false, the MP3 files can be loaded and WAV files converted to "
-#~ "MP3 in the MoH module. The default behavior of true assumes you have "
-#~ "mpg123 loaded as well as sox and will convert MP3 files to WAV. This is "
-#~ "highly recommended as MP3 files heavily tax the system and can cause "
-#~ "instability on a busy phone system"
-#~ msgstr ""
-#~ "Когато е установено невярно, в модул Музика при Задържане могат да се "
-#~ "качват MP3 файлове и WAV файловете се конвертират на MP3. Установеното по "
-#~ "подразбиране вярно предполага че имате инсталирани mpg123 и sox и ще "
-#~ "конвертира MP3 файловете на WAV. Това е препоръчително тъй като MP3 "
-#~ "файловете използват повече ресурси от системата и може да доведе до "
-#~ "нестабилност на натоварена телефонна система"
 
 #~ msgid ""
 #~ "The volume adjustment is a linear value. Since loudness is logarithmic, "
