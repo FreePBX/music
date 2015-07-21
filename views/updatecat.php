@@ -2,7 +2,7 @@
 //	License for all code of this FreePBX module can be found in the license file inside the module directory
 //	Copyright 2015 Sangoma Technologies.
 //
-extract($request);
+extract($request, EXTR_SKIP);
 if ($mh->mpg123) {
 	$mpg123html = '
 		<!--Volume Adjustment-->
@@ -119,7 +119,6 @@ $randomplay = file_exists("{$path_to_dir}/.random");
 				<div class="form-group">
 					<div class="col-md-3">
 						<label class="control-label" for="mohfile"><?php echo _("Upload File") ?></label>
-						<i class="fa fa-question-circle fpbx-help-icon" data-for="mohfile"></i>
 					</div>
 					<div class="col-md-9">
 						<span class="btn btn-default btn-file">
@@ -132,15 +131,9 @@ $randomplay = file_exists("{$path_to_dir}/.random");
 			</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<span id="mohfile-help" class="help-block fpbx-help-block"><?php echo _("")?></span>
-		</div>
-	</div>
 </div>
 <!--END Upload File-->
 <?php echo $mpg123html ?>
-<input type="button" value="<?php echo _("Upload")?>" onclick="document.upload.submit(upload);alert('<?php echo addslashes(_("Please wait until the page loads. Your file is being processed."))?>');/>
 </form>
 <br/>
 <hr/>
