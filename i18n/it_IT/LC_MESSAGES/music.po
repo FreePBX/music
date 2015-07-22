@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-22 16:32-0400\n"
+"POT-Creation-Date: 2015-07-22 15:26-0400\n"
 "PO-Revision-Date: 2008-11-07 12:57+0100\n"
 "Last-Translator: Francesco Romano <francesco.romano@alteclab.it>\n"
 "Language-Team: Italian\n"
@@ -46,7 +46,7 @@ msgstr ""
 msgid "Application"
 msgstr ""
 
-#: views/updatecat.php:126
+#: views/updatecat.php:125
 msgid "Browse"
 msgstr ""
 
@@ -139,12 +139,6 @@ msgstr ""
 msgid "Please enter a valid Category Name"
 msgstr "Prego immettere un Nome di Categoria valido"
 
-#: views/updatecat.php:143
-msgid "Please wait until the page loads. Your file is being processed."
-msgstr ""
-"Prego attendere fino a quando la pagina non si ricarica. Sto processando il "
-"file."
-
 #: Music.class.php:215
 msgid "Reset"
 msgstr ""
@@ -189,10 +183,6 @@ msgstr ""
 msgid "Type"
 msgstr ""
 
-#: views/updatecat.php:143
-msgid "Upload"
-msgstr "Carica"
-
 #: views/updatecat.php:121
 msgid "Upload File"
 msgstr ""
@@ -232,6 +222,14 @@ msgstr "Aggiustamento Volume"
 #: views/updatecat.php:56 views/updatecat.php:95
 msgid "Yes"
 msgstr ""
+
+#~ msgid "Please wait until the page loads. Your file is being processed."
+#~ msgstr ""
+#~ "Prego attendere fino a quando la pagina non si ricarica. Sto processando "
+#~ "il file."
+
+#~ msgid "Upload"
+#~ msgstr "Carica"
 
 #~ msgid "Add Music Category"
 #~ msgstr "Aggiungi Categoria Musica"

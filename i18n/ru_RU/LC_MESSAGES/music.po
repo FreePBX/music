@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-22 16:32-0400\n"
+"POT-Creation-Date: 2015-07-22 15:26-0400\n"
 "PO-Revision-Date: 2015-04-23 16:48+0200\n"
 "Last-Translator: Yuriy <alliancesko@gmail.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/music/"
@@ -50,7 +50,7 @@ msgstr ""
 msgid "Application"
 msgstr ""
 
-#: views/updatecat.php:126
+#: views/updatecat.php:125
 msgid "Browse"
 msgstr ""
 
@@ -143,10 +143,6 @@ msgstr ""
 msgid "Please enter a valid Category Name"
 msgstr "Введите правильное название для категории"
 
-#: views/updatecat.php:143
-msgid "Please wait until the page loads. Your file is being processed."
-msgstr "Дождитесь, пока страница загрузится. Ваш файл обрабатывается."
-
 #: Music.class.php:215
 msgid "Reset"
 msgstr ""
@@ -198,10 +194,6 @@ msgstr ""
 msgid "Type"
 msgstr ""
 
-#: views/updatecat.php:143
-msgid "Upload"
-msgstr "Загрузить"
-
 #: views/updatecat.php:121
 msgid "Upload File"
 msgstr ""
@@ -241,6 +233,12 @@ msgstr "Настройка громкости"
 #: views/updatecat.php:56 views/updatecat.php:95
 msgid "Yes"
 msgstr ""
+
+#~ msgid "Please wait until the page loads. Your file is being processed."
+#~ msgstr "Дождитесь, пока страница загрузится. Ваш файл обрабатывается."
+
+#~ msgid "Upload"
+#~ msgstr "Загрузить"
 
 #~ msgid "Add Music Category"
 #~ msgstr "Добавить категорию музыки"

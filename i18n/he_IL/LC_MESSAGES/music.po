@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-22 16:32-0400\n"
+"POT-Creation-Date: 2015-07-22 15:26-0400\n"
 "PO-Revision-Date: 2006-10-17 17:30+0300\n"
 "Last-Translator: Shimi <shimi@shimi.net>\n"
 "MIME-Version: 1.0\n"
@@ -44,7 +44,7 @@ msgstr ""
 msgid "Application"
 msgstr ""
 
-#: views/updatecat.php:126
+#: views/updatecat.php:125
 msgid "Browse"
 msgstr ""
 
@@ -130,10 +130,6 @@ msgstr ""
 msgid "Please enter a valid Category Name"
 msgstr ""
 
-#: views/updatecat.php:143
-msgid "Please wait until the page loads. Your file is being processed."
-msgstr ""
-
 #: Music.class.php:215
 msgid "Reset"
 msgstr ""
@@ -173,10 +169,6 @@ msgstr ""
 
 #: views/grid.php:5 views/musiclist.php:5
 msgid "Type"
-msgstr ""
-
-#: views/updatecat.php:143
-msgid "Upload"
 msgstr ""
 
 #: views/updatecat.php:121
