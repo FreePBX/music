@@ -43,12 +43,12 @@ function addcategory_onsubmit() {
 
 function linkFormat(value){
 	var action = 'edit';
-	if(value['type'] === _("Streaming")){
+	if(value['type'] == 'streaming'){
 		action = 'editstream'
 	}
 	var html = '<a href="?display=music&view=form&category='+value['category']+'&action='+action+'"><i class="fa fa-pencil"></i></a>';
 	if(value['category'] !== 'default'){
-		html += '&nbsp;<a href="?display=music&action=delete&id='+value['category']+'" class="delAction"><i class="fa fa-trash"></i></a>';
+		html += '&nbsp;<a href="?display=music&action=delete&category='+value['category']+'" class="delAction"><i class="fa fa-trash"></i></a>';
 	}
 	return html;
 }

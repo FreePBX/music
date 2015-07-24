@@ -59,7 +59,7 @@ class music_conf {
 }
 
 function music_makemusiccategory($path_to_dir) {
-	mkdir("$path_to_dir", 0755);
+	mkdir("$path_to_dir", 0755, true);
 }
 
 function music_list($path=null) {
@@ -97,6 +97,15 @@ function music_list($path=null) {
 	} else {
 		return null;
 	}
+}
+
+function music_makestreamcategory($path_to_dir,$stream) {
+	if (!is_dir($path_to_dir)) {
+		music_makemusiccategory($path_to_dir);
+	}
+	$fh=fopen("$path_to_dir/.custom","w");
+	fwrite($fh,$stream);
+	fclose($fh);
 }
 
 function music_rmdirr($dirname)

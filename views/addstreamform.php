@@ -28,10 +28,11 @@ if (isset($category)){
 	$onsubmit = 'addstream_onsubmit();';
 }
 ?>
-<form name="streamform" action="" method="post" onsubmit="<?php echo $onsubmit?>">
+<form name="formstream" action="" method="post" onsubmit="<?php echo $onsubmit?>" class="fpbx-submit" data-fpbx-delete="?display=music&amp;action=delete&amp;category=<?php echo $category?>">
 <input type="hidden" name="display" value="music">
 <input type="hidden" name="action" value="<?php echo $formaction?>">
 <input type="hidden" name="view" value="form">
+<input type="hidden" name="category" value="<?php echo $category?>">
 
 <!--Category Name-->
 <div class="element-container">

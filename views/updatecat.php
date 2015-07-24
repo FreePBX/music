@@ -80,6 +80,10 @@ if ($category == "default") {
 $randomplay = file_exists("{$path_to_dir}/.random");
 
 ?>
+<form enctype="multipart/form-data" name="upload" action="" method="POST" class="fpbx-submit" data-fpbx-delete="?display=music&amp;action=delete&amp;category=<?php echo $category?>">
+<input type="hidden" name="display" value="<?php echo $display?>">
+<input type="hidden" name="category" value="<?php echo $category?>">
+<input type="hidden" name="action" value="updatecategory">
 <!--Enable Random Play-->
 <div class="element-container">
 	<div class="row">
@@ -107,10 +111,6 @@ $randomplay = file_exists("{$path_to_dir}/.random");
 	</div>
 </div>
 <!--END Enable Random Play-->
-<form enctype="multipart/form-data" name="upload" action="" method="POST">
-<input type="hidden" name="display" value="<?php echo $display?>">
-<input type="hidden" name="category" value="<?php echo "$category" ?>">
-<input type="hidden" name="action" value="addedfile">
 <!--Upload File-->
 <div class="element-container">
 	<div class="row">

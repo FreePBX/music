@@ -1,4 +1,4 @@
-<table id="musicgrid" data-url="ajax.php?module=music&command=getJSON&jdata=musiclist&category=<?php echo $_REQUEST['category']?>" data-cache="false"  data-toggle="table" class="table table-striped">
+<table id="musicgrid" data-url="ajax.php?module=music&amp;command=getJSON&amp;jdata=musiclist&amp;category=<?php echo $_REQUEST['category']?>" data-cache="false"  data-toggle="table" class="table table-striped">
 	<thead>
 		<tr>
 			<th data-field="filename" class="col-md-8"><?php echo _("File")?></th>

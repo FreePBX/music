@@ -17,7 +17,7 @@ switch ($request['view']) {
 	case 'form':
 		switch($request["action"]){
 			case "edit":
-			case "addedfile":
+			case "updatecategory":
 				$heading .= ' - '.$request['category'];
 				$content = load_view(__DIR__.'/views/updatecat.php', array('request' => $request, 'mh' => $mh));
 				$content .= load_view(__DIR__.'/views/musiclist.php', array('request' => $request, 'mh' => $mh));
@@ -36,25 +36,25 @@ switch ($request['view']) {
 	break;
 }
 
-
+$request["action"] = ($request["action"] == "delete") ? "" : $request["action"];
 ?>
 <div class="container-fluid">
 	<h1><?php echo $heading?></h1>
 	<?php echo isset($message)?$message:''?>
-	<div class = "display full-border">
 		<div class="row">
-			<div class="col-sm-9">
+			<div class="col-sm-<?php echo ($request["action"] == "") ? "12" : "9"?>">
 				<div class="fpbx-container">
-					<div class="display full-border">
+					<div class="display <?php echo ($request["action"] == "") ? "no" : "full"?>-border">
 						<?php echo $content ?>
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-3 hidden-xs bootnav">
-				<div class="list-group">
-					<?php echo load_view(__DIR__.'/views/bootnav.php', array('request' => $request ))?>
+			<?php if ($request["action"] != "") {?>
+				<div class="col-sm-3 hidden-xs bootnav">
+					<div class="list-group">
+						<?php echo load_view(__DIR__.'/views/bootnav.php', array('request' => $request ))?>
+					</div>
 				</div>
-			</div>
+			<?php } ?>
 		</div>
-	</div>
 </div>

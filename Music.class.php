@@ -23,8 +23,7 @@ class Music implements \BMO {
 	public function doConfigPageInit($page) {
 		$request = $_REQUEST;
 		$action = isset($request['action'])?$request['action']:'';
-		$randon = isset($request['randon'])?$request['randon']:'';
-		$randoff = isset($request['randoff'])?$request['randoff']:'';
+		$rand = isset($request['erand']) && $request['erand'] == 'yes' ? true : false;
 		$category = isset($request['category'])?htmlspecialchars(strtr($request['category']," ./\"\'\`", "------")):'';
 		$volume = isset($request['volume']) && is_numeric($request['volume']) ? $request['volume'] : '';
 
@@ -32,7 +31,9 @@ class Music implements \BMO {
 		$path_to_moh_dir = $this->mohpath;
 
 
-		if ($category == null) $category = 'default';
+		if ($category == null) {
+			$category = 'default';
+		}
 		$display='music';
 
 
@@ -43,14 +44,18 @@ class Music implements \BMO {
 		}
 
 
-		if (strlen($randon)) {
-			touch($path_to_dir."/.random");
-			needreload();
+		if ($rand) {
+			if(!file_exists($path_to_dir."/.random")) {
+				touch($path_to_dir."/.random");
+				needreload();
+			}
+		} else {
+			if(file_exists($path_to_dir."/.random")) {
+				unlink($path_to_dir."/.random");
+				needreload();
+			}
 		}
-		if (strlen($randoff)) {
-			unlink($path_to_dir."/.random");
-			needreload();
-		}
+
 		switch ($action) {
 			case "addednewstream":
 			case "editednewstream":
@@ -59,40 +64,39 @@ class Music implements \BMO {
 				if ($format != "") {
 					$stream .= "\nformat=$format";
 				}
-				music_makestreamcatergory($path_to_dir,$stream);
+				music_makestreamcategory($path_to_dir,$stream);
 				needreload();
+			break;
 			case "addednew":
 				music_makemusiccategory($path_to_dir);
 				$_REQUEST['action'] = 'edit';
 				$_REQUEST['category'] = $category;
-			break;
-			case "addedfile":
-				$fileTypes = array("audio/wav", "audio/mpeg3");
-				if(empty($_FILES)){
-					$this->message = _("No file provided");
-					break;
-				}
-				if(in_array($_FILES['mohfile']['type'], $fileTypes)){
-				$file = $_FILES['mohfile'];
-				if(move_uploaded_file($_FILES["mohfile"]["tmp_name"], $path_to_dir.'/'.$_FILES["mohfile"]["name"])){
-					$this->message = _("File upload success");
-				}else{
-					$this->message = _("File seemed valid but could not move it to it's path");
-				}
-
-			}else{
-				$this->message = _("Filetype not Supported Upload Failed");
-				break;
-			}
 				needreload();
+			break;
+			case "updatecategory":
+				$fileTypes = array("audio/wav", "audio/mpeg3");
+				if(!empty($_FILES['mohfile']['type'])) {
+					if(in_array($_FILES['mohfile']['type'], $fileTypes)){
+						$file = $_FILES['mohfile'];
+						if(move_uploaded_file($_FILES["mohfile"]["tmp_name"], $path_to_dir.'/'.$_FILES["mohfile"]["name"])){
+							$this->message = _("File upload success");
+							needreload();
+						}else{
+							$this->message = _("File seemed valid but could not move it to it's path");
+						}
+					}else{
+						$this->message = _("Filetype not Supported Upload Failed");
+						break;
+					}
+				}
 			break;
 			case "delete":
-				//$fh = fopen("/tmp/music.log","a");
-				//fwrite($fh,print_r($_REQUEST,true));
-				music_rmdirr("$path_to_dir");
+				if($path_to_dir != $path_to_moh_dir) {
+					music_rmdirr("$path_to_dir");
+					needreload();
+				}
 				$path_to_dir = $path_to_moh_dir;
 				$category='default';
-				needreload();
 			break;
 		}
 	}
@@ -115,17 +119,10 @@ class Music implements \BMO {
 		$cats = array();
 		$cats[] = array('category' => 'default', 'type' => _('Standard'), 'link' => array('category' => 'default', 'type' =>'standard'));
 		foreach(glob($this->mohpath.'/*', GLOB_ONLYDIR) as $dir) {
-			$dir = str_replace($this->mohpath.'/', '', $dir);
-			if(empty($dir)){continue;}
-			$cats[] = array('category' => $dir, 'type' => _('Standard'), 'link' => array('category' => urldecode($dir), 'type' =>'standard'));
+			$type = file_exists($dir . '/.custom') ? _('Streaming') : _('Standard');
+			$cats[] = array('category' => basename($dir), 'type' => $type, 'link' => array('category' => urldecode(basename($dir)), 'type' => file_exists($dir . '/.custom') ? 'streaming' : 'standard'));
 		}
-		if (file_exists($this->mohpath . '/.custom')) {
-			$application = file_get_contents($this->mohpath.'/.custom');
-			$application = explode("\n",$application);
-			if (isset($application[0])) {
-				$cats[] = array('category' => $application[0], 'type' => _('Streaming'), 'link' => array('category' => urldecode($application[0]), 'type' =>'streaming'));
-			}
-		}
+
 		return $cats;
 	}
 	public function ajaxRequest($req, &$setting) {
@@ -223,10 +220,13 @@ class Music implements \BMO {
 				if (empty($request['category'])||($request['category'] == 'default')) {
 					unset($buttons['delete']);
 				}
-				$request['action'] = isset($requets['action'])?$request['action']:'';
+				$request['action'] = isset($request['action'])?$request['action']:'';
 				switch ($request['action']) {
 					case 'add':
-					case 'addstreaming':
+					case 'edit':
+					case 'updatecategory':
+					case 'addstream':
+					case 'editstream':
 						/*if we match the above case(s) nothing to do*/
 					break;
 					default:
