@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX musik\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-22 15:26-0400\n"
+"POT-Creation-Date: 2015-07-24 16:09-0400\n"
 "PO-Revision-Date: 2011-03-20 00:00+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: \n"
@@ -33,19 +33,19 @@ msgstr ""
 msgid "Action"
 msgstr ""
 
-#: views/grid.php:6
+#: views/grid.php:18
 msgid "Actions"
 msgstr ""
 
-#: views/bootnav.php:1
+#: views/bootnav.php:2 views/grid.php:2
 msgid "Add Category"
 msgstr ""
 
-#: views/bootnav.php:2
+#: views/bootnav.php:3 views/grid.php:3
 msgid "Add Streaming Category"
 msgstr "Lägg till strömkategori"
 
-#: views/addcatform.php:27 views/addstreamform.php:55
+#: views/addcatform.php:27 views/addstreamform.php:56
 msgid ""
 "Allows you to Set up Different Categories for music on hold.  This is useful "
 "if you would like to specify different Hold Music or Commercials for various "
@@ -55,7 +55,7 @@ msgstr ""
 "användbart för att specificera olika typer av pausmusik eller reklam för "
 "köer."
 
-#: views/addstreamform.php:67
+#: views/addstreamform.php:68
 msgid "Application"
 msgstr ""
 
@@ -75,23 +75,23 @@ msgstr ""
 "Kategorierna \\\"none\\\" och \\\"default\\\" är reserverade namn. Skriv in "
 "ett annat namn"
 
-#: views/grid.php:4
+#: views/grid.php:16
 msgid "Category"
 msgstr ""
 
-#: views/addcatform.php:15 views/addstreamform.php:43
+#: views/addcatform.php:15 views/addstreamform.php:44
 msgid "Category Name"
 msgstr ""
 
-#: Music.class.php:210
+#: Music.class.php:211
 msgid "Delete"
 msgstr "Ta bort"
 
-#: views/updatecat.php:90
+#: views/updatecat.php:94
 msgid "Enable Random Play"
 msgstr "Aktivera slumpmässig uppspelning"
 
-#: views/updatecat.php:105
+#: views/updatecat.php:109
 msgid "Enable random playback of music for this category"
 msgstr ""
 
@@ -103,39 +103,39 @@ msgstr ""
 msgid "File"
 msgstr ""
 
-#: Music.class.php:80
+#: Music.class.php:85
 msgid "File seemed valid but could not move it to it's path"
 msgstr ""
 
-#: Music.class.php:78
+#: Music.class.php:82
 msgid "File upload success"
 msgstr ""
 
-#: Music.class.php:84
+#: Music.class.php:88
 msgid "Filetype not Supported Upload Failed"
 msgstr ""
 
-#: Music.class.php:162
+#: Music.class.php:163
 msgid "Invalid Request"
 msgstr ""
 
-#: views/updatecat.php:58 views/updatecat.php:97
-msgid "No"
+#: views/bootnav.php:1
+msgid "List MoH"
 msgstr ""
 
-#: Music.class.php:72
-msgid "No file provided"
-msgstr "Ingen fil angiven"
+#: views/updatecat.php:58 views/updatecat.php:101
+msgid "No"
+msgstr ""
 
 #: page.music.php:12
 msgid "On Hold Music"
 msgstr "Pausmusik"
 
-#: views/addstreamform.php:92
+#: views/addstreamform.php:93
 msgid "Optional Format"
 msgstr ""
 
-#: views/addstreamform.php:104
+#: views/addstreamform.php:105
 msgid ""
 "Optional value for \"format=\" line used to provide the format to Asterisk. "
 "This should be a format understood by Asterisk such as ulaw, and is specific "
@@ -151,7 +151,7 @@ msgstr ""
 msgid "Please enter a valid Category Name"
 msgstr "Skriv in ett giltigt kategorinamn"
 
-#: Music.class.php:215
+#: Music.class.php:216
 msgid "Reset"
 msgstr ""
 
@@ -159,15 +159,15 @@ msgstr ""
 msgid "Should wav encode to mp3"
 msgstr ""
 
-#: Music.class.php:116 Music.class.php:120
+#: Music.class.php:124 Music.class.php:126
 msgid "Standard"
 msgstr ""
 
-#: Music.class.php:126 assets/js/music.js:46
+#: Music.class.php:126
 msgid "Streaming"
 msgstr ""
 
-#: Music.class.php:220
+#: Music.class.php:221
 msgid "Submit"
 msgstr ""
 
@@ -187,7 +187,7 @@ msgstr ""
 "installerat mpg123 kan du sätta parametern: <strong>Konvertera musikfiler "
 "till WAV</strong> till falskt i Avancerade inställningar"
 
-#: views/addstreamform.php:79
+#: views/addstreamform.php:80
 msgid ""
 "This is the \"application=\" line used to provide the streaming details to "
 "Asterisk. See information on musiconhold.conf configuration for different "
@@ -197,7 +197,7 @@ msgstr ""
 "strömmande ljud. Titta i filen musiconhold.conf för olika ljudformat och "
 "strömmande media från Internet."
 
-#: views/grid.php:5 views/musiclist.php:5
+#: views/grid.php:17 views/musiclist.php:5
 msgid "Type"
 msgstr ""
 
@@ -237,9 +237,12 @@ msgstr "75% volym"
 msgid "Volume Adjustment"
 msgstr "Justera volym"
 
-#: views/updatecat.php:56 views/updatecat.php:95
+#: views/updatecat.php:56 views/updatecat.php:99
 msgid "Yes"
 msgstr ""
+
+#~ msgid "No file provided"
+#~ msgstr "Ingen fil angiven"
 
 #~ msgid "Please wait until the page loads. Your file is being processed."
 #~ msgstr "Vänta medan sidan laddas och din fil hanteras."

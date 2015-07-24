@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.10.0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-22 15:26-0400\n"
+"POT-Creation-Date: 2015-07-24 16:09-0400\n"
 "PO-Revision-Date: 2014-02-19 20:56+0200\n"
 "Last-Translator: Chise Mishima <c.mishima@qloog.com>\n"
 "Language-Team: Japanese <http://example.com/projects/freepbx/music/ja/>\n"
@@ -52,19 +52,19 @@ msgstr ""
 msgid "Action"
 msgstr ""
 
-#: views/grid.php:6
+#: views/grid.php:18
 msgid "Actions"
 msgstr ""
 
-#: views/bootnav.php:1
+#: views/bootnav.php:2 views/grid.php:2
 msgid "Add Category"
 msgstr ""
 
-#: views/bootnav.php:2
+#: views/bootnav.php:3 views/grid.php:3
 msgid "Add Streaming Category"
 msgstr "ストリーミングカテゴリを追加"
 
-#: views/addcatform.php:27 views/addstreamform.php:55
+#: views/addcatform.php:27 views/addstreamform.php:56
 msgid ""
 "Allows you to Set up Different Categories for music on hold.  This is useful "
 "if you would like to specify different Hold Music or Commercials for various "
@@ -73,7 +73,7 @@ msgstr ""
 "保留音用の様々なカテゴリをセットアップすることができます。種類の異なる保留音"
 "を指定したり、様々なACDキュー用のコマーシャルを指定するのに役に立ちます。"
 
-#: views/addstreamform.php:67
+#: views/addstreamform.php:68
 msgid "Application"
 msgstr ""
 
@@ -93,23 +93,23 @@ msgstr ""
 "カテゴリ名： \\\"none\\\" and \\\"default\\\"は予約語です。違う名前を入力して"
 "ください。"
 
-#: views/grid.php:4
+#: views/grid.php:16
 msgid "Category"
 msgstr ""
 
-#: views/addcatform.php:15 views/addstreamform.php:43
+#: views/addcatform.php:15 views/addstreamform.php:44
 msgid "Category Name"
 msgstr ""
 
-#: Music.class.php:210
+#: Music.class.php:211
 msgid "Delete"
 msgstr "削除"
 
-#: views/updatecat.php:90
+#: views/updatecat.php:94
 msgid "Enable Random Play"
 msgstr "ランダム再生を有効にする"
 
-#: views/updatecat.php:105
+#: views/updatecat.php:109
 msgid "Enable random playback of music for this category"
 msgstr ""
 
@@ -121,39 +121,39 @@ msgstr ""
 msgid "File"
 msgstr ""
 
-#: Music.class.php:80
+#: Music.class.php:85
 msgid "File seemed valid but could not move it to it's path"
 msgstr ""
 
-#: Music.class.php:78
+#: Music.class.php:82
 msgid "File upload success"
 msgstr ""
 
-#: Music.class.php:84
+#: Music.class.php:88
 msgid "Filetype not Supported Upload Failed"
 msgstr ""
 
-#: Music.class.php:162
+#: Music.class.php:163
 msgid "Invalid Request"
 msgstr ""
 
-#: views/updatecat.php:58 views/updatecat.php:97
-msgid "No"
+#: views/bootnav.php:1
+msgid "List MoH"
 msgstr ""
 
-#: Music.class.php:72
-msgid "No file provided"
-msgstr "ファイルが選択されていません"
+#: views/updatecat.php:58 views/updatecat.php:101
+msgid "No"
+msgstr ""
 
 #: page.music.php:12
 msgid "On Hold Music"
 msgstr "保留音"
 
-#: views/addstreamform.php:92
+#: views/addstreamform.php:93
 msgid "Optional Format"
 msgstr ""
 
-#: views/addstreamform.php:104
+#: views/addstreamform.php:105
 msgid ""
 "Optional value for \"format=\" line used to provide the format to Asterisk. "
 "This should be a format understood by Asterisk such as ulaw, and is specific "
@@ -168,7 +168,7 @@ msgstr ""
 msgid "Please enter a valid Category Name"
 msgstr "有効なカテゴリ名を入力してください"
 
-#: Music.class.php:215
+#: Music.class.php:216
 msgid "Reset"
 msgstr ""
 
@@ -176,15 +176,15 @@ msgstr ""
 msgid "Should wav encode to mp3"
 msgstr ""
 
-#: Music.class.php:116 Music.class.php:120
+#: Music.class.php:124 Music.class.php:126
 msgid "Standard"
 msgstr ""
 
-#: Music.class.php:126 assets/js/music.js:46
+#: Music.class.php:126
 msgid "Streaming"
 msgstr ""
 
-#: Music.class.php:220
+#: Music.class.php:221
 msgid "Submit"
 msgstr ""
 
@@ -204,7 +204,7 @@ msgstr ""
 "amportal.confファイル内で、<strong>AMPMPG123=false</strong>というパラメータを"
 "設定することが可能です。"
 
-#: views/addstreamform.php:79
+#: views/addstreamform.php:80
 msgid ""
 "This is the \"application=\" line used to provide the streaming details to "
 "Asterisk. See information on musiconhold.conf configuration for different "
@@ -214,7 +214,7 @@ msgstr ""
 "\"ラインです。musiconhold.conf設定にある異なるオーディオやインターネットスト"
 "リーミングソースオプションの情報を参照してください。"
 
-#: views/grid.php:5 views/musiclist.php:5
+#: views/grid.php:17 views/musiclist.php:5
 msgid "Type"
 msgstr ""
 
@@ -254,9 +254,12 @@ msgstr "ボリューム 75%"
 msgid "Volume Adjustment"
 msgstr "ボリューム調整"
 
-#: views/updatecat.php:56 views/updatecat.php:95
+#: views/updatecat.php:56 views/updatecat.php:99
 msgid "Yes"
 msgstr ""
+
+#~ msgid "No file provided"
+#~ msgstr "ファイルが選択されていません"
 
 #~ msgid "Please wait until the page loads. Your file is being processed."
 #~ msgstr "ページが更新されるまでお待ちください。ファイルの処理中。"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-22 15:26-0400\n"
+"POT-Creation-Date: 2015-07-24 16:09-0400\n"
 "PO-Revision-Date: 2014-07-22 12:02+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/music/bg/"
@@ -26,19 +26,19 @@ msgstr ""
 msgid "Action"
 msgstr ""
 
-#: views/grid.php:6
+#: views/grid.php:18
 msgid "Actions"
 msgstr ""
 
-#: views/bootnav.php:1
+#: views/bootnav.php:2 views/grid.php:2
 msgid "Add Category"
 msgstr ""
 
-#: views/bootnav.php:2
+#: views/bootnav.php:3 views/grid.php:3
 msgid "Add Streaming Category"
 msgstr "Добави Поточна Категория"
 
-#: views/addcatform.php:27 views/addstreamform.php:55
+#: views/addcatform.php:27 views/addstreamform.php:56
 msgid ""
 "Allows you to Set up Different Categories for music on hold.  This is useful "
 "if you would like to specify different Hold Music or Commercials for various "
@@ -48,7 +48,7 @@ msgstr ""
 "полезно ако желаете да определите различни Задържания, Музикални или "
 "Рекламни за някои ACD Опашки."
 
-#: views/addstreamform.php:67
+#: views/addstreamform.php:68
 msgid "Application"
 msgstr ""
 
@@ -68,23 +68,23 @@ msgstr ""
 "Категории: \\\"none\\\" и \\\"default\\\" са резервирани имена. Моля "
 "въведете различно име"
 
-#: views/grid.php:4
+#: views/grid.php:16
 msgid "Category"
 msgstr ""
 
-#: views/addcatform.php:15 views/addstreamform.php:43
+#: views/addcatform.php:15 views/addstreamform.php:44
 msgid "Category Name"
 msgstr ""
 
-#: Music.class.php:210
+#: Music.class.php:211
 msgid "Delete"
 msgstr "Изтрий"
 
-#: views/updatecat.php:90
+#: views/updatecat.php:94
 msgid "Enable Random Play"
 msgstr "Разреши Случайно Възпроизвеждане"
 
-#: views/updatecat.php:105
+#: views/updatecat.php:109
 msgid "Enable random playback of music for this category"
 msgstr ""
 
@@ -96,39 +96,39 @@ msgstr ""
 msgid "File"
 msgstr ""
 
-#: Music.class.php:80
+#: Music.class.php:85
 msgid "File seemed valid but could not move it to it's path"
 msgstr ""
 
-#: Music.class.php:78
+#: Music.class.php:82
 msgid "File upload success"
 msgstr ""
 
-#: Music.class.php:84
+#: Music.class.php:88
 msgid "Filetype not Supported Upload Failed"
 msgstr ""
 
-#: Music.class.php:162
+#: Music.class.php:163
 msgid "Invalid Request"
 msgstr ""
 
-#: views/updatecat.php:58 views/updatecat.php:97
-msgid "No"
+#: views/bootnav.php:1
+msgid "List MoH"
 msgstr ""
 
-#: Music.class.php:72
-msgid "No file provided"
-msgstr "Не е предоставен файл"
+#: views/updatecat.php:58 views/updatecat.php:101
+msgid "No"
+msgstr ""
 
 #: page.music.php:12
 msgid "On Hold Music"
 msgstr "Музика при Задържане"
 
-#: views/addstreamform.php:92
+#: views/addstreamform.php:93
 msgid "Optional Format"
 msgstr ""
 
-#: views/addstreamform.php:104
+#: views/addstreamform.php:105
 msgid ""
 "Optional value for \"format=\" line used to provide the format to Asterisk. "
 "This should be a format understood by Asterisk such as ulaw, and is specific "
@@ -145,7 +145,7 @@ msgstr ""
 msgid "Please enter a valid Category Name"
 msgstr "Моля въведете правилно Име на Категория"
 
-#: Music.class.php:215
+#: Music.class.php:216
 msgid "Reset"
 msgstr ""
 
@@ -153,15 +153,15 @@ msgstr ""
 msgid "Should wav encode to mp3"
 msgstr ""
 
-#: Music.class.php:116 Music.class.php:120
+#: Music.class.php:124 Music.class.php:126
 msgid "Standard"
 msgstr ""
 
-#: Music.class.php:126 assets/js/music.js:46
+#: Music.class.php:126
 msgid "Streaming"
 msgstr ""
 
-#: Music.class.php:220
+#: Music.class.php:221
 msgid "Submit"
 msgstr ""
 
@@ -181,7 +181,7 @@ msgstr ""
 "параметър: <strong>Convert Music Files to WAV</strong> на false в "
 "Допълнителни Настройки"
 
-#: views/addstreamform.php:79
+#: views/addstreamform.php:80
 msgid ""
 "This is the \"application=\" line used to provide the streaming details to "
 "Asterisk. See information on musiconhold.conf configuration for different "
@@ -191,7 +191,7 @@ msgstr ""
 "Астериск. Вижте информацията в настройките на musiconhold.conf за различните "
 "опции за аудио и интернет поточни източници."
 
-#: views/grid.php:5 views/musiclist.php:5
+#: views/grid.php:17 views/musiclist.php:5
 msgid "Type"
 msgstr ""
 
@@ -231,9 +231,12 @@ msgstr "Ниво 75%"
 msgid "Volume Adjustment"
 msgstr "Настройка на Усилването"
 
-#: views/updatecat.php:56 views/updatecat.php:95
+#: views/updatecat.php:56 views/updatecat.php:99
 msgid "Yes"
 msgstr ""
+
+#~ msgid "No file provided"
+#~ msgstr "Не е предоставен файл"
 
 #~ msgid "Please wait until the page loads. Your file is being processed."
 #~ msgstr ""

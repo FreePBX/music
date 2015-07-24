@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-22 15:26-0400\n"
+"POT-Creation-Date: 2015-07-24 16:09-0400\n"
 "PO-Revision-Date: 2015-04-23 16:48+0200\n"
 "Last-Translator: Yuriy <alliancesko@gmail.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/music/"
@@ -24,19 +24,19 @@ msgstr ""
 msgid "Action"
 msgstr ""
 
-#: views/grid.php:6
+#: views/grid.php:18
 msgid "Actions"
 msgstr ""
 
-#: views/bootnav.php:1
+#: views/bootnav.php:2 views/grid.php:2
 msgid "Add Category"
 msgstr ""
 
-#: views/bootnav.php:2
+#: views/bootnav.php:3 views/grid.php:3
 msgid "Add Streaming Category"
 msgstr "Добавить категорию потока"
 
-#: views/addcatform.php:27 views/addstreamform.php:55
+#: views/addcatform.php:27 views/addstreamform.php:56
 msgid ""
 "Allows you to Set up Different Categories for music on hold.  This is useful "
 "if you would like to specify different Hold Music or Commercials for various "
@@ -46,7 +46,7 @@ msgstr ""
 "для использования различной Музыки в ожидании при перенаправлении звонка и "
 "Очереди."
 
-#: views/addstreamform.php:67
+#: views/addstreamform.php:68
 msgid "Application"
 msgstr ""
 
@@ -66,23 +66,23 @@ msgstr ""
 "Категории: \\\"none\\\" и \\\"default\\\" это зарезервированные имена. "
 "Выберите другое название"
 
-#: views/grid.php:4
+#: views/grid.php:16
 msgid "Category"
 msgstr ""
 
-#: views/addcatform.php:15 views/addstreamform.php:43
+#: views/addcatform.php:15 views/addstreamform.php:44
 msgid "Category Name"
 msgstr ""
 
-#: Music.class.php:210
+#: Music.class.php:211
 msgid "Delete"
 msgstr "Удалить"
 
-#: views/updatecat.php:90
+#: views/updatecat.php:94
 msgid "Enable Random Play"
 msgstr "Случайная выборка при воспроизведении"
 
-#: views/updatecat.php:105
+#: views/updatecat.php:109
 msgid "Enable random playback of music for this category"
 msgstr ""
 
@@ -94,39 +94,39 @@ msgstr ""
 msgid "File"
 msgstr ""
 
-#: Music.class.php:80
+#: Music.class.php:85
 msgid "File seemed valid but could not move it to it's path"
 msgstr ""
 
-#: Music.class.php:78
+#: Music.class.php:82
 msgid "File upload success"
 msgstr ""
 
-#: Music.class.php:84
+#: Music.class.php:88
 msgid "Filetype not Supported Upload Failed"
 msgstr ""
 
-#: Music.class.php:162
+#: Music.class.php:163
 msgid "Invalid Request"
 msgstr ""
 
-#: views/updatecat.php:58 views/updatecat.php:97
-msgid "No"
+#: views/bootnav.php:1
+msgid "List MoH"
 msgstr ""
 
-#: Music.class.php:72
-msgid "No file provided"
-msgstr "Не указан файл"
+#: views/updatecat.php:58 views/updatecat.php:101
+msgid "No"
+msgstr ""
 
 #: page.music.php:12
 msgid "On Hold Music"
 msgstr "Музыка в ожидании"
 
-#: views/addstreamform.php:92
+#: views/addstreamform.php:93
 msgid "Optional Format"
 msgstr ""
 
-#: views/addstreamform.php:104
+#: views/addstreamform.php:105
 msgid ""
 "Optional value for \"format=\" line used to provide the format to Asterisk. "
 "This should be a format understood by Asterisk such as ulaw, and is specific "
@@ -143,7 +143,7 @@ msgstr ""
 msgid "Please enter a valid Category Name"
 msgstr "Введите правильное название для категории"
 
-#: Music.class.php:215
+#: Music.class.php:216
 msgid "Reset"
 msgstr ""
 
@@ -151,15 +151,15 @@ msgstr ""
 msgid "Should wav encode to mp3"
 msgstr ""
 
-#: Music.class.php:116 Music.class.php:120
+#: Music.class.php:124 Music.class.php:126
 msgid "Standard"
 msgstr ""
 
-#: Music.class.php:126 assets/js/music.js:46
+#: Music.class.php:126
 msgid "Streaming"
 msgstr ""
 
-#: Music.class.php:220
+#: Music.class.php:221
 msgid "Submit"
 msgstr ""
 
@@ -180,7 +180,7 @@ msgstr ""
 "<strong>Конвертировать музыкальные файлы в WAV</strong> в значение false в "
 "дополнительных настройках"
 
-#: views/addstreamform.php:79
+#: views/addstreamform.php:80
 msgid ""
 "This is the \"application=\" line used to provide the streaming details to "
 "Asterisk. See information on musiconhold.conf configuration for different "
@@ -190,7 +190,7 @@ msgstr ""
 "Астериск. Посмотрите дополнительную информацию в конфигурации musiconhold."
 "conf для выбора других опций для аудио- и потокового вещания из интернет."
 
-#: views/grid.php:5 views/musiclist.php:5
+#: views/grid.php:17 views/musiclist.php:5
 msgid "Type"
 msgstr ""
 
@@ -230,9 +230,12 @@ msgstr "Громкость 75%"
 msgid "Volume Adjustment"
 msgstr "Настройка громкости"
 
-#: views/updatecat.php:56 views/updatecat.php:95
+#: views/updatecat.php:56 views/updatecat.php:99
 msgid "Yes"
 msgstr ""
+
+#~ msgid "No file provided"
+#~ msgstr "Не указан файл"
 
 #~ msgid "Please wait until the page loads. Your file is being processed."
 #~ msgstr "Дождитесь, пока страница загрузится. Ваш файл обрабатывается."
