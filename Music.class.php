@@ -90,6 +90,10 @@ class Music implements \BMO {
 					}
 				}
 			break;
+			case "deletefile":
+				$file = basename($_REQUEST['filename']);
+				music_rmdirr("$path_to_dir"."/".$file);
+			break;
 			case "delete":
 				if($path_to_dir != $path_to_moh_dir) {
 					music_rmdirr("$path_to_dir");

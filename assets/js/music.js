@@ -54,6 +54,6 @@ function linkFormat(value){
 }
 
 function musicFormat(value){
-	html = '<a href="?display=music&action=deletefile&filename='+value['filename']+'&category='+value['category']+'" class="delAction"><i class="fa fa-trash"></i></a>';
+	html = '<a href="?display=music&action=deletefile&view=form&filename='+value['filename']+'&category='+value['category']+'" class="delAction"><i class="fa fa-trash"></i></a>';
 	return html;
 }

@@ -18,6 +18,7 @@ switch ($request['view']) {
 		switch($request["action"]){
 			case "edit":
 			case "updatecategory":
+			case "deletefile":
 				$heading .= ' - '.$request['category'];
 				$content = load_view(__DIR__.'/views/updatecat.php', array('request' => $request, 'mh' => $mh));
 				$content .= load_view(__DIR__.'/views/musiclist.php', array('request' => $request, 'mh' => $mh));
