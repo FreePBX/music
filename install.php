@@ -18,7 +18,7 @@ if (isset($tresults)) {
 		} elseif ($tresult == "none") {
       $dir = $path_to_moh_dir."/.nomusic_reserved";
       if (!is_dir($dir)) {
-        mkdir("$dir", 0755,true); 
+        mkdir("$dir", 0755,true);
       }
       touch($dir."/silence.wav");
     } else {
@@ -42,20 +42,21 @@ fclose($handle);
 
 
 $freepbx_conf =& freepbx_conf::create();
+if ($freepbx_conf->conf_setting_exists('AMPMPG123')) {
+	$freepbx_conf->remove_conf_setting('AMPMPG123');
+}
 
-  // AMPMPG123
-  //
-  $set['value'] = true;
-  $set['defaultval'] =& $set['value'];
-  $set['readonly'] = 0;
-  $set['hidden'] = 0;
-  $set['level'] = 3;
-  $set['module'] = 'music';
-  $set['category'] = 'System Setup';
-  $set['emptyok'] = 0;
-  $set['name'] = 'Convert Music Files to WAV';
-  $set['description'] = 'When set to false, the MP3 files can be loaded and WAV files converted to MP3 in the MoH module. The default behavior of true assumes you have mpg123 loaded as well as sox and will convert MP3 files to WAV. This is highly recommended as MP3 files heavily tax the system and can cause instability on a busy phone system';
-  $set['type'] = CONF_TYPE_BOOL;
-  $freepbx_conf->define_conf_setting('AMPMPG123',$set,true);
-
-needreload();
+// CACHERTCLASSES
+//
+$set['value'] = true;
+$set['defaultval'] =& $set['value'];
+$set['readonly'] = 0;
+$set['hidden'] = 0;
+$set['level'] = 3;
+$set['module'] = 'music';
+$set['category'] = 'System Setup';
+$set['emptyok'] = 0;
+$set['name'] = 'Cache MoH Classes';
+$set['description'] = 'When enabled Asterisk will use 1 instance of moh class for all channels who are using it, decreasing consumable cpu cycles and memory in the process';
+$set['type'] = CONF_TYPE_BOOL;
+$freepbx_conf->define_conf_setting('CACHERTCLASSES',$set,true);

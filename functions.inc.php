@@ -19,17 +19,17 @@ class music_conf {
 
 		$File_Write="";
 		$tresults = music_list();
+		$ccc = FreePBX::Config()->get("CACHERTCLASSES") ? "yes" : "no";
+		$File_Write = "[general]\ncachertclasses=".$ccc."\n";
 		if (isset($tresults)) {
 
-			if (version_compare($version, "1.6.0", "ge")) {
-				$random = "sort=random\n";
-				$alpha = "sort=alpha\n";
-			} else {
-				$random = "random=yes\n";
-				$alpha = "";
-			}
+			$random = "sort=random\n";
+			$alpha = "sort=alpha\n";
 
 			foreach ($tresults as $tresult)  {
+				if(strtolower($tresult) == "general") {
+					continue;
+				}
 				// hack - but his is all a hack until redone, in functions, etc.
 				// this puts a none category to allow no music to be chosen
 				//

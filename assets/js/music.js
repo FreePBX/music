@@ -30,13 +30,18 @@ function editstream_onsubmit() {
 function addcategory_onsubmit() {
 	var theForm = document.localcategory;
 	var msgInvalidCategoryName = _('Please enter a valid Category Name');
-	var msgReservedCategoryName = _('Categories: \"none\" and \"default\" are reserved names. Please enter a different name');
+	var msgReservedCategoryName = _('Categories: "none" and "default" are reserved names. Please enter a different name');
 
 	defaultEmptyOK = false;
-	if (!isAlphanumeric(theForm.category.value))
+	if (!isAlphanumeric(theForm.category.value)) {
 		return warnInvalid(theForm.category, msgInvalidCategoryName);
-	if (theForm.category.value == "default" || theForm.category.value == "none" || theForm.category.value == ".nomusic_reserved")
+	}
+	if(theForm.category.value.toLowerCase() == "general") {
+		return warnInvalid(theForm.category, _("General is not a valid category name"));
+	}
+	if (theForm.category.value == "default" || theForm.category.value == "none" || theForm.category.value == ".nomusic_reserved") {
 		return warnInvalid(theForm.category, msgReservedCategoryName);
+	}
 
 	return true;
 }
