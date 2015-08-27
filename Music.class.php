@@ -129,40 +129,77 @@ class Music implements \BMO {
 
 		return $cats;
 	}
+
 	public function ajaxRequest($req, &$setting) {
-		//The ajax request
-		if ($req == "getJSON") {
-			//Tell BMO This command is valid. If you are doing a lot of actions use a switch
-			return true;
-		}else{
-			//Deny everything else
-			return false;
+		$setting['authenticate'] = false;
+		$setting['allowremote'] = false;
+		switch($req) {
+			case "gethtml5":
+			case "playback":
+			case "download":
+			case "getJSON":
+				return true;
+			break;
+		}
+		return false;
+	}
+
+	public function ajaxCustomHandler() {
+		switch($_REQUEST['command']) {
+			case "playback":
+			case "download":
+				$media = $this->FreePBX->Media();
+				$media->getHTML5File($_REQUEST['file']);
+			break;
 		}
 	}
-	//This handles the AJAX via ajax.php?module=helloworld&command=getJSON&jdata=grid
+
 	public function ajaxHandler() {
-		if($_REQUEST['command'] == 'getJSON'){
-			switch ($_REQUEST['jdata']) {
-				case 'categories':
-					return $this->getCategories();
-				break;
-				case 'musiclist':
-					$path = $this->mohpath;
-					if($_REQUEST['category'] != 'default'){
-						$path .= '/'.$_REQUEST['category'];
+		switch($_REQUEST['command']) {
+			case "gethtml5":
+				$media = $this->FreePBX->Media();
+				$path = $this->mohpath;
+				if($_REQUEST['category'] != 'default'){
+					$path .= '/'.$_REQUEST['category'];
+				}
+				$file = $path . "/" . $_REQUEST['file'];
+				if (file_exists($file))	{
+					$media->load($file);
+					$files = $media->generateHTML5();
+					$final = array();
+					foreach($files as $format => $name) {
+						$final[$format] = "ajax.php?module=music&command=playback&file=".$name;
 					}
-					$files = array();
-					foreach ($this->fileList($path) as $value){
-						$fp = pathinfo($path .'/'.$value);
-						$oi = array('link' => array('category' => $_REQUEST['category'], 'filename' => $value));
-						$files[] = array_merge($fp,$oi);
-					}
-					return $files;
-				break;
-				default:
-					print json_encode(_("Invalid Request"));
-				break;
-			}
+					return array("status" => true, "files" => $final);
+				} else {
+					return array("status" => false, "message" => _("File does not exist"));
+				}
+			break;
+			case "getJSON":
+				switch ($_REQUEST['jdata']) {
+					case 'categories':
+						return $this->getCategories();
+					break;
+					case 'musiclist':
+						$path = $this->mohpath;
+						if($_REQUEST['category'] != 'default'){
+							$path .= '/'.$_REQUEST['category'];
+						}
+						$files = array();
+						$count = 0;
+						foreach ($this->fileList($path) as $value){
+							$fp = pathinfo($path .'/'.$value);
+							$oi = array('category' => $_REQUEST['category'], 'id' => $count, 'link' => array('category' => $_REQUEST['category'], 'filename' => $value));
+							$files[] = array_merge($fp,$oi);
+							$count++;
+						}
+						return $files;
+					break;
+					default:
+						print json_encode(_("Invalid Request"));
+					break;
+				}
+			break;
 		}
 	}
 
