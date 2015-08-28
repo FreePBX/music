@@ -187,7 +187,7 @@ class Music implements \BMO {
 							}
 							if(in_array($extension,$supported['in'])) {
 								$tmp_name = $_FILES["files"]["tmp_name"][$key];
-								$dname = preg_replace("/\s+/","-",strtolower($_FILES["files"]["name"][$key]));
+								$dname = preg_replace("/\s+|'+|\"+|\?+|\*+/","-",strtolower($_FILES["files"]["name"][$key]));
 								$name = pathinfo($dname,PATHINFO_FILENAME) . '.' . $extension;
 								move_uploaded_file($tmp_name, $path_to_dir."/".$name);
 								return array("status" => true, "name" => pathinfo($dname,PATHINFO_FILENAME), "filename" => $name, "type" => $extension, "category" => $category);
