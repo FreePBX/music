@@ -19,8 +19,14 @@ switch ($request['view']) {
 			case "edit":
 			case "updatecategory":
 			case "deletefile":
+				$media = FreePBX::create()->Media;
+				$supported = $media->getSupportedFormats();
+				ksort($supported['in']);
+				ksort($supported['out']);
+				$supportedHTML5 = $media->getSupportedHTML5Formats();
+				$convertto = array_intersect($supported['out'], $mh->convert);
 				$heading .= ' - '.$request['category'];
-				$content = load_view(__DIR__.'/views/updatecat.php', array('request' => $request, 'mh' => $mh));
+				$content = load_view(__DIR__.'/views/updatecat.php', array("convertto" => $convertto, "supportedHTML5" => implode(",",$supportedHTML5), "supported" => $supported, 'request' => $request, 'mh' => $mh));
 				$content .= load_view(__DIR__.'/views/musiclist.php', array('request' => $request, 'mh' => $mh));
 			break;
 			case "add":

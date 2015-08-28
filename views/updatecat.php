@@ -3,74 +3,6 @@
 //	Copyright 2015 Sangoma Technologies.
 //
 extract($request, EXTR_SKIP);
-if ($mh->mpg123) {
-	$mpg123html = '
-		<!--Volume Adjustment-->
-		<div class="element-container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="row">
-						<div class="form-group">
-							<div class="col-md-3">
-								<label class="control-label" for="volume">'. _("Volume Adjustment") .'</label>
-								<i class="fa fa-question-circle fpbx-help-icon" data-for="volume"></i>
-							</div>
-							<div class="col-md-9">
-								<select name="volume" id="volume" class="form-control">
-									<option value="1.50">'. _("Volume 150%").'</option>
-									<option value="1.25">'. _("Volume 125%").'</option>
-									<option value="" selected>'. _("Volume 100%").'</option>
-									<option value=".75"><'. _("Volume 75%").'</option>
-									<option value=".5">'. _("Volume 50%").'</option>
-									<option value=".25">'. _("Volume 25%").'</option>
-									<option value=".1">'. _("Volume 10%").'</option>
-								</select>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<span id="volume-help" class="help-block fpbx-help-block">'. _("The volume adjustment is a linear value. Since loudness is logarithmic, the linear level will be less of an adjustment. You should test out the installed music to assure it is at the correct volume. This feature will convert MP3 files to WAV files. If you do not have mpg123 installed, you can set the parameter: <strong>Convert Music Files to WAV</strong> to false in Advanced Settings").'</span>
-				</div>
-			</div>
-		</div>
-		<!--END Volume Adjustment-->
-	';
-}else{
-	 $mpg123html = '
-	<!--Encode wav to mp3-->
-	<div class="element-container">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="row">
-					<div class="form-group">
-						<div class="col-md-3">
-							<label class="control-label" for="onlywav">'. _("Encode wav to mp3") .'</label>
-							<i class="fa fa-question-circle fpbx-help-icon" data-for="onlywav"></i>
-						</div>
-						<div class="col-md-9">
-							<span class="radioset">
-							<input type="radio" name="onlywav" id="onlywavyes" value="1">
-							<label for="onlywavyes">'._("Yes").'</label>
-							<input type="radio" name="onlywav" id="onlywavno" value="0" CHECKED>
-							<label for="onlywavno">'._("No").'</label>
-							</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<span id="onlywav-help" class="help-block fpbx-help-block">'. _("Should wav encode to mp3").'</span>
-			</div>
-		</div>
-	</div>
-	<!--END Encode wav to mp3-->
-	';
-}
 if ($category == "default") {
 	$path_to_dir = $mh->mohpath; //path to directory u want to read.
 } else {
@@ -110,31 +42,69 @@ $randomplay = file_exists("{$path_to_dir}/.random");
 		</div>
 	</div>
 </div>
-<!--END Enable Random Play-->
-<!--Upload File-->
 <div class="element-container">
 	<div class="row">
 		<div class="col-md-12">
 			<div class="row">
 				<div class="form-group">
 					<div class="col-md-3">
-						<label class="control-label" for="mohfile"><?php echo _("Upload File") ?></label>
+						<label class="control-label" for="fileupload"><?php echo _("Upload Recording")?></label>
+						<i class="fa fa-question-circle fpbx-help-icon" data-for="fileupload"></i>
 					</div>
 					<div class="col-md-9">
 						<span class="btn btn-default btn-file">
-						    <?php echo _("Browse")?>
-						    <input type="file" class="form-control" name="mohfile" id="mohfile">
+							<?php echo _("Browse")?>
+							<input id="fileupload" type="file" class="form-control" name="files[]" data-url="ajax.php?module=music&amp;command=upload&amp;category=<?php echo $category?>" class="form-control" multiple>
 						</span>
 						<span class="filename"></span>
+						<div id="upload-progress" class="progress">
+							<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+						</div>
+						<div id="dropzone">
+							<div class="message"><?php echo _("Drop Multiple Files or Archives Here")?></div>
+						</div>
 					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<span id="fileupload-help" class="help-block fpbx-help-block"><?php echo sprintf(_("Upload files from your local system. Supported upload formats are: %s. This includes archives (that include multiple files) and multiple files"),"<i><strong>".implode(", ",$supported['in'])."</strong></i>")?></span>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<!--END Upload File-->
-<?php echo $mpg123html ?>
+<!--END Enable Random Play-->
+<div class="element-container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="form-group">
+					<div class="col-md-3">
+						<label class="control-label" for="convert"><?php echo _("Convert All To")?></label>
+						<i class="fa fa-question-circle fpbx-help-icon" data-for="convert"></i>
+					</div>
+					<div class="col-md-9 text-center">
+						<span class="radioset">
+							<?php $c=0;foreach($convertto as $k => $v) { ?>
+								<?php if(($c % 5) == 0 && $c != 0) { ?></span></br><span class="radioset"><?php } ?>
+								<input type="checkbox" id="<?php echo $k?>" name="codec[]" class="codec" value="<?php echo $k?>" <?php echo ($k == 'wav') ? 'CHECKED' : ''?>>
+								<label for="<?php echo $k?>"><?php echo $v?></label>
+							<?php $c++; } ?>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<span id="convert-help" class="help-block fpbx-help-block"><?php echo _("Check all file formats you would like this cateogry to be encoded into")?></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 </form>
 <br/>
 <hr/>
 <br/>
+<script>var supportedRegExp = "<?php echo implode("|",array_keys($supported['in']))?>"; var supportedHTML5 = "<?php echo implode(",",FreePBX::Media()->getSupportedHTML5Formats())?>"</script>

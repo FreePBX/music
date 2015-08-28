@@ -53,7 +53,7 @@ function linkFormat(value){
 }
 
 function playFormatter(val,row){
-	return '<div id="jquery_jplayer_'+row.id+'" class="jp-jplayer" data-filename="'+row.basename+'" data-category="'+row.category+'" data-container="#jp_container_'+row.id+'" data-year="'+row.year+'" data-month="'+row.month+'" data-day="'+row.day+'" data-file="'+row.file+'"></div><div id="jp_container_'+row.id+'" data-player="jquery_jplayer_'+row.id+'" class="jp-audio-freepbx" role="application" aria-label="media player">'+
+	return '<div id="jquery_jplayer_'+row.id+'" class="jp-jplayer" data-filename="'+row.filename+'" data-category="'+row.category+'" data-container="#jp_container_'+row.id+'"></div><div id="jp_container_'+row.id+'" data-player="jquery_jplayer_'+row.id+'" class="jp-audio-freepbx" role="application" aria-label="media player">'+
 		'<div class="jp-type-single">'+
 			'<div class="jp-gui jp-interface">'+
 				'<div class="jp-controls">'+
@@ -84,14 +84,94 @@ function playFormatter(val,row){
 	'</div>';
 }
 
-function musicFormat(value){
-	html = '<a href="?display=music&action=deletefile&view=form&filename='+value['filename']+'&category='+value['category']+'" class="delAction"><i class="fa fa-trash"></i></a>';
+function musicFormat(value,row){
+	html = '<a href="?display=music&action=deletefile&view=form&filename='+row.filename+'&category='+row.category+'" class="delAction"><i class="fa fa-trash"></i></a>';
 	return html;
 }
 
 $('#musicgrid').on("post-body.bs.table", function () {
 	bindPlayers();
 });
+
+//Make sure at least one codec is selected
+$(".codec").change(function() {
+	if(!$(".codec").is(":checked")) {
+		alert(_("At least one codec must be checked"));
+		$(this).prop("checked", true);
+	}
+});
+
+/**
+ * Drag/Drop/Upload Files
+ */
+$('#dropzone').on('drop dragover', function (e) {
+	e.preventDefault();
+});
+$('#dropzone').on('dragleave drop', function (e) {
+	$(this).removeClass("activate");
+});
+$('#dropzone').on('dragover', function (e) {
+	$(this).addClass("activate");
+});
+$('#fileupload').fileupload({
+	dataType: 'json',
+	dropZone: $("#dropzone"),
+	add: function (e, data) {
+		//TODO: Need to check all supported formats
+		var sup = "\.("+supportedRegExp+")$",
+				patt = new RegExp(sup),
+				submit = true;
+		$.each(data.files, function(k, v) {
+			if(!patt.test(v.name)) {
+				submit = false;
+				alert(_("Unsupported file type"));
+				return false;
+			}
+			var s = v.name.replace(/\.[^/.]+$/, "").replace(/\s+/g, '-').toLowerCase();
+			if(!$(".replace").length && mohConflict(s)) {
+				if(!confirm(sprintf(_("File %s will overwrite a file that already exists in this category. Is that ok?"),v.name))) {
+					submit = false;
+					return false;
+				}
+			}
+		});
+		if(submit) {
+			data.submit();
+		}
+	},
+	drop: function () {
+		$("#upload-progress .progress-bar").css("width", "0%");
+	},
+	dragover: function (e, data) {
+	},
+	change: function (e, data) {
+	},
+	done: function (e, data) {
+		if(data.result.status) {
+			$('#musicgrid').bootstrapTable('prepend',{
+				'filename': data.result.filename,
+				'type': data.result.type,
+				'name': data.result.name,
+				'category': data.result.category,
+				'id': $("#musicgrid tr").length
+			});
+		} else {
+			alert(data.result.message);
+		}
+	},
+	progressall: function (e, data) {
+		var progress = parseInt(data.loaded / data.total * 100, 10);
+		$("#upload-progress .progress-bar").css("width", progress+"%");
+	},
+	fail: function (e, data) {
+	},
+	always: function (e, data) {
+	}
+});
+
+function mohConflict(s) {
+	return false;
+}
 
 function bindPlayers() {
 	$(".jp-jplayer").each(function() {
@@ -137,7 +217,7 @@ function bindPlayers() {
 				$(container).find(".jp-ball").css("left","0%");
 			},
 			swfPath: "/js",
-			supplied: "wav",
+			supplied: supportedHTML5,
 			cssSelectorAncestor: container,
 			wmode: "window",
 			useStateClassSkin: true,

@@ -27,6 +27,9 @@
   <menuitems>
     <music>Music on Hold</music>
   </menuitems>
+  <depends>
+    <module>framework ge 13.0.1beta3.56</module>
+  </depends>
   <location>release/2.11/music-2.11.0.1.tgz</location>
   <md5sum>787dc2e298cb49636534f9b7ae7114a0</md5sum>
   <supported>

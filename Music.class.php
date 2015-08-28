@@ -6,6 +6,22 @@ if(!function_exists('music_list')) {
 }
 
 class Music implements \BMO {
+	/** Extensions to show in the convert to section
+	 * Limited on purpose because there are far too many,
+	 * Most of which are not supported by asterisk
+	 */
+	public $convert = array(
+		"wav",
+		"sln",
+		"g722",
+		"ulaw",
+		"alaw",
+		"g729",
+		"gsm",
+		"wav49",
+		"g719",
+		"mp3"
+	);
 
 	public function __construct($freepbx = null) {
 		if ($freepbx == null) {
@@ -17,7 +33,6 @@ class Music implements \BMO {
 		$this->mohdir = $freepbx->Config->get('MOHDIR');
 		$this->varlibdir = $freepbx->Config->get('ASTVARLIBDIR');
 		$this->mohpath = $this->varlibdir.'/'.$this->mohdir;
-		$this->mpg123 = $freepbx->Config->get('AMPMPG123');
 	}
 
 	public function doConfigPageInit($page) {
@@ -138,6 +153,7 @@ class Music implements \BMO {
 			case "playback":
 			case "download":
 			case "getJSON":
+			case "upload":
 				return true;
 			break;
 		}
@@ -156,6 +172,55 @@ class Music implements \BMO {
 
 	public function ajaxHandler() {
 		switch($_REQUEST['command']) {
+			case "upload":
+				foreach ($_FILES["files"]["error"] as $key => $error) {
+					switch($error) {
+						case UPLOAD_ERR_OK:
+							$extension = pathinfo($_FILES["files"]["name"][$key], PATHINFO_EXTENSION);
+							$extension = strtolower($extension);
+							$supported = $this->FreePBX->Media->getSupportedFormats();
+							$category = isset($_REQUEST['category'])?htmlspecialchars(strtr($_REQUEST['category']," ./\"\'\`", "------")):'';
+							if ($category == "default") {
+								$path_to_dir = $this->mohpath; //path to directory u want to read.
+							} else {
+								$path_to_dir = $this->mohpath."/"; //path to directory u want to read.
+							}
+							if(in_array($extension,$supported['in'])) {
+								$tmp_name = $_FILES["files"]["tmp_name"][$key];
+								$dname = preg_replace("/\s+/","-",strtolower($_FILES["files"]["name"][$key]));
+								$name = pathinfo($dname,PATHINFO_FILENAME) . '.' . $extension;
+								move_uploaded_file($tmp_name, $path_to_dir."/".$name);
+								return array("status" => true, "name" => pathinfo($dname,PATHINFO_FILENAME), "filename" => $name, "type" => $extension, "category" => $category);
+							} else {
+								return array("status" => false, "message" => _("Unsupported file format"));
+								break;
+							}
+						break;
+						case UPLOAD_ERR_INI_SIZE:
+							return array("status" => false, "message" => _("The uploaded file exceeds the upload_max_filesize directive in php.ini"));
+						break;
+						case UPLOAD_ERR_FORM_SIZE:
+							return array("status" => false, "message" => _("The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form"));
+						break;
+						case UPLOAD_ERR_PARTIAL:
+							return array("status" => false, "message" => _("The uploaded file was only partially uploaded"));
+						break;
+						case UPLOAD_ERR_NO_FILE:
+							return array("status" => false, "message" => _("No file was uploaded"));
+						break;
+						case UPLOAD_ERR_NO_TMP_DIR:
+							return array("status" => false, "message" => _("Missing a temporary folder"));
+						break;
+						case UPLOAD_ERR_CANT_WRITE:
+							return array("status" => false, "message" => _("Failed to write file to disk"));
+						break;
+						case UPLOAD_ERR_EXTENSION:
+							return array("status" => false, "message" => _("A PHP extension stopped the file upload"));
+						break;
+					}
+				}
+				return array("status" => false, "message" => _("Can Not Find Uploaded Files"));
+			break;
 			case "gethtml5":
 				$media = $this->FreePBX->Media();
 				$path = $this->mohpath;
@@ -188,9 +253,8 @@ class Music implements \BMO {
 						$files = array();
 						$count = 0;
 						foreach ($this->fileList($path) as $value){
-							$fp = pathinfo($path .'/'.$value);
-							$oi = array('category' => $_REQUEST['category'], 'id' => $count, 'link' => array('category' => $_REQUEST['category'], 'filename' => $value));
-							$files[] = array_merge($fp,$oi);
+							$fp = pathinfo($value);
+							$files[] = array('type' => $fp['extension'], 'category' => $_REQUEST['category'], 'id' => $count, 'filename' => $value , 'name' => $fp['filename']);
 							$count++;
 						}
 						return $files;
@@ -214,7 +278,8 @@ class Music implements \BMO {
 	public function fileList($path){
 		$pattern = '';
 		$handle=opendir($path) ;
-		$extensions = array('mp3','MP3','wav','WAV'); // list of extensions to match
+		$supported = $this->FreePBX->Media->getSupportedFormats();
+		$extensions = array_intersect($supported['out'], $this->convert);
 		//generate the pattern to look for.
 		$pattern = '/(\.'.implode('|\.',$extensions).')$/i';
 		//store file names that match pattern in an array

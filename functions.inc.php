@@ -112,7 +112,6 @@ function music_rmdirr($dirname)
 {
 	// Sanity check
 	if (!file_exists($dirname)) {
-		print "$dirname Doesn't exist\n";
 		return false;
 	}
 
