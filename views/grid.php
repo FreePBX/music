@@ -1,6 +1,6 @@
 <div id="toolbar-all">
-    <a class="btn" href="?display=music&amp;view=form&amp;action=add"><i class="fa fa-plus"></i> <?php echo _("Add Category")?></a>
-		<a class="btn" href="?display=music&amp;view=form&amp;action=addstream"><i class="fa fa-plus"></i> <?php echo _("Add Streaming Category")?></a>
+    <a class="btn" href="?display=music&amp;action=add&amp;type=files"><i class="fa fa-plus"></i> <?php echo _("Add Files Category")?></a>
+		<a class="btn" href="?display=music&amp;action=add&amp;type=custom"><i class="fa fa-plus"></i> <?php echo _("Add Custom Application Category")?></a>
 </div>
 <table id="musicgrid" data-url="ajax.php?module=music&amp;command=getJSON&amp;jdata=categories" data-cache="false" data-cookie="true"
         data-cookie-id-table="moh-categories"

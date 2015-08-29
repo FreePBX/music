@@ -1,21 +1,5 @@
-<?php
-//	License for all code of this FreePBX module can be found in the license file inside the module directory
-//	Copyright 2015 Sangoma Technologies.
-//
-extract($request, EXTR_SKIP);
-if ($category == "default") {
-	$path_to_dir = $mh->mohpath; //path to directory u want to read.
-} else {
-	$path_to_dir = $mh->mohpath."/$category"; //path to directory u want to read.
-}
-
-$randomplay = file_exists("{$path_to_dir}/.random");
-
-?>
-<form enctype="multipart/form-data" name="upload" action="" method="POST" class="fpbx-submit" data-fpbx-delete="?display=music&amp;action=delete&amp;category=<?php echo $category?>">
-<input type="hidden" name="display" value="<?php echo $display?>">
-<input type="hidden" name="category" value="<?php echo $category?>">
-<input type="hidden" name="action" value="updatecategory">
+<form enctype="multipart/form-data" name="upload" action="" method="POST" class="fpbx-submit" data-fpbx-delete="?display=music&amp;action=delete&amp;category=<?php echo $data['category']?>">
+<input type="hidden" name="category" value="<?php echo $data['category']?>">
 <!--Enable Random Play-->
 <div class="element-container">
 	<div class="row">
@@ -27,9 +11,9 @@ $randomplay = file_exists("{$path_to_dir}/.random");
 						<i class="fa fa-question-circle fpbx-help-icon" data-for="erand"></i>
 					</div>
 					<div class="col-md-9 radioset">
-						<input type="radio" name="erand" id="erandyes" value="yes" <?php echo ($randomplay?"CHECKED":"") ?>>
+						<input type="radio" name="erand" id="erandyes" value="yes" <?php echo ($data['random']?"CHECKED":"") ?>>
 						<label for="erandyes"><?php echo _("Yes");?></label>
-						<input type="radio" name="erand" id="erandno" value="no" <?php echo ($randomplay?"":"CHECKED") ?>>
+						<input type="radio" name="erand" id="erandno" value="no" <?php echo ($data['random']?"":"CHECKED") ?>>
 						<label for="erandno"><?php echo _("No");?></label>
 					</div>
 				</div>
@@ -38,7 +22,7 @@ $randomplay = file_exists("{$path_to_dir}/.random");
 	</div>
 	<div class="row">
 		<div class="col-md-12">
-			<span id="erand-help" class="help-block fpbx-help-block"><?php echo _("Enable random playback of music for this category")?></span>
+			<span id="erand-help" class="help-block fpbx-help-block"><?php echo _("Enable random playback of music for this category. If disabled music will play in alphabetical order")?></span>
 		</div>
 	</div>
 </div>
@@ -107,4 +91,4 @@ $randomplay = file_exists("{$path_to_dir}/.random");
 <br/>
 <hr/>
 <br/>
-<script>var supportedRegExp = "<?php echo implode("|",array_keys($supported['in']))?>"; var supportedHTML5 = "<?php echo implode(",",FreePBX::Media()->getSupportedHTML5Formats())?>"</script>
+<script>var files = <?php echo json_encode($files)?>; var supportedRegExp = "<?php echo implode("|",array_keys($supported['in']))?>"; var supportedHTML5 = "<?php echo implode(",",FreePBX::Media()->getSupportedHTML5Formats())?>"</script>

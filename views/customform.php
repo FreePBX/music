@@ -1,38 +1,17 @@
 <?php
 //	License for all code of this FreePBX module can be found in the license file inside the module directory
 //	Copyright 2015 Sangoma Technologies.
-extract($request);
-if (isset($category)){
-	if ($category == "default") {
-		$path_to_dir = $mh->mohpath; //path to directory u want to read.
-	} else {
-		$path_to_dir = $mh->mohpath."/$category"; //path to directory u want to read.
-	}
-	if (file_exists("{$path_to_dir}/.custom")) {
-		$application = file_get_contents("{$path_to_dir}/.custom");
-		$application = explode("\n",$application);
-		if (isset($application[1])) {
-			$format = explode('=',$application[1],2);
-			$format = $format[1];
-		} else {
-			$format = "";
-		}
-	} else {
-		$application = false;
-	}
-	$formaction = "editednewstream";
+if (isset($request['action']) && $request['action'] == "edit"){
 	$onsubmit = 'editstream_onsubmit();';
 	$readonly = 'readonly';
 }else{
-	$formaction = "addednewstream";
 	$onsubmit = 'addstream_onsubmit();';
+	$readonly = '';
 }
 ?>
-<form name="formstream" action="" method="post" onsubmit="<?php echo $onsubmit?>" class="fpbx-submit" data-fpbx-delete="?display=music&amp;action=delete&amp;category=<?php echo $category?>">
-<input type="hidden" name="display" value="music">
-<input type="hidden" name="action" value="<?php echo $formaction?>">
+<form name="formstream" action="config.php?display=music" method="post" onsubmit="<?php echo $onsubmit?>" class="fpbx-submit" <?php if(isset($data['category'])) {?>data-fpbx-delete="?display=music&amp;action=delete&amp;category=<?php echo isset($data['category']) ? $data['category'] : ""?><?php } ?>">
 <input type="hidden" name="view" value="form">
-<input type="hidden" name="category" value="<?php echo $category?>">
+<input type="hidden" name="category" value="<?php echo !empty($data['category']) ? $data['category'] : ""?>">
 
 <!--Category Name-->
 <div class="element-container">
@@ -45,7 +24,7 @@ if (isset($category)){
 						<i class="fa fa-question-circle fpbx-help-icon" data-for="category"></i>
 					</div>
 					<div class="col-md-9">
-						<input type="text" class="form-control" id="category" name="category" value="<?php echo $category?>" <?php echo $readonly?>>
+						<input type="text" class="form-control" id="category" name="category" value="<?php echo !empty($data['category']) ? $data['category'] : ""?>" <?php echo $readonly?>>
 					</div>
 				</div>
 			</div>
@@ -69,7 +48,7 @@ if (isset($category)){
 						<i class="fa fa-question-circle fpbx-help-icon" data-for="stream"></i>
 					</div>
 					<div class="col-md-9">
-						<input type="text" class="form-control" id="stream" name="stream" value="<?php echo $application[0]?>">
+						<input type="text" class="form-control" id="stream" name="stream" value="<?php echo !empty($data['application']) ? $data['application'] : ""?>">
 					</div>
 				</div>
 			</div>
@@ -77,7 +56,7 @@ if (isset($category)){
 	</div>
 	<div class="row">
 		<div class="col-md-12">
-			<span id="stream-help" class="help-block fpbx-help-block"><?php echo _("This is the \"application=\" line used to provide the streaming details to Asterisk. See information on musiconhold.conf configuration for different audio and Internet streaming source options.")?></span>
+			<span id="stream-help" class="help-block fpbx-help-block"><?php echo _('This is the "application=" line used to provide the streaming details to Asterisk. See information on musiconhold.conf configuration for different audio and Internet streaming source options.')?></span>
 		</div>
 	</div>
 </div>
@@ -94,7 +73,7 @@ if (isset($category)){
 						<i class="fa fa-question-circle fpbx-help-icon" data-for="format"></i>
 					</div>
 					<div class="col-md-9">
-						<input type="text" class="form-control" id="format" name="format" value="<?php echo htmlentities($format)?>">
+						<input type="text" class="form-control" id="format" name="format" value="<?php echo !empty($data['format']) ? $data['format'] : ""?>">
 					</div>
 				</div>
 			</div>
@@ -102,7 +81,7 @@ if (isset($category)){
 	</div>
 	<div class="row">
 		<div class="col-md-12">
-			<span id="format-help" class="help-block fpbx-help-block"><?php echo _("Optional value for \"format=\" line used to provide the format to Asterisk. This should be a format understood by Asterisk such as ulaw, and is specific to the streaming application you are using. See information on musiconhold.conf configuration for different audio and Internet streaming source options.")?></span>
+			<span id="format-help" class="help-block fpbx-help-block"><?php echo _('Optional value for "format=" line used to provide the format to Asterisk. This should be a format understood by Asterisk such as ulaw, and is specific to the streaming application you are using. See information on musiconhold.conf configuration for different audio and Internet streaming source options.')?></span>
 		</div>
 	</div>
 </div>

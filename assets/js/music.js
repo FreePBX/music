@@ -40,14 +40,14 @@ function addcategory_onsubmit() {
 	return true;
 }
 
-function linkFormat(value){
-	var action = 'edit';
-	if(value['type'] == 'streaming'){
-		action = 'editstream'
+function linkFormat(val,row){
+	var type = 'files';
+	if(row.type == 'custom'){
+		type = 'custom';
 	}
-	var html = '<a href="?display=music&view=form&category='+value['category']+'&action='+action+'"><i class="fa fa-pencil"></i></a>';
-	if(value['category'] !== 'default'){
-		html += '&nbsp;<a href="?display=music&action=delete&category='+value['category']+'" class="delAction"><i class="fa fa-trash"></i></a>';
+	var html = '<a href="?display=music&id='+row.id+'&action=edit&type='+type+'"><i class="fa fa-pencil"></i></a>';
+	if(row.category !== 'default'){
+		html += '&nbsp;<a href="?display=music&id='+row.id+'&action=delete"" class="delAction"><i class="fa fa-trash"></i></a>';
 	}
 	return html;
 }
@@ -85,7 +85,7 @@ function playFormatter(val,row){
 }
 
 function musicFormat(value,row){
-	html = '<a href="?display=music&action=deletefile&view=form&filename='+row.filename+'&category='+row.category+'" class="delAction"><i class="fa fa-trash"></i></a>';
+	html = '<a data-filename="'+row.filename+'" data-id="'+row.id+'" data-category="'+row.category+'" class="clickable delAction delMusic"><i class="fa fa-trash"></i></a>';
 	return html;
 }
 
@@ -127,12 +127,11 @@ $('#fileupload').fileupload({
 				alert(_("Unsupported file type"));
 				return false;
 			}
-			var s = v.name.replace(/\.[^/.]+$/, "").replace(/\s+/g, '-').toLowerCase();
-			if(!$(".replace").length && mohConflict(s)) {
-				if(!confirm(sprintf(_("File %s will overwrite a file that already exists in this category. Is that ok?"),v.name))) {
-					submit = false;
-					return false;
-				}
+			var s = v.name.replace(/\.[^/.]+$/, "").replace(/\s+|'+|\"+|\?+|\*+/g, '-').toLowerCase();
+			if(mohConflict(s)) {
+				alert(sprintf(_("File '%s' will overwrite a file (%s) that already exists in this category"),v.name, s));
+				submit = false;
+				return false;
 			}
 		});
 		if(submit) {
@@ -155,6 +154,7 @@ $('#fileupload').fileupload({
 				'category': data.result.category,
 				'id': $("#musicgrid tr").length
 			});
+			files.push(data.result.name.toLowerCase());
 		} else {
 			alert(data.result.message);
 		}
@@ -170,7 +170,7 @@ $('#fileupload').fileupload({
 });
 
 function mohConflict(s) {
-	return false;
+	return files.indexOf(s) > -1;
 }
 
 function bindPlayers() {
@@ -272,3 +272,15 @@ function bindPlayers() {
 		player.jPlayer.currentTime = maxduration * percentage / 100;
 	};
 }
+
+$(document).on("click", ".delMusic", function() {
+	var id = $(this).data("id");
+	id = parseInt(id);
+	$.post( "ajax.php", {module: "music", command: "deletemusic", filename: $(this).data("filename"), category: $(this).data("category")}, function( data ) {
+		if(data.status) {
+			$('#musicgrid').bootstrapTable('remove', {field: 'id', values: [id]});
+		} else {
+			alert(data.message);
+		}
+	});
+});
