@@ -2,7 +2,7 @@
 //	License for all code of this FreePBX module can be found in the license file inside the module directory
 //	Copyright 2015 Sangoma Technologies.
 ?>
-<form name="localcategory" id="localcategory" action="" method="post" onsubmit="return addcategory_onsubmit();" class="fpbx-submit">
+<form name="localcategory" id="localcategory" action="" method="post" class="fpbx-submit">
 <input type="hidden" name="display" value="music">
 <input type="hidden" name="action" value="addednew">
 <!--Category Name-->

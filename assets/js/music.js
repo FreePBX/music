@@ -1,44 +1,20 @@
-function addstream_onsubmit() {
-	var theForm = document.formstream;
+$("form").submit(function() {
+	if($("#category").length) {
+		var name = $("#category").val();
+		if (!isAlphanumeric(name)) {
+			return warnInvalid($("#category"), _('Please enter a valid Category Name'));
+		}
 
-	defaultEmptyOK = false;
-	if (!isAlphanumeric(theForm.category.value))
-		return warnInvalid(theForm.category, _('Please enter a valid Category Name'));
-	if (theForm.category.value == "default" || theForm.category.value == "none" || theForm.category.value == ".nomusic_reserved")
-		return warnInvalid(theForm.category, _('Categories: "none" and "default" are reserved names. Please enter a different name'));
-	if (isEmpty(theForm.stream.value))
-		return warnInvalid(theForm.stream, _('Please enter a streaming application command and arguments'));
-
-	return true;
-}
-
-
-function editstream_onsubmit() {
-	var theForm = document.formstream;
-
-	defaultEmptyOK = false;
-	if (isEmpty(theForm.stream.value))
-		return warnInvalid(theForm.stream, _('Please enter a streaming application command and arguments'));
-
-	return true;
-}
-
-function addcategory_onsubmit() {
-	var theForm = document.localcategory;
-
-	defaultEmptyOK = false;
-	if (!isAlphanumeric(theForm.category.value)) {
-		return warnInvalid(theForm.category, _('Please enter a valid Category Name'));
+		if (name == "default" || name == "none" || name == ".nomusic_reserved") {
+			return warnInvalid($("#category"), _('Categories: "none" and "default" are reserved names. Please enter a different name'));
+		}
 	}
-	if(theForm.category.value.toLowerCase() == "general") {
-		return warnInvalid(theForm.category, _("General is not a valid category name"));
+});
+$("form[name=formcustom]").submit(function() {
+	if (isEmpty($("#application").val())) {
+		return warnInvalid($("#application"), _('Please enter a valid application command and arguments'));
 	}
-	if (theForm.category.value == "default" || theForm.category.value == "none" || theForm.category.value == ".nomusic_reserved") {
-		return warnInvalid(theForm.category, _('Categories: "none" and "default" are reserved names. Please enter a different name'));
-	}
-
-	return true;
-}
+});
 
 function linkFormat(val,row){
 	var type = 'files';

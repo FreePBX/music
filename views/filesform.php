@@ -1,5 +1,6 @@
 <form enctype="multipart/form-data" name="upload" action="" method="POST" class="fpbx-submit" data-fpbx-delete="?display=music&amp;action=delete&amp;category=<?php echo $data['category']?>">
-<input type="hidden" name="category" value="<?php echo $data['category']?>">
+<input type="hidden" name="id" value="<?php echo !empty($data['id']) ? $data['id'] : ""?>">
+<input type="hidden" name="type" value="files">
 <!--Enable Random Play-->
 <div class="element-container">
 	<div class="row">

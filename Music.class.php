@@ -45,31 +45,31 @@ class Music implements \BMO {
 		$request['category'] = isset($request['category'])?$this->stripCategory($request['category']):"";
 		switch($request["action"]){
 			case "edit":
-			switch($request['type']) {
-				case "custom":
-					$data = $this->getCategoryByName($request['category']);
-					dbug($data);
-					$content = load_view(__DIR__.'/views/customform.php', array("data" => $data, "request" => $request));
-				break;
-				case "files":
-					$media = \FreePBX::create()->Media;
-					$supported = $media->getSupportedFormats();
-					ksort($supported['in']);
-					ksort($supported['out']);
-					$supportedHTML5 = $media->getSupportedHTML5Formats();
-					$convertto = array_intersect($supported['out'], $mh->convert);
-					$data = $this->getCategoryByID($_REQUEST['id']);
-					$heading .= ' - '.$data['category'];
-					$path = $this->getCategoryPath($data['category']);
-					$files = array();
-					foreach($mh->fileList($path) as $f) {
-						$i = pathinfo($f);
-						$files[] = strtolower($i['filename']);
-					}
-					$content = load_view(__DIR__.'/views/filesform.php', array("files" => $files, "convertto" => $convertto, "supportedHTML5" => implode(",",$supportedHTML5), "supported" => $supported, 'data' => $data));
-					$content .= load_view(__DIR__.'/views/musiclist.php', array('request' => $request, 'mh' => $mh));
-				break;
-			}
+				switch($request['type']) {
+					case "custom":
+						$data = $this->getCategoryByName($request['category']);
+						dbug($data);
+						$content = load_view(__DIR__.'/views/customform.php', array("data" => $data, "request" => $request));
+					break;
+					case "files":
+						$media = \FreePBX::create()->Media;
+						$supported = $media->getSupportedFormats();
+						ksort($supported['in']);
+						ksort($supported['out']);
+						$supportedHTML5 = $media->getSupportedHTML5Formats();
+						$convertto = array_intersect($supported['out'], $mh->convert);
+						$data = $this->getCategoryByID($_REQUEST['id']);
+						$heading .= ' - '.$data['category'];
+						$path = $this->getCategoryPath($data['category']);
+						$files = array();
+						foreach($mh->fileList($path) as $f) {
+							$i = pathinfo($f);
+							$files[] = strtolower($i['filename']);
+						}
+						$content = load_view(__DIR__.'/views/filesform.php', array("files" => $files, "convertto" => $convertto, "supportedHTML5" => implode(",",$supportedHTML5), "supported" => $supported, 'data' => $data));
+						$content .= load_view(__DIR__.'/views/musiclist.php', array('request' => $request, 'mh' => $mh));
+					break;
+				}
 			break;
 			case "add":
 				switch($request['type']) {
@@ -82,6 +82,8 @@ class Music implements \BMO {
 					break;
 				}
 			break;
+			case "delete":
+				$this->deleteMusic($request['id']);
 			default:
 				$content = load_view(__DIR__.'/views/grid.php', array('request' => $request, 'mh' => $mh));
 			break;
@@ -121,35 +123,18 @@ class Music implements \BMO {
 			}
 		}
 
-		switch ($action) {
-			case "addednewstream":
-			case "editednewstream":
-				$stream = isset($request['stream'])?$request['stream']:'';
-				$format = isset($request['format'])?trim($request['format']):'';
-				if ($format != "") {
-					$stream .= "\nformat=$format";
-				}
-				if (!is_dir($path_to_dir)) {
-					mkdir("$path_to_dir", 0755);
-				}
-				$fh=fopen("$path_to_dir/.custom","w");
-				fwrite($fh,$stream);
-				fclose($fh);
+		switch ($_POST['type']) {
+			case "custom":
 				needreload();
 			break;
-			case "addednew":
-				mkdir("$path_to_dir", 0755, true);
+			case "files":
 				needreload();
-			break;
-			case "delete":
-				if($path_to_dir != $path_to_moh_dir) {
-					$this->rmdirr("$path_to_dir");
-					needreload();
-				}
-				$path_to_dir = $path_to_moh_dir;
-				$category='default';
 			break;
 		}
+	}
+
+	public function addFilesCategory($files) {
+
 	}
 
 	public function genConfig() {
@@ -205,19 +190,30 @@ class Music implements \BMO {
 		$this->FreePBX->WriteConfig($conf);
 	}
 
+	public function deleteMusic($id) {
+		$info = $this->getCategoryByID($id);
+		$sql = "DELETE FROM music WHERE id = ?";
+		$sth = $this->db->prepare($sql);
+		$sth->execute(array($id));
+		if(!empty($info['category'])) {
+			$path = $this->getCategoryPath($info['category']);
+			$this->rmdirr($path);
+		}
+	}
+
 	public function rmdirr($path) {
 		// Sanity check
-		if (!file_exists($dirname)) {
+		if (!file_exists($path)) {
 			return false;
 		}
 
 		// Simple delete for a file
-		if (is_file($dirname)) {
-			return unlink($dirname);
+		if (is_file($path)) {
+			return unlink($path);
 		}
 
 		// Loop through the folder
-		$dir = dir($dirname);
+		$dir = dir($path);
 		while (false !== $entry = $dir->read()) {
 			// Skip pointers
 			if ($entry == '.' || $entry == '..') {
@@ -225,12 +221,12 @@ class Music implements \BMO {
 			}
 
 			// Recurse
-			$this->rmdirr("$dirname/$entry");
+			$this->rmdirr("$$path/$entry");
 		}
 
 		// Clean up
 		$dir->close();
-		return rmdir($dirname);
+		return rmdir($path);
 	}
 
 	public function install() {
