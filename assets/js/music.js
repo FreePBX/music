@@ -121,7 +121,7 @@ function playFormatter(val,row){
 }
 
 function musicFormat(value,row){
-	html = '<a data-filename="'+row.filename+'" data-id="'+row.id+'" data-categoryid="'+row.categoryid+'" class="clickable delAction delMusic"><i class="fa fa-trash"></i></a>';
+	html = '<a data-name="'+row.name+'" data-id="'+row.id+'" data-categoryid="'+row.categoryid+'" class="clickable delAction delMusic"><i class="fa fa-trash"></i></a>';
 	return html;
 }
 
@@ -185,9 +185,9 @@ $('#fileupload').fileupload({
 		if(data.result.status) {
 			$('#musicgrid').bootstrapTable('prepend',{
 				'filename': data.result.filename,
-				'type': data.result.type,
+				'formats': data.result.formats,
 				'name': data.result.name,
-				'categoryid': data.result.id,
+				'categoryid': data.result.categoryid,
 				'id': $("#musicgrid tr").length
 			});
 			files.push(data.result.name.toLowerCase());
@@ -310,11 +310,14 @@ function bindPlayers() {
 }
 
 $(document).on("click", ".delMusic", function() {
-	var id = $(this).data("id");
+	var id = $(this).data("id"),
+			name = $(this).data("name");
 	id = parseInt(id);
-	$.post( "ajax.php", {module: "music", command: "deletemusic", filename: $(this).data("filename"), categoryid: $(this).data("categoryid")}, function( data ) {
+	$.post( "ajax.php", {module: "music", command: "deletemusic", name: name, categoryid: $(this).data("categoryid")}, function( data ) {
 		if(data.status) {
 			$('#musicgrid').bootstrapTable('remove', {field: 'id', values: [id]});
+			var index = files.indexOf();
+			files.splice(name, 1);
 		} else {
 			alert(data.message);
 		}

@@ -143,7 +143,7 @@
 					<div class="row">
 						<div class="form-group">
 							<div class="col-md-3">
-								<label class="control-label" for="convert"><?php echo _("Convert All To")?></label>
+								<label class="control-label" for="convert"><?php echo _("Convert Upload/Files To")?></label>
 								<i class="fa fa-question-circle fpbx-help-icon" data-for="convert"></i>
 							</div>
 							<div class="col-md-9 text-center">
@@ -159,7 +159,7 @@
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<span id="convert-help" class="help-block fpbx-help-block"><?php echo _("Check all file formats you would like this cateogry to be encoded into")?></span>
+							<span id="convert-help" class="help-block fpbx-help-block"><?php echo _("Check all file formats you would like this music in this category to be encoded into. This applied to uploaded music and any music currently on the system. It will not overwrite any formats that have been previously processed.")?></span>
 						</div>
 					</div>
 				</div>

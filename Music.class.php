@@ -23,6 +23,8 @@ class Music implements \BMO {
 		"mp3"
 	);
 
+	private $tmp = "/tmp";
+
 	private $message = array();
 
 	public function __construct($freepbx = null) {
@@ -35,6 +37,8 @@ class Music implements \BMO {
 		$this->varlibdir = $freepbx->Config->get('ASTVARLIBDIR');
 		$this->mohpath = $this->varlibdir.'/'.$this->mohdir;
 		$this->config = $this->loadMoHConfig();
+		$tmp = sys_get_temp_dir();
+		$this->tmp = !empty($tmp) && file_exists($tmp) ? $tmp : $this->tmp;
 	}
 
 	public function showPage() {
@@ -58,8 +62,10 @@ class Music implements \BMO {
 				$files = array();
 				foreach($mh->fileList($path) as $f) {
 					$i = pathinfo($f);
-					$files[] = strtolower($i['filename']);
+					$fn = $i['filename'];
+					$files[$fn] = strtolower($i['filename']);
 				}
+				$files = array_values($files);
 				$content = load_view(__DIR__.'/views/form.php', array("files" => $files, "convertto" => $convertto, "supportedHTML5" => implode(",",$supportedHTML5), "supported" => $supported, 'data' => $data));
 			break;
 			case "add":
@@ -337,14 +343,14 @@ class Music implements \BMO {
 				return array("status" => true);
 			break;
 			case "deletemusic":
-				if(empty($_POST['filename']) || empty($_POST['categoryid'])) {
+				if(empty($_POST['name']) || empty($_POST['categoryid'])) {
 					return array("status" => false);
 				}
 				$category = $this->getCategoryByID($_REQUEST['categoryid']);
 				$path = $this->getCategoryPath($category['category']);
-				$filename = basename($_POST['filename']);
-				if(file_exists($path."/".$filename)) {
-					unlink($path."/".$filename);
+				$name = basename($_POST['name']);
+				foreach(glob($path."/".$name."*") as $file) {
+					unlink($file);
 				}
 				return array("status" => true);
 			break;
@@ -357,12 +363,19 @@ class Music implements \BMO {
 							$supported = $this->FreePBX->Media->getSupportedFormats();
 							$category = $this->getCategoryByID($_POST['id']);
 							$path = $this->getCategoryPath($category['category']);
+							$media = $this->FreePBX->Media();
 							if(in_array($extension,$supported['in'])) {
 								$tmp_name = $_FILES["files"]["tmp_name"][$key];
 								$dname = preg_replace("/\s+|'+|\"+|\?+|\*+/","-",strtolower($_FILES["files"]["name"][$key]));
-								$name = pathinfo($dname,PATHINFO_FILENAME) . '.' . $extension;
-								move_uploaded_file($tmp_name, $path."/".$name);
-								return array("status" => true, "name" => pathinfo($dname,PATHINFO_FILENAME), "filename" => $name, "type" => $extension, "category" => $category['category']);
+								$dname = pathinfo($dname,PATHINFO_FILENAME);
+								$name = $dname . '.' . $extension;
+								move_uploaded_file($tmp_name, $this->tmp."/".$name);
+								$media->load($this->tmp."/".$name);
+								foreach($_POST['codec'] as $c) {
+									$media->convert($path."/".$dname.".".$c);
+								}
+								unlink($this->tmp."/".$name);
+								return array("status" => true, "name" => $dname, "filename" => $name, "formats" => $_POST['codec'], "category" => $category['category'], "categoryid" => $_POST['id']);
 							} else {
 								return array("status" => false, "message" => _("Unsupported file format"));
 								break;
