@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX musik\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-24 16:09-0400\n"
+"POT-Creation-Date: 2015-09-04 12:36-0700\n"
 "PO-Revision-Date: 2011-03-20 00:00+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: \n"
@@ -29,113 +29,150 @@ msgstr ""
 "X-Poedit-Language: Swedish\n"
 "X-Poedit-Country: SWEDEN\n"
 
-#: views/musiclist.php:6
+#: Music.class.php:403
+msgid "A PHP extension stopped the file upload"
+msgstr ""
+
+#: views/form.php:174
 msgid "Action"
 msgstr ""
 
-#: views/grid.php:18
+#: views/grid.php:20
 msgid "Actions"
 msgstr ""
 
-#: views/bootnav.php:2 views/grid.php:2
+#: views/grid.php:5
 msgid "Add Category"
 msgstr ""
 
-#: views/bootnav.php:3 views/grid.php:3
-msgid "Add Streaming Category"
-msgstr "Lägg till strömkategori"
-
-#: views/addcatform.php:27 views/addstreamform.php:56
+#: views/addcatform.php:27
 msgid ""
 "Allows you to Set up Different Categories for music on hold.  This is useful "
-"if you would like to specify different Hold Music or Commercials for various "
-"ACD Queues."
+"if you would like to specify different Hold Music or Commercials. The "
+"category name will be converted to ASCII if any UTF8 characters are found"
 msgstr ""
-"Ger dig möjlighet att sätta upp olika kategorier för pausmusik. Detta är "
-"användbart för att specificera olika typer av pausmusik eller reklam för "
-"köer."
 
-#: views/addstreamform.php:68
+#: assets/js/music.js:52
+msgid "An Error occurred trying to submit this document"
+msgstr ""
+
+#: views/form.php:37
 msgid "Application"
 msgstr ""
 
-#: views/updatecat.php:125
+#: assets/js/music.js:135
+msgid "At least one codec must be checked"
+msgstr ""
+
+#: views/form.php:118
 msgid "Browse"
 msgstr ""
 
-#: install.php:37
-msgid "Cannot write to file"
-msgstr "Kan inte skriva till fil"
-
-#: assets/js/music.js:33
-msgid ""
-"Categories: \\\"none\\\" and \\\"default\\\" are reserved names. Please "
-"enter a different name"
+#: Music.class.php:407
+msgid "Can Not Find Uploaded Files"
 msgstr ""
-"Kategorierna \\\"none\\\" och \\\"default\\\" är reserverade namn. Skriv in "
-"ett annat namn"
 
-#: views/grid.php:16
+#: assets/js/music.js:9
+msgid ""
+"Categories: \"none\" and \"default\" are reserved names. Please enter a "
+"different name"
+msgstr ""
+
+#: views/grid.php:18
 msgid "Category"
 msgstr ""
 
-#: views/addcatform.php:15 views/addstreamform.php:44
-msgid "Category Name"
+#: Music.class.php:114
+msgid "Category Already Exists"
 msgstr ""
 
-#: Music.class.php:211
+#: views/addcatform.php:15
+msgid "Category Name (ASCII Only)"
+msgstr ""
+
+#: views/form.php:162
+msgid ""
+"Check all file formats you would like this music in this category to be "
+"encoded into. This applied to uploaded music and any music currently on the "
+"system. It will not overwrite any formats that have been previously "
+"processed."
+msgstr ""
+
+#: views/form.php:146
+msgid "Convert Upload/Files To"
+msgstr ""
+
+#: views/addcatform.php:44 views/form.php:16
+msgid "Custom Application"
+msgstr ""
+
+#: Music.class.php:538
 msgid "Delete"
 msgstr "Ta bort"
 
-#: views/updatecat.php:94
+#: views/form.php:126
+msgid "Drop Multiple Files or Archives Here"
+msgstr ""
+
+#: views/form.php:88
 msgid "Enable Random Play"
 msgstr "Aktivera slumpmässig uppspelning"
 
-#: views/updatecat.php:109
-msgid "Enable random playback of music for this category"
+#: views/form.php:103
+msgid ""
+"Enable random playback of music for this category. If disabled music will "
+"play in alphabetical order"
 msgstr ""
 
-#: views/updatecat.php:50
-msgid "Encode wav to mp3"
+#: Music.class.php:400
+msgid "Failed to write file to disk"
 msgstr ""
 
-#: views/musiclist.php:4
+#: views/form.php:171
 msgid "File"
 msgstr ""
 
-#: Music.class.php:85
-msgid "File seemed valid but could not move it to it's path"
+#: Music.class.php:423
+msgid "File does not exist"
 msgstr ""
 
-#: Music.class.php:82
-msgid "File upload success"
+#: views/addcatform.php:43 views/form.php:15
+msgid "Files"
 msgstr ""
 
-#: Music.class.php:88
-msgid "Filetype not Supported Upload Failed"
+#: views/form.php:172
+msgid "Formats"
 msgstr ""
 
-#: Music.class.php:163
+#: Music.class.php:460
 msgid "Invalid Request"
 msgstr ""
 
 #: views/bootnav.php:1
-msgid "List MoH"
+msgid "List MoH Categories"
 msgstr ""
 
-#: views/updatecat.php:58 views/updatecat.php:101
+#: Music.class.php:397
+msgid "Missing a temporary folder"
+msgstr ""
+
+#: views/form.php:95
 msgid "No"
 msgstr ""
 
-#: page.music.php:12
+#: Music.class.php:394
+msgid "No file was uploaded"
+msgstr ""
+
+#: Music.class.php:46
 msgid "On Hold Music"
 msgstr "Pausmusik"
 
-#: views/addstreamform.php:93
+#: views/form.php:62
 msgid "Optional Format"
 msgstr ""
 
-#: views/addstreamform.php:105
+#: views/form.php:74
 msgid ""
 "Optional value for \"format=\" line used to provide the format to Asterisk. "
 "This should be a format understood by Asterisk such as ulaw, and is specific "
@@ -147,47 +184,41 @@ msgstr ""
 "applikation av strömmande ljud du anger. Titta i filen musiconhold.conf för "
 "olika ljudformat och strömmande media från Internet."
 
-#: assets/js/music.js:32
+#: views/form.php:173
+msgid "Play"
+msgstr ""
+
+#: assets/js/music.js:5
 msgid "Please enter a valid Category Name"
 msgstr "Skriv in ett giltigt kategorinamn"
 
-#: Music.class.php:216
+#: assets/js/music.js:16
+msgid "Please enter a valid application command and arguments"
+msgstr ""
+
+#: Music.class.php:543
 msgid "Reset"
 msgstr ""
 
-#: views/updatecat.php:67
-msgid "Should wav encode to mp3"
-msgstr ""
-
-#: Music.class.php:124 Music.class.php:126
-msgid "Standard"
-msgstr ""
-
-#: Music.class.php:126
-msgid "Streaming"
-msgstr ""
-
-#: Music.class.php:221
+#: Music.class.php:548
 msgid "Submit"
 msgstr ""
 
-#: views/updatecat.php:35
+#: Music.class.php:388
 msgid ""
-"The volume adjustment is a linear value. Since loudness is logarithmic, the "
-"linear level will be less of an adjustment. You should test out the "
-"installed music to assure it is at the correct volume. This feature will "
-"convert MP3 files to WAV files. If you do not have mpg123 installed, you can "
-"set the parameter: <strong>Convert Music Files to WAV</strong> to false in "
-"Advanced Settings"
+"The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
+"the HTML form"
 msgstr ""
-"Justering av volymen anges som ett linjärt värde. Eftersom loudness är "
-"logaritmiskt kommer den linjära nivån att vara en mindre justering. Du bör "
-"testa den installerade musiken för att försäkra dig om det rätta värdet. "
-"Detta funktion kommer att konvertera filerna MP3 till WAV. Om du inte har "
-"installerat mpg123 kan du sätta parametern: <strong>Konvertera musikfiler "
-"till WAV</strong> till falskt i Avancerade inställningar"
 
-#: views/addstreamform.php:80
+#: Music.class.php:385
+msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
+msgstr ""
+
+#: Music.class.php:391
+msgid "The uploaded file was only partially uploaded"
+msgstr ""
+
+#: views/form.php:49
 msgid ""
 "This is the \"application=\" line used to provide the streaming details to "
 "Asterisk. See information on musiconhold.conf configuration for different "
@@ -197,49 +228,100 @@ msgstr ""
 "strömmande ljud. Titta i filen musiconhold.conf för olika ljudformat och "
 "strömmande media från Internet."
 
-#: views/grid.php:17 views/musiclist.php:5
+#: views/addcatform.php:38 views/form.php:10 views/grid.php:19
 msgid "Type"
 msgstr ""
 
-#: views/updatecat.php:121
-msgid "Upload File"
+#: views/addcatform.php:53 views/form.php:25
+msgid ""
+"Type of Music on Hold. If set to \"Files\" then this category will play the "
+"files listed below. If set to \"Custom Application\" then this category will "
+"stream music from the set application"
 msgstr ""
 
-#: views/updatecat.php:26
-msgid "Volume 10%"
-msgstr "10% volym"
+#: Music.class.php:380
+msgid "Unsupported file format"
+msgstr ""
 
-#: views/updatecat.php:22
-msgid "Volume 100%"
-msgstr "100% volym"
+#: assets/js/music.js:163
+msgid "Unsupported file type"
+msgstr ""
 
-#: views/updatecat.php:21
-msgid "Volume 125%"
-msgstr "125% volym"
+#: views/form.php:113
+msgid "Upload Recording"
+msgstr ""
 
-#: views/updatecat.php:20
-msgid "Volume 150%"
-msgstr "150% volym"
+#: views/form.php:133
+#, php-format
+msgid ""
+"Upload files from your local system. Supported upload formats are: %s. This "
+"includes archives (that include multiple files) and multiple files"
+msgstr ""
 
-#: views/updatecat.php:25
-msgid "Volume 25%"
-msgstr "25% volym"
-
-#: views/updatecat.php:24
-msgid "Volume 50%"
-msgstr "50% volym"
-
-#: views/updatecat.php:23
-msgid "Volume 75%"
-msgstr "75% volym"
-
-#: views/updatecat.php:15
-msgid "Volume Adjustment"
-msgstr "Justera volym"
-
-#: views/updatecat.php:56 views/updatecat.php:99
+#: views/form.php:93
 msgid "Yes"
 msgstr ""
+
+#~ msgid "Add Streaming Category"
+#~ msgstr "Lägg till strömkategori"
+
+#~ msgid ""
+#~ "Allows you to Set up Different Categories for music on hold.  This is "
+#~ "useful if you would like to specify different Hold Music or Commercials "
+#~ "for various ACD Queues."
+#~ msgstr ""
+#~ "Ger dig möjlighet att sätta upp olika kategorier för pausmusik. Detta är "
+#~ "användbart för att specificera olika typer av pausmusik eller reklam för "
+#~ "köer."
+
+#~ msgid "Cannot write to file"
+#~ msgstr "Kan inte skriva till fil"
+
+#~ msgid ""
+#~ "Categories: \\\"none\\\" and \\\"default\\\" are reserved names. Please "
+#~ "enter a different name"
+#~ msgstr ""
+#~ "Kategorierna \\\"none\\\" och \\\"default\\\" är reserverade namn. Skriv "
+#~ "in ett annat namn"
+
+#~ msgid ""
+#~ "The volume adjustment is a linear value. Since loudness is logarithmic, "
+#~ "the linear level will be less of an adjustment. You should test out the "
+#~ "installed music to assure it is at the correct volume. This feature will "
+#~ "convert MP3 files to WAV files. If you do not have mpg123 installed, you "
+#~ "can set the parameter: <strong>Convert Music Files to WAV</strong> to "
+#~ "false in Advanced Settings"
+#~ msgstr ""
+#~ "Justering av volymen anges som ett linjärt värde. Eftersom loudness är "
+#~ "logaritmiskt kommer den linjära nivån att vara en mindre justering. Du "
+#~ "bör testa den installerade musiken för att försäkra dig om det rätta "
+#~ "värdet. Detta funktion kommer att konvertera filerna MP3 till WAV. Om du "
+#~ "inte har installerat mpg123 kan du sätta parametern: <strong>Konvertera "
+#~ "musikfiler till WAV</strong> till falskt i Avancerade inställningar"
+
+#~ msgid "Volume 10%"
+#~ msgstr "10% volym"
+
+#~ msgid "Volume 100%"
+#~ msgstr "100% volym"
+
+#~ msgid "Volume 125%"
+#~ msgstr "125% volym"
+
+#~ msgid "Volume 150%"
+#~ msgstr "150% volym"
+
+#~ msgid "Volume 25%"
+#~ msgstr "25% volym"
+
+#~ msgid "Volume 50%"
+#~ msgstr "50% volym"
+
+#~ msgid "Volume 75%"
+#~ msgstr "75% volym"
+
+#~ msgid "Volume Adjustment"
+#~ msgstr "Justera volym"
 
 #~ msgid "No file provided"
 #~ msgstr "Ingen fil angiven"
