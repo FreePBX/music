@@ -46,7 +46,7 @@ class Music implements \BMO {
 		$request['category'] = isset($request['category'])?$this->stripCategory($request['category']):"";
 		switch($request["action"]){
 			case "edit":
-				$media = \FreePBX::create()->Media;
+				$media = $this->FreePBX->Media;
 				$supported = $media->getSupportedFormats();
 				ksort($supported['in']);
 				ksort($supported['out']);
@@ -429,7 +429,7 @@ class Music implements \BMO {
 									'categoryid' => $category['id'],
 									'category' => $category['category'],
 									'id' => $count,
-									'filename' => $value ,
+									'filename' => $value,
 									'name' => $fp['filename'],
 									'formats' => array(
 										$fp['extension']
