@@ -10,18 +10,78 @@ $("form").submit(function() {
 		}
 	}
 });
-$("form[name=formcustom]").submit(function() {
-	if (isEmpty($("#application").val())) {
-		return warnInvalid($("#application"), _('Please enter a valid application command and arguments'));
+$("#moheditform").submit(function(e) {
+	if($("#type").val() == "custom") {
+		if (isEmpty($("#application").val())) {
+			return warnInvalid($("#application"), _('Please enter a valid application command and arguments'));
+		}
+	}
+	e.preventDefault();
+	var data = {
+		module: "music",
+		command: "save",
+		id: $("input[name=id]").val()
+	};
+	data.type = $("#type").val();
+	data.format = $("#format").val();
+	data.application = $("#application").val();
+	data.erand = $("input[name=erand]:checked").val();
+	data.codecs = [];
+	$(".codec:checked").each(function() {
+		data.codecs.push($(this).val());
+	});
+
+	$("#action-buttons input").prop("disabled",true);
+
+	$.ajax({
+		type: 'POST',
+		url: "ajax.php",
+		data: data,
+		dataType: 'json',
+		timeout: 30000,
+		success: function(data) {
+			if(data.status) {
+				window.location = "?display=music";
+			} else {
+				alert(data.message);
+				console.log(data.errors);
+				$("#action-buttons input").prop("disabled", false);
+			}
+		},
+		error: function(data) {
+			alert(_("An Error occurred trying to submit this document"));
+			$("#action-buttons input").prop("disabled", false);
+		},
+	});
+});
+
+$(document).on("keyup paste", ".name-check", function(e) {
+	if (e.keyCode == 37 || e.keyCode == 38 || e.keyCode == 39 || e.keyCode == 40) {
+		return;
+	}
+	var i = $(this).val().replace(/\s|&|<|>|\.|`|'|\*|\?|"|\/|\\|\|/g, '').toLowerCase();
+	$(this).val(i);
+});
+
+$("#type").change(function() {
+	if($(this).val() == "files") {
+		$("#application-container").addClass("hidden");
+		$("#files-container").removeClass("hidden");
+	} else {
+		$("#application-container").removeClass("hidden");
+		$("#files-container").addClass("hidden");
 	}
 });
 
+function formatFormatter(val,row){
+	return row.formats.join();
+}
 function linkFormat(val,row){
 	var type = 'files';
 	if(row.type == 'custom'){
 		type = 'custom';
 	}
-	var html = '<a href="?display=music&id='+row.id+'&action=edit&type='+type+'"><i class="fa fa-pencil"></i></a>';
+	var html = '<a href="?display=music&id='+row.id+'&action=edit"><i class="fa fa-pencil"></i></a>';
 	if(row.category !== 'default'){
 		html += '&nbsp;<a href="?display=music&id='+row.id+'&action=delete"" class="delAction"><i class="fa fa-trash"></i></a>';
 	}
@@ -29,7 +89,7 @@ function linkFormat(val,row){
 }
 
 function playFormatter(val,row){
-	return '<div id="jquery_jplayer_'+row.id+'" class="jp-jplayer" data-filename="'+row.filename+'" data-category="'+row.category+'" data-container="#jp_container_'+row.id+'"></div><div id="jp_container_'+row.id+'" data-player="jquery_jplayer_'+row.id+'" class="jp-audio-freepbx" role="application" aria-label="media player">'+
+	return '<div id="jquery_jplayer_'+row.id+'" class="jp-jplayer" data-filename="'+row.filename+'" data-categoryid="'+row.categoryid+'" data-container="#jp_container_'+row.id+'"></div><div id="jp_container_'+row.id+'" data-player="jquery_jplayer_'+row.id+'" class="jp-audio-freepbx" role="application" aria-label="media player">'+
 		'<div class="jp-type-single">'+
 			'<div class="jp-gui jp-interface">'+
 				'<div class="jp-controls">'+
@@ -61,7 +121,7 @@ function playFormatter(val,row){
 }
 
 function musicFormat(value,row){
-	html = '<a data-filename="'+row.filename+'" data-id="'+row.id+'" data-category="'+row.category+'" class="clickable delAction delMusic"><i class="fa fa-trash"></i></a>';
+	html = '<a data-filename="'+row.filename+'" data-id="'+row.id+'" data-categoryid="'+row.categoryid+'" class="clickable delAction delMusic"><i class="fa fa-trash"></i></a>';
 	return html;
 }
 
@@ -127,7 +187,7 @@ $('#fileupload').fileupload({
 				'filename': data.result.filename,
 				'type': data.result.type,
 				'name': data.result.name,
-				'category': data.result.category,
+				'categoryid': data.result.id,
 				'id': $("#musicgrid tr").length
 			});
 			files.push(data.result.name.toLowerCase());
@@ -154,7 +214,7 @@ function bindPlayers() {
 		var container = $(this).data("container"),
 				player = $(this),
 				file = player.data("filename"),
-				category = player.data("category");
+				categoryid = player.data("categoryid");
 		$(this).jPlayer({
 			ready: function() {
 				$(container + " .jp-play").click(function() {
@@ -163,7 +223,7 @@ function bindPlayers() {
 						$.ajax({
 							type: 'POST',
 							url: "ajax.php",
-							data: {module: "music", command: "gethtml5", file: file, category: category},
+							data: {module: "music", command: "gethtml5", file: file, categoryid: categoryid},
 							dataType: 'json',
 							timeout: 30000,
 							success: function(data) {
@@ -252,7 +312,7 @@ function bindPlayers() {
 $(document).on("click", ".delMusic", function() {
 	var id = $(this).data("id");
 	id = parseInt(id);
-	$.post( "ajax.php", {module: "music", command: "deletemusic", filename: $(this).data("filename"), category: $(this).data("category")}, function( data ) {
+	$.post( "ajax.php", {module: "music", command: "deletemusic", filename: $(this).data("filename"), categoryid: $(this).data("categoryid")}, function( data ) {
 		if(data.status) {
 			$('#musicgrid').bootstrapTable('remove', {field: 'id', values: [id]});
 		} else {
