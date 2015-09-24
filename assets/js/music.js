@@ -31,28 +31,27 @@ $("#moheditform").submit(function(e) {
 		data.codecs.push($(this).val());
 	});
 
-	$("#action-buttons input").prop("disabled",true);
-
-	$.ajax({
-		type: 'POST',
-		url: "ajax.php",
-		data: data,
-		dataType: 'json',
-		timeout: 30000,
-		success: function(data) {
+	if($("#type").val() == "custom" || confirm(_("If you are doing media conversions this can take a very long time, is that ok?"))) {
+		$("#action-buttons input").prop("disabled",true);
+		$.ajax({
+			type: 'POST',
+			url: "ajax.php",
+			data: data,
+			dataType: 'json',
+			timeout: 240000
+		}).done(function(data) {
 			if(data.status) {
 				window.location = "?display=music";
 			} else {
 				alert(data.message);
 				console.log(data.errors);
-				$("#action-buttons input").prop("disabled", false);
 			}
-		},
-		error: function(data) {
+		}).fail(function() {
 			alert(_("An Error occurred trying to submit this document"));
+		}).always(function() {
 			$("#action-buttons input").prop("disabled", false);
-		},
-	});
+		});
+	}
 });
 
 $(document).on("keyup paste", ".name-check", function(e) {

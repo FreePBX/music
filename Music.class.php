@@ -86,7 +86,7 @@ class Music implements \BMO {
 					$this->addCategory($_POST['category'],$_POST['type']);
 				break;
 				case "delete":
-					$this->deleteMusic($_REQUEST['id']);
+					$this->deleteCategory($_REQUEST['id']);
 				break;
 			}
 		}
@@ -102,6 +102,7 @@ class Music implements \BMO {
 			"format" => $format,
 			"id" => $id
 		));
+		needreload();
 	}
 
 	public function addCategory($name,$type) {
@@ -122,6 +123,7 @@ class Music implements \BMO {
 		if(!file_exists($this->mohpath . "/" . $name)) {
 			mkdir($this->mohpath . "/" . $name);
 		}
+		needreload();
 	}
 
 	public function genConfig() {
@@ -135,8 +137,8 @@ class Music implements \BMO {
 				case "files":
 					$conf["musiconhold_additional.conf"][$name] = array(
 						"mode" => $cat['type'],
-						"sort" => ($random) ? "random" : "alpha",
-						"directory" => $this->getCategoryPath($cat['name'])
+						"sort" => ($cat['random']) ? "random" : "alpha",
+						"directory" => $this->getCategoryPath($cat['category'])
 					);
 				break;
 				case "custom":
@@ -155,7 +157,11 @@ class Music implements \BMO {
 		$this->FreePBX->WriteConfig($conf);
 	}
 
-	public function deleteMusic($id) {
+	/**
+	 * Delete Category
+	 * @param  integer $id ID of category
+	 */
+	public function deleteCategory($id) {
 		$info = $this->getCategoryByID($id);
 		$sql = "DELETE FROM music WHERE id = ?";
 		$sth = $this->db->prepare($sql);
@@ -164,9 +170,18 @@ class Music implements \BMO {
 			$path = $this->getCategoryPath($info['category']);
 			$this->rmdirr($path);
 		}
+		needreload();
 	}
 
+	/**
+	 * Recursively Remove a Directory
+	 * @param  string $path The path to remove
+	 * @return boolean       True if removed, false if it did not
+	 */
 	public function rmdirr($path) {
+		if($path == $this->mohpath) {
+			return false;
+		}
 		// Sanity check
 		if (!file_exists($path)) {
 			return false;
@@ -186,7 +201,7 @@ class Music implements \BMO {
 			}
 
 			// Recurse
-			$this->rmdirr("$$path/$entry");
+			$this->rmdirr($path."/".$entry);
 		}
 
 		// Clean up
@@ -284,6 +299,10 @@ class Music implements \BMO {
 
 	}
 
+	/**
+	 * Get all categories
+	 * @return [type] [description]
+	 */
 	public function getCategories(){
 		$sql = "SELECT * FROM music";
 		$sth = $this->db->prepare($sql);
@@ -301,7 +320,7 @@ class Music implements \BMO {
 			case "download":
 			case "getJSON":
 			case "upload":
-			case "deletemusic":
+			case "deleteCategory":
 			case "save":
 				return true;
 			break;
@@ -342,7 +361,7 @@ class Music implements \BMO {
 				$this->updateCategoryByID($_POST['id'],$_POST['type'], ($_POST['erand'] == "yes"), $_POST['application'], $_POST['format']);
 				return array("status" => true);
 			break;
-			case "deletemusic":
+			case "deleteCategory":
 				if(empty($_POST['name']) || empty($_POST['categoryid'])) {
 					return array("status" => false);
 				}
@@ -464,15 +483,20 @@ class Music implements \BMO {
 		}
 	}
 
+	/**
+	 * Get all Music Files for a Category
+	 * @param  string $path The full path
+	 * @return array       array of files
+	 */
 	public function getAllMusic($path=null) {
 		if ($path === null) {
-	    global $amp_conf;
-	    // to get through possible upgrade gltiches, check if set
-	    if (!isset($amp_conf['MOHDIR'])) {
-	      $amp_conf['MOHDIR'] = '/mohmp3';
-	    }
-	    $path = $amp_conf['ASTVARLIBDIR'].'/'.$amp_conf['MOHDIR'];
-	  }
+			global $amp_conf;
+			// to get through possible upgrade gltiches, check if set
+			if (!isset($amp_conf['MOHDIR'])) {
+				$amp_conf['MOHDIR'] = '/mohmp3';
+			}
+			$path = $amp_conf['ASTVARLIBDIR'].'/'.$amp_conf['MOHDIR'];
+		}
 		$i = 1;
 		$arraycount = 0;
 		$filearray = Array("default");
@@ -548,7 +572,7 @@ class Music implements \BMO {
 						'value' => _('Submit')
 					)
 				);
-				if (empty($request['category'])||($request['category'] == 'default')) {
+				if (empty($request['id'])||($request['id'] == '1')) {
 					unset($buttons['delete']);
 				}
 				$request['action'] = isset($request['action'])?$request['action']:'';
@@ -569,6 +593,11 @@ class Music implements \BMO {
 		return $buttons;
 	}
 
+	/**
+	 * Get Category by Name
+	 * @param  string $name The category name
+	 * @return array       Array of category data
+	 */
 	public function getCategoryByName($name) {
 		$sql = "SELECT * FROM music WHERE category = ?";
 		$sth = $this->db->prepare($sql);
@@ -576,6 +605,11 @@ class Music implements \BMO {
 		return $sth->fetch(\PDO::FETCH_ASSOC);
 	}
 
+	/**
+	 * Get Category by ID
+	 * @param  int $name The ID
+	 * @return array       Array of category data
+	 */
 	public function getCategoryByID($id) {
 		$sql = "SELECT * FROM music WHERE id = ?";
 		$sth = $this->db->prepare($sql);
