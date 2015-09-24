@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: freePBX 2.5.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-04 12:36-0700\n"
+"POT-Creation-Date: 2015-09-24 09:31-0700\n"
 "PO-Revision-Date: 2015-05-02 11:57+0200\n"
 "Last-Translator: Renato <fiuza@tecnologia.inf.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -34,7 +34,7 @@ msgstr ""
 "X-Poedit-Country: BRAZIL\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: Music.class.php:403
+#: Music.class.php:422
 msgid "A PHP extension stopped the file upload"
 msgstr ""
 
@@ -57,7 +57,7 @@ msgid ""
 "category name will be converted to ASCII if any UTF8 characters are found"
 msgstr ""
 
-#: assets/js/music.js:52
+#: assets/js/music.js:50
 msgid "An Error occurred trying to submit this document"
 msgstr ""
 
@@ -65,7 +65,7 @@ msgstr ""
 msgid "Application"
 msgstr ""
 
-#: assets/js/music.js:135
+#: assets/js/music.js:134
 msgid "At least one codec must be checked"
 msgstr ""
 
@@ -73,7 +73,7 @@ msgstr ""
 msgid "Browse"
 msgstr ""
 
-#: Music.class.php:407
+#: Music.class.php:426
 msgid "Can Not Find Uploaded Files"
 msgstr ""
 
@@ -87,7 +87,7 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: Music.class.php:114
+#: Music.class.php:115
 msgid "Category Already Exists"
 msgstr ""
 
@@ -111,7 +111,7 @@ msgstr ""
 msgid "Custom Application"
 msgstr ""
 
-#: Music.class.php:538
+#: Music.class.php:562
 msgid "Delete"
 msgstr "Apagar"
 
@@ -129,7 +129,7 @@ msgid ""
 "play in alphabetical order"
 msgstr ""
 
-#: Music.class.php:400
+#: Music.class.php:419
 msgid "Failed to write file to disk"
 msgstr ""
 
@@ -137,7 +137,7 @@ msgstr ""
 msgid "File"
 msgstr ""
 
-#: Music.class.php:423
+#: Music.class.php:442
 msgid "File does not exist"
 msgstr ""
 
@@ -149,7 +149,13 @@ msgstr ""
 msgid "Formats"
 msgstr ""
 
-#: Music.class.php:460
+#: assets/js/music.js:34
+msgid ""
+"If you are doing media conversions this can take a very long time, is that "
+"ok?"
+msgstr ""
+
+#: Music.class.php:479
 msgid "Invalid Request"
 msgstr ""
 
@@ -157,7 +163,7 @@ msgstr ""
 msgid "List MoH Categories"
 msgstr ""
 
-#: Music.class.php:397
+#: Music.class.php:416
 msgid "Missing a temporary folder"
 msgstr ""
 
@@ -165,7 +171,7 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: Music.class.php:394
+#: Music.class.php:413
 msgid "No file was uploaded"
 msgstr ""
 
@@ -201,25 +207,25 @@ msgstr "Por favor, entre com um nome de categoria válido"
 msgid "Please enter a valid application command and arguments"
 msgstr ""
 
-#: Music.class.php:543
+#: Music.class.php:567
 msgid "Reset"
 msgstr ""
 
-#: Music.class.php:548
+#: Music.class.php:572
 msgid "Submit"
 msgstr ""
 
-#: Music.class.php:388
+#: Music.class.php:407
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 
-#: Music.class.php:385
+#: Music.class.php:404
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 
-#: Music.class.php:391
+#: Music.class.php:410
 msgid "The uploaded file was only partially uploaded"
 msgstr ""
 
@@ -244,11 +250,11 @@ msgid ""
 "stream music from the set application"
 msgstr ""
 
-#: Music.class.php:380
+#: Music.class.php:399
 msgid "Unsupported file format"
 msgstr ""
 
-#: assets/js/music.js:163
+#: assets/js/music.js:162
 msgid "Unsupported file type"
 msgstr ""
 
