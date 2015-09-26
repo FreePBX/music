@@ -321,6 +321,7 @@ class Music implements \BMO {
 			case "getJSON":
 			case "upload":
 			case "deleteCategory":
+			case "deletemusic":
 			case "save":
 				return true;
 			break;
@@ -340,6 +341,20 @@ class Music implements \BMO {
 
 	public function ajaxHandler() {
 		switch($_REQUEST['command']) {
+			case "deletemusic":
+				$category = $this->getCategoryByID($_POST['categoryid']);
+				if(empty($category)) {
+					return array("status" => false, "message" => _("Invalid category"));
+				}
+				$path = $this->getCategoryPath($category['category']);
+				foreach(glob($path."/".$_POST['name']."*") as $file) {
+					if(!unlink($file)) {
+						return array("status" => false, "message" => sprintf(_("Unable to delete %s"),$file));
+						break;
+					}
+				}
+				return array("status" => true);
+			break;
 			case "save":
 				if($_POST['type'] == "files") {
 					//do conversions here whooooo
