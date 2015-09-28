@@ -120,7 +120,7 @@ function playFormatter(val,row){
 }
 
 function musicFormat(value,row){
-	html = '<a data-name="'+row.name+'" data-id="'+row.id+'" data-categoryid="'+row.categoryid+'" class="clickable delAction delMusic"><i class="fa fa-trash"></i></a>';
+	html = '<a data-name="'+row.name+'" data-id="'+row.id+'" data-categoryid="'+row.categoryid+'" class="clickable delMusic"><i class="fa fa-trash"></i></a>';
 	return html;
 }
 
@@ -309,6 +309,9 @@ function bindPlayers() {
 }
 
 $(document).on("click", ".delMusic", function() {
+	if(!confirm(_("Are you sure you want to delete this item?"))) {
+		return;
+	}
 	var id = $(this).data("id"),
 			name = $(this).data("name");
 	id = parseInt(id);
