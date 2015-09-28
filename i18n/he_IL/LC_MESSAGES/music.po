@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-25 22:27-0700\n"
+"POT-Creation-Date: 2015-09-28 08:34-0700\n"
 "PO-Revision-Date: 2006-10-17 17:30+0300\n"
 "Last-Translator: Shimi <shimi@shimi.net>\n"
 "MIME-Version: 1.0\n"
@@ -44,6 +44,10 @@ msgstr ""
 
 #: views/form.php:37
 msgid "Application"
+msgstr ""
+
+#: assets/js/music.js:312
+msgid "Are you sure you want to delete this item?"
 msgstr ""
 
 #: assets/js/music.js:134

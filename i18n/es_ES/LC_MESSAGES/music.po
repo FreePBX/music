@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX - music module spanish translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-25 22:27-0700\n"
+"POT-Creation-Date: 2015-09-28 08:34-0700\n"
 "PO-Revision-Date: 2015-03-25 10:16+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/music/"
@@ -46,6 +46,10 @@ msgstr ""
 
 #: views/form.php:37
 msgid "Application"
+msgstr ""
+
+#: assets/js/music.js:312
+msgid "Are you sure you want to delete this item?"
 msgstr ""
 
 #: assets/js/music.js:134

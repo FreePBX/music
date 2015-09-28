@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX musik\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-25 22:27-0700\n"
+"POT-Creation-Date: 2015-09-28 08:34-0700\n"
 "PO-Revision-Date: 2011-03-20 00:00+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: \n"
@@ -58,6 +58,10 @@ msgstr ""
 
 #: views/form.php:37
 msgid "Application"
+msgstr ""
+
+#: assets/js/music.js:312
+msgid "Are you sure you want to delete this item?"
 msgstr ""
 
 #: assets/js/music.js:134
