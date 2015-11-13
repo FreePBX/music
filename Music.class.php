@@ -37,8 +37,10 @@ class Music implements \BMO {
 		$this->varlibdir = $freepbx->Config->get('ASTVARLIBDIR');
 		$this->mohpath = $this->varlibdir.'/'.$this->mohdir;
 		$this->config = $this->loadMoHConfig();
-		$tmp = sys_get_temp_dir();
-		$this->tmp = !empty($tmp) && file_exists($tmp) ? $tmp : $this->tmp;
+		$this->tmp = \FreePBX::Config()->get("ASTSPOOLDIR") . "/tmp";
+		if(!file_exists($this->tmp)) {
+			mkdir($this->tmp,0777,true);
+		}
 	}
 
 	public function showPage() {
