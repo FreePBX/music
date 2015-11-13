@@ -182,12 +182,8 @@ $('#fileupload').fileupload({
 	},
 	done: function (e, data) {
 		if(data.result.status) {
-			$('#musicgrid').bootstrapTable('prepend',{
-				'filename': data.result.filename,
-				'formats': data.result.formats,
-				'name': data.result.name,
-				'categoryid': data.result.categoryid,
-				'id': $("#musicgrid tr").length
+			$('#musicgrid').bootstrapTable('refresh',{
+				silent: true
 			});
 			files.push(data.result.name.toLowerCase());
 		} else {
