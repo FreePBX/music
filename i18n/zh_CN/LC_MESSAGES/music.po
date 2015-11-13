@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-28 08:34-0700\n"
+"POT-Creation-Date: 2015-11-13 10:53-0800\n"
 "PO-Revision-Date: 2009-01-31 13:24+0800\n"
 "Last-Translator: 周征晟 <zhougongjizhe@163.com>\n"
 "Language-Team: EdwardBadBoy <zhougongjizhe@163.com>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Poedit-Country: CHINA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: Music.class.php:437
+#: Music.class.php:439
 msgid "A PHP extension stopped the file upload"
 msgstr ""
 
@@ -49,7 +49,7 @@ msgstr ""
 msgid "Application"
 msgstr ""
 
-#: assets/js/music.js:312
+#: assets/js/music.js:308
 msgid "Are you sure you want to delete this item?"
 msgstr ""
 
@@ -61,7 +61,7 @@ msgstr ""
 msgid "Browse"
 msgstr ""
 
-#: Music.class.php:441
+#: Music.class.php:443
 msgid "Can Not Find Uploaded Files"
 msgstr ""
 
@@ -75,7 +75,7 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: Music.class.php:115
+#: Music.class.php:117
 msgid "Category Already Exists"
 msgstr ""
 
@@ -99,7 +99,7 @@ msgstr ""
 msgid "Custom Application"
 msgstr ""
 
-#: Music.class.php:577
+#: Music.class.php:579
 msgid "Delete"
 msgstr "删除"
 
@@ -117,7 +117,7 @@ msgid ""
 "play in alphabetical order"
 msgstr ""
 
-#: Music.class.php:434
+#: Music.class.php:436
 msgid "Failed to write file to disk"
 msgstr ""
 
@@ -125,7 +125,7 @@ msgstr ""
 msgid "File"
 msgstr ""
 
-#: Music.class.php:457
+#: Music.class.php:459
 msgid "File does not exist"
 msgstr ""
 
@@ -143,11 +143,11 @@ msgid ""
 "ok?"
 msgstr ""
 
-#: Music.class.php:494
+#: Music.class.php:496
 msgid "Invalid Request"
 msgstr ""
 
-#: Music.class.php:347
+#: Music.class.php:349
 msgid "Invalid category"
 msgstr ""
 
@@ -155,19 +155,23 @@ msgstr ""
 msgid "List MoH Categories"
 msgstr ""
 
-#: Music.class.php:431
+#: Music.class.php:433
 msgid "Missing a temporary folder"
 msgstr ""
+
+#: music.i18n.php:4 music.i18n.php:10
+msgid "Music on Hold"
+msgstr "等待音乐"
 
 #: views/form.php:95
 msgid "No"
 msgstr ""
 
-#: Music.class.php:428
+#: Music.class.php:430
 msgid "No file was uploaded"
 msgstr ""
 
-#: Music.class.php:46
+#: Music.class.php:48
 msgid "On Hold Music"
 msgstr "等待音乐"
 
@@ -198,25 +202,29 @@ msgstr "请输入有效的类别名称"
 msgid "Please enter a valid application command and arguments"
 msgstr ""
 
-#: Music.class.php:582
+#: Music.class.php:584
 msgid "Reset"
 msgstr ""
 
-#: Music.class.php:587
+#: music.i18n.php:6 music.i18n.php:12
+msgid "Settings"
+msgstr ""
+
+#: Music.class.php:589
 msgid "Submit"
 msgstr ""
 
-#: Music.class.php:422
+#: Music.class.php:424
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 
-#: Music.class.php:419
+#: Music.class.php:421
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 
-#: Music.class.php:425
+#: Music.class.php:427
 msgid "The uploaded file was only partially uploaded"
 msgstr ""
 
@@ -241,12 +249,12 @@ msgid ""
 "stream music from the set application"
 msgstr ""
 
-#: Music.class.php:352
+#: Music.class.php:354
 #, php-format
 msgid "Unable to delete %s"
 msgstr ""
 
-#: Music.class.php:414
+#: Music.class.php:416
 msgid "Unsupported file format"
 msgstr ""
 
@@ -265,8 +273,23 @@ msgid ""
 "includes archives (that include multiple files) and multiple files"
 msgstr ""
 
+#: music.i18n.php:8
+msgid ""
+"Uploading and management of sound files (wav, mp3) to be used for on-hold "
+"music."
+msgstr ""
+
 #: views/form.php:93
 msgid "Yes"
+msgstr ""
+
+#: assets/js/music.js:116
+#, perl-format
+msgid ""
+"You are missing support for playback in this browser. To fully support HTML5 "
+"browser playback you will need to install programs that can not be "
+"distributed with the PBX. If you'd like to install the binaries needed for "
+"these conversions click <a href='%s'>here</a>"
 msgstr ""
 
 #~ msgid "Add Streaming Category"
@@ -342,9 +365,6 @@ msgstr ""
 
 #~ msgid "Error Processing"
 #~ msgstr "处理中发生错误"
-
-#~ msgid "Music on Hold"
-#~ msgstr "等待音乐"
 
 #~ msgid "Optional Format:"
 #~ msgstr "可选的格式："
