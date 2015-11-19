@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-13 10:53-0800\n"
-"PO-Revision-Date: 2015-11-19 03:58+0200\n"
+"PO-Revision-Date: 2015-11-19 04:14+0200\n"
 "Last-Translator: Matthias <it@mitterhuemer.at>\n"
 "Language-Team: German "
 "<http://weblate.freepbx.org/projects/freepbx/music/de_DE/>\n"
@@ -260,10 +260,14 @@ msgid ""
 "Asterisk. See information on musiconhold.conf configuration for different "
 "audio and Internet streaming source options."
 msgstr ""
+"Dies ist die \"application=\" Zeile. Sie wird verwendet um Asterisk "
+"Streaming Details zur verfügung zu stellen. Mehr Informationen finden Sie in "
+"der musiconhold.conf Konfiguration für benutzerdefinierte Audio und Internet "
+"Streaming Quellen Optionen."
 
 #: views/addcatform.php:38 views/form.php:10 views/grid.php:19
 msgid "Type"
-msgstr ""
+msgstr "Typ"
 
 #: views/addcatform.php:53 views/form.php:25
 msgid ""
@@ -271,23 +275,27 @@ msgid ""
 "files listed below. If set to \"Custom Application\" then this category will "
 "stream music from the set application"
 msgstr ""
+"Welche Art von Music on Hold? Wenn dieser Wert auf \"Dateien\" gesetzt ist, "
+"wird diese Kategorie die unten aufgelisteten Dateien abspielen. Ist der Wert "
+"auf \"Benutzerdefinierte Applikation\" gesetzt, so wird diese Kategorie "
+"Musik von der von Ihnen definierten Applikation wiedergeben"
 
 #: Music.class.php:354
 #, php-format
 msgid "Unable to delete %s"
-msgstr ""
+msgstr "Fehler beim Löschen von %s"
 
 #: Music.class.php:416
 msgid "Unsupported file format"
-msgstr ""
+msgstr "Nicht unterstütztes Datei Format"
 
 #: assets/js/music.js:162
 msgid "Unsupported file type"
-msgstr ""
+msgstr "Nicht unterstützter Dateityp"
 
 #: views/form.php:113
 msgid "Upload Recording"
-msgstr ""
+msgstr "Aufnahme hochladen"
 
 #: views/form.php:133
 #, php-format
@@ -295,16 +303,21 @@ msgid ""
 "Upload files from your local system. Supported upload formats are: %s. This "
 "includes archives (that include multiple files) and multiple files"
 msgstr ""
+"Datei von Ihrem lokalen System hochladen. Unterstützte Formate sind: %s. "
+"Dies inkludiert Archive (welche mehrere Dateien beinhalten) und mehrere "
+"einzelne Dateien"
 
 #: music.i18n.php:8
 msgid ""
 "Uploading and management of sound files (wav, mp3) to be used for on-hold "
 "music."
 msgstr ""
+"Hochladen und Verwalten von Audio Dateien (wav, mp3) welche für on-hold "
+"Music verwendet werden sollen."
 
 #: views/form.php:93
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
 #: assets/js/music.js:116
 #, perl-format
@@ -314,3 +327,7 @@ msgid ""
 "distributed with the PBX. If you'd like to install the binaries needed for "
 "these conversions click <a href='%s'>here</a>"
 msgstr ""
+"Ihr Browser unterstützt keine HTML5 Wiedergabe. Für volle HTML5 Audio "
+"Wiedergabe unterstützung benötigen Sie zusätzliche Programme, welche "
+"zusammen mit der PBX nicht zur verfügung gestellt werden können. Möchten Sie "
+"die benötigten binaries installieren klicken Sie <a href='%s'>hier</a>"
