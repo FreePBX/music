@@ -159,7 +159,7 @@
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<span id="convert-help" class="help-block fpbx-help-block"><?php echo _("Check all file formats you would like this music in this category to be encoded into. This applied to uploaded music and any music currently on the system. It will not overwrite any formats that have been previously processed.")?></span>
+							<span id="convert-help" class="help-block fpbx-help-block"><?php echo _("Check all file formats you would like the music in this category to be encoded into. This applied to uploaded music and any music currently on the system. It will not overwrite any formats that have been previously processed.")?></span>
 						</div>
 					</div>
 				</div>

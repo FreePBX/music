@@ -13,14 +13,12 @@ class Music implements \BMO {
 	public $convert = array(
 		"wav",
 		"sln",
+		"sln48",
 		"g722",
 		"ulaw",
 		"alaw",
 		"g729",
-		"gsm",
-		"wav49",
-		"g719",
-		"mp3"
+		"gsm"
 	);
 
 	private $tmp = "/tmp";
