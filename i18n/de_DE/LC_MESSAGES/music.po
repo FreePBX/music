@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-13 10:53-0800\n"
+"POT-Creation-Date: 2015-12-22 12:57-0800\n"
 "PO-Revision-Date: 2015-11-19 04:14+0200\n"
 "Last-Translator: Matthias <it@mitterhuemer.at>\n"
 "Language-Team: German <http://weblate.freepbx.org/projects/freepbx/music/"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
-#: Music.class.php:439
+#: Music.class.php:437
 msgid "A PHP extension stopped the file upload"
 msgstr "Eine PHP Erweiterung hat den Datei Upload gestoppt"
 
@@ -68,7 +68,7 @@ msgstr "Mindestens ein Codec muss ausgewählt werden"
 msgid "Browse"
 msgstr "Durchsuchen"
 
-#: Music.class.php:443
+#: Music.class.php:441
 msgid "Can Not Find Uploaded Files"
 msgstr "Es können keine hochgeladenen Dateien gefunden werden"
 
@@ -84,7 +84,7 @@ msgstr ""
 msgid "Category"
 msgstr "Kategorie"
 
-#: Music.class.php:117
+#: Music.class.php:115
 msgid "Category Already Exists"
 msgstr "Diese Kategorie existiert bereits"
 
@@ -94,15 +94,11 @@ msgstr "Kategorie Name (ausschließlich ASCII)"
 
 #: views/form.php:162
 msgid ""
-"Check all file formats you would like this music in this category to be "
+"Check all file formats you would like the music in this category to be "
 "encoded into. This applied to uploaded music and any music currently on the "
 "system. It will not overwrite any formats that have been previously "
 "processed."
 msgstr ""
-"Wählen Sie alle Formate aus in die Sie Ihre Musik encodieren möchten. Diese "
-"Einstellung wird für Ihre hochgeladene und bereits im System vorhandene "
-"Musik angewendet. Vorher bereits encodierte Formate werden nicht "
-"überschrieben."
 
 #: views/form.php:146
 msgid "Convert Upload/Files To"
@@ -113,7 +109,7 @@ msgstr ""
 msgid "Custom Application"
 msgstr "Benutzerdefinierte Applikation"
 
-#: Music.class.php:579
+#: Music.class.php:577
 msgid "Delete"
 msgstr "Löschen"
 
@@ -134,7 +130,7 @@ msgstr ""
 "Einstellung deaktiviert, wird die Musik in Alphabetischer Reihenfolge "
 "abgespielt"
 
-#: Music.class.php:436
+#: Music.class.php:434
 msgid "Failed to write file to disk"
 msgstr "Fehler beim Speichern der Datei"
 
@@ -142,7 +138,7 @@ msgstr "Fehler beim Speichern der Datei"
 msgid "File"
 msgstr "Datei"
 
-#: Music.class.php:459
+#: Music.class.php:457
 msgid "File does not exist"
 msgstr "Datei existiert nicht"
 
@@ -162,11 +158,11 @@ msgstr ""
 "Sollten Sie eine Konvertierung von Medien machen kann dieser Vorgang etwas "
 "länger dauern, Sind Sie damit einverstanden?"
 
-#: Music.class.php:496
+#: Music.class.php:494
 msgid "Invalid Request"
 msgstr "Falsche Anforderung"
 
-#: Music.class.php:349
+#: Music.class.php:347
 msgid "Invalid category"
 msgstr "Falsche Kategorie"
 
@@ -174,7 +170,7 @@ msgstr "Falsche Kategorie"
 msgid "List MoH Categories"
 msgstr "MoH Kategorien auflisten"
 
-#: Music.class.php:433
+#: Music.class.php:431
 msgid "Missing a temporary folder"
 msgstr "Fehlender temporärer Ordner"
 
@@ -186,11 +182,11 @@ msgstr "Music on Hold"
 msgid "No"
 msgstr "Nein"
 
-#: Music.class.php:430
+#: Music.class.php:428
 msgid "No file was uploaded"
 msgstr "Es wurde keine Datei hochgeladen"
 
-#: Music.class.php:48
+#: Music.class.php:46
 msgid "On Hold Music"
 msgstr "On Hold Music"
 
@@ -225,7 +221,7 @@ msgstr ""
 "Bitte geben Sie einen gültigen Applikations Command und dazugehörige "
 "Argumente an"
 
-#: Music.class.php:584
+#: Music.class.php:582
 msgid "Reset"
 msgstr "Zurücksetzen"
 
@@ -233,11 +229,11 @@ msgstr "Zurücksetzen"
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: Music.class.php:589
+#: Music.class.php:587
 msgid "Submit"
 msgstr "Absenden"
 
-#: Music.class.php:424
+#: Music.class.php:422
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
@@ -245,13 +241,13 @@ msgstr ""
 "Die hochgeladene Datei überschreitet die Maximal zulässige Dateigröße welche "
 "als Wert \"MAX_FILE_SIZE\" in der HTML definiert wurde"
 
-#: Music.class.php:421
+#: Music.class.php:419
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 "Die hochgeladene Datei überschreitet die maximal zulässige Dateigröße welche "
 "als Wert \"upload_max_filesize\" in der php.ini definiert wurde"
 
-#: Music.class.php:427
+#: Music.class.php:425
 msgid "The uploaded file was only partially uploaded"
 msgstr "Die hochgeladene Datei wurde nur teilweise hochgeladen"
 
@@ -281,12 +277,12 @@ msgstr ""
 "auf \"Benutzerdefinierte Applikation\" gesetzt, so wird diese Kategorie "
 "Musik von der von Ihnen definierten Applikation wiedergeben"
 
-#: Music.class.php:354
+#: Music.class.php:352
 #, php-format
 msgid "Unable to delete %s"
 msgstr "Fehler beim Löschen von %s"
 
-#: Music.class.php:416
+#: Music.class.php:414
 msgid "Unsupported file format"
 msgstr "Nicht unterstütztes Datei Format"
 
@@ -332,3 +328,14 @@ msgstr ""
 "Wiedergabe unterstützung benötigen Sie zusätzliche Programme, welche "
 "zusammen mit der PBX nicht zur verfügung gestellt werden können. Möchten Sie "
 "die benötigten binaries installieren klicken Sie <a href='%s'>hier</a>"
+
+#~ msgid ""
+#~ "Check all file formats you would like this music in this category to be "
+#~ "encoded into. This applied to uploaded music and any music currently on "
+#~ "the system. It will not overwrite any formats that have been previously "
+#~ "processed."
+#~ msgstr ""
+#~ "Wählen Sie alle Formate aus in die Sie Ihre Musik encodieren möchten. "
+#~ "Diese Einstellung wird für Ihre hochgeladene und bereits im System "
+#~ "vorhandene Musik angewendet. Vorher bereits encodierte Formate werden "
+#~ "nicht überschrieben."
