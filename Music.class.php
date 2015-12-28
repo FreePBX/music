@@ -400,7 +400,7 @@ class Music implements \BMO {
 							$media = $this->FreePBX->Media();
 							if(in_array($extension,$supported['in'])) {
 								$tmp_name = $_FILES["files"]["tmp_name"][$key];
-								$dname = preg_replace("/\s+|'+|\"+|\?+|\*+/","-",strtolower($_FILES["files"]["name"][$key]));
+								$dname = \Media\Media::cleanFileName($_FILES["files"]["name"][$key]);
 								$dname = pathinfo($dname,PATHINFO_FILENAME);
 								$name = $dname . '.' . $extension;
 								move_uploaded_file($tmp_name, $this->tmp."/".$name);
