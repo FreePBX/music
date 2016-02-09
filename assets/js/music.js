@@ -170,6 +170,7 @@ $('#fileupload').fileupload({
 			}
 		});
 		if(submit) {
+			$("#upload-progress .progress-bar").addClass("progress-bar-striped active");
 			data.submit();
 		}
 	},
@@ -181,6 +182,8 @@ $('#fileupload').fileupload({
 	change: function (e, data) {
 	},
 	done: function (e, data) {
+		$("#upload-progress .progress-bar").removeClass("progress-bar-striped active");
+		$("#upload-progress .progress-bar").css("width", "0%");
 		if(data.result.status) {
 			$('#musicgrid').bootstrapTable('refresh',{
 				silent: true
