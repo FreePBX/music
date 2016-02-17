@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.10.0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-22 12:57-0800\n"
+"POT-Creation-Date: 2016-02-17 10:25-0800\n"
 "PO-Revision-Date: 2014-02-19 20:56+0200\n"
 "Last-Translator: Chise Mishima <c.mishima@qloog.com>\n"
 "Language-Team: Japanese <http://example.com/projects/freepbx/music/ja/>\n"
@@ -48,7 +48,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 1.8\n"
 
-#: Music.class.php:437
+#: Music.class.php:438
 msgid "A PHP extension stopped the file upload"
 msgstr ""
 
@@ -79,7 +79,7 @@ msgstr ""
 msgid "Application"
 msgstr ""
 
-#: assets/js/music.js:308
+#: assets/js/music.js:311
 msgid "Are you sure you want to delete this item?"
 msgstr ""
 
@@ -91,7 +91,11 @@ msgstr ""
 msgid "Browse"
 msgstr ""
 
-#: Music.class.php:441
+#: music.i18n.php:14
+msgid "Cache MoH Classes"
+msgstr ""
+
+#: Music.class.php:442
 msgid "Can Not Find Uploaded Files"
 msgstr ""
 
@@ -105,7 +109,7 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: Music.class.php:115
+#: Music.class.php:116
 msgid "Category Already Exists"
 msgstr ""
 
@@ -129,7 +133,7 @@ msgstr ""
 msgid "Custom Application"
 msgstr ""
 
-#: Music.class.php:577
+#: Music.class.php:578
 msgid "Delete"
 msgstr "削除"
 
@@ -147,7 +151,7 @@ msgid ""
 "play in alphabetical order"
 msgstr ""
 
-#: Music.class.php:434
+#: Music.class.php:435
 msgid "Failed to write file to disk"
 msgstr ""
 
@@ -155,7 +159,7 @@ msgstr ""
 msgid "File"
 msgstr ""
 
-#: Music.class.php:457
+#: Music.class.php:458
 msgid "File does not exist"
 msgstr ""
 
@@ -173,11 +177,11 @@ msgid ""
 "ok?"
 msgstr ""
 
-#: Music.class.php:494
+#: Music.class.php:495
 msgid "Invalid Request"
 msgstr ""
 
-#: Music.class.php:347
+#: Music.class.php:348
 msgid "Invalid category"
 msgstr ""
 
@@ -185,7 +189,7 @@ msgstr ""
 msgid "List MoH Categories"
 msgstr ""
 
-#: Music.class.php:431
+#: Music.class.php:432
 msgid "Missing a temporary folder"
 msgstr ""
 
@@ -197,11 +201,11 @@ msgstr "保留音"
 msgid "No"
 msgstr ""
 
-#: Music.class.php:428
+#: Music.class.php:429
 msgid "No file was uploaded"
 msgstr ""
 
-#: Music.class.php:46
+#: Music.class.php:47
 msgid "On Hold Music"
 msgstr "保留音"
 
@@ -232,7 +236,7 @@ msgstr "有効なカテゴリ名を入力してください"
 msgid "Please enter a valid application command and arguments"
 msgstr ""
 
-#: Music.class.php:582
+#: Music.class.php:583
 msgid "Reset"
 msgstr ""
 
@@ -240,21 +244,25 @@ msgstr ""
 msgid "Settings"
 msgstr "設定"
 
-#: Music.class.php:587
+#: Music.class.php:588
 msgid "Submit"
 msgstr ""
 
-#: Music.class.php:422
+#: music.i18n.php:16
+msgid "System Setup"
+msgstr "システムセットアップ"
+
+#: Music.class.php:423
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 
-#: Music.class.php:419
+#: Music.class.php:420
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 
-#: Music.class.php:425
+#: Music.class.php:426
 msgid "The uploaded file was only partially uploaded"
 msgstr ""
 
@@ -279,12 +287,12 @@ msgid ""
 "stream music from the set application"
 msgstr ""
 
-#: Music.class.php:352
+#: Music.class.php:353
 #, php-format
 msgid "Unable to delete %s"
 msgstr ""
 
-#: Music.class.php:414
+#: Music.class.php:415
 msgid "Unsupported file format"
 msgstr ""
 
@@ -308,6 +316,12 @@ msgid ""
 "Uploading and management of sound files (wav, mp3) to be used for on-hold "
 "music."
 msgstr "保留音で使用する音楽ファイル (wav, mp3) のアップロードと管理。"
+
+#: music.i18n.php:18
+msgid ""
+"When enabled Asterisk will use 1 instance of moh class for all channels who "
+"are using it, decreasing consumable cpu cycles and memory in the process"
+msgstr ""
 
 #: views/form.php:93
 msgid "Yes"
@@ -448,9 +462,6 @@ msgstr ""
 
 #~ msgid "Submit Changes"
 #~ msgstr "変更を適用"
-
-#~ msgid "System Setup"
-#~ msgstr "システムセットアップ"
 
 #~ msgid "This is not a fatal error, your Music on Hold may still work."
 #~ msgstr ""
