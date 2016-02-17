@@ -15,18 +15,21 @@
 #
 # Copyright (C) 2009 Séverine GUTIERREZ, severine@medialsace.fr
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-22 12:57-0800\n"
-"PO-Revision-Date: 2009-04-20 22:53+0100\n"
-"Last-Translator: Séverine GUTIERREZ <severine@medialsace.fr>\n"
-"Language-Team: Français <LL@li.org>\n"
+"PO-Revision-Date: 2016-02-04 23:07+0200\n"
+"Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
+"Language-Team: French "
+"<http://weblate.freepbx.org/projects/freepbx/music/fr_FR/>\n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2.2-dev\n"
 
 #: Music.class.php:437
 msgid "A PHP extension stopped the file upload"
@@ -34,15 +37,16 @@ msgstr ""
 
 #: views/form.php:174
 msgid "Action"
-msgstr ""
+msgstr "Action"
 
 #: views/grid.php:20
+#, fuzzy
 msgid "Actions"
-msgstr ""
+msgstr "Actions"
 
 #: views/grid.php:5
 msgid "Add Category"
-msgstr ""
+msgstr "Ajouter une catégorie"
 
 #: views/addcatform.php:27
 msgid ""
@@ -57,19 +61,19 @@ msgstr ""
 
 #: views/form.php:37
 msgid "Application"
-msgstr ""
+msgstr "Application"
 
 #: assets/js/music.js:308
 msgid "Are you sure you want to delete this item?"
-msgstr ""
+msgstr "Êtes-vous sûr de vouloir supprimer cet item ?"
 
 #: assets/js/music.js:134
 msgid "At least one codec must be checked"
-msgstr ""
+msgstr "Au moins un codec doit être sélectionné"
 
 #: views/form.php:118
 msgid "Browse"
-msgstr ""
+msgstr "Parcourir"
 
 #: Music.class.php:441
 msgid "Can Not Find Uploaded Files"
@@ -80,18 +84,20 @@ msgid ""
 "Categories: \"none\" and \"default\" are reserved names. Please enter a "
 "different name"
 msgstr ""
+"Les catégories \"none\" et \"default\" sont des noms réservés. S'il vous "
+"plaît, veuillez saisir un nom différent"
 
 #: views/grid.php:18
 msgid "Category"
-msgstr ""
+msgstr "Catégorie"
 
 #: Music.class.php:115
 msgid "Category Already Exists"
-msgstr ""
+msgstr "La catégorie existe déjà"
 
 #: views/addcatform.php:15
 msgid "Category Name (ASCII Only)"
-msgstr ""
+msgstr "Nom de la catégorie (ASCII seulement)"
 
 #: views/form.php:162
 msgid ""
@@ -107,7 +113,7 @@ msgstr ""
 
 #: views/addcatform.php:44 views/form.php:16
 msgid "Custom Application"
-msgstr ""
+msgstr "Application personnalisée"
 
 #: Music.class.php:577
 msgid "Delete"
@@ -119,33 +125,35 @@ msgstr ""
 
 #: views/form.php:88
 msgid "Enable Random Play"
-msgstr "Activer Lecture Aléatoire"
+msgstr "Activer la lecture aléatoire"
 
 #: views/form.php:103
 msgid ""
 "Enable random playback of music for this category. If disabled music will "
 "play in alphabetical order"
 msgstr ""
+"Permet la lecture aléatoire des morceaux de cette catégorie. Si désactivée, "
+"la lecture se fera en ordre alphabétique"
 
 #: Music.class.php:434
 msgid "Failed to write file to disk"
-msgstr ""
+msgstr "Impossible d'écrire sur le disque"
 
 #: views/form.php:171
 msgid "File"
-msgstr ""
+msgstr "Fichier"
 
 #: Music.class.php:457
 msgid "File does not exist"
-msgstr ""
+msgstr "Le fichier n'existe pas"
 
 #: views/addcatform.php:43 views/form.php:15
 msgid "Files"
-msgstr ""
+msgstr "Fichiers"
 
 #: views/form.php:172
 msgid "Formats"
-msgstr ""
+msgstr "Formats"
 
 #: assets/js/music.js:34
 msgid ""
@@ -155,27 +163,27 @@ msgstr ""
 
 #: Music.class.php:494
 msgid "Invalid Request"
-msgstr ""
+msgstr "Requête invalide"
 
 #: Music.class.php:347
 msgid "Invalid category"
-msgstr ""
+msgstr "Catégorie invalide"
 
 #: views/bootnav.php:1
 msgid "List MoH Categories"
-msgstr ""
+msgstr "Liste des catégories de musique en attente"
 
 #: Music.class.php:431
 msgid "Missing a temporary folder"
-msgstr ""
+msgstr "Un répertoire temporaire est absent"
 
 #: music.i18n.php:4 music.i18n.php:10
 msgid "Music on Hold"
-msgstr "Musique d'Attente"
+msgstr "Musique en attente"
 
 #: views/form.php:95
 msgid "No"
-msgstr ""
+msgstr "Non"
 
 #: Music.class.php:428
 msgid "No file was uploaded"
@@ -183,11 +191,11 @@ msgstr ""
 
 #: Music.class.php:46
 msgid "On Hold Music"
-msgstr "Musique d'Attente"
+msgstr "Musique en attente"
 
 #: views/form.php:62
 msgid "Optional Format"
-msgstr ""
+msgstr "Format optionnel"
 
 #: views/form.php:74
 msgid ""
@@ -204,11 +212,11 @@ msgstr ""
 
 #: views/form.php:173
 msgid "Play"
-msgstr ""
+msgstr "Écouter"
 
 #: assets/js/music.js:5
 msgid "Please enter a valid Category Name"
-msgstr "Veuillez entrer un Nom de Catégorie valide"
+msgstr "Veuillez entrer un nom de catégorie valide"
 
 #: assets/js/music.js:16
 msgid "Please enter a valid application command and arguments"
@@ -216,15 +224,15 @@ msgstr ""
 
 #: Music.class.php:582
 msgid "Reset"
-msgstr ""
+msgstr "Réinitialiser"
 
 #: music.i18n.php:6 music.i18n.php:12
 msgid "Settings"
-msgstr ""
+msgstr "Paramètres"
 
 #: Music.class.php:587
 msgid "Submit"
-msgstr ""
+msgstr "Soumettre"
 
 #: Music.class.php:422
 msgid ""
@@ -253,7 +261,7 @@ msgstr ""
 
 #: views/addcatform.php:38 views/form.php:10 views/grid.php:19
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 #: views/addcatform.php:53 views/form.php:25
 msgid ""
@@ -265,15 +273,15 @@ msgstr ""
 #: Music.class.php:352
 #, php-format
 msgid "Unable to delete %s"
-msgstr ""
+msgstr "Incapable de supprimer %s"
 
 #: Music.class.php:414
 msgid "Unsupported file format"
-msgstr ""
+msgstr "Format de fichier non supporté"
 
 #: assets/js/music.js:162
 msgid "Unsupported file type"
-msgstr ""
+msgstr "Type de fichier non supporté"
 
 #: views/form.php:113
 msgid "Upload Recording"
@@ -294,7 +302,7 @@ msgstr ""
 
 #: views/form.php:93
 msgid "Yes"
-msgstr ""
+msgstr "Oui"
 
 #: assets/js/music.js:116
 #, perl-format
