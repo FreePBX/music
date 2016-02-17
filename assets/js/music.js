@@ -228,7 +228,7 @@ function bindPlayers() {
 								if(data.status) {
 									player.on($.jPlayer.event.error, function(event) {
 										$(container).removeClass("jp-state-loading");
-										console.log(event);
+										console.warn(event);
 									});
 									player.one($.jPlayer.event.canplay, function(event) {
 										$(container).removeClass("jp-state-loading");

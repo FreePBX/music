@@ -13,6 +13,7 @@ class Music implements \BMO {
 	public $convert = array(
 		"wav",
 		"sln",
+		"sln16",
 		"sln48",
 		"g722",
 		"ulaw",
@@ -548,8 +549,8 @@ class Music implements \BMO {
 	public function fileList($path){
 		$pattern = '';
 		$handle = opendir($path) ;
-		$supported = $this->FreePBX->Media->getSupportedFormats();
-		$extensions = array_intersect($supported['out'], $this->convert);
+		$supported = $this->FreePBX->Media->getSupportedFormats("AsteriskShell");
+		$extensions = $supported['out'];
 		//generate the pattern to look for.
 		$pattern = '/(\.'.implode('|\.',$extensions).')$/i';
 		//store file names that match pattern in an array
