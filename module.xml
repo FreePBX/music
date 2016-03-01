@@ -2,7 +2,7 @@
   <rawname>music</rawname>
   <repo>standard</repo>
   <name>Music on Hold</name>
-  <version>13.0.13</version>
+  <version>13.0.14</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -11,6 +11,7 @@
   <category>Settings</category>
   <description>Uploading and management of sound files (wav, mp3) to be used for on-hold music.</description>
 	<changelog>
+		*13.0.14* FREEPBX-11729 generate the none category
 		*13.0.13* Support all Asterisk supported media formats
     *13.0.12* Support global file name function
 		*13.0.11* Fix formats

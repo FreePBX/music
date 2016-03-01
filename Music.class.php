@@ -128,8 +128,30 @@ class Music implements \BMO {
 	}
 
 	public function genConfig() {
-		$ccc = \FreePBX::Config()->get("CACHERTCLASSES") ? "yes" : "no";
+		$ccc = $this->FreePBX->Config->get("CACHERTCLASSES") ? "yes" : "no";
 		$conf["musiconhold_additional.conf"]['general']['cachertclasses'] = $ccc;
+
+		$conf["musiconhold_additional.conf"]['none'] = array(
+			"mode" => "files",
+			"sort" => "alpha",
+			"directory" => $this->mohpath."/.nomusic_reserved"
+		);
+		if(!file_exists($this->mohpath."/.nomusic_reserved")) {
+			mkdir($this->mohpath."/.nomusic_reserved");
+			copy(__DIR__."/silence.wav",$this->mohpath."/.nomusic_reserved/silence.wav");
+			$AMPASTERISKWEBUSER = $this->FreePBX->Config->get("AMPASTERISKWEBUSER");
+			$AMPASTERISKUSER = $this->FreePBX->Config->get("AMPASTERISKUSER");
+			$AMPASTERISKGROUP = $this->FreePBX->Config->get("AMPASTERISKGROUP");
+			$AMPASTERISKWEBGROUP = $this->FreePBX->Config->get("AMPASTERISKWEBGROUP");
+
+			$ampowner = $AMPASTERISKWEBUSER;
+			/* Address concerns carried over from amportal in FREEPBX-8268. If the apache user is different
+			 * than the Asterisk user we provide permissions that allow both.
+			 */
+			$ampgroup =  $AMPASTERISKWEBUSER != $AMPASTERISKUSER ? $AMPASTERISKGROUP : $AMPASTERISKWEBGROUP;
+			chown($this->mohpath."/.nomusic_reserved",$ampowner);
+			chown($this->mohpath."/.nomusic_reserved/silence.wav",$ampowner);
+		}
 
 		$categories = $this->getCategories();
 		foreach($categories as $cat) {
