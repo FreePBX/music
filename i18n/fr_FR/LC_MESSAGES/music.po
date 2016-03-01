@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-17 10:25-0800\n"
+"POT-Creation-Date: 2016-03-01 15:08-0800\n"
 "PO-Revision-Date: 2016-02-04 23:07+0200\n"
 "Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/music/"
@@ -31,7 +31,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
-#: Music.class.php:438
+#: Music.class.php:460
 msgid "A PHP extension stopped the file upload"
 msgstr ""
 
@@ -79,7 +79,7 @@ msgstr "Parcourir"
 msgid "Cache MoH Classes"
 msgstr ""
 
-#: Music.class.php:442
+#: Music.class.php:464
 msgid "Can Not Find Uploaded Files"
 msgstr ""
 
@@ -119,7 +119,7 @@ msgstr ""
 msgid "Custom Application"
 msgstr "Application personnalisée"
 
-#: Music.class.php:578
+#: Music.class.php:600
 msgid "Delete"
 msgstr "Supprimer"
 
@@ -139,7 +139,7 @@ msgstr ""
 "Permet la lecture aléatoire des morceaux de cette catégorie. Si désactivée, "
 "la lecture se fera en ordre alphabétique"
 
-#: Music.class.php:435
+#: Music.class.php:457
 msgid "Failed to write file to disk"
 msgstr "Impossible d'écrire sur le disque"
 
@@ -147,7 +147,7 @@ msgstr "Impossible d'écrire sur le disque"
 msgid "File"
 msgstr "Fichier"
 
-#: Music.class.php:458
+#: Music.class.php:480
 msgid "File does not exist"
 msgstr "Le fichier n'existe pas"
 
@@ -165,11 +165,11 @@ msgid ""
 "ok?"
 msgstr ""
 
-#: Music.class.php:495
+#: Music.class.php:517
 msgid "Invalid Request"
 msgstr "Requête invalide"
 
-#: Music.class.php:348
+#: Music.class.php:370
 msgid "Invalid category"
 msgstr "Catégorie invalide"
 
@@ -177,7 +177,7 @@ msgstr "Catégorie invalide"
 msgid "List MoH Categories"
 msgstr "Liste des catégories de musique en attente"
 
-#: Music.class.php:432
+#: Music.class.php:454
 msgid "Missing a temporary folder"
 msgstr "Un répertoire temporaire est absent"
 
@@ -189,7 +189,7 @@ msgstr "Musique en attente"
 msgid "No"
 msgstr "Non"
 
-#: Music.class.php:429
+#: Music.class.php:451
 msgid "No file was uploaded"
 msgstr ""
 
@@ -226,7 +226,7 @@ msgstr "Veuillez entrer un nom de catégorie valide"
 msgid "Please enter a valid application command and arguments"
 msgstr ""
 
-#: Music.class.php:583
+#: Music.class.php:605
 msgid "Reset"
 msgstr "Réinitialiser"
 
@@ -234,7 +234,7 @@ msgstr "Réinitialiser"
 msgid "Settings"
 msgstr "Paramètres"
 
-#: Music.class.php:588
+#: Music.class.php:610
 msgid "Submit"
 msgstr "Soumettre"
 
@@ -242,17 +242,17 @@ msgstr "Soumettre"
 msgid "System Setup"
 msgstr ""
 
-#: Music.class.php:423
+#: Music.class.php:445
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 
-#: Music.class.php:420
+#: Music.class.php:442
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 
-#: Music.class.php:426
+#: Music.class.php:448
 msgid "The uploaded file was only partially uploaded"
 msgstr ""
 
@@ -278,12 +278,12 @@ msgid ""
 "stream music from the set application"
 msgstr ""
 
-#: Music.class.php:353
+#: Music.class.php:375
 #, php-format
 msgid "Unable to delete %s"
 msgstr "Incapable de supprimer %s"
 
-#: Music.class.php:415
+#: Music.class.php:437
 msgid "Unsupported file format"
 msgstr "Format de fichier non supporté"
 
