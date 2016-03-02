@@ -137,7 +137,7 @@ class Music implements \BMO {
 			"directory" => $this->mohpath."/.nomusic_reserved"
 		);
 		if(!file_exists($this->mohpath."/.nomusic_reserved")) {
-			mkdir($this->mohpath."/.nomusic_reserved");
+			mkdir($this->mohpath."/.nomusic_reserved",0777,true);
 			copy(__DIR__."/silence.wav",$this->mohpath."/.nomusic_reserved/silence.wav");
 			$AMPASTERISKWEBUSER = $this->FreePBX->Config->get("AMPASTERISKWEBUSER");
 			$AMPASTERISKUSER = $this->FreePBX->Config->get("AMPASTERISKUSER");
