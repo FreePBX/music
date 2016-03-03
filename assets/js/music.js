@@ -333,3 +333,7 @@ $(document).on("click", ".delMusic", function() {
 		}
 	});
 });
+
+$("table").on("post-body.bs.table", function () {
+	positionActionBar();
+});
