@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-01 15:08-0800\n"
+"POT-Creation-Date: 2016-03-02 16:45-0800\n"
 "PO-Revision-Date: 2016-02-14 09:04+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian <http://weblate.freepbx.org/projects/freepbx/music/fa/"
@@ -21,11 +21,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
-#: Music.class.php:460
+#: Music.class.php:480
 msgid "A PHP extension stopped the file upload"
 msgstr "بارگذاری فایل به دلیل تنظیمات PHP متوقف شد"
 
-#: views/form.php:174
+#: views/advanced_form.php:174 views/basic_form.php:67
 msgid "Action"
 msgstr "عملیات"
 
@@ -44,23 +44,23 @@ msgid ""
 "category name will be converted to ASCII if any UTF8 characters are found"
 msgstr ""
 
-#: assets/js/music.js:50
+#: assets/js/music.js:60
 msgid "An Error occurred trying to submit this document"
 msgstr "خطا در ارسال این سند"
 
-#: views/form.php:37
+#: views/advanced_form.php:37
 msgid "Application"
 msgstr "برنامه ها"
 
-#: assets/js/music.js:311
+#: assets/js/music.js:320
 msgid "Are you sure you want to delete this item?"
 msgstr "آیا از حذف این مورد مطمئن هستید؟"
 
-#: assets/js/music.js:134
+#: assets/js/music.js:143
 msgid "At least one codec must be checked"
 msgstr "حداقل یک کدک باید بررسی شود"
 
-#: views/form.php:118
+#: views/advanced_form.php:118 views/basic_form.php:39
 msgid "Browse"
 msgstr "مسیر"
 
@@ -68,7 +68,7 @@ msgstr "مسیر"
 msgid "Cache MoH Classes"
 msgstr ""
 
-#: Music.class.php:464
+#: Music.class.php:484
 msgid "Can Not Find Uploaded Files"
 msgstr "فایل بارگذاری شده یافت نمیشود"
 
@@ -83,7 +83,7 @@ msgstr ""
 msgid "Category"
 msgstr "دسته"
 
-#: Music.class.php:116
+#: Music.class.php:136
 msgid "Category Already Exists"
 msgstr "دسته موجود"
 
@@ -91,7 +91,7 @@ msgstr "دسته موجود"
 msgid "Category Name (ASCII Only)"
 msgstr "نام دسته (فقط ASCII)"
 
-#: views/form.php:162
+#: views/advanced_form.php:162
 msgid ""
 "Check all file formats you would like the music in this category to be "
 "encoded into. This applied to uploaded music and any music currently on the "
@@ -99,63 +99,63 @@ msgid ""
 "processed."
 msgstr ""
 
-#: views/form.php:146
+#: views/advanced_form.php:146
 msgid "Convert Upload/Files To"
 msgstr "تبدیل فایل های بارگذاری شده به"
 
-#: views/addcatform.php:44 views/form.php:16
+#: views/addcatform.php:44 views/advanced_form.php:16
 msgid "Custom Application"
 msgstr "برنامه شخصی"
 
-#: Music.class.php:600
+#: Music.class.php:628
 msgid "Delete"
 msgstr "حذف"
 
-#: views/form.php:126
+#: views/advanced_form.php:126 views/basic_form.php:47
 msgid "Drop Multiple Files or Archives Here"
 msgstr "چند فایل یا فایل فشرده را به اینجا بکشید"
 
-#: views/form.php:88
+#: views/advanced_form.php:88 views/basic_form.php:9
 msgid "Enable Random Play"
 msgstr "فعال سازی اجرای تصادفی"
 
-#: views/form.php:103
+#: views/advanced_form.php:103 views/basic_form.php:24
 msgid ""
 "Enable random playback of music for this category. If disabled music will "
 "play in alphabetical order"
 msgstr ""
 
-#: Music.class.php:457
+#: Music.class.php:477
 msgid "Failed to write file to disk"
 msgstr "خطا در نوشتن فایل به روی دیسک"
 
-#: views/form.php:171
+#: views/advanced_form.php:171 views/basic_form.php:64
 msgid "File"
 msgstr "فایل"
 
-#: Music.class.php:480
+#: Music.class.php:500
 msgid "File does not exist"
 msgstr "فایل موجود نیست"
 
-#: views/addcatform.php:43 views/form.php:15
+#: views/addcatform.php:43 views/advanced_form.php:15
 msgid "Files"
 msgstr "فایل ها"
 
-#: views/form.php:172
+#: views/advanced_form.php:172 views/basic_form.php:65
 msgid "Formats"
 msgstr "فرمت ها"
 
-#: assets/js/music.js:34
+#: assets/js/music.js:41
 msgid ""
 "If you are doing media conversions this can take a very long time, is that "
 "ok?"
 msgstr "اگر مکالمه تصویری است, زمان بیشتری میگیرد, ایرادی ندارد؟"
 
-#: Music.class.php:517
+#: Music.class.php:537
 msgid "Invalid Request"
 msgstr "درخواست نامعتبر"
 
-#: Music.class.php:370
+#: Music.class.php:390
 msgid "Invalid category"
 msgstr "دسته نامعتبر"
 
@@ -163,7 +163,7 @@ msgstr "دسته نامعتبر"
 msgid "List MoH Categories"
 msgstr "فهرست دسته MoH"
 
-#: Music.class.php:454
+#: Music.class.php:474
 msgid "Missing a temporary folder"
 msgstr "از دست دادن پوشه موقت"
 
@@ -171,11 +171,11 @@ msgstr "از دست دادن پوشه موقت"
 msgid "Music on Hold"
 msgstr "آهنگ انتظار"
 
-#: views/form.php:95
+#: views/advanced_form.php:95 views/basic_form.php:16
 msgid "No"
 msgstr "خیر"
 
-#: Music.class.php:451
+#: Music.class.php:471
 msgid "No file was uploaded"
 msgstr "فایلی بارگذاری نشده"
 
@@ -183,11 +183,11 @@ msgstr "فایلی بارگذاری نشده"
 msgid "On Hold Music"
 msgstr "آهنگ انتظار"
 
-#: views/form.php:62
+#: views/advanced_form.php:62
 msgid "Optional Format"
 msgstr "فرمت اختیاری"
 
-#: views/form.php:74
+#: views/advanced_form.php:74
 msgid ""
 "Optional value for \"format=\" line used to provide the format to Asterisk. "
 "This should be a format understood by Asterisk such as ulaw, and is specific "
@@ -195,7 +195,7 @@ msgid ""
 "conf configuration for different audio and Internet streaming source options."
 msgstr ""
 
-#: views/form.php:173
+#: views/advanced_form.php:173 views/basic_form.php:66
 msgid "Play"
 msgstr "اجرا"
 
@@ -207,7 +207,7 @@ msgstr "لطفا نام دسته درست وارد کنید"
 msgid "Please enter a valid application command and arguments"
 msgstr "لطفا دستورات برنامه درست وارد کنید"
 
-#: Music.class.php:605
+#: Music.class.php:633
 msgid "Reset"
 msgstr "بازنشانی"
 
@@ -215,7 +215,7 @@ msgstr "بازنشانی"
 msgid "Settings"
 msgstr "تنظیمات"
 
-#: Music.class.php:610
+#: Music.class.php:638
 msgid "Submit"
 msgstr "ارسال"
 
@@ -223,56 +223,56 @@ msgstr "ارسال"
 msgid "System Setup"
 msgstr ""
 
-#: Music.class.php:445
+#: Music.class.php:465
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 
-#: Music.class.php:442
+#: Music.class.php:462
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 
-#: Music.class.php:448
+#: Music.class.php:468
 msgid "The uploaded file was only partially uploaded"
 msgstr "بخشی از فایل بارگذاری شده"
 
-#: views/form.php:49
+#: views/advanced_form.php:49
 msgid ""
 "This is the \"application=\" line used to provide the streaming details to "
 "Asterisk. See information on musiconhold.conf configuration for different "
 "audio and Internet streaming source options."
 msgstr ""
 
-#: views/addcatform.php:38 views/form.php:10 views/grid.php:19
+#: views/addcatform.php:38 views/advanced_form.php:10 views/grid.php:19
 msgid "Type"
 msgstr "نوع"
 
-#: views/addcatform.php:53 views/form.php:25
+#: views/addcatform.php:53 views/advanced_form.php:25
 msgid ""
 "Type of Music on Hold. If set to \"Files\" then this category will play the "
 "files listed below. If set to \"Custom Application\" then this category will "
 "stream music from the set application"
 msgstr ""
 
-#: Music.class.php:375
+#: Music.class.php:395
 #, php-format
 msgid "Unable to delete %s"
 msgstr "نمیتوان فایل %s را حذف کرد"
 
-#: Music.class.php:437
+#: Music.class.php:457
 msgid "Unsupported file format"
 msgstr "فرمت فایل نامعتبر"
 
-#: assets/js/music.js:162
+#: assets/js/music.js:171
 msgid "Unsupported file type"
 msgstr "نوع فایل پشتیبانی نشده"
 
-#: views/form.php:113
+#: views/advanced_form.php:113 views/basic_form.php:34
 msgid "Upload Recording"
 msgstr "بارگذاری پیام ظبط شده"
 
-#: views/form.php:133
+#: views/advanced_form.php:133 views/basic_form.php:54
 #, php-format
 msgid ""
 "Upload files from your local system. Supported upload formats are: %s. This "
@@ -291,11 +291,11 @@ msgid ""
 "are using it, decreasing consumable cpu cycles and memory in the process"
 msgstr ""
 
-#: views/form.php:93
+#: views/advanced_form.php:93 views/basic_form.php:14
 msgid "Yes"
 msgstr "بله"
 
-#: assets/js/music.js:116
+#: assets/js/music.js:125
 #, perl-format
 msgid ""
 "You are missing support for playback in this browser. To fully support HTML5 "
