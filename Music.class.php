@@ -49,6 +49,21 @@ class Music implements \BMO {
 		$request['view'] = isset($request['view'])?$request['view']:'';
 		$request['action'] = isset($request['action'])?$request['action']:'';
 		$request['category'] = isset($request['category'])?$this->stripCategory($request['category']):"";
+		$request['id'] = isset($_REQUEST['id']) ? $_REQUEST['id'] : '';
+
+		$display_mode = "advanced";
+		$mode = $this->FreePBX->Config->get("FPBXOPMODE");
+		if(!empty($mode)) {
+			$display_mode = $mode;
+		}
+		if($display_mode == "basic") {
+			$cat = $this->getCategoryByName("default");
+			if(empty($cat)) {
+				throw new \Exception("Error in Music on Hold. Cant find default class");
+			}
+			$request["action"] = 'edit';
+			$request['id'] = $cat['id'];
+		}
 		switch($request["action"]){
 			case "edit":
 				$media = $this->FreePBX->Media;
@@ -57,7 +72,11 @@ class Music implements \BMO {
 				ksort($supported['out']);
 				$supportedHTML5 = $media->getSupportedHTML5Formats();
 				$convertto = array_intersect($supported['out'], $mh->convert);
-				$data = $this->getCategoryByID($_REQUEST['id']);
+				$data = $this->getCategoryByID($request['id']);
+				if($display_mode == "basic") {
+					//only files allowed in this mode
+					$data['type'] = 'files';
+				}
 				$heading .= ' - '.$data['category'];
 				$path = $this->getCategoryPath($data['category']);
 				$files = array();
@@ -67,7 +86,8 @@ class Music implements \BMO {
 					$files[$fn] = strtolower($i['filename']);
 				}
 				$files = array_values($files);
-				$content = load_view(__DIR__.'/views/form.php', array("files" => $files, "convertto" => $convertto, "supportedHTML5" => implode(",",$supportedHTML5), "supported" => $supported, 'data' => $data));
+				$view = ($display_mode == "basic") ? __DIR__.'/views/basic_form.php' : __DIR__.'/views/advanced_form.php';
+				$content = load_view($view, array("display_mode" => $display_mode, "files" => $files, "convertto" => $convertto, "supportedHTML5" => implode(",",$supportedHTML5), "supported" => $supported, 'data' => $data));
 			break;
 			case "add":
 				$content = load_view(__DIR__.'/views/addcatform.php');
@@ -590,6 +610,14 @@ class Music implements \BMO {
 	}
 
 	public function getActionBar($request) {
+		$display_mode = "advanced";
+		$mode = $this->FreePBX->Config->get("FPBXOPMODE");
+		if(!empty($mode)) {
+			$display_mode = $mode;
+		}
+		if($display_mode == "basic") {
+			$request['action'] = 'edit';
+		}
 		$buttons = array();
 		switch($request['display']) {
 			case 'music':
@@ -610,7 +638,7 @@ class Music implements \BMO {
 						'value' => _('Submit')
 					)
 				);
-				if (empty($request['id'])||($request['id'] == '1')) {
+				if ($display_mode != "basic" && (empty($request['id'])||($request['id'] == '1'))) {
 					unset($buttons['delete']);
 				}
 				$request['action'] = isset($request['action'])?$request['action']:'';
@@ -679,6 +707,12 @@ class Music implements \BMO {
 			return $lc->ProcessedConfig;
 		} else {
 			return array();
+		}
+	}
+
+	public function getRightNav($request) {
+		if(isset($request['action']) && ($request['action'] == 'edit' || $request['action'] == 'add' || $request['action'] == 'updatecategory' || $request['action'] == 'addstream')){
+			return load_view(__DIR__."/views/bootnav.php",array('request' => $request));
 		}
 	}
 }

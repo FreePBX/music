@@ -27,31 +27,40 @@ $("#moheditform").submit(function(e) {
 	data.application = $("#application").val();
 	data.erand = $("input[name=erand]:checked").val();
 	data.codecs = [];
-	$(".codec:checked").each(function() {
-		data.codecs.push($(this).val());
-	});
-
-	if($("#type").val() == "custom" || confirm(_("If you are doing media conversions this can take a very long time, is that ok?"))) {
-		$("#action-buttons input").prop("disabled",true);
-		$.ajax({
-			type: 'POST',
-			url: "ajax.php",
-			data: data,
-			dataType: 'json',
-			timeout: 240000
-		}).done(function(data) {
-			if(data.status) {
-				window.location = "?display=music";
-			} else {
-				alert(data.message);
-				console.log(data.errors);
-			}
-		}).fail(function() {
-			alert(_("An Error occurred trying to submit this document"));
-		}).always(function() {
-			$("#action-buttons input").prop("disabled", false);
+	if($("input[type=checkbox].codec").length > 0) {
+		$("input[type=checkbox].codec:checked").each(function() {
+			data.codecs.push($(this).val());
+		});
+	} else {
+		$("input[type=hidden].codec").each(function() {
+			data.codecs.push($(this).val());
 		});
 	}
+
+
+	if(display_mode == "advanced" && $("#type").val() != "custom" && !confirm(_("If you are doing media conversions this can take a very long time, is that ok?"))) {
+		return false;
+	}
+
+	$("#action-buttons input").prop("disabled",true);
+	$.ajax({
+		type: 'POST',
+		url: "ajax.php",
+		data: data,
+		dataType: 'json',
+		timeout: 240000
+	}).done(function(data) {
+		if(data.status) {
+			window.location = "?display=music";
+		} else {
+			alert(data.message);
+			console.log(data.errors);
+		}
+	}).fail(function() {
+		alert(_("An Error occurred trying to submit this document"));
+	}).always(function() {
+		$("#action-buttons input").prop("disabled", false);
+	});
 });
 
 $(document).on("keyup paste", ".name-check", function(e) {
