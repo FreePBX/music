@@ -432,6 +432,17 @@ class Music implements \BMO {
 				return array("status" => true);
 			break;
 			case "upload":
+				// XXX If the posted file was too large,
+				// we will get here, but $_FILES is empty!
+				// Specifically, if the file that was posted is
+				// larger than 'post_max_size' in php.ini.
+				// So, php will throw an error, as index
+				// $_FILES["files"] does not exist, because
+				// $_FILES is empty.
+				if (!isset($_FILES)) {
+					return array("status" => false,
+						"message" => _("File upload failed"));
+				}
 				foreach ($_FILES["files"]["error"] as $key => $error) {
 					switch($error) {
 						case UPLOAD_ERR_OK:
