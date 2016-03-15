@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-02 16:45-0800\n"
+"POT-Creation-Date: 2016-03-15 10:47-0700\n"
 "PO-Revision-Date: 2015-11-19 04:14+0200\n"
 "Last-Translator: Matthias <it@mitterhuemer.at>\n"
 "Language-Team: German <http://weblate.freepbx.org/projects/freepbx/music/"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
-#: Music.class.php:480
+#: Music.class.php:491
 msgid "A PHP extension stopped the file upload"
 msgstr "Eine PHP Erweiterung hat den Datei Upload gestoppt"
 
@@ -56,7 +56,7 @@ msgstr "Beim Absenden des Dokuments ist ein Fehler aufgetreten"
 msgid "Application"
 msgstr "Applikation"
 
-#: assets/js/music.js:320
+#: assets/js/music.js:328
 msgid "Are you sure you want to delete this item?"
 msgstr "Möchten Sie diesen Inhalt wirklich löschen?"
 
@@ -72,7 +72,7 @@ msgstr "Durchsuchen"
 msgid "Cache MoH Classes"
 msgstr ""
 
-#: Music.class.php:484
+#: Music.class.php:495
 msgid "Can Not Find Uploaded Files"
 msgstr "Es können keine hochgeladenen Dateien gefunden werden"
 
@@ -113,7 +113,7 @@ msgstr ""
 msgid "Custom Application"
 msgstr "Benutzerdefinierte Applikation"
 
-#: Music.class.php:628
+#: Music.class.php:639
 msgid "Delete"
 msgstr "Löschen"
 
@@ -134,7 +134,7 @@ msgstr ""
 "Einstellung deaktiviert, wird die Musik in Alphabetischer Reihenfolge "
 "abgespielt"
 
-#: Music.class.php:477
+#: Music.class.php:488
 msgid "Failed to write file to disk"
 msgstr "Fehler beim Speichern der Datei"
 
@@ -142,9 +142,13 @@ msgstr "Fehler beim Speichern der Datei"
 msgid "File"
 msgstr "Datei"
 
-#: Music.class.php:500
+#: Music.class.php:511
 msgid "File does not exist"
 msgstr "Datei existiert nicht"
+
+#: Music.class.php:444
+msgid "File upload failed"
+msgstr ""
 
 #: views/addcatform.php:43 views/advanced_form.php:15
 msgid "Files"
@@ -162,7 +166,7 @@ msgstr ""
 "Sollten Sie eine Konvertierung von Medien machen kann dieser Vorgang etwas "
 "länger dauern, Sind Sie damit einverstanden?"
 
-#: Music.class.php:537
+#: Music.class.php:548
 msgid "Invalid Request"
 msgstr "Falsche Anforderung"
 
@@ -174,7 +178,7 @@ msgstr "Falsche Kategorie"
 msgid "List MoH Categories"
 msgstr "MoH Kategorien auflisten"
 
-#: Music.class.php:474
+#: Music.class.php:485
 msgid "Missing a temporary folder"
 msgstr "Fehlender temporärer Ordner"
 
@@ -186,7 +190,7 @@ msgstr "Music on Hold"
 msgid "No"
 msgstr "Nein"
 
-#: Music.class.php:471
+#: Music.class.php:482
 msgid "No file was uploaded"
 msgstr "Es wurde keine Datei hochgeladen"
 
@@ -225,7 +229,7 @@ msgstr ""
 "Bitte geben Sie einen gültigen Applikations Command und dazugehörige "
 "Argumente an"
 
-#: Music.class.php:633
+#: Music.class.php:644
 msgid "Reset"
 msgstr "Zurücksetzen"
 
@@ -233,7 +237,7 @@ msgstr "Zurücksetzen"
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: Music.class.php:638
+#: Music.class.php:649
 msgid "Submit"
 msgstr "Absenden"
 
@@ -241,7 +245,7 @@ msgstr "Absenden"
 msgid "System Setup"
 msgstr ""
 
-#: Music.class.php:465
+#: Music.class.php:476
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
@@ -249,13 +253,13 @@ msgstr ""
 "Die hochgeladene Datei überschreitet die Maximal zulässige Dateigröße welche "
 "als Wert \"MAX_FILE_SIZE\" in der HTML definiert wurde"
 
-#: Music.class.php:462
+#: Music.class.php:473
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 "Die hochgeladene Datei überschreitet die maximal zulässige Dateigröße welche "
 "als Wert \"upload_max_filesize\" in der php.ini definiert wurde"
 
-#: Music.class.php:468
+#: Music.class.php:479
 msgid "The uploaded file was only partially uploaded"
 msgstr "Die hochgeladene Datei wurde nur teilweise hochgeladen"
 
@@ -290,7 +294,7 @@ msgstr ""
 msgid "Unable to delete %s"
 msgstr "Fehler beim Löschen von %s"
 
-#: Music.class.php:457
+#: Music.class.php:468
 msgid "Unsupported file format"
 msgstr "Nicht unterstütztes Datei Format"
 

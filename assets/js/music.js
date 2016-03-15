@@ -102,7 +102,7 @@ function playFormatter(val,row){
 			'<div class="jp-gui jp-interface">'+
 				'<div class="jp-controls">'+
 					'<i class="fa fa-play jp-play"></i>'+
-					'<i class="fa fa-repeat jp-repeat"></i>'+
+					'<i class="fa fa-undo jp-restart"></i>'+
 				'</div>'+
 				'<div class="jp-progress">'+
 					'<div class="jp-seek-bar progress">'+
@@ -250,6 +250,14 @@ function bindPlayers() {
 								}
 							}
 						});
+					}
+				});
+				var $this = this;
+				$(container).find(".jp-restart").click(function() {
+					if($($this).data("jPlayer").status.paused) {
+						$($this).jPlayer("pause",0);
+					} else {
+						$($this).jPlayer("play",0);
 					}
 				});
 			},
