@@ -10,11 +10,11 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-15 10:47-0700\n"
-"PO-Revision-Date: 2016-04-02 19:03+0200\n"
+"PO-Revision-Date: 2016-04-26 06:48+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
-"Language-Team: Persian "
-"<http://weblate.freepbx.org/projects/freepbx/music/fa/>\n"
-"Language: fa\n"
+"Language-Team: Persian (Iran) "
+"<http://weblate.freepbx.org/projects/freepbx/music/fa_IR/>\n"
+"Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -290,7 +290,7 @@ msgstr "نوع فایل پشتیبانی نشده"
 
 #: views/advanced_form.php:113 views/basic_form.php:34
 msgid "Upload Recording"
-msgstr "بارگذاری پیام ظبط شده"
+msgstr "بارگذاری پیام ضبط شده"
 
 #: views/advanced_form.php:133 views/basic_form.php:54
 #, php-format
