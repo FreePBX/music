@@ -253,21 +253,48 @@ class Music implements \BMO {
 	}
 
 	public function install() {
-		$sql = 'CREATE TABLE IF NOT EXISTS `music` (
-			`id` INT NOT NULL AUTO_INCREMENT,
-			`category` VARCHAR(255) NULL,
-			`type` VARCHAR(100) NULL,
-			`random` TINYINT NULL,
-			`application` varchar(255) NULL,
-			`format` varchar(5) NULL,
-		PRIMARY KEY (`id`),
-		UNIQUE KEY `category_UNIQUE` (`category`));';
-
-		try {
-			$check = $this->db->query($sql);
-		} catch(\Exception $e) {
-			die_freepbx("Can not execute $statement : " . $check->getMessage() .  "\n");
-		}
+		$table = $this->FreePBX->Database->migrate("music");
+		$cols = array(
+			"id" => array(
+				"type" => "integer",
+				"primaryKey" => true,
+				"autoincrement" => true
+			),
+			"category" => array(
+				"type" => "string",
+				"length" => 255,
+				"notnull" => false,
+			),
+			"type" => array(
+				"type" => "string",
+				"length" => 100,
+				"notnull" => false,
+			),
+			"random" => array(
+				"type" => "boolean",
+				"notnull" => false,
+			),
+			"application" => array(
+				"type" => "string",
+				"length" => 255,
+				"notnull" => false,
+			),
+			"format" => array(
+				"type" => "string",
+				"length" => 10,
+				"notnull" => false,
+			),
+		);
+		$indexes = array(
+			"category_UNIQUE" => array(
+				"type" => "unique",
+				"cols" => array(
+					"category"
+				)
+			)
+		);
+		$table->modify($cols,$indexes);
+		unset($table);
 
 		$freepbx_conf = $this->FreePBX->Config;
 		if ($freepbx_conf->conf_setting_exists('AMPMPG123')) {
