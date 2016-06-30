@@ -2,7 +2,7 @@
   <rawname>music</rawname>
   <repo>standard</repo>
   <name>Music on Hold</name>
-  <version>13.0.19</version>
+  <version>13.0.20</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -11,6 +11,7 @@
   <category>Settings</category>
   <description>Uploading and management of sound files (wav, mp3) to be used for on-hold music.</description>
 	<changelog>
+		*13.0.20* FREEPBX-12656 Hang on upgrade of Music on Hold module
 		*13.0.19* FREEPBX-12527 increase format length in DB
 		*13.0.18* Trap file upload failure - better than a runtime exception by lidl
 		*13.0.17* Visual styling issues cleaned up
@@ -42,7 +43,7 @@
     <music>Music on Hold</music>
   </menuitems>
   <depends>
-    <module>framework ge 13.0.66</module>
+    <version>12.0.1alpha45</version>
   </depends>
   <location>release/2.11/music-2.11.0.1.tgz</location>
   <md5sum>787dc2e298cb49636534f9b7ae7114a0</md5sum>
