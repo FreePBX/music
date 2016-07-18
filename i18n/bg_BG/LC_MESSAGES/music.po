@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 19:43-0500\n"
+"POT-Creation-Date: 2016-07-18 15:02-0700\n"
 "PO-Revision-Date: 2014-07-22 12:02+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/music/bg/"
@@ -44,6 +44,10 @@ msgstr ""
 msgid "Application:"
 msgstr "Приложение:"
 
+#: music.i18n.php:14
+msgid "Cache MoH Classes"
+msgstr ""
+
 #: install.php:37
 msgid "Cannot write to file"
 msgstr "Грешка при запис на файл"
@@ -72,10 +76,6 @@ msgstr "Провери"
 msgid "Completed processing"
 msgstr "Завършено обработване"
 
-#: music.i18n.php:8
-msgid "Convert Music Files to WAV"
-msgstr "Конвертиране на Музикални Файлове в WAV"
-
 #: page.music.php:130
 msgid "Delete"
 msgstr "Изтрий"
@@ -90,7 +90,7 @@ msgstr "Изтрий Музикална Категория  %s"
 msgid "Delete Streaming Category"
 msgstr "Изтрий Поточна Категория"
 
-#: page.music.php:479
+#: page.music.php:480
 msgid "Deleted"
 msgstr "Изтрит"
 
@@ -110,7 +110,7 @@ msgstr "Редактирай Поточна Категория"
 msgid "Enable Random Play"
 msgstr "Разреши Случайно Възпроизвеждане"
 
-#: page.music.php:481
+#: page.music.php:482
 #, php-format
 msgid "Error Deleting %s"
 msgstr "Грешка при Изтриване %s"
@@ -119,7 +119,7 @@ msgstr "Грешка при Изтриване %s"
 msgid "Error Processing"
 msgstr "Грешка при Обработване"
 
-#: music.i18n.php:3 music.i18n.php:6
+#: music.i18n.php:4 music.i18n.php:10
 msgid "Music on Hold"
 msgstr "Музика при Задържане"
 
@@ -164,7 +164,7 @@ msgstr "Моля изберете файл за добавяне"
 msgid "Please wait until the page loads. Your file is being processed."
 msgstr "Моля изчакайте докато страницата се презареди. Вашият файл се качва."
 
-#: music.i18n.php:4
+#: music.i18n.php:6 music.i18n.php:12
 msgid "Settings"
 msgstr "Настройки"
 
@@ -172,7 +172,7 @@ msgstr "Настройки"
 msgid "Submit Changes"
 msgstr "Приеми Промените"
 
-#: music.i18n.php:10
+#: music.i18n.php:16
 msgid "System Setup"
 msgstr "Общи Настройки"
 
@@ -215,7 +215,7 @@ msgstr "Добави"
 msgid "Upload a .wav or .mp3 file:"
 msgstr "Добави .wav или .mp3 файл:"
 
-#: music.i18n.php:5
+#: music.i18n.php:8
 msgid ""
 "Uploading and management of sound files (wav, mp3) to be used for on-hold "
 "music."
@@ -255,22 +255,13 @@ msgstr "Ниво 75%"
 msgid "Volume Adjustment"
 msgstr "Настройка на Усилването"
 
-#: music.i18n.php:12
+#: music.i18n.php:18
 msgid ""
-"When set to false, the MP3 files can be loaded and WAV files converted to "
-"MP3 in the MoH module. The default behavior of true assumes you have mpg123 "
-"loaded as well as sox and will convert MP3 files to WAV. This is highly "
-"recommended as MP3 files heavily tax the system and can cause instability on "
-"a busy phone system"
+"When enabled Asterisk will use 1 instance of moh class for all channels who "
+"are using it, decreasing consumable cpu cycles and memory in the process"
 msgstr ""
-"Когато е установено невярно, в модул Музика при Задържане могат да се качват "
-"MP3 файлове и WAV файловете се конвертират на MP3. Установеното по "
-"подразбиране вярно предполага че имате инсталирани mpg123 и sox и ще "
-"конвертира MP3 файловете на WAV. Това е препоръчително тъй като MP3 "
-"файловете използват повече ресурси от системата и може да доведе до "
-"нестабилност на натоварена телефонна система"
 
-#: page.music.php:476
+#: page.music.php:477
 msgid ""
 "You must have at least one file for On Hold Music.  Please upload one before "
 "deleting this one."
@@ -292,6 +283,23 @@ msgid ""
 msgstr ""
 "sox се провали при конвертирането на файла и оригиналния не може да се "
 "копира за възстановяване"
+
+#~ msgid "Convert Music Files to WAV"
+#~ msgstr "Конвертиране на Музикални Файлове в WAV"
+
+#~ msgid ""
+#~ "When set to false, the MP3 files can be loaded and WAV files converted to "
+#~ "MP3 in the MoH module. The default behavior of true assumes you have "
+#~ "mpg123 loaded as well as sox and will convert MP3 files to WAV. This is "
+#~ "highly recommended as MP3 files heavily tax the system and can cause "
+#~ "instability on a busy phone system"
+#~ msgstr ""
+#~ "Когато е установено невярно, в модул Музика при Задържане могат да се "
+#~ "качват MP3 файлове и WAV файловете се конвертират на MP3. Установеното по "
+#~ "подразбиране вярно предполага че имате инсталирани mpg123 и sox и ще "
+#~ "конвертира MP3 файловете на WAV. Това е препоръчително тъй като MP3 "
+#~ "файловете използват повече ресурси от системата и може да доведе до "
+#~ "нестабилност на натоварена телефонна система"
 
 #~ msgid ""
 #~ "The volume adjustment is a linear value. Since loudness is logarithmic, "

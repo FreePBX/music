@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX - music module spanish translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 19:43-0500\n"
+"POT-Creation-Date: 2016-07-18 15:02-0700\n"
 "PO-Revision-Date: 2009-01-21 11:57+0100\n"
 "Last-Translator: Juan Asensio Sánchez <okelet@gmail.com>\n"
 "Language-Team: Juan Asensio Sánchez <okelet@gmail.com>\n"
@@ -34,6 +34,10 @@ msgstr ""
 msgid "Application:"
 msgstr "Aplicación:"
 
+#: music.i18n.php:14
+msgid "Cache MoH Classes"
+msgstr ""
+
 #: install.php:37
 msgid "Cannot write to file"
 msgstr "No se pudo escribir en el archivo"
@@ -63,10 +67,6 @@ msgstr "Comprobar"
 msgid "Completed processing"
 msgstr "Procesamiento completado"
 
-#: music.i18n.php:8
-msgid "Convert Music Files to WAV"
-msgstr ""
-
 #: page.music.php:130
 msgid "Delete"
 msgstr "Eliminar"
@@ -81,7 +81,7 @@ msgstr "Eliminar categoría de música %s"
 msgid "Delete Streaming Category"
 msgstr "Eliminar categoría de música en directo"
 
-#: page.music.php:479
+#: page.music.php:480
 msgid "Deleted"
 msgstr "Eliminado"
 
@@ -101,7 +101,7 @@ msgstr "Editar categoría de música en directo"
 msgid "Enable Random Play"
 msgstr "Habilitar reproducción aleatoria"
 
-#: page.music.php:481
+#: page.music.php:482
 #, php-format
 msgid "Error Deleting %s"
 msgstr "Error al eliminar %s"
@@ -110,7 +110,7 @@ msgstr "Error al eliminar %s"
 msgid "Error Processing"
 msgstr "Error de procesamiento"
 
-#: music.i18n.php:3 music.i18n.php:6
+#: music.i18n.php:4 music.i18n.php:10
 msgid "Music on Hold"
 msgstr "Música en espera"
 
@@ -159,7 +159,7 @@ msgid "Please wait until the page loads. Your file is being processed."
 msgstr ""
 "Por favor, espere mientras la página se carga. Su archivo se está procesando."
 
-#: music.i18n.php:4
+#: music.i18n.php:6 music.i18n.php:12
 msgid "Settings"
 msgstr ""
 
@@ -167,7 +167,7 @@ msgstr ""
 msgid "Submit Changes"
 msgstr "Enviar cambios"
 
-#: music.i18n.php:10
+#: music.i18n.php:16
 msgid "System Setup"
 msgstr ""
 
@@ -204,7 +204,7 @@ msgstr "Enviar"
 msgid "Upload a .wav or .mp3 file:"
 msgstr "Enviar archivo WAV o MP3:"
 
-#: music.i18n.php:5
+#: music.i18n.php:8
 msgid ""
 "Uploading and management of sound files (wav, mp3) to be used for on-hold "
 "music."
@@ -242,16 +242,13 @@ msgstr ""
 msgid "Volume Adjustment"
 msgstr "Ajuste de volumen"
 
-#: music.i18n.php:12
+#: music.i18n.php:18
 msgid ""
-"When set to false, the MP3 files can be loaded and WAV files converted to "
-"MP3 in the MoH module. The default behavior of true assumes you have mpg123 "
-"loaded as well as sox and will convert MP3 files to WAV. This is highly "
-"recommended as MP3 files heavily tax the system and can cause instability on "
-"a busy phone system"
+"When enabled Asterisk will use 1 instance of moh class for all channels who "
+"are using it, decreasing consumable cpu cycles and memory in the process"
 msgstr ""
 
-#: page.music.php:476
+#: page.music.php:477
 msgid ""
 "You must have at least one file for On Hold Music.  Please upload one before "
 "deleting this one."

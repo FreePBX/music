@@ -3,13 +3,13 @@
 # For licensing information, please see the file named LICENSE located in the module directory
 #
 # FreePBX language template for music
-# Copyright (C) 2008-2015 Sangoma, Inc.
+# Copyright (C) 2008-2016 Sangoma, Inc.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 19:43-0500\n"
+"POT-Creation-Date: 2016-07-18 15:02-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,6 +40,10 @@ msgstr ""
 msgid "Application:"
 msgstr ""
 
+#: music.i18n.php:14
+msgid "Cache MoH Classes"
+msgstr ""
+
 #: install.php:37
 msgid "Cannot write to file"
 msgstr ""
@@ -68,10 +72,6 @@ msgstr ""
 msgid "Completed processing"
 msgstr ""
 
-#: music.i18n.php:8
-msgid "Convert Music Files to WAV"
-msgstr ""
-
 #: page.music.php:130
 msgid "Delete"
 msgstr ""
@@ -86,7 +86,7 @@ msgstr ""
 msgid "Delete Streaming Category"
 msgstr ""
 
-#: page.music.php:479
+#: page.music.php:480
 msgid "Deleted"
 msgstr ""
 
@@ -106,7 +106,7 @@ msgstr ""
 msgid "Enable Random Play"
 msgstr ""
 
-#: page.music.php:481
+#: page.music.php:482
 #, php-format
 msgid "Error Deleting %s"
 msgstr ""
@@ -117,8 +117,8 @@ msgstr ""
 msgid "Error Processing"
 msgstr ""
 
-#: music.i18n.php:3
-#: music.i18n.php:6
+#: music.i18n.php:4
+#: music.i18n.php:10
 msgid "Music on Hold"
 msgstr ""
 
@@ -162,7 +162,8 @@ msgstr ""
 msgid "Please wait until the page loads. Your file is being processed."
 msgstr ""
 
-#: music.i18n.php:4
+#: music.i18n.php:6
+#: music.i18n.php:12
 msgid "Settings"
 msgstr ""
 
@@ -172,7 +173,7 @@ msgstr ""
 msgid "Submit Changes"
 msgstr ""
 
-#: music.i18n.php:10
+#: music.i18n.php:16
 msgid "System Setup"
 msgstr ""
 
@@ -206,7 +207,7 @@ msgstr ""
 msgid "Upload a .wav or .mp3 file:"
 msgstr ""
 
-#: music.i18n.php:5
+#: music.i18n.php:8
 msgid ""
 "Uploading and management of sound files (wav, mp3) to be used for on-hold "
 "music."
@@ -244,16 +245,13 @@ msgstr ""
 msgid "Volume Adjustment"
 msgstr ""
 
-#: music.i18n.php:12
+#: music.i18n.php:18
 msgid ""
-"When set to false, the MP3 files can be loaded and WAV files converted to "
-"MP3 in the MoH module. The default behavior of true assumes you have mpg123 "
-"loaded as well as sox and will convert MP3 files to WAV. This is highly "
-"recommended as MP3 files heavily tax the system and can cause instability on "
-"a busy phone system"
+"When enabled Asterisk will use 1 instance of moh class for all channels who "
+"are using it, decreasing consumable cpu cycles and memory in the process"
 msgstr ""
 
-#: page.music.php:476
+#: page.music.php:477
 msgid ""
 "You must have at least one file for On Hold Music.  Please upload one before "
 "deleting this one."

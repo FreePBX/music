@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 19:43-0500\n"
+"POT-Creation-Date: 2016-07-18 15:02-0700\n"
 "PO-Revision-Date: 2008-12-06 16:38+0100\n"
 "Last-Translator: Alexander Kozyrev <ceo@postmet.com>\n"
 "Language-Team: Russian <faq@postmet.com>\n"
@@ -37,6 +37,10 @@ msgstr ""
 msgid "Application:"
 msgstr "Приложение:"
 
+#: music.i18n.php:14
+msgid "Cache MoH Classes"
+msgstr ""
+
 #: install.php:37
 msgid "Cannot write to file"
 msgstr "Невозможно записать в файл"
@@ -65,10 +69,6 @@ msgstr "Проверить"
 msgid "Completed processing"
 msgstr "Действие завершено"
 
-#: music.i18n.php:8
-msgid "Convert Music Files to WAV"
-msgstr "Конвертировать  музыкальные файлы в WAV"
-
 #: page.music.php:130
 msgid "Delete"
 msgstr "Удалить"
@@ -83,7 +83,7 @@ msgstr "Удалить категорию музыки %s"
 msgid "Delete Streaming Category"
 msgstr "Удалить категорию потокового вещания"
 
-#: page.music.php:479
+#: page.music.php:480
 msgid "Deleted"
 msgstr "Удалено"
 
@@ -103,7 +103,7 @@ msgstr "Редактировать категорию потокового ве�
 msgid "Enable Random Play"
 msgstr "Случайная выборка при воспроизведении"
 
-#: page.music.php:481
+#: page.music.php:482
 #, php-format
 msgid "Error Deleting %s"
 msgstr "Ошибка при удалении %s"
@@ -112,7 +112,7 @@ msgstr "Ошибка при удалении %s"
 msgid "Error Processing"
 msgstr "Ошибка при совершении действия"
 
-#: music.i18n.php:3 music.i18n.php:6
+#: music.i18n.php:4 music.i18n.php:10
 msgid "Music on Hold"
 msgstr "Музыка в ожидании"
 
@@ -157,7 +157,7 @@ msgstr "Укажите файл для загрузки"
 msgid "Please wait until the page loads. Your file is being processed."
 msgstr "Дождитесь, пока страница загрузится. Ваш файл обрабатывается."
 
-#: music.i18n.php:4
+#: music.i18n.php:6 music.i18n.php:12
 msgid "Settings"
 msgstr "Настройки"
 
@@ -165,7 +165,7 @@ msgstr "Настройки"
 msgid "Submit Changes"
 msgstr "Применить изменения"
 
-#: music.i18n.php:10
+#: music.i18n.php:16
 msgid "System Setup"
 msgstr "Системные установка"
 
@@ -208,7 +208,7 @@ msgstr "Загрузить"
 msgid "Upload a .wav or .mp3 file:"
 msgstr "Загрузить файл .wav или .mp3:"
 
-#: music.i18n.php:5
+#: music.i18n.php:8
 msgid ""
 "Uploading and management of sound files (wav, mp3) to be used for on-hold "
 "music."
@@ -248,21 +248,13 @@ msgstr "Громкость 75%"
 msgid "Volume Adjustment"
 msgstr "Настрока громкости"
 
-#: music.i18n.php:12
+#: music.i18n.php:18
 msgid ""
-"When set to false, the MP3 files can be loaded and WAV files converted to "
-"MP3 in the MoH module. The default behavior of true assumes you have mpg123 "
-"loaded as well as sox and will convert MP3 files to WAV. This is highly "
-"recommended as MP3 files heavily tax the system and can cause instability on "
-"a busy phone system"
+"When enabled Asterisk will use 1 instance of moh class for all channels who "
+"are using it, decreasing consumable cpu cycles and memory in the process"
 msgstr ""
-"Когда установлена в false, файлы mp3 могут быть загружены и WAV файлы "
-"конвертированны в mp3 в модуле Музыка в ожидании. Режим по умолчанию "
-"предполагает, что у вас загружен mpg123 так же как и sox и он будет "
-"конвертировать mp3 в wav. Это крайне рекомендуется т.к. mp3 файлы сильно "
-"нагружают систему и могут привести к ее не стабильной работе"
 
-#: page.music.php:476
+#: page.music.php:477
 msgid ""
 "You must have at least one file for On Hold Music.  Please upload one before "
 "deleting this one."
@@ -284,6 +276,22 @@ msgid ""
 msgstr ""
 "sox не удалось конвертировать файл и оригинал не может быть скопирован как "
 "резервная копия"
+
+#~ msgid "Convert Music Files to WAV"
+#~ msgstr "Конвертировать  музыкальные файлы в WAV"
+
+#~ msgid ""
+#~ "When set to false, the MP3 files can be loaded and WAV files converted to "
+#~ "MP3 in the MoH module. The default behavior of true assumes you have "
+#~ "mpg123 loaded as well as sox and will convert MP3 files to WAV. This is "
+#~ "highly recommended as MP3 files heavily tax the system and can cause "
+#~ "instability on a busy phone system"
+#~ msgstr ""
+#~ "Когда установлена в false, файлы mp3 могут быть загружены и WAV файлы "
+#~ "конвертированны в mp3 в модуле Музыка в ожидании. Режим по умолчанию "
+#~ "предполагает, что у вас загружен mpg123 так же как и sox и он будет "
+#~ "конвертировать mp3 в wav. Это крайне рекомендуется т.к. mp3 файлы сильно "
+#~ "нагружают систему и могут привести к ее не стабильной работе"
 
 #~ msgid ""
 #~ "The volume adjustment is a linear value. Since loudness is logarithmic, "
