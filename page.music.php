@@ -468,6 +468,7 @@ function editstream_onsubmit() {
 
 	if (isset($_REQUEST['del'])) {
 		$del = $_REQUEST['del'];
+		$del = basename($del);
 		if (strpos($del, "\"") || strpos($del, "\'") || strpos($del, "\;")) {
 			print "You're trying to use an invalid character. Please don't.\n";
 			exit;
