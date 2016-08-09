@@ -36,7 +36,7 @@ class Music implements \BMO {
 		$this->varlibdir = $freepbx->Config->get('ASTVARLIBDIR');
 		$this->mohpath = $this->varlibdir.'/'.$this->mohdir;
 		$this->config = $this->loadMoHConfig();
-		$this->tmp = \FreePBX::Config()->get("ASTSPOOLDIR") . "/tmp";
+		$this->tmp = $this->FreePBX->Config->get("ASTSPOOLDIR") . "/tmp";
 		if(!file_exists($this->tmp)) {
 			mkdir($this->tmp,0777,true);
 		}
@@ -382,8 +382,6 @@ class Music implements \BMO {
 	}
 
 	public function ajaxRequest($req, &$setting) {
-		$setting['authenticate'] = false;
-		$setting['allowremote'] = false;
 		switch($req) {
 			case "gethtml5":
 			case "playback":
