@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: FreePBX - music module spanish translation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-09 15:22-0700\n"
-"PO-Revision-Date: 2016-12-09 08:49+0200\n"
+"PO-Revision-Date: 2016-12-09 21:01+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish "
 "<http://weblate.freepbx.org/projects/freepbx/music/es_ES/>\n"
@@ -223,11 +223,11 @@ msgstr "Por favor, introduzca un nombre de categoría válido"
 
 #: assets/js/music.js:16
 msgid "Please enter a valid application command and arguments"
-msgstr ""
+msgstr "Introduzca un comando de aplicación y argumentos válidos"
 
 #: Music.class.php:669
 msgid "Reset"
-msgstr ""
+msgstr "Reiniciar"
 
 #: music.i18n.php:6 music.i18n.php:12
 msgid "Settings"
@@ -235,7 +235,7 @@ msgstr "Configuración"
 
 #: Music.class.php:674
 msgid "Submit"
-msgstr ""
+msgstr "Enviar"
 
 #: music.i18n.php:16
 msgid "System Setup"
@@ -246,14 +246,16 @@ msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
+"El archivo subido supera la directiva MAX_FILE_SIZE que se especificó en el "
+"formulario HTML"
 
 #: Music.class.php:498
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
-msgstr ""
+msgstr "El archivo subido supera la directiva upload_max_filesize en php.ini"
 
 #: Music.class.php:504
 msgid "The uploaded file was only partially uploaded"
-msgstr ""
+msgstr "El archivo subido sólo se cargó parcialmente"
 
 #: views/advanced_form.php:49
 msgid ""
@@ -268,7 +270,7 @@ msgstr ""
 
 #: views/addcatform.php:38 views/advanced_form.php:10 views/grid.php:19
 msgid "Type"
-msgstr ""
+msgstr "Tipo"
 
 #: views/addcatform.php:53 views/advanced_form.php:25
 msgid ""
@@ -276,23 +278,27 @@ msgid ""
 "files listed below. If set to \"Custom Application\" then this category will "
 "stream music from the set application"
 msgstr ""
+"Tipo de música en espera. Si se establece en \"Archivos\", esta categoría "
+"reproducirá los archivos que se enumeran a continuación. Si se establece en "
+"\"Aplicación personalizada\", esta categoría transmitirá música desde la "
+"aplicación indicada"
 
 #: Music.class.php:420
 #, php-format
 msgid "Unable to delete %s"
-msgstr ""
+msgstr "No se puede eliminar %s"
 
 #: Music.class.php:493
 msgid "Unsupported file format"
-msgstr ""
+msgstr "Formato de Archivo no soportado"
 
 #: assets/js/music.js:171
 msgid "Unsupported file type"
-msgstr ""
+msgstr "Tipo de Archivo no soportado"
 
 #: views/advanced_form.php:113 views/basic_form.php:34
 msgid "Upload Recording"
-msgstr ""
+msgstr "Cargar la grabación"
 
 #: views/advanced_form.php:133 views/basic_form.php:54
 #, php-format
@@ -300,6 +306,9 @@ msgid ""
 "Upload files from your local system. Supported upload formats are: %s. This "
 "includes archives (that include multiple files) and multiple files"
 msgstr ""
+"Cargue archivos desde su sistema local. Los formatos de carga soportados son:"
+" %s. Esto incluye archivadores (que incluyen varios archivos) y múltiples "
+"archivos"
 
 #: music.i18n.php:8
 msgid ""
@@ -314,10 +323,13 @@ msgid ""
 "When enabled Asterisk will use 1 instance of moh class for all channels who "
 "are using it, decreasing consumable cpu cycles and memory in the process"
 msgstr ""
+"Cuando está habilitado, Asterisk utilizará 1 instancia de la clase moh para "
+"todos los canales que la utilicen, disminuyendo los ciclos de CPU requeridos "
+"y la memoria en el proceso"
 
 #: views/advanced_form.php:93 views/basic_form.php:14
 msgid "Yes"
-msgstr ""
+msgstr "Si"
 
 #: assets/js/music.js:125
 #, perl-format
@@ -327,6 +339,11 @@ msgid ""
 "distributed with the PBX. If you'd like to install the binaries needed for "
 "these conversions click <a href='%s'>here</a>"
 msgstr ""
+"Falta soporte para la reproducción en este navegador. Para admitir "
+"plenamente la reproducción del navegador HTML5, tendrá que instalar "
+"programas que no se pueden distribuir con la central. Si desea instalar los "
+"binarios necesarios para estas conversiones, haga clic en <a "
+"href='%s'>aquí</a>"
 
 #~ msgid "Add Streaming Category"
 #~ msgstr "Añadir categoría de música en directo"
