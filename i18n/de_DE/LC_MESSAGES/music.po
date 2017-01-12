@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-09 15:22-0700\n"
-"PO-Revision-Date: 2017-01-10 16:18+0200\n"
+"PO-Revision-Date: 2017-01-12 16:09+0200\n"
 "Last-Translator: Sven <spiderrs4@web.de>\n"
 "Language-Team: German "
 "<http://weblate.freepbx.org/projects/freepbx/music/de_DE/>\n"
@@ -168,7 +168,7 @@ msgstr ""
 
 #: Music.class.php:573
 msgid "Invalid Request"
-msgstr "Falsche Anforderung"
+msgstr "ungültige Anfrage"
 
 #: Music.class.php:415
 msgid "Invalid category"
