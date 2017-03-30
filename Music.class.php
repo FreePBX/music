@@ -129,6 +129,7 @@ class Music implements \BMO {
 	public function addCategory($name,$type) {
 		$name = iconv("UTF-8", "ISO-8859-1//TRANSLIT", $name);
 		$name = preg_replace("/\s+|'+|`+|\\+|\/+|\"+|<+|>+|\?+|\*|\.+|&+|\|/","",strtolower($name));
+		$name = basename($name);
 		$cat = $this->getCategoryByName(strtolower($name));
 		if(!empty($cat)) {
 			$this->message = array(
@@ -210,7 +211,7 @@ class Music implements \BMO {
 		$sth = $this->db->prepare($sql);
 		$sth->execute(array($id));
 		if(!empty($info['category'])) {
-			$path = $this->getCategoryPath($info['category']);
+			$path = $this->getCategoryPath(basename($info['category']));
 			$this->rmdirr($path);
 		}
 		needreload();
@@ -415,7 +416,8 @@ class Music implements \BMO {
 					return array("status" => false, "message" => _("Invalid category"));
 				}
 				$path = $this->getCategoryPath($category['category']);
-				foreach(glob($path."/".$_POST['name']."*") as $file) {
+				$name = basename($_POST['name']);
+				foreach(glob($path."/".$name."*") as $file) {
 					if(!unlink($file)) {
 						return array("status" => false, "message" => sprintf(_("Unable to delete %s"),$file));
 						break;
@@ -480,6 +482,7 @@ class Music implements \BMO {
 							if(in_array($extension,$supported['in'])) {
 								$tmp_name = $_FILES["files"]["tmp_name"][$key];
 								$dname = \Media\Media::cleanFileName($_FILES["files"]["name"][$key]);
+								$dname = basename($dname);
 								$dname = pathinfo($dname,PATHINFO_FILENAME);
 								$name = $dname . '.' . $extension;
 								move_uploaded_file($tmp_name, $this->tmp."/".$name);
@@ -523,7 +526,7 @@ class Music implements \BMO {
 				$media = $this->FreePBX->Media();
 				$category = $this->getCategoryByID($_REQUEST['categoryid']);
 				$path = $this->getCategoryPath($category['category']);
-				$file = $path . "/" . $_REQUEST['file'];
+				$file = $path . "/" . basename($_REQUEST['file']);
 				if (file_exists($file))	{
 					$media->load($file);
 					$files = $media->generateHTML5();
@@ -731,7 +734,7 @@ class Music implements \BMO {
 	private function getCategoryPath($category=null) {
 		$path = $this->mohpath;
 		if(!empty($category) && $category != 'default'){
-			$path .= '/'.$category;
+			$path .= '/'.basename($category);
 		}
 		return $path;
 	}

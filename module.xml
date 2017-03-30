@@ -2,7 +2,7 @@
   <rawname>music</rawname>
   <repo>standard</repo>
   <name>Music on Hold</name>
-  <version>13.0.22</version>
+  <version>13.0.22.1</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -11,6 +11,7 @@
   <category>Settings</category>
   <description>Uploading and management of sound files (wav, mp3) to be used for on-hold music.</description>
 	<changelog>
+		*13.0.22.1* FREEPBX-14461 alert PHP file size limits
 		*13.0.22* Language Update
 		*13.0.21* Put the right version in
 		*13.0.20* FREEPBX-12656 Hang on upgrade of Music on Hold module
