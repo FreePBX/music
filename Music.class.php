@@ -263,7 +263,7 @@ class Music implements \BMO {
 			),
 			"category" => array(
 				"type" => "string",
-				"length" => 255,
+				"length" => 190,
 				"notnull" => false,
 			),
 			"type" => array(

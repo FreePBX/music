@@ -9,17 +9,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-09 15:22-0700\n"
-"PO-Revision-Date: 2015-11-19 04:14+0200\n"
-"Last-Translator: Matthias <it@mitterhuemer.at>\n"
+"POT-Creation-Date: 2017-03-23 14:28+0000\n"
+"PO-Revision-Date: 2017-03-07 02:29+0200\n"
+"Last-Translator: hammer125 <auswertung@aon.at>\n"
 "Language-Team: German <http://weblate.freepbx.org/projects/freepbx/music/"
 "de_DE/>\n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.2-dev\n"
+"X-Generator: Weblate 2.4\n"
 
 #: Music.class.php:516
 msgid "A PHP extension stopped the file upload"
@@ -56,10 +56,6 @@ msgstr "Beim Absenden des Dokuments ist ein Fehler aufgetreten"
 msgid "Application"
 msgstr "Applikation"
 
-#: assets/js/music.js:328
-msgid "Are you sure you want to delete this item?"
-msgstr "Möchten Sie diesen Inhalt wirklich löschen?"
-
 #: assets/js/music.js:143
 msgid "At least one codec must be checked"
 msgstr "Mindestens ein Codec muss ausgewählt werden"
@@ -70,7 +66,7 @@ msgstr "Durchsuchen"
 
 #: music.i18n.php:14
 msgid "Cache MoH Classes"
-msgstr ""
+msgstr "Cache für MoH-Klassen"
 
 #: Music.class.php:520
 msgid "Can Not Find Uploaded Files"
@@ -103,6 +99,10 @@ msgid ""
 "system. It will not overwrite any formats that have been previously "
 "processed."
 msgstr ""
+"Haken Sie alle Dateiformate an in die Musik in dieser Kategorie kodiert "
+"werden soll. Das wird angewendet auf hochgeladene Musik und jede Musik, die "
+"derzeit auf dem System existiert. Es wird keine Formate überschreiben, die "
+"vorher verarbeitet wurden."
 
 #: views/advanced_form.php:146
 msgid "Convert Upload/Files To"
@@ -119,7 +119,7 @@ msgstr "Löschen"
 
 #: views/advanced_form.php:126 views/basic_form.php:47
 msgid "Drop Multiple Files or Archives Here"
-msgstr "Ziehen Sie mehrere Dateien oder Archive hier rein"
+msgstr "Ziehen Sie mehrere Dateien oder Archive hier her"
 
 #: views/advanced_form.php:88 views/basic_form.php:9
 msgid "Enable Random Play"
@@ -148,7 +148,7 @@ msgstr "Datei existiert nicht"
 
 #: Music.class.php:469
 msgid "File upload failed"
-msgstr ""
+msgstr "Datei hochladen fehlgeschlagen"
 
 #: views/addcatform.php:43 views/advanced_form.php:15
 msgid "Files"
@@ -163,12 +163,12 @@ msgid ""
 "If you are doing media conversions this can take a very long time, is that "
 "ok?"
 msgstr ""
-"Sollten Sie eine Konvertierung von Medien machen kann dieser Vorgang etwas "
-"länger dauern, Sind Sie damit einverstanden?"
+"Sollten Sie eine Konvertierung von Medien machen kann dieser Vorgang sehr "
+"lange dauern, Sind Sie damit einverstanden?"
 
 #: Music.class.php:573
 msgid "Invalid Request"
-msgstr "Falsche Anforderung"
+msgstr "ungültige Anfrage"
 
 #: Music.class.php:415
 msgid "Invalid category"
@@ -184,7 +184,7 @@ msgstr "Fehlender temporärer Ordner"
 
 #: music.i18n.php:4 music.i18n.php:10
 msgid "Music on Hold"
-msgstr "Music on Hold"
+msgstr "Musik bei Halten"
 
 #: views/advanced_form.php:95 views/basic_form.php:16
 msgid "No"
@@ -196,7 +196,7 @@ msgstr "Es wurde keine Datei hochgeladen"
 
 #: Music.class.php:47
 msgid "On Hold Music"
-msgstr "On Hold Music"
+msgstr "Warteschleifenmusik"
 
 #: views/advanced_form.php:62
 msgid "Optional Format"
@@ -243,7 +243,7 @@ msgstr "Absenden"
 
 #: music.i18n.php:16
 msgid "System Setup"
-msgstr ""
+msgstr "System-Einrichtung"
 
 #: Music.class.php:501
 msgid ""
@@ -329,6 +329,9 @@ msgid ""
 "When enabled Asterisk will use 1 instance of moh class for all channels who "
 "are using it, decreasing consumable cpu cycles and memory in the process"
 msgstr ""
+"Wenn aktiviert, Asterisk wird 1 Instanz der moh-Klasse für alle Kanäle "
+"verwenden, die Sie benützen und die verfügbaren CPU-Zyklen und den Speicher "
+"im Prozess reduzieren"
 
 #: views/advanced_form.php:93 views/basic_form.php:14
 msgid "Yes"
@@ -346,6 +349,9 @@ msgstr ""
 "Wiedergabe unterstützung benötigen Sie zusätzliche Programme, welche "
 "zusammen mit der PBX nicht zur verfügung gestellt werden können. Möchten Sie "
 "die benötigten binaries installieren klicken Sie <a href='%s'>hier</a>"
+
+#~ msgid "Are you sure you want to delete this item?"
+#~ msgstr "Möchten Sie diesen Inhalt wirklich löschen?"
 
 #~ msgid ""
 #~ "Check all file formats you would like this music in this category to be "
