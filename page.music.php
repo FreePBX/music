@@ -23,5 +23,5 @@ function music_return_bytes($val) {
 <script>
 var post_max_size = <?php echo music_return_bytes(ini_get('post_max_size'))?>;
 var upload_max_filesize = <?php echo music_return_bytes(ini_get('upload_max_filesize'))?>;
-var max_size = (upload_max_filesize > post_max_size) ? upload_max_filesize : post_max_size;
+var max_size = (upload_max_filesize < post_max_size) ? upload_max_filesize : post_max_size;
 </script>
