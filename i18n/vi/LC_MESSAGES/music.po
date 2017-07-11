@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-30 10:47-0700\n"
-"PO-Revision-Date: 2017-07-10 21:52+0200\n"
+"PO-Revision-Date: 2017-07-10 22:29+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/music/vi/>\n"
@@ -99,103 +99,111 @@ msgid ""
 "system. It will not overwrite any formats that have been previously "
 "processed."
 msgstr ""
+"Vui lòng kiểm tra tất cả các định dạng mà bạn muốn mã hóa tiếng nhạc vào "
+"trong Category này. Điều này được áp dụng cho những bản nhạc đã được tải lên "
+"và hiện tại trong hệ thống. Nó sẽ không ghi đè bất cứ định dạng nào đã được "
+"xử lý trước đó."
 
 #: views/advanced_form.php:146
 msgid "Convert Upload/Files To"
-msgstr ""
+msgstr "Chuyển các bản tải lên/ các tệp thành"
 
 #: views/addcatform.php:44 views/advanced_form.php:16
 msgid "Custom Application"
-msgstr ""
+msgstr "Chỉnh sửa ứng dụng"
 
 #: Music.class.php:667
 msgid "Delete"
-msgstr ""
+msgstr "Xóa"
 
 #: views/advanced_form.php:126 views/basic_form.php:47
 msgid "Drop Multiple Files or Archives Here"
-msgstr ""
+msgstr "Thả các tệp hoặc các tệp nén ở đây"
 
 #: views/advanced_form.php:88 views/basic_form.php:9
 msgid "Enable Random Play"
-msgstr ""
+msgstr "Kích hoạt tính năng phát ngẫu nhiên"
 
 #: views/advanced_form.php:103 views/basic_form.php:24
 msgid ""
 "Enable random playback of music for this category. If disabled music will "
 "play in alphabetical order"
 msgstr ""
+"Kích hoạt phát lại nhạc ngẫu nhiên cho category này. Nếu bị vô hiệu nhạc sẽ "
+"phát theo thứ tự an pha bê"
 
 #: Music.class.php:516
 msgid "Failed to write file to disk"
-msgstr ""
+msgstr "Ghi tệp vào đã không thành công"
 
 #: views/advanced_form.php:171 views/basic_form.php:64
 msgid "File"
-msgstr ""
+msgstr "Tệp"
 
 #: Music.class.php:539
 msgid "File does not exist"
-msgstr ""
+msgstr "Tệp không tồn tại"
 
 #: assets/js/music.js:176
 #, perl-format
 msgid "File size is too large. Max size is %s bytes"
-msgstr ""
+msgstr "Dung lượng tệp quá lớn. Dung lượng tối đa là %s byte"
 
 #: Music.class.php:471
 msgid "File upload failed"
-msgstr ""
+msgstr "Tải tệp lên không thành công"
 
 #: views/addcatform.php:43 views/advanced_form.php:15
 msgid "Files"
-msgstr ""
+msgstr "Các tệp"
 
 #: views/advanced_form.php:172 views/basic_form.php:65
 msgid "Formats"
-msgstr ""
+msgstr "Các định dạng"
 
 #: assets/js/music.js:41
 msgid ""
 "If you are doing media conversions this can take a very long time, is that "
 "ok?"
 msgstr ""
+"Nếu bạn đang chuyển đổi media thì  có thể mất mát nhiều thời gian,bạn có "
+"đồng ý không?"
 
 #: Music.class.php:576
 msgid "Invalid Request"
-msgstr ""
+msgstr "Yêu cầu không hợp lệ"
 
 #: Music.class.php:416
 msgid "Invalid category"
-msgstr ""
+msgstr "Category không hợp lệ"
 
 #: views/bootnav.php:1
 msgid "List MoH Categories"
-msgstr ""
+msgstr "Danh sách các category MoH"
 
 #: Music.class.php:513
 msgid "Missing a temporary folder"
-msgstr ""
+msgstr "Bị thiếu một thư mục tạm"
 
 #: music.i18n.php:4 music.i18n.php:10
 msgid "Music on Hold"
-msgstr ""
+msgstr "Nhạc phát lúc chờ"
 
 #: views/advanced_form.php:95 views/basic_form.php:16
 msgid "No"
-msgstr ""
+msgstr "Không"
 
 #: Music.class.php:510
 msgid "No file was uploaded"
-msgstr ""
+msgstr "Không có tệp nào được tải lên"
 
 #: Music.class.php:47
 msgid "On Hold Music"
-msgstr ""
+msgstr "Nhạc chờ"
 
 #: views/advanced_form.php:62
 msgid "Optional Format"
-msgstr ""
+msgstr "Định dạng lựa chọn"
 
 #: views/advanced_form.php:74
 msgid ""
@@ -207,11 +215,11 @@ msgstr ""
 
 #: views/advanced_form.php:173 views/basic_form.php:66
 msgid "Play"
-msgstr ""
+msgstr "Phát"
 
 #: assets/js/music.js:5
 msgid "Please enter a valid Category Name"
-msgstr ""
+msgstr "Vui lòng nhập Tên của Category hợp lệ"
 
 #: assets/js/music.js:16
 msgid "Please enter a valid application command and arguments"
@@ -219,19 +227,19 @@ msgstr ""
 
 #: Music.class.php:672
 msgid "Reset"
-msgstr ""
+msgstr "Cài đặt lại"
 
 #: music.i18n.php:6
 msgid "Settings"
-msgstr ""
+msgstr "Cài đặt"
 
 #: Music.class.php:677
 msgid "Submit"
-msgstr ""
+msgstr "gửi đi"
 
 #: music.i18n.php:14
 msgid "System Setup"
-msgstr ""
+msgstr "Thiết lập hệ thống"
 
 #: Music.class.php:504
 msgid ""
