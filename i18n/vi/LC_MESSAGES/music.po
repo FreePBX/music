@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-30 10:47-0700\n"
-"PO-Revision-Date: 2017-07-11 08:53+0200\n"
+"PO-Revision-Date: 2017-07-11 08:56+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/music/vi/>\n"
@@ -86,7 +86,7 @@ msgstr ""
 
 #: views/grid.php:18
 msgid "Category"
-msgstr "Category"
+msgstr "Mục phân loại- Category"
 
 #: Music.class.php:137
 msgid "Category Already Exists"
