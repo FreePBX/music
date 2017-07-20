@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-30 10:47-0700\n"
-"PO-Revision-Date: 2017-07-11 08:56+0200\n"
+"PO-Revision-Date: 2017-07-20 13:28+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/music/vi/>\n"
@@ -62,7 +62,7 @@ msgstr "Bạn có chắc chắn muốn xóa mục này?"
 
 #: assets/js/music.js:143
 msgid "At least one codec must be checked"
-msgstr "Phải có ít nhất một Codec được kiểm tra"
+msgstr "Phải đánh dấu check ít nhất một Codec"
 
 #: views/advanced_form.php:118 views/basic_form.php:39
 msgid "Browse"
@@ -103,10 +103,10 @@ msgid ""
 "system. It will not overwrite any formats that have been previously "
 "processed."
 msgstr ""
-"Vui lòng kiểm tra tất cả các định dạng mà bạn muốn mã hóa tiếng nhạc vào "
-"trong Category này. Điều này được áp dụng cho những bản nhạc đã được tải lên "
-"và hiện tại trong hệ thống. Nó sẽ không ghi đè bất cứ định dạng nào đã được "
-"xử lý trước đó."
+"Đánh dấu check tất cả các định dạng mà bạn muốn mã hóa tiếng nhạc vào trong "
+"Category này. Điều này được áp dụng cho những bản nhạc đã được tải lên và "
+"hiện tại trong hệ thống. Nó sẽ không ghi đè bất cứ định dạng nào đã được xử "
+"lý trước đó."
 
 #: views/advanced_form.php:146
 msgid "Convert Upload/Files To"
