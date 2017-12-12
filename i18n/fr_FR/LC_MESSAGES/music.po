@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-30 10:47-0700\n"
-"PO-Revision-Date: 2017-12-11 23:09+0200\n"
+"PO-Revision-Date: 2017-12-11 23:20+0200\n"
 "Last-Translator: JCattan <jeremie@famillecattan.com>\n"
 "Language-Team: French "
 "<http://weblate.freepbx.org/projects/freepbx/music/fr_FR/>\n"
@@ -40,7 +40,6 @@ msgid "Action"
 msgstr "Action"
 
 #: views/grid.php:20
-#, fuzzy
 msgid "Actions"
 msgstr "Actions"
 
@@ -54,10 +53,14 @@ msgid ""
 "if you would like to specify different Hold Music or Commercials. The "
 "category name will be converted to ASCII if any UTF8 characters are found"
 msgstr ""
+"Vous permet de configurer différentes catégories pour la musique en attente. "
+"Ceci est utile si vous souhaitez spécifier différentes musiques d'attente ou "
+"publicités. Le nom de la catégorie sera converti en ASCII si des caractères "
+"UTF8 sont trouvés"
 
 #: assets/js/music.js:60
 msgid "An Error occurred trying to submit this document"
-msgstr ""
+msgstr "Une erreur est survenue lors de la tentative d'envoi du document"
 
 #: views/advanced_form.php:37
 msgid "Application"
@@ -77,11 +80,11 @@ msgstr "Parcourir"
 
 #: music.i18n.php:12
 msgid "Cache MoH Classes"
-msgstr ""
+msgstr "Cache MoH Classes"
 
 #: Music.class.php:523
 msgid "Can Not Find Uploaded Files"
-msgstr ""
+msgstr "Impossible de trouver les fichiers téléchargés"
 
 #: assets/js/music.js:9
 msgid ""
@@ -110,10 +113,14 @@ msgid ""
 "system. It will not overwrite any formats that have been previously "
 "processed."
 msgstr ""
+"Vérifiez tous les formats de fichiers dans lesquels vous souhaitez encoder "
+"la musique de cette catégorie. Cela s'applique à la musique téléchargée et à "
+"toute musique actuellement sur le système. Il n'écrase aucun des formats "
+"précédemment traités."
 
 #: views/advanced_form.php:146
 msgid "Convert Upload/Files To"
-msgstr ""
+msgstr "Convertir/Envoyer les fichier vers"
 
 #: views/addcatform.php:44 views/advanced_form.php:16
 msgid "Custom Application"
@@ -125,7 +132,7 @@ msgstr "Supprimer"
 
 #: views/advanced_form.php:126 views/basic_form.php:47
 msgid "Drop Multiple Files or Archives Here"
-msgstr ""
+msgstr "Déposer plusieurs fichiers ou archives ici"
 
 #: views/advanced_form.php:88 views/basic_form.php:9
 msgid "Enable Random Play"
@@ -155,10 +162,11 @@ msgstr "Le fichier n'existe pas"
 #, perl-format
 msgid "File size is too large. Max size is %s bytes"
 msgstr ""
+"La taille du fichier est trop grande. La taille maximale est de %s bytes"
 
 #: Music.class.php:471
 msgid "File upload failed"
-msgstr ""
+msgstr "Échec Envoi Fichier"
 
 #: views/addcatform.php:43 views/advanced_form.php:15
 msgid "Files"
@@ -173,6 +181,8 @@ msgid ""
 "If you are doing media conversions this can take a very long time, is that "
 "ok?"
 msgstr ""
+"Si vous effectuez des conversions de médias, cela peut prendre beaucoup de "
+"temps, compris?"
 
 #: Music.class.php:576
 msgid "Invalid Request"
@@ -200,7 +210,7 @@ msgstr "Non"
 
 #: Music.class.php:510
 msgid "No file was uploaded"
-msgstr ""
+msgstr "Pas de fichier envoyé"
 
 #: Music.class.php:47
 msgid "On Hold Music"
@@ -233,7 +243,7 @@ msgstr "Veuillez entrer un nom de catégorie valide"
 
 #: assets/js/music.js:16
 msgid "Please enter a valid application command and arguments"
-msgstr ""
+msgstr "Veuillez entrer une commande et des arguments d'application valides"
 
 #: Music.class.php:672
 msgid "Reset"
@@ -249,21 +259,24 @@ msgstr "Soumettre"
 
 #: music.i18n.php:14
 msgid "System Setup"
-msgstr ""
+msgstr "Paramètres Système"
 
 #: Music.class.php:504
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
+"Le fichier téléchargé dépasse la directive MAX_FILE_SIZE spécifiée dans le "
+"formulaire HTML"
 
 #: Music.class.php:501
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
+"Le fichier téléchargé dépasse la directive upload_max_filesize dans php.ini"
 
 #: Music.class.php:507
 msgid "The uploaded file was only partially uploaded"
-msgstr ""
+msgstr "Le fichier téléchargé n'a été que partiellement téléchargé"
 
 #: views/advanced_form.php:49
 msgid ""
@@ -286,6 +299,10 @@ msgid ""
 "files listed below. If set to \"Custom Application\" then this category will "
 "stream music from the set application"
 msgstr ""
+"Type de musique d'attente. S'il est réglé sur \"Fichiers\", cette catégorie "
+"jouera les fichiers listés ci-dessous. Si cette option est définie sur \""
+"Application personnalisée\", cette catégorie diffusera de la musique à "
+"partir de l'application définie"
 
 #: Music.class.php:422
 #, php-format
@@ -302,7 +319,7 @@ msgstr "Type de fichier non supporté"
 
 #: views/advanced_form.php:113 views/basic_form.php:34
 msgid "Upload Recording"
-msgstr ""
+msgstr "Envoyer Enregistrement"
 
 #: views/advanced_form.php:133 views/basic_form.php:54
 #, php-format
@@ -310,18 +327,26 @@ msgid ""
 "Upload files from your local system. Supported upload formats are: %s. This "
 "includes archives (that include multiple files) and multiple files"
 msgstr ""
+"Télécharger des fichiers depuis votre système local. Les formats de "
+"téléchargement pris en charge sont les suivants: %s. Cela inclut les "
+"archives (qui incluent plusieurs fichiers) et plusieurs fichiers"
 
 #: music.i18n.php:8
 msgid ""
 "Uploading and management of sound files (wav, mp3) to be used for on-hold "
 "music."
 msgstr ""
+"Téléchargement et gestion de fichiers audio (wav, mp3) à utiliser pour la "
+"musique d'attente."
 
 #: music.i18n.php:16
 msgid ""
 "When enabled Asterisk will use 1 instance of moh class for all channels who "
 "are using it, decreasing consumable cpu cycles and memory in the process"
 msgstr ""
+"Lorsqu'elle est activée, Asterisk utilise 1 instance de moh class pour tous "
+"les canaux qui l'utilisent, ce qui réduit les cycles de cpu consommables et "
+"la mémoire dans le processus"
 
 #: views/advanced_form.php:93 views/basic_form.php:14
 msgid "Yes"
@@ -335,6 +360,10 @@ msgid ""
 "distributed with the PBX. If you'd like to install the binaries needed for "
 "these conversions click <a href='%s'>here</a>"
 msgstr ""
+"Vous manquez de support pour la lecture dans ce navigateur. Pour prendre en "
+"charge la lecture HTML5, vous devez installer des programmes qui ne peuvent "
+"pas être distribués avec le PBX. Si vous souhaitez installer les binaires "
+"requis pour ces conversions, cliquez <a href='%s'> ici </a>"
 
 #~ msgid "Add Streaming Category"
 #~ msgstr "Ajouter une Catégorie de Sreaming"
