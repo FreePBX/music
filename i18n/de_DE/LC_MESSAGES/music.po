@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-30 10:47-0700\n"
-"PO-Revision-Date: 2017-12-18 16:39+0200\n"
+"PO-Revision-Date: 2018-02-16 19:35+0200\n"
 "Last-Translator: Nils <Nils@heckenkamp.info>\n"
 "Language-Team: German "
 "<http://weblate.freepbx.org/projects/freepbx/music/de_DE/>\n"
@@ -58,7 +58,7 @@ msgstr "Anwendung"
 
 #: assets/js/music.js:333
 msgid "Are you sure you want to delete this item?"
-msgstr "Möchten Sie diesen Inhalt wirklich löschen?"
+msgstr "Sind Sie sicher, diesen Inhalt wirklich zu löschen?"
 
 #: assets/js/music.js:143
 msgid "At least one codec must be checked"
