@@ -1,5 +1,7 @@
 <?php
 namespace FreePBX\modules;
+use BMO;
+use PDO;
 // vim: set ai ts=4 sw=4 ft=php:
 if(!function_exists('music_list')) {
 	include(__DIR__.'/functions.inc.php');
@@ -124,6 +126,20 @@ class Music implements \BMO {
 			"id" => $id
 		));
 		needreload();
+    }
+    
+	public function upsertCategoryByID($id, $type, $random = false, $application = '', $format = '') {
+		$sql = "REPLACE INTO music (id, type, random, application, format) VALUES(:id, :type, :random, :application, :format)";
+		$sth = $this->db->prepare($sql);
+		$sth->execute(array(
+			":type" => $type,
+			":random" => $random,
+			":application" => $application,
+			":format" => $format,
+			":id" => $id
+		));
+        needreload();
+        return $this;
 	}
 
 	public function addCategory($name,$type) {
@@ -254,49 +270,6 @@ class Music implements \BMO {
 	}
 
 	public function install() {
-		$table = $this->FreePBX->Database->migrate("music");
-		$cols = array(
-			"id" => array(
-				"type" => "integer",
-				"primaryKey" => true,
-				"autoincrement" => true
-			),
-			"category" => array(
-				"type" => "string",
-				"length" => 190,
-				"notnull" => false,
-			),
-			"type" => array(
-				"type" => "string",
-				"length" => 100,
-				"notnull" => false,
-			),
-			"random" => array(
-				"type" => "boolean",
-				"notnull" => false,
-			),
-			"application" => array(
-				"type" => "string",
-				"length" => 255,
-				"notnull" => false,
-			),
-			"format" => array(
-				"type" => "string",
-				"length" => 10,
-				"notnull" => false,
-			),
-		);
-		$indexes = array(
-			"category_UNIQUE" => array(
-				"type" => "unique",
-				"cols" => array(
-					"category"
-				)
-			)
-		);
-		$table->modify($cols,$indexes);
-		unset($table);
-
 		$freepbx_conf = $this->FreePBX->Config;
 		if ($freepbx_conf->conf_setting_exists('AMPMPG123')) {
 			$freepbx_conf->remove_conf_setting('AMPMPG123');
@@ -320,7 +293,7 @@ class Music implements \BMO {
 		$sql = "SELECT * FROM music WHERE category = 'default'";
 		$sth = $this->db->prepare($sql);
 		$sth->execute();
-		$default = $sth->fetch(\PDO::FETCH_ASSOC);
+		$default = $sth->fetch(PDO::FETCH_ASSOC);
 		if(empty($default)) {
 			$random = file_exists($this->mohpath."/.random") ? 1 : 0;
 			$sql = "INSERT INTO music (`category`, `type`, `random`) VALUES (?,?,?)";
@@ -333,7 +306,7 @@ class Music implements \BMO {
 			$sql = "SELECT * FROM music WHERE category = ?";
 			$sth = $this->db->prepare($sql);
 			$sth->execute(array($category));
-			$c = $sth->fetch(\PDO::FETCH_ASSOC);
+			$c = $sth->fetch(PDO::FETCH_ASSOC);
 			if(!empty($c)) {
 				continue;
 			}
@@ -363,12 +336,7 @@ class Music implements \BMO {
 	public function uninstall() {
 
 	}
-	public function backup(){
 
-	}
-	public function restore($backup){
-
-	}
 
 	/**
 	 * Get all categories
@@ -378,7 +346,7 @@ class Music implements \BMO {
 		$sql = "SELECT * FROM music";
 		$sth = $this->db->prepare($sql);
 		$sth->execute();
-		$cats = $sth->fetchAll(\PDO::FETCH_ASSOC);
+		$cats = $sth->fetchAll(PDO::FETCH_ASSOC);
 		return !empty($cats) ? $cats : array();
 	}
 
@@ -707,7 +675,7 @@ class Music implements \BMO {
 		$sql = "SELECT * FROM music WHERE category = ?";
 		$sth = $this->db->prepare($sql);
 		$sth->execute(array($name));
-		return $sth->fetch(\PDO::FETCH_ASSOC);
+		return $sth->fetch(PDO::FETCH_ASSOC);
 	}
 
 	/**
@@ -719,7 +687,7 @@ class Music implements \BMO {
 		$sql = "SELECT * FROM music WHERE id = ?";
 		$sth = $this->db->prepare($sql);
 		$sth->execute(array($id));
-		return $sth->fetch(\PDO::FETCH_ASSOC);
+		return $sth->fetch(PDO::FETCH_ASSOC);
 	}
 
 	/**
