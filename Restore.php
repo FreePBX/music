@@ -10,7 +10,7 @@ class Restore Extends Base\RestoreBase{
     }
     foreach ($files as $file) {
         $filename = $file['pathto'].'/'.$file['filename'];
-        if(file_exist($filename)){
+        if(file_exists($filename)){
             continue;
         }
         copy($this->tmpdir.'/files/'.$file['pathto'].'/'.$file['filename'], $filename);
