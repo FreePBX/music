@@ -16,4 +16,23 @@ class Restore Extends Base\RestoreBase{
         copy($this->tmpdir.'/files/'.$file['pathto'].'/'.$file['filename'], $filename);
     }
   }
+    public function processLegacy($pdo, $data, $tables, $unknownTables, $tmpfiledir){
+        $tables = array_flip($tables + $unknownTables);
+        if (!isset($tables['music'])) {
+            return $this;
+        }
+        $music = $this->FreePBX->Music;
+        $music->setDatabase($pdo);
+        $configs = $music->getCategories();
+        $music->resetDatabase();
+        $Directory = new RecursiveDirectoryIterator($tmpfiledir);
+        $Iterator = new RecursiveIteratorIterator($Directory);
+        $files = new RegexIterator($Iterator, '/^.+\moh/i', RecursiveRegexIterator::GET_MATCH);
+        foreach ($file as $path => $object) {
+            @copy($file, $this->FreePBX->Config->get('ASTVARLIBDIR').'/moh/')
+        }
+        foreach ($configs as $category) {
+            $this->FreePBX->Music->upsertCategoryById($category['id'], $category['type'], $category['random'], $category['application'], $category['format']);
+        } 
+    }   
 }

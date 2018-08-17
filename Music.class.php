@@ -43,6 +43,15 @@ class Music implements \BMO {
 			mkdir($this->tmp,0777,true);
 		}
 	}
+	
+	public function setDatabase($pdo){
+		$this->db = $pdo;
+		return $this;
+	}
+	public function resetDatabase(){
+		$this->db = $this->FreePBX->Database;
+		return $this;
+	}
 
 	public function showPage() {
 		$mh = $this;
