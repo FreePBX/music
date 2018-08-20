@@ -29,7 +29,7 @@ class Restore Extends Base\RestoreBase{
         $Iterator = new RecursiveIteratorIterator($Directory);
         $files = new RegexIterator($Iterator, '/^.+\moh/i', RecursiveRegexIterator::GET_MATCH);
         foreach ($file as $path => $object) {
-            @copy($file, $this->FreePBX->Config->get('ASTVARLIBDIR').'/moh/')
+            @copy($file, $this->FreePBX->Config->get('ASTVARLIBDIR').'/moh/');
         }
         foreach ($configs as $category) {
             $this->FreePBX->Music->upsertCategoryById($category['id'], $category['type'], $category['random'], $category['application'], $category['format']);
