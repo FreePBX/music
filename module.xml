@@ -2,7 +2,7 @@
     <rawname>music</rawname>
     <repo>standard</repo>
     <name>Music on Hold</name>
-    <version>15.0.1</version>
+    <version>15.0.2</version>
     <publisher>Sangoma Technologies Corporation</publisher>
     <license>GPLv3+</license>
     <licenselink>https://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -11,18 +11,19 @@
     <category>Settings</category>
     <description>Uploading and management of sound files (wav, mp3) to be used for on-hold music.</description>
     <changelog>
+		*15.0.2* Packaging of ver 15.0.2
         *15.0.1* Backup 15.0
-    </changelog>
+	</changelog>
     <database>
         <table name="music">
-            <field name="id" type="integer" primarykey="true" autoincrement="true" />
-            <field name="category" type="string" length="190" notnull="false" />
-            <field name="type" type="string" length="100" notnull="false" />
-            <field name="random" type="boolean" notnull="false" />
-            <field name="application" type="string" length="255" notnull="false" />
-            <field name="format" type="string" length="10" notnull="false" />
+            <field name="id" type="integer" primarykey="true" autoincrement="true"/>
+            <field name="category" type="string" length="190" notnull="false"/>
+            <field name="type" type="string" length="100" notnull="false"/>
+            <field name="random" type="boolean" notnull="false"/>
+            <field name="application" type="string" length="255" notnull="false"/>
+            <field name="format" type="string" length="10" notnull="false"/>
             <key name="category_UNIQUE" type="unique">
-                <column name="category" />
+                <column name="category"/>
             </key>
         </table>
     </database>
