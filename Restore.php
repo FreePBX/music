@@ -29,7 +29,6 @@ class Restore Extends Base\RestoreBase{
         $Iterator = new \RecursiveIteratorIterator($Directory);
         $files = new \RegexIterator($Iterator, '/^.+\moh\//i', \RecursiveRegexIterator::GET_MATCH);
         foreach ($files as $path => $object) {
-            var_dump($path);
             @copy($path, $this->FreePBX->Config->get('ASTVARLIBDIR').'/moh/');
         }
         foreach ($configs as $category) {
