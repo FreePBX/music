@@ -25,14 +25,15 @@ class Restore Extends Base\RestoreBase{
         $music->setDatabase($pdo);
         $configs = $music->getCategories();
         $music->resetDatabase();
-        $Directory = new RecursiveDirectoryIterator($tmpfiledir);
-        $Iterator = new RecursiveIteratorIterator($Directory);
-        $files = new RegexIterator($Iterator, '/^.+\moh/i', RecursiveRegexIterator::GET_MATCH);
-        foreach ($file as $path => $object) {
-            @copy($file, $this->FreePBX->Config->get('ASTVARLIBDIR').'/moh/');
+        $Directory = new \RecursiveDirectoryIterator($tmpfiledir);
+        $Iterator = new \RecursiveIteratorIterator($Directory);
+        $files = new \RegexIterator($Iterator, '/^.+\moh\//i', \RecursiveRegexIterator::GET_MATCH);
+        foreach ($files as $path => $object) {
+            var_dump($path);
+            @copy($path, $this->FreePBX->Config->get('ASTVARLIBDIR').'/moh/');
         }
         foreach ($configs as $category) {
             $this->FreePBX->Music->upsertCategoryById($category['id'], $category['type'], $category['random'], $category['application'], $category['format']);
-        } 
+        }
     }   
 }
