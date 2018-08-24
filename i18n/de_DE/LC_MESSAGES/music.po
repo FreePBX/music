@@ -10,16 +10,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-30 10:47-0700\n"
-"PO-Revision-Date: 2018-02-16 19:35+0200\n"
-"Last-Translator: Nils <Nils@heckenkamp.info>\n"
-"Language-Team: German "
-"<http://weblate.freepbx.org/projects/freepbx/music/de_DE/>\n"
+"PO-Revision-Date: 2018-08-25 12:00+0000\n"
+"Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
+"Language-Team: German <http://*/projects/freepbx/music/de/>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.4\n"
+"X-Generator: Weblate 3.0.1\n"
 
 #: Music.class.php:519
 msgid "A PHP extension stopped the file upload"
@@ -259,14 +258,14 @@ msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
-"Die hochgeladene Datei überschreitet die Maximal zulässige Dateigröße welche "
-"als Wert \"MAX_FILE_SIZE\" in der HTML definiert wurde"
+"Die hochgeladene Datei überschreitet die maximal zulässige Dateigröße, die "
+"als Wert \"MAX_FILE_SIZE\" im HTML-Formular festgelegt wurde"
 
 #: Music.class.php:501
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
-"Die hochgeladene Datei überschreitet die maximal zulässige Dateigröße welche "
-"als Wert \"upload_max_filesize\" in der php.ini definiert wurde"
+"Die hochgeladene Datei überschreitet die maximal zulässige Dateigröße, die "
+"in der 'upload_max_filesize'-Direktive in der php.ini festgelegt wurde"
 
 #: Music.class.php:507
 msgid "The uploaded file was only partially uploaded"
@@ -305,7 +304,7 @@ msgstr "Fehler beim Löschen von %s"
 
 #: Music.class.php:496
 msgid "Unsupported file format"
-msgstr "Nicht unterstütztes Datei Format"
+msgstr "Nicht unterstütztes Dateiformat"
 
 #: assets/js/music.js:171
 msgid "Unsupported file type"
