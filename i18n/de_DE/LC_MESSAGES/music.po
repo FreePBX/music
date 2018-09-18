@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-30 10:47-0700\n"
-"PO-Revision-Date: 2018-08-25 12:00+0000\n"
+"PO-Revision-Date: 2018-09-19 16:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/music/de/>\n"
 "Language: de_DE\n"
@@ -176,7 +176,7 @@ msgstr ""
 
 #: Music.class.php:576
 msgid "Invalid Request"
-msgstr "ungültige Anfrage"
+msgstr "Ungültige Anfrage"
 
 #: Music.class.php:416
 msgid "Invalid category"
