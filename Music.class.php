@@ -153,9 +153,9 @@ class Music implements \BMO {
 
 	public function addCategory($name,$type) {
 		$name = iconv("UTF-8", "ISO-8859-1//TRANSLIT", $name);
-		$name = preg_replace("/\s+|'+|`+|\\+|\/+|\"+|<+|>+|\?+|\*|\.+|&+|\|/","",strtolower($name));
+		$name = preg_replace("/\s+|'+|`+|\\+|\/+|\"+|<+|>+|\?+|\*|\.+|&+|\|/","",$name);
 		$name = basename($name);
-		$cat = $this->getCategoryByName(strtolower($name));
+		$cat = $this->getCategoryByName($name);
 		if(!empty($cat)) {
 			$this->message = array(
 				"type" => "danger",
