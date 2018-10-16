@@ -3,38 +3,39 @@
 # For licensing information, please see the file named LICENSE located in the module directory
 #
 # FreePBX language template for music
-# Copyright (C) 2008-2015 Sangoma, Inc.
+# Copyright (C) 2008-2017 Sangoma Technologies, Inc.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-30 10:47-0700\n"
-"PO-Revision-Date: 2018-09-19 16:00+0000\n"
-"Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
-"Language-Team: German <http://*/projects/freepbx/music/de/>\n"
-"Language: de_DE\n"
+"PO-Revision-Date: 2017-07-20 13:28+0200\n"
+"Last-Translator: PETER <ftek@ymail.com>\n"
+"Language-Team: Vietnamese "
+"<http://weblate.freepbx.org/projects/freepbx/music/vi/>\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.4\n"
 
 #: Music.class.php:519
 msgid "A PHP extension stopped the file upload"
-msgstr "Eine PHP Erweiterung hat den Datei Upload gestoppt"
+msgstr "Một máy nhánh PHP vừa ngừng tải tệp lên"
 
 #: views/advanced_form.php:174 views/basic_form.php:67
 msgid "Action"
-msgstr "Aktion"
+msgstr "Thao tác"
 
 #: views/grid.php:20
 msgid "Actions"
-msgstr "Aktionen"
+msgstr "Các thao tác"
 
 #: views/grid.php:5
 msgid "Add Category"
-msgstr "Neue Kategorie"
+msgstr "Thêm Category"
 
 #: views/addcatform.php:27
 msgid ""
@@ -42,58 +43,58 @@ msgid ""
 "if you would like to specify different Hold Music or Commercials. The "
 "category name will be converted to ASCII if any UTF8 characters are found"
 msgstr ""
-"Sie können verschiedene Kategorien für Music on hold anlegen. Dies ist "
-"nützlich wenn Sie unterschiedliche Audio Dateien oder Werbespots abspielen "
-"möchten. Der Kategorie Name wird automatisch in das ASCII Format konvertiert "
-"wenn irgendwelche UTF8 Zeichen gefunden werden sollten"
+"Cho phép bạn thiết lập các Category khác nhau cho nhạc chờ. Điều này sẽ có "
+"ích nếu bạn muốn chỉ định một nhạc chờ khác hay vì các mục đích thương mại. "
+"Tên của Category sẽ được chuyển đổi thành ASCII nếu tìm thấy bất kỳ ký tự "
+"UTF8 nào"
 
 #: assets/js/music.js:60
 msgid "An Error occurred trying to submit this document"
-msgstr "Beim Absenden des Dokuments ist ein Fehler aufgetreten"
+msgstr "Đã xảy ra một lỗi khi đang gửi đi tài liệu này"
 
 #: views/advanced_form.php:37
 msgid "Application"
-msgstr "Anwendung"
+msgstr "Ứng dụng"
 
 #: assets/js/music.js:333
 msgid "Are you sure you want to delete this item?"
-msgstr "Sind Sie sicher, diesen Inhalt wirklich zu löschen?"
+msgstr "Bạn có chắc chắn muốn xóa mục này?"
 
 #: assets/js/music.js:143
 msgid "At least one codec must be checked"
-msgstr "Mindestens ein Codec muss ausgewählt werden"
+msgstr "Phải đánh dấu check ít nhất một Codec"
 
 #: views/advanced_form.php:118 views/basic_form.php:39
 msgid "Browse"
-msgstr "Durchsuchen"
+msgstr "Trình duyệt"
 
 #: music.i18n.php:12
 msgid "Cache MoH Classes"
-msgstr "Cache für MoH-Klassen"
+msgstr "Các loại Cache MoH"
 
 #: Music.class.php:523
 msgid "Can Not Find Uploaded Files"
-msgstr "Es können keine hochgeladenen Dateien gefunden werden"
+msgstr "Không thể tìm thấy các tệp đã tải lên"
 
 #: assets/js/music.js:9
 msgid ""
 "Categories: \"none\" and \"default\" are reserved names. Please enter a "
 "different name"
 msgstr ""
-"Kategorien \"none\" und \"default\" sind reservierte Namen. Bitte geben Sie "
-"einen anderen Namen ein"
+"Categories: \"none\"  và \"default\" là những tên dành riêng. Vui lòng nhập "
+"một tên khác"
 
 #: views/grid.php:18
 msgid "Category"
-msgstr "Kategorie"
+msgstr "Mục phân loại- Category"
 
 #: Music.class.php:137
 msgid "Category Already Exists"
-msgstr "Diese Kategorie existiert bereits"
+msgstr "Category đã tồn tại"
 
 #: views/addcatform.php:15
 msgid "Category Name (ASCII Only)"
-msgstr "Kategorie Name (ausschließlich ASCII)"
+msgstr "Tên của Category ( Chỉ ASCII)"
 
 #: views/advanced_form.php:162
 msgid ""
@@ -102,113 +103,111 @@ msgid ""
 "system. It will not overwrite any formats that have been previously "
 "processed."
 msgstr ""
-"Haken Sie alle Dateiformate an in die Musik in dieser Kategorie kodiert "
-"werden soll. Das wird angewendet auf hochgeladene Musik und jede Musik, die "
-"derzeit auf dem System existiert. Es wird keine Formate überschreiben, die "
-"vorher verarbeitet wurden."
+"Đánh dấu check tất cả các định dạng mà bạn muốn mã hóa tiếng nhạc vào trong "
+"Category này. Điều này được áp dụng cho những bản nhạc đã được tải lên và "
+"hiện tại trong hệ thống. Nó sẽ không ghi đè bất cứ định dạng nào đã được xử "
+"lý trước đó."
 
 #: views/advanced_form.php:146
 msgid "Convert Upload/Files To"
-msgstr ""
-"Konvertiere hochgeladene bzw. bereits vorhandene Dateien in die Formate"
+msgstr "Chuyển các bản tải lên/ các tệp thành"
 
 #: views/addcatform.php:44 views/advanced_form.php:16
 msgid "Custom Application"
-msgstr "Benutzerdefinierte Applikation"
+msgstr "Chỉnh sửa ứng dụng"
 
 #: Music.class.php:667
 msgid "Delete"
-msgstr "Löschen"
+msgstr "Xóa"
 
 #: views/advanced_form.php:126 views/basic_form.php:47
 msgid "Drop Multiple Files or Archives Here"
-msgstr "Ziehen Sie mehrere Dateien oder Archive hier her"
+msgstr "Thả các tệp hoặc các tệp nén ở đây"
 
 #: views/advanced_form.php:88 views/basic_form.php:9
 msgid "Enable Random Play"
-msgstr "Zufällige Wiedergabe aktivieren"
+msgstr "Kích hoạt tính năng phát ngẫu nhiên"
 
 #: views/advanced_form.php:103 views/basic_form.php:24
 msgid ""
 "Enable random playback of music for this category. If disabled music will "
 "play in alphabetical order"
 msgstr ""
-"Aktivieren Sie die zufällige Wiedergabe für diese Kategorie. Ist diese "
-"Einstellung deaktiviert, wird die Musik in Alphabetischer Reihenfolge "
-"abgespielt"
+"Kích hoạt phát lại nhạc ngẫu nhiên cho category này. Nếu bị vô hiệu nhạc sẽ "
+"phát theo thứ tự an pha bê"
 
 #: Music.class.php:516
 msgid "Failed to write file to disk"
-msgstr "Fehler beim Speichern der Datei"
+msgstr "Ghi tệp vào đã không thành công"
 
 #: views/advanced_form.php:171 views/basic_form.php:64
 msgid "File"
-msgstr "Datei"
+msgstr "Tệp"
 
 #: Music.class.php:539
 msgid "File does not exist"
-msgstr "Datei existiert nicht"
+msgstr "Tệp không tồn tại"
 
 #: assets/js/music.js:176
 #, perl-format
 msgid "File size is too large. Max size is %s bytes"
-msgstr "Die Datei ist zu groß. Die maximale Größe beträgt %s Bytes"
+msgstr "Dung lượng tệp quá lớn. Dung lượng tối đa là %s byte"
 
 #: Music.class.php:471
 msgid "File upload failed"
-msgstr "Datei hochladen fehlgeschlagen"
+msgstr "Tải tệp lên không thành công"
 
 #: views/addcatform.php:43 views/advanced_form.php:15
 msgid "Files"
-msgstr "Dateien"
+msgstr "Các tệp"
 
 #: views/advanced_form.php:172 views/basic_form.php:65
 msgid "Formats"
-msgstr "Formate"
+msgstr "Các định dạng"
 
 #: assets/js/music.js:41
 msgid ""
 "If you are doing media conversions this can take a very long time, is that "
 "ok?"
 msgstr ""
-"Sollten Sie eine Konvertierung von Medien machen kann dieser Vorgang sehr "
-"lange dauern, Sind Sie damit einverstanden?"
+"Nếu bạn đang chuyển đổi media thì  có thể mất mát nhiều thời gian,bạn có "
+"đồng ý không?"
 
 #: Music.class.php:576
 msgid "Invalid Request"
-msgstr "Ungültige Anfrage"
+msgstr "Yêu cầu không hợp lệ"
 
 #: Music.class.php:416
 msgid "Invalid category"
-msgstr "Falsche Kategorie"
+msgstr "Category không hợp lệ"
 
 #: views/bootnav.php:1
 msgid "List MoH Categories"
-msgstr "MoH Kategorien auflisten"
+msgstr "Danh sách các category MoH"
 
 #: Music.class.php:513
 msgid "Missing a temporary folder"
-msgstr "Fehlender temporärer Ordner"
+msgstr "Bị thiếu một thư mục tạm"
 
 #: music.i18n.php:4 music.i18n.php:10
 msgid "Music on Hold"
-msgstr "Musik bei Halten"
+msgstr "Nhạc phát lúc chờ"
 
 #: views/advanced_form.php:95 views/basic_form.php:16
 msgid "No"
-msgstr "Nein"
+msgstr "Không"
 
 #: Music.class.php:510
 msgid "No file was uploaded"
-msgstr "Es wurde keine Datei hochgeladen"
+msgstr "Không có tệp nào được tải lên"
 
 #: Music.class.php:47
 msgid "On Hold Music"
-msgstr "Warteschleifenmusik"
+msgstr "Nhạc chờ"
 
 #: views/advanced_form.php:62
 msgid "Optional Format"
-msgstr "Optionales Format"
+msgstr "Định dạng lựa chọn"
 
 #: views/advanced_form.php:74
 msgid ""
@@ -217,59 +216,55 @@ msgid ""
 "to the streaming application you are using. See information on musiconhold."
 "conf configuration for different audio and Internet streaming source options."
 msgstr ""
-"Optionaler Wert für \"format=\" Zeile wird verwendet um Asterisk das Format "
-"zu liefern. Das Format muss von Asterisk verstanden werden (Bsp. alaw oder "
-"eine spezifische Streaming Applikation welche Sie verwenden) Mehr "
-"Informationen: Siehe musiconhold.conf Konfiguration für benutzerdefinierte "
-"Audio und Internet Streaming Quellen."
+"Gía trị tùy chọn cho dòng  \"format=\" được sử dụng nhằm cung cấp định dạng "
+"cho Assterisk. Định dạng này phải được Asterisk hiểu và nhận diện được chặng "
+"hạn như ulaw, và được dành riêng cho ứng dụng trực tuyến mà bạn đang sử "
+"dụng. Để biết thêm thông tin về các audio khác nhau hay các tùy chọn nguồn "
+"trực tuyến, xem cấu hình musiconhold.conf."
 
 #: views/advanced_form.php:173 views/basic_form.php:66
 msgid "Play"
-msgstr "Abspielen"
+msgstr "Phát"
 
 #: assets/js/music.js:5
 msgid "Please enter a valid Category Name"
-msgstr "Bitte geben Sie einen gültigen Kategorie Namen ein"
+msgstr "Vui lòng nhập Tên của Category hợp lệ"
 
 #: assets/js/music.js:16
 msgid "Please enter a valid application command and arguments"
-msgstr ""
-"Bitte geben Sie einen gültigen Applikations Command und dazugehörige "
-"Argumente an"
+msgstr "Vui lòng nhập lệnh và các tham số ứng dụng hợp lệ"
 
 #: Music.class.php:672
 msgid "Reset"
-msgstr "Zurücksetzen"
+msgstr "Cài đặt lại"
 
 #: music.i18n.php:6
 msgid "Settings"
-msgstr "Einstellungen"
+msgstr "Cài đặt"
 
 #: Music.class.php:677
 msgid "Submit"
-msgstr "Absenden"
+msgstr "gửi đi"
 
 #: music.i18n.php:14
 msgid "System Setup"
-msgstr "System-Einrichtung"
+msgstr "Thiết lập hệ thống"
 
 #: Music.class.php:504
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
-"Die hochgeladene Datei überschreitet die maximal zulässige Dateigröße, die "
-"als Wert \"MAX_FILE_SIZE\" im HTML-Formular festgelegt wurde"
+"Tệp được tải lên vượt quá kích cỡ tệp tối đa được quy định trong mẫu HTML"
 
 #: Music.class.php:501
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
-"Die hochgeladene Datei überschreitet die maximal zulässige Dateigröße, die "
-"in der 'upload_max_filesize'-Direktive in der php.ini festgelegt wurde"
+"Tệp được tải lên vượt quá kích cỡ tải lên tối đa được quy định trong php.ini"
 
 #: Music.class.php:507
 msgid "The uploaded file was only partially uploaded"
-msgstr "Die hochgeladene Datei wurde nur teilweise hochgeladen"
+msgstr "Các tệp tải lên đã chỉ được tải lên từng phần"
 
 #: views/advanced_form.php:49
 msgid ""
@@ -277,14 +272,13 @@ msgid ""
 "Asterisk. See information on musiconhold.conf configuration for different "
 "audio and Internet streaming source options."
 msgstr ""
-"Dies ist die \"application=\" Zeile. Sie wird verwendet um Asterisk "
-"Streaming Details zur verfügung zu stellen. Mehr Informationen finden Sie in "
-"der musiconhold.conf Konfiguration für benutzerdefinierte Audio und Internet "
-"Streaming Quellen Optionen."
+"Đây là dòng \"application =\" được sử dụng để cung cấp các chi tiết trực "
+"tuyến cho Asterisk. Xem thông tin các audio khác nhau và các tùy chọn ngồn "
+"trực tiếp tại cấu hình musiconhold.conf."
 
 #: views/addcatform.php:38 views/advanced_form.php:10 views/grid.php:19
 msgid "Type"
-msgstr "Typ"
+msgstr "Kiểu"
 
 #: views/addcatform.php:53 views/advanced_form.php:25
 msgid ""
@@ -292,27 +286,26 @@ msgid ""
 "files listed below. If set to \"Custom Application\" then this category will "
 "stream music from the set application"
 msgstr ""
-"Welche Art von Music on Hold? Wenn dieser Wert auf \"Dateien\" gesetzt ist, "
-"wird diese Kategorie die unten aufgelisteten Dateien abspielen. Ist der Wert "
-"auf \"Benutzerdefinierte Applikation\" gesetzt, so wird diese Kategorie "
-"Musik von der von Ihnen definierten Applikation wiedergeben"
+"Kiểu nhạc chờ. Nếu cài đặt là \"File\" thì category này sẽ phát các tệp được "
+"liệt kê dưới đây. Nếu cài đặt là \"Custom Application\"  thì category này sẽ "
+"phát trực tuyến nhạc từ ứng dụng đã cài đặt"
 
 #: Music.class.php:422
 #, php-format
 msgid "Unable to delete %s"
-msgstr "Fehler beim Löschen von %s"
+msgstr "Không thể xóa %s"
 
 #: Music.class.php:496
 msgid "Unsupported file format"
-msgstr "Nicht unterstütztes Dateiformat"
+msgstr "Định dạng tệp không được hỗ trợ"
 
 #: assets/js/music.js:171
 msgid "Unsupported file type"
-msgstr "Nicht unterstützter Dateityp"
+msgstr "Kiểu tệp không được hỗ trợ"
 
 #: views/advanced_form.php:113 views/basic_form.php:34
 msgid "Upload Recording"
-msgstr "Aufnahme hochladen"
+msgstr "Tải lên bản ghi âm"
 
 #: views/advanced_form.php:133 views/basic_form.php:54
 #, php-format
@@ -320,30 +313,29 @@ msgid ""
 "Upload files from your local system. Supported upload formats are: %s. This "
 "includes archives (that include multiple files) and multiple files"
 msgstr ""
-"Datei von Ihrem lokalen System hochladen. Unterstützte Formate sind: %s. "
-"Dies inkludiert Archive (welche mehrere Dateien beinhalten) und mehrere "
-"einzelne Dateien"
+"Tải lên các tệp từ hệ thống của bạn. Các định dạng tải lên được hỗ trợ là: %"
+"s. Bao gồm các tệp nén ( gồm nhiều tệp khác nhau) và các tệp"
 
 #: music.i18n.php:8
 msgid ""
 "Uploading and management of sound files (wav, mp3) to be used for on-hold "
 "music."
 msgstr ""
-"Hochladen und Verwalten von Audio Dateien (wav, mp3) welche für on-hold "
-"Music verwendet werden sollen."
+"Đang tải lên và quản lý các tệp âm thanh ( wav, mp3) sẽ được sử dụng cho "
+"nhạc chờ."
 
 #: music.i18n.php:16
 msgid ""
 "When enabled Asterisk will use 1 instance of moh class for all channels who "
 "are using it, decreasing consumable cpu cycles and memory in the process"
 msgstr ""
-"Wenn aktiviert, Asterisk wird 1 Instanz der moh-Klasse für alle Kanäle "
-"verwenden, die Sie benützen und die verfügbaren CPU-Zyklen und den Speicher "
-"im Prozess reduzieren"
+"Khi đã kích hoạt, Asterisk sẽ sử dụng một ví dụ của lớp moh cho tất cả các "
+"kênh mà người ta đang sử dụng, giảm chu kỳ của cpu và bộ nhớ trong quá trình "
+"xử lý"
 
 #: views/advanced_form.php:93 views/basic_form.php:14
 msgid "Yes"
-msgstr "Ja"
+msgstr "Có"
 
 #: assets/js/music.js:125
 #, perl-format
@@ -353,18 +345,7 @@ msgid ""
 "distributed with the PBX. If you'd like to install the binaries needed for "
 "these conversions click <a href='%s'>here</a>"
 msgstr ""
-"Ihr Browser unterstützt keine HTML5 Wiedergabe. Für volle HTML5 Audio "
-"Wiedergabe unterstützung benötigen Sie zusätzliche Programme, welche "
-"zusammen mit der PBX nicht zur verfügung gestellt werden können. Möchten Sie "
-"die benötigten binaries installieren klicken Sie <a href='%s'>hier</a>"
-
-#~ msgid ""
-#~ "Check all file formats you would like this music in this category to be "
-#~ "encoded into. This applied to uploaded music and any music currently on "
-#~ "the system. It will not overwrite any formats that have been previously "
-#~ "processed."
-#~ msgstr ""
-#~ "Wählen Sie alle Formate aus in die Sie Ihre Musik encodieren möchten. "
-#~ "Diese Einstellung wird für Ihre hochgeladene und bereits im System "
-#~ "vorhandene Musik angewendet. Vorher bereits encodierte Formate werden "
-#~ "nicht überschrieben."
+"Bạn đan thiếu hỗ trợ để phát lại trên trình duyệt này. Để có hỗ trợ đầy đủ "
+"cho việc phát lại trên trình duyệt HTML5 bạn cần phải cài đặt các chường "
+"trình không thể phân phối được với PBX. Nếu bạn muốn cài đặt các chương "
+"trình cần thiết cho các chuyển đổi này, hãy nhấp vào <a href='%s'> ở đây </a>"
