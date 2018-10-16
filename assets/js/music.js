@@ -67,7 +67,7 @@ $(document).on("keyup paste", ".name-check", function(e) {
 	if (e.keyCode == 37 || e.keyCode == 38 || e.keyCode == 39 || e.keyCode == 40) {
 		return;
 	}
-	var i = $(this).val().replace(/\s|&|<|>|\.|`|'|\*|\?|"|\/|\\|\|/g, '').toLowerCase();
+	var i = $(this).val().replace(/\s|&|<|>|\.|`|'|\*|\?|"|\/|\\|\|/g, '');
 	$(this).val(i);
 });
 
