@@ -529,21 +529,27 @@ class Music implements \BMO {
 						$list = $this->fileList($path);
 						asort($list);
 						foreach ($list as $value){
-							$fp = pathinfo($value);
-							if(!isset($files[$fp['filename']])) {
-								$files[$fp['filename']] = array(
-									'categoryid' => $category['id'],
-									'category' => $category['category'],
-									'id' => $count,
-									'filename' => $value,
-									'name' => $fp['filename'],
-									'formats' => array(
-										$fp['extension']
-									)
-								);
-								$count++;
-							} else {
-								$files[$fp['filename']]['formats'][] = $fp['extension'];
+							/*
+								Parse the file if there's a name + extension (name.ext)
+							*/
+							list($fn,$fe) = explode(".",$value);							
+							if(!empty($fn) && !empty($fe)){
+								$fp = pathinfo($value);								
+								if(!isset($files[$fp['filename']])){
+									$files[$fp['filename']] = array(
+										'categoryid' => $category['id'],
+										'category' => $category['category'],
+										'id' => $count,
+										'filename' => $value,
+										'name' => $fp['filename'],
+										'formats' => array(
+											$fp['extension']
+										)
+									);
+									$count++;
+								} else {
+									$files[$fp['filename']]['formats'][] = $fp['extension'];
+								}							
 							}
 						}
 
