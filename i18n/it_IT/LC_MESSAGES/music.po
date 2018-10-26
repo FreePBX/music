@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-20 14:26-0400\n"
+"POT-Creation-Date: 2018-10-26 13:41-0400\n"
 "PO-Revision-Date: 2018-05-30 07:55+0000\n"
 "Last-Translator: Stell0 <stefano.fancello@nethesis.it>\n"
 "Language-Team: Italian <http://*/projects/freepbx/music/it/>\n"
@@ -112,7 +112,7 @@ msgstr "convertire il caricamento / Files in"
 msgid "Custom Application"
 msgstr "Applicazione personalizzata"
 
-#: Music.class.php:644
+#: Music.class.php:650
 msgid "Delete"
 msgstr "Elimina"
 
@@ -169,7 +169,7 @@ msgid ""
 msgstr ""
 "Se stai facendo conversioni di media questo può richiedere molto tempo, ok?"
 
-#: Music.class.php:553
+#: Music.class.php:559
 msgid "Invalid Request"
 msgstr "richiesta non valida"
 
@@ -230,7 +230,7 @@ msgstr "Prego immettere un Nome di Categoria valido"
 msgid "Please enter a valid application command and arguments"
 msgstr "Inserisci un comando e argomenti validi per l'applicazione"
 
-#: Music.class.php:649
+#: Music.class.php:655
 msgid "Reset"
 msgstr "Azzera"
 
@@ -238,7 +238,7 @@ msgstr "Azzera"
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: Music.class.php:654
+#: Music.class.php:660
 msgid "Submit"
 msgstr "Sottoscrivi"
 

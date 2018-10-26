@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-20 14:26-0400\n"
+"POT-Creation-Date: 2018-10-26 13:41-0400\n"
 "PO-Revision-Date: 2016-09-30 15:39+0200\n"
 "Last-Translator: Maxim <maxim@ua.fm>\n"
 "Language-Team: Ukrainian <http://weblate.freepbx.org/projects/freepbx/music/"
@@ -103,7 +103,7 @@ msgstr ""
 msgid "Custom Application"
 msgstr ""
 
-#: Music.class.php:644
+#: Music.class.php:650
 msgid "Delete"
 msgstr "Видалити"
 
@@ -158,7 +158,7 @@ msgstr ""
 "Якщо ви продовжите перетворення медіа це може зайняти дуже багато часу, "
 "добре?"
 
-#: Music.class.php:553
+#: Music.class.php:559
 msgid "Invalid Request"
 msgstr "Невірний запит"
 
@@ -219,7 +219,7 @@ msgstr ""
 msgid "Please enter a valid application command and arguments"
 msgstr ""
 
-#: Music.class.php:649
+#: Music.class.php:655
 msgid "Reset"
 msgstr ""
 
@@ -227,7 +227,7 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: Music.class.php:654
+#: Music.class.php:660
 msgid "Submit"
 msgstr ""
 

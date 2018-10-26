@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-20 14:26-0400\n"
+"POT-Creation-Date: 2018-10-26 13:41-0400\n"
 "PO-Revision-Date: 2017-07-20 13:28+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/music/"
@@ -112,7 +112,7 @@ msgstr "Chuyển các bản tải lên/ các tệp thành"
 msgid "Custom Application"
 msgstr "Chỉnh sửa ứng dụng"
 
-#: Music.class.php:644
+#: Music.class.php:650
 msgid "Delete"
 msgstr "Xóa"
 
@@ -169,7 +169,7 @@ msgstr ""
 "Nếu bạn đang chuyển đổi media thì  có thể mất mát nhiều thời gian,bạn có "
 "đồng ý không?"
 
-#: Music.class.php:553
+#: Music.class.php:559
 msgid "Invalid Request"
 msgstr "Yêu cầu không hợp lệ"
 
@@ -230,7 +230,7 @@ msgstr "Vui lòng nhập Tên của Category hợp lệ"
 msgid "Please enter a valid application command and arguments"
 msgstr "Vui lòng nhập lệnh và các tham số ứng dụng hợp lệ"
 
-#: Music.class.php:649
+#: Music.class.php:655
 msgid "Reset"
 msgstr "Cài đặt lại"
 
@@ -238,7 +238,7 @@ msgstr "Cài đặt lại"
 msgid "Settings"
 msgstr "Cài đặt"
 
-#: Music.class.php:654
+#: Music.class.php:660
 msgid "Submit"
 msgstr "gửi đi"
 

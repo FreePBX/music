@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-16 14:07+0530\n"
+"POT-Creation-Date: 2018-10-26 13:41-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -102,7 +102,7 @@ msgstr ""
 msgid "Custom Application"
 msgstr ""
 
-#: Music.class.php:644
+#: Music.class.php:650
 msgid "Delete"
 msgstr ""
 
@@ -161,7 +161,7 @@ msgid ""
 "ok?"
 msgstr ""
 
-#: Music.class.php:553
+#: Music.class.php:559
 msgid "Invalid Request"
 msgstr ""
 
@@ -220,7 +220,7 @@ msgstr ""
 msgid "Please enter a valid application command and arguments"
 msgstr ""
 
-#: Music.class.php:649
+#: Music.class.php:655
 msgid "Reset"
 msgstr ""
 
@@ -228,7 +228,7 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: Music.class.php:654
+#: Music.class.php:660
 msgid "Submit"
 msgstr ""
 

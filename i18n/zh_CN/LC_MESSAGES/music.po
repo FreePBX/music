@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-20 14:26-0400\n"
+"POT-Creation-Date: 2018-10-26 13:41-0400\n"
 "PO-Revision-Date: 2009-01-31 13:24+0800\n"
 "Last-Translator: 周征晟 <zhougongjizhe@163.com>\n"
 "Language-Team: EdwardBadBoy <zhougongjizhe@163.com>\n"
@@ -100,7 +100,7 @@ msgstr ""
 msgid "Custom Application"
 msgstr ""
 
-#: Music.class.php:644
+#: Music.class.php:650
 msgid "Delete"
 msgstr "删除"
 
@@ -153,7 +153,7 @@ msgid ""
 "ok?"
 msgstr ""
 
-#: Music.class.php:553
+#: Music.class.php:559
 msgid "Invalid Request"
 msgstr ""
 
@@ -212,7 +212,7 @@ msgstr "请输入有效的类别名称"
 msgid "Please enter a valid application command and arguments"
 msgstr ""
 
-#: Music.class.php:649
+#: Music.class.php:655
 msgid "Reset"
 msgstr ""
 
@@ -220,7 +220,7 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: Music.class.php:654
+#: Music.class.php:660
 msgid "Submit"
 msgstr ""
 

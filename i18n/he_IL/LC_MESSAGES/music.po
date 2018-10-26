@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-20 14:26-0400\n"
+"POT-Creation-Date: 2018-10-26 13:41-0400\n"
 "PO-Revision-Date: 2006-10-17 17:30+0300\n"
 "Last-Translator: Shimi <shimi@shimi.net>\n"
 "MIME-Version: 1.0\n"
@@ -96,7 +96,7 @@ msgstr ""
 msgid "Custom Application"
 msgstr ""
 
-#: Music.class.php:644
+#: Music.class.php:650
 msgid "Delete"
 msgstr "מחק"
 
@@ -149,7 +149,7 @@ msgid ""
 "ok?"
 msgstr ""
 
-#: Music.class.php:553
+#: Music.class.php:559
 msgid "Invalid Request"
 msgstr ""
 
@@ -205,7 +205,7 @@ msgstr ""
 msgid "Please enter a valid application command and arguments"
 msgstr ""
 
-#: Music.class.php:649
+#: Music.class.php:655
 msgid "Reset"
 msgstr ""
 
@@ -213,7 +213,7 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: Music.class.php:654
+#: Music.class.php:660
 msgid "Submit"
 msgstr ""
 
