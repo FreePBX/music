@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX - music module spanish translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-16 10:39+0530\n"
+"POT-Creation-Date: 2018-10-26 13:41-0400\n"
 "PO-Revision-Date: 2016-12-09 21:01+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/music/"
@@ -107,7 +107,7 @@ msgstr "Convertir subida/archivos a"
 msgid "Custom Application"
 msgstr "Aplicación personalizada"
 
-#: Music.class.php:667
+#: Music.class.php:673
 msgid "Delete"
 msgstr "Eliminar"
 
@@ -164,7 +164,7 @@ msgstr ""
 "Si está realizando conversiones de medios, esto puede tardar mucho tiempo, "
 "¿está bien?"
 
-#: Music.class.php:576
+#: Music.class.php:582
 msgid "Invalid Request"
 msgstr "Requerimiento Invalido"
 
@@ -226,7 +226,7 @@ msgstr "Por favor, introduzca un nombre de categoría válido"
 msgid "Please enter a valid application command and arguments"
 msgstr "Introduzca un comando de aplicación y argumentos válidos"
 
-#: Music.class.php:672
+#: Music.class.php:678
 msgid "Reset"
 msgstr "Reiniciar"
 
@@ -234,7 +234,7 @@ msgstr "Reiniciar"
 msgid "Settings"
 msgstr "Configuración"
 
-#: Music.class.php:677
+#: Music.class.php:683
 msgid "Submit"
 msgstr "Enviar"
 

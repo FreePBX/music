@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-16 10:39+0530\n"
+"POT-Creation-Date: 2018-10-26 13:41-0400\n"
 "PO-Revision-Date: 2016-04-26 06:48+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -106,7 +106,7 @@ msgstr "تبدیل فایل های بارگذاری شده به"
 msgid "Custom Application"
 msgstr "برنامه شخصی"
 
-#: Music.class.php:667
+#: Music.class.php:673
 msgid "Delete"
 msgstr "حذف"
 
@@ -161,7 +161,7 @@ msgid ""
 "ok?"
 msgstr "اگر مکالمه تصویری است, زمان بیشتری میگیرد, ایرادی ندارد؟"
 
-#: Music.class.php:576
+#: Music.class.php:582
 msgid "Invalid Request"
 msgstr "درخواست نامعتبر"
 
@@ -222,7 +222,7 @@ msgstr "لطفا نام دسته درست وارد کنید"
 msgid "Please enter a valid application command and arguments"
 msgstr "لطفا دستورات برنامه درست وارد کنید"
 
-#: Music.class.php:672
+#: Music.class.php:678
 msgid "Reset"
 msgstr "بازنشانی"
 
@@ -230,7 +230,7 @@ msgstr "بازنشانی"
 msgid "Settings"
 msgstr "تنظیمات"
 
-#: Music.class.php:677
+#: Music.class.php:683
 msgid "Submit"
 msgstr "ارسال"
 

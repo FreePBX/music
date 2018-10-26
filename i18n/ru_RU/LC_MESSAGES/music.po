@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-16 10:39+0530\n"
+"POT-Creation-Date: 2018-10-26 13:41-0400\n"
 "PO-Revision-Date: 2016-04-15 12:26+0000\n"
 "Last-Translator: Weblate Admin <admin@postmet.com>\n"
 "Language-Team: Russian <https://weblate.postmet.com/projects/freepbx13/music/"
@@ -109,7 +109,7 @@ msgstr "Конвертировать Загруженные файлы в"
 msgid "Custom Application"
 msgstr "Специализированное  приложение"
 
-#: Music.class.php:667
+#: Music.class.php:673
 msgid "Delete"
 msgstr "Удалить"
 
@@ -164,7 +164,7 @@ msgid ""
 "ok?"
 msgstr "Медиа-конвертация может занять длительное время. Продолжить?"
 
-#: Music.class.php:576
+#: Music.class.php:582
 msgid "Invalid Request"
 msgstr "Неверный запрос"
 
@@ -225,7 +225,7 @@ msgstr "Введите правильное название для катего
 msgid "Please enter a valid application command and arguments"
 msgstr "Пожалуйста введите корректную команду приложения  и аргументы"
 
-#: Music.class.php:672
+#: Music.class.php:678
 msgid "Reset"
 msgstr "Сброс"
 
@@ -233,7 +233,7 @@ msgstr "Сброс"
 msgid "Settings"
 msgstr "Настройки"
 
-#: Music.class.php:677
+#: Music.class.php:683
 msgid "Submit"
 msgstr "Подтвердить"
 
