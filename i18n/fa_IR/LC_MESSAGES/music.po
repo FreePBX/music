@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-26 13:41-0400\n"
-"PO-Revision-Date: 2019-01-25 09:30+0000\n"
+"PO-Revision-Date: 2019-01-26 10:00+0000\n"
 "Last-Translator: Media Mousavi <mousavi.media@gmail.com>\n"
 "Language-Team: Persian <http://*/projects/freepbx/music/fa/>\n"
 "Language: fa_IR\n"
@@ -140,7 +140,7 @@ msgstr "فایل موجود نیست"
 #: assets/js/music.js:176
 #, perl-format
 msgid "File size is too large. Max size is %s bytes"
-msgstr "اندازه فایل بیشتر از حد مجاز اسن"
+msgstr "فایل بزرگ است. بیشترین اندازه %s1 بایت است"
 
 #: Music.class.php:471
 msgid "File upload failed"
