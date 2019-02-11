@@ -43,7 +43,7 @@ class Music implements \BMO {
 			mkdir($this->tmp,0777,true);
 		}
 	}
-	
+
 	public function setDatabase($pdo){
 		$this->db = $pdo;
 		return $this;
@@ -135,23 +135,28 @@ class Music implements \BMO {
 			"id" => $id
 		));
 		needreload();
-    }
-    
-	public function upsertCategoryByID($id, $type, $random = false, $application = '', $format = '') {
-		$sql = "REPLACE INTO music (id, type, random, application, format) VALUES(:id, :type, :random, :application, :format)";
-		$sth = $this->db->prepare($sql);
-		$sth->execute(array(
-			":type" => $type,
-			":random" => $random,
-			":application" => $application,
-			":format" => $format,
-			":id" => $id
-		));
-        needreload();
-        return $this;
 	}
 
+	/**
+	 * Add Category by generated id
+	 *
+	 * @param string $name The Category name
+	 * @param string $type The Category type
+	 * @return void
+	 */
 	public function addCategory($name,$type) {
+		$this->addCategoryById(null, $name,$type);
+	}
+
+	/**
+	 * Add Category by ID
+	 *
+	 * @param integer $id The Category ID
+	 * @param string $name The Category name
+	 * @param string $type The Category type
+	 * @return void
+	 */
+	public function addCategoryById($id, $name,$type) {
 		$name = iconv("UTF-8", "ISO-8859-1//TRANSLIT", $name);
 		$name = preg_replace("/\s+|'+|`+|\\+|\/+|\"+|<+|>+|\?+|\*|\.+|&+|\|/","",$name);
 		$name = basename($name);
@@ -163,9 +168,9 @@ class Music implements \BMO {
 			);
 			return;
 		}
-		$sql = "INSERT INTO music (`category`, `type`) VALUES (?,?)";
+		$sql = "INSERT INTO music (`id`, `category`, `type`) VALUES (?, ?,?)";
 		$sth = $this->db->prepare($sql);
-		$sth->execute(array($name,$type));
+		$sth->execute(array($id,$name,$type));
 
 		if(!file_exists($this->mohpath . "/" . $name)) {
 			mkdir($this->mohpath . "/" . $name);
@@ -532,9 +537,9 @@ class Music implements \BMO {
 							/*
 								Parse the file if there's a name + extension (name.ext)
 							*/
-							list($fn,$fe) = explode(".",$value);							
+							list($fn,$fe) = explode(".",$value);
 							if(!empty($fn) && !empty($fe)){
-								$fp = pathinfo($value);								
+								$fp = pathinfo($value);
 								if(!isset($files[$fp['filename']])){
 									$files[$fp['filename']] = array(
 										'categoryid' => $category['id'],
@@ -549,7 +554,7 @@ class Music implements \BMO {
 									$count++;
 								} else {
 									$files[$fp['filename']]['formats'][] = $fp['extension'];
-								}							
+								}
 							}
 						}
 
