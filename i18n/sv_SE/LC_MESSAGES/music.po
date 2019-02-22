@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX musik\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-11 13:54-0500\n"
+"POT-Creation-Date: 2019-02-22 15:00+0530\n"
 "PO-Revision-Date: 2011-03-20 00:00+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: \n"
@@ -42,7 +42,7 @@ msgstr ""
 msgid "Actions"
 msgstr ""
 
-#: views/grid.php:5
+#: views/bootnav.php:3 views/grid.php:5
 msgid "Add Category"
 msgstr ""
 
@@ -83,7 +83,7 @@ msgid ""
 "different name"
 msgstr ""
 
-#: views/grid.php:18
+#: views/bootnav.php:9 views/grid.php:18
 msgid "Category"
 msgstr ""
 
@@ -172,7 +172,7 @@ msgstr ""
 msgid "Invalid category"
 msgstr ""
 
-#: views/bootnav.php:1
+#: views/bootnav.php:2
 msgid "List MoH Categories"
 msgstr ""
 

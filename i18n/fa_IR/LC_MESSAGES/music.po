@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-11 13:54-0500\n"
+"POT-Creation-Date: 2019-02-22 15:00+0530\n"
 "PO-Revision-Date: 2016-04-26 06:48+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -33,7 +33,7 @@ msgstr "عملیات"
 msgid "Actions"
 msgstr "اعمال"
 
-#: views/grid.php:5
+#: views/bootnav.php:3 views/grid.php:5
 msgid "Add Category"
 msgstr "افزودن دسته بندی"
 
@@ -78,7 +78,7 @@ msgid ""
 msgstr ""
 "دسته های： \"هیچ\" و \"پیشفرض\" از قبل وجود دارند. نام دیگری انتخاب کنید"
 
-#: views/grid.php:18
+#: views/bootnav.php:9 views/grid.php:18
 msgid "Category"
 msgstr "دسته"
 
@@ -169,7 +169,7 @@ msgstr "درخواست نامعتبر"
 msgid "Invalid category"
 msgstr "دسته نامعتبر"
 
-#: views/bootnav.php:1
+#: views/bootnav.php:2
 msgid "List MoH Categories"
 msgstr "فهرست دسته MoH"
 

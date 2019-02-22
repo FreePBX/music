@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-11 13:54-0500\n"
+"POT-Creation-Date: 2019-02-22 15:00+0530\n"
 "PO-Revision-Date: 2018-02-16 19:35+0200\n"
 "Last-Translator: Nils <Nils@heckenkamp.info>\n"
 "Language-Team: German <http://weblate.freepbx.org/projects/freepbx/music/"
@@ -33,7 +33,7 @@ msgstr "Aktion"
 msgid "Actions"
 msgstr "Aktionen"
 
-#: views/grid.php:5
+#: views/bootnav.php:3 views/grid.php:5
 msgid "Add Category"
 msgstr "Neue Kategorie"
 
@@ -80,7 +80,7 @@ msgstr ""
 "Kategorien \"none\" und \"default\" sind reservierte Namen. Bitte geben Sie "
 "einen anderen Namen ein"
 
-#: views/grid.php:18
+#: views/bootnav.php:9 views/grid.php:18
 msgid "Category"
 msgstr "Kategorie"
 
@@ -179,7 +179,7 @@ msgstr "ungültige Anfrage"
 msgid "Invalid category"
 msgstr "Falsche Kategorie"
 
-#: views/bootnav.php:1
+#: views/bootnav.php:2
 msgid "List MoH Categories"
 msgstr "MoH Kategorien auflisten"
 

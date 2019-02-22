@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-11 13:54-0500\n"
+"POT-Creation-Date: 2019-02-22 15:00+0530\n"
 "PO-Revision-Date: 2016-09-30 15:39+0200\n"
 "Last-Translator: Maxim <maxim@ua.fm>\n"
 "Language-Team: Ukrainian <http://weblate.freepbx.org/projects/freepbx/music/"
@@ -34,7 +34,7 @@ msgstr "Дія"
 msgid "Actions"
 msgstr "Дії"
 
-#: views/grid.php:5
+#: views/bootnav.php:3 views/grid.php:5
 msgid "Add Category"
 msgstr "Додати категорію"
 
@@ -75,7 +75,7 @@ msgid ""
 "different name"
 msgstr ""
 
-#: views/grid.php:18
+#: views/bootnav.php:9 views/grid.php:18
 msgid "Category"
 msgstr "Категорія"
 
@@ -166,7 +166,7 @@ msgstr "Невірний запит"
 msgid "Invalid category"
 msgstr ""
 
-#: views/bootnav.php:1
+#: views/bootnav.php:2
 msgid "List MoH Categories"
 msgstr ""
 
