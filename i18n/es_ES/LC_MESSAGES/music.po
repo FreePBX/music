@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX - music module spanish translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-26 13:41-0400\n"
+"POT-Creation-Date: 2019-02-22 14:58+0530\n"
 "PO-Revision-Date: 2016-12-09 21:01+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/music/"
@@ -29,7 +29,7 @@ msgstr "Acción"
 msgid "Actions"
 msgstr "Acciones"
 
-#: views/grid.php:5
+#: views/bootnav.php:3 views/grid.php:5
 msgid "Add Category"
 msgstr "Agregar Categoría"
 
@@ -75,7 +75,7 @@ msgstr ""
 "Categorías: \"none\" y \"default\" son nombres reservados. Ingrese un nombre "
 "diferente"
 
-#: views/grid.php:18
+#: views/bootnav.php:9 views/grid.php:18
 msgid "Category"
 msgstr "Categoría"
 
@@ -172,7 +172,7 @@ msgstr "Requerimiento Invalido"
 msgid "Invalid category"
 msgstr "categoría invalida"
 
-#: views/bootnav.php:1
+#: views/bootnav.php:2
 msgid "List MoH Categories"
 msgstr "Listar Categorías MOH"
 

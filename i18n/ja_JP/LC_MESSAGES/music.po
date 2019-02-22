@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.10.0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-26 13:41-0400\n"
+"POT-Creation-Date: 2019-02-22 14:58+0530\n"
 "PO-Revision-Date: 2014-02-19 20:56+0200\n"
 "Last-Translator: Chise Mishima <c.mishima@qloog.com>\n"
 "Language-Team: Japanese <http://example.com/projects/freepbx/music/ja/>\n"
@@ -60,7 +60,7 @@ msgstr ""
 msgid "Actions"
 msgstr ""
 
-#: views/grid.php:5
+#: views/bootnav.php:3 views/grid.php:5
 msgid "Add Category"
 msgstr ""
 
@@ -101,7 +101,7 @@ msgid ""
 "different name"
 msgstr ""
 
-#: views/grid.php:18
+#: views/bootnav.php:9 views/grid.php:18
 msgid "Category"
 msgstr ""
 
@@ -190,7 +190,7 @@ msgstr ""
 msgid "Invalid category"
 msgstr ""
 
-#: views/bootnav.php:1
+#: views/bootnav.php:2
 msgid "List MoH Categories"
 msgstr ""
 

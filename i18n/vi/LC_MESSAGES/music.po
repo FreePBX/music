@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-26 13:41-0400\n"
+"POT-Creation-Date: 2019-02-22 14:58+0530\n"
 "PO-Revision-Date: 2017-07-20 13:28+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/music/"
@@ -33,7 +33,7 @@ msgstr "Thao tác"
 msgid "Actions"
 msgstr "Các thao tác"
 
-#: views/grid.php:5
+#: views/bootnav.php:3 views/grid.php:5
 msgid "Add Category"
 msgstr "Thêm Category"
 
@@ -80,7 +80,7 @@ msgstr ""
 "Categories: \"none\"  và \"default\" là những tên dành riêng. Vui lòng nhập "
 "một tên khác"
 
-#: views/grid.php:18
+#: views/bootnav.php:9 views/grid.php:18
 msgid "Category"
 msgstr "Mục phân loại- Category"
 
@@ -177,7 +177,7 @@ msgstr "Yêu cầu không hợp lệ"
 msgid "Invalid category"
 msgstr "Category không hợp lệ"
 
-#: views/bootnav.php:1
+#: views/bootnav.php:2
 msgid "List MoH Categories"
 msgstr "Danh sách các category MoH"
 

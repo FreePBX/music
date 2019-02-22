@@ -2,7 +2,7 @@
   <rawname>music</rawname>
   <repo>standard</repo>
   <name>Music on Hold</name>
-  <version>13.0.22.5</version>
+  <version>13.0.22.6</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -11,6 +11,7 @@
   <category>Settings</category>
   <description>Uploading and management of sound files (wav, mp3) to be used for on-hold music.</description>
 	<changelog>
+		*13.0.22.6* Fixing FREEPBX-19511 MoH rnav view 
 		*13.0.22.5* FREEPBX-17836 MOH with french characters are not visible in MOH module after upload 
 		*13.0.22.4* FREEPBX-17559 MOH not allowing uppercase letters 
 		*13.0.22.3* FREEPBX-14461 use the lowest value

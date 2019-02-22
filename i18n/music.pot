@@ -3,13 +3,13 @@
 # For licensing information, please see the file named LICENSE located in the module directory
 #
 # FreePBX language template for music
-# Copyright (C) 2008-2018 Sangoma Technologies, Inc.
+# Copyright (C) 2008-2019 Sangoma Technologies, Inc.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-26 13:41-0400\n"
+"POT-Creation-Date: 2019-02-22 14:58+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,6 +31,7 @@ msgstr ""
 msgid "Actions"
 msgstr ""
 
+#: views/bootnav.php:3
 #: views/grid.php:5
 msgid "Add Category"
 msgstr ""
@@ -73,6 +74,7 @@ msgid ""
 "different name"
 msgstr ""
 
+#: views/bootnav.php:9
 #: views/grid.php:18
 msgid "Category"
 msgstr ""
@@ -169,7 +171,7 @@ msgstr ""
 msgid "Invalid category"
 msgstr ""
 
-#: views/bootnav.php:1
+#: views/bootnav.php:2
 msgid "List MoH Categories"
 msgstr ""
 
