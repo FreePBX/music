@@ -6,7 +6,6 @@ use FreePBX\modules\Backup as Base;
 class Backup Extends Base\BackupBase{
 	public function runBackup($id,$transaction){
 		$dirs = [];
-		$configs = $this->FreePBX->Music->getCategories();
 		$varlibdir = $this->FreePBX->Config->get('ASTVARLIBDIR');
 		$iterator = new RecursiveDirectoryIterator($varlibdir.'/moh',RecursiveDirectoryIterator::SKIP_DOTS);
 		foreach (new RecursiveIteratorIterator($iterator) as $file) {
@@ -15,6 +14,9 @@ class Backup Extends Base\BackupBase{
 
 		}
 		$this->addDirectories(array_unique($dirs));
-		$this->addConfigs($configs);
+		$this->addConfigs([
+			'data' => $this->FreePBX->Music->getCategories(),
+			'settings' => $this->dumpAdvancedSettings()
+		]);
 	}
 }
