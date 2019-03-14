@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX - music module spanish translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-22 14:58+0530\n"
+"POT-Creation-Date: 2019-03-14 14:52-0400\n"
 "PO-Revision-Date: 2016-12-09 21:01+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/music/"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Poedit-Country: SPAIN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: Music.class.php:519
+#: Music.class.php:520
 msgid "A PHP extension stopped the file upload"
 msgstr "Una extensión de PHP detuvo la subida del archivo"
 
@@ -63,7 +63,7 @@ msgstr "Vistazo"
 msgid "Cache MoH Classes"
 msgstr "Cache Clases MOH"
 
-#: Music.class.php:523
+#: Music.class.php:524
 msgid "Can Not Find Uploaded Files"
 msgstr "No puede encontrase Archivos subidos"
 
@@ -107,7 +107,7 @@ msgstr "Convertir subida/archivos a"
 msgid "Custom Application"
 msgstr "Aplicación personalizada"
 
-#: Music.class.php:673
+#: Music.class.php:674
 msgid "Delete"
 msgstr "Eliminar"
 
@@ -127,7 +127,7 @@ msgstr ""
 "Active la reproducción aleatoria de música para esta categoría. Si se "
 "deshabilita la música se reproduce en orden alfabético"
 
-#: Music.class.php:516
+#: Music.class.php:517
 msgid "Failed to write file to disk"
 msgstr "Fallo al escribir al disco"
 
@@ -135,7 +135,7 @@ msgstr "Fallo al escribir al disco"
 msgid "File"
 msgstr "Archivo"
 
-#: Music.class.php:539
+#: Music.class.php:540
 msgid "File does not exist"
 msgstr "Archivo no existe"
 
@@ -144,7 +144,7 @@ msgstr "Archivo no existe"
 msgid "File size is too large. Max size is %s bytes"
 msgstr ""
 
-#: Music.class.php:471
+#: Music.class.php:472
 msgid "File upload failed"
 msgstr "Subida de Archivo Fallo"
 
@@ -164,11 +164,11 @@ msgstr ""
 "Si está realizando conversiones de medios, esto puede tardar mucho tiempo, "
 "¿está bien?"
 
-#: Music.class.php:582
+#: Music.class.php:583
 msgid "Invalid Request"
 msgstr "Requerimiento Invalido"
 
-#: Music.class.php:416
+#: Music.class.php:417
 msgid "Invalid category"
 msgstr "categoría invalida"
 
@@ -176,7 +176,7 @@ msgstr "categoría invalida"
 msgid "List MoH Categories"
 msgstr "Listar Categorías MOH"
 
-#: Music.class.php:513
+#: Music.class.php:514
 msgid "Missing a temporary folder"
 msgstr "Carpeta temporal faltante"
 
@@ -188,7 +188,7 @@ msgstr "Música en espera"
 msgid "No"
 msgstr "No"
 
-#: Music.class.php:510
+#: Music.class.php:511
 msgid "No file was uploaded"
 msgstr "No se subió archivo"
 
@@ -226,7 +226,7 @@ msgstr "Por favor, introduzca un nombre de categoría válido"
 msgid "Please enter a valid application command and arguments"
 msgstr "Introduzca un comando de aplicación y argumentos válidos"
 
-#: Music.class.php:678
+#: Music.class.php:679
 msgid "Reset"
 msgstr "Reiniciar"
 
@@ -234,7 +234,7 @@ msgstr "Reiniciar"
 msgid "Settings"
 msgstr "Configuración"
 
-#: Music.class.php:683
+#: Music.class.php:684
 msgid "Submit"
 msgstr "Enviar"
 
@@ -242,7 +242,7 @@ msgstr "Enviar"
 msgid "System Setup"
 msgstr "Configuración del sistema"
 
-#: Music.class.php:504
+#: Music.class.php:505
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
@@ -250,11 +250,11 @@ msgstr ""
 "El archivo subido supera la directiva MAX_FILE_SIZE que se especificó en el "
 "formulario HTML"
 
-#: Music.class.php:501
+#: Music.class.php:502
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr "El archivo subido supera la directiva upload_max_filesize en php.ini"
 
-#: Music.class.php:507
+#: Music.class.php:508
 msgid "The uploaded file was only partially uploaded"
 msgstr "El archivo subido sólo se cargó parcialmente"
 
@@ -284,12 +284,12 @@ msgstr ""
 "\"Aplicación personalizada\", esta categoría transmitirá música desde la "
 "aplicación indicada"
 
-#: Music.class.php:422
+#: Music.class.php:423
 #, php-format
 msgid "Unable to delete %s"
 msgstr "No se puede eliminar %s"
 
-#: Music.class.php:496
+#: Music.class.php:497
 msgid "Unsupported file format"
 msgstr "Formato de Archivo no soportado"
 
