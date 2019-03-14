@@ -274,6 +274,7 @@ class Music implements \BMO {
 			"random" => array(
 				"type" => "boolean",
 				"notnull" => false,
+				"default" => 0
 			),
 			"application" => array(
 				"type" => "string",
@@ -555,9 +556,9 @@ class Music implements \BMO {
 							/*
 								Parse the file if there's a name + extension (name.ext)
 							*/
-							list($fn,$fe) = explode(".",$value);							
+							list($fn,$fe) = explode(".",$value);
 							if(!empty($fn) && !empty($fe)){
-								$fp = pathinfo($value);								
+								$fp = pathinfo($value);
 								if(!isset($files[$fp['filename']])){
 									$files[$fp['filename']] = array(
 										'categoryid' => $category['id'],
@@ -572,7 +573,7 @@ class Music implements \BMO {
 									$count++;
 								} else {
 									$files[$fp['filename']]['formats'][] = $fp['extension'];
-								}							
+								}
 							}
 						}
 
