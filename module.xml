@@ -2,7 +2,7 @@
     <rawname>music</rawname>
     <repo>standard</repo>
     <name>Music on Hold</name>
-    <version>15.0.9</version>
+    <version>15.0.10</version>
     <publisher>Sangoma Technologies Corporation</publisher>
     <license>GPLv3+</license>
     <licenselink>https://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -11,6 +11,7 @@
     <category>Settings</category>
     <description>Uploading and management of sound files (wav, mp3) to be used for on-hold music.</description>
     <changelog>
+		*15.0.10* FREEPBX-19630 Add MOH Custom streaming fails with SQL error
 		*15.0.8* Fixing FREEPBX-19511 MoH rnav view
 		*15.0.7* fixing legacy restore
 		*15.0.6* fixing legacy restore
