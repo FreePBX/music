@@ -1,6 +1,9 @@
 <?php
 namespace FreePBX\modules\Music;
 use FreePBX\modules\Backup as Base;
+use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
+use Symfony\Component\Finder\Finder;
 class Restore Extends Base\RestoreBase{
 	public function runRestore($jobid){
 		$configs = $this->getConfigs();
@@ -20,12 +23,26 @@ class Restore Extends Base\RestoreBase{
 	}
 
 	public function processLegacy($pdo, $data, $tables, $unknownTables){
-		$this->restoreLegacyDatabase($pdo);
-		$Directory = new \RecursiveDirectoryIterator($this->tmpdir);
-		$Iterator = new \RecursiveIteratorIterator($Directory);
-		$files = new \RegexIterator($Iterator, '/^.+\moh\//i', \RecursiveRegexIterator::GET_MATCH);
-		foreach ($files as $path => $object) {
-			copy($path, $this->FreePBX->Config->get('ASTVARLIBDIR').'/moh/');
+		$this->restoreLegacyAdvancedSettings($pdo);
+
+		if(version_compare_freepbx($this->getVersion(),"13","ge")) {
+			$this->restoreLegacyDatabase($pdo);
+		}
+
+		if(!file_exists($this->tmpdir.'/moh')) {
+			return;
+		}
+
+		$mohdir = $this->FreePBX->Config->get('ASTVARLIBDIR').'/'.$this->FreePBX->Config->get('MOHDIR');
+
+		$finder = new Finder();
+		$fileSystem = new Filesystem();
+		foreach ($finder->in($this->tmpdir.'/moh') as $item) {
+			if($item->isDir()) {
+				$fileSystem->mkdir($mohdir.'/'.$item->getRelativePathname());
+				continue;
+			}
+			$fileSystem->copy($item->getPathname(), $mohdir.'/'.$item->getRelativePathname(), true);
 		}
 	}
 }
