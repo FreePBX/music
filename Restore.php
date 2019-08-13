@@ -28,8 +28,7 @@ class Restore Extends Base\RestoreBase{
 		if(version_compare_freepbx($this->getVersion(),"13","ge")) {
 			$this->restoreLegacyDatabase($pdo);
 		}
-
-		if(!file_exists($this->tmpdir.'/moh')) {
+		if(!file_exists($this->tmpdir.'/var/lib/asterisk/moh')) {
 			return;
 		}
 
@@ -37,7 +36,7 @@ class Restore Extends Base\RestoreBase{
 
 		$finder = new Finder();
 		$fileSystem = new Filesystem();
-		foreach ($finder->in($this->tmpdir.'/moh') as $item) {
+		foreach ($finder->in($this->tmpdir.'/var/lib/asterisk/moh') as $item) {
 			if($item->isDir()) {
 				$fileSystem->mkdir($mohdir.'/'.$item->getRelativePathname());
 				continue;
