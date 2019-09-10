@@ -2,7 +2,7 @@
     <rawname>music</rawname>
     <repo>standard</repo>
     <name>Music on Hold</name>
-    <version>15.0.12</version>
+    <version>15.0.13</version>
     <publisher>Sangoma Technologies Corporation</publisher>
     <license>GPLv3+</license>
     <licenselink>https://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -11,6 +11,7 @@
     <category>Settings</category>
     <description>Uploading and management of sound files (wav, mp3) to be used for on-hold music.</description>
     <changelog>
+		*15.0.13* Related to FREEPBX-20414: removed $jobid from runRestore() 
 		*15.0.12* FREEPBX-20413  system is not restoring Legacy custom moh added. 
         *15.0.11* FREEPBX-19661
 		*15.0.10* FREEPBX-19630 Add MOH Custom streaming fails with SQL error
