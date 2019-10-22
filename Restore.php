@@ -8,17 +8,25 @@ class Restore Extends Base\RestoreBase{
 	public function runRestore(){
 		$configs = $this->getConfigs();
 		$files = $this->getFiles();
+		$this->FreePBX->Database->query("TRUNCATE TABLE music");
 		foreach ($configs['data'] as $category) {
 			$this->FreePBX->Music->addCategoryById($category['id'], $category['category'], $category['type']);
 			$this->FreePBX->Music->updateCategoryById($category['id'], $category['type'], $category['random'], $category['application'], $category['format']);
 		}
 		$this->importAdvancedSettings($config['settings']);
+
+		$mohdir = $this->FreePBX->Config->get('ASTVARLIBDIR').'/'.$this->FreePBX->Config->get('MOHDIR');
+		shell_exec("rm -rf $mohdir 2>&1");
+
 		foreach ($files as $file) {
 			$filename = $file->getPathTo().'/'.$file->getFilename();
-			if(file_exists($filename)){
-					continue;
+			$source = $this->tmpdir.'/files'.$file->getPathTo().'/'.$file->getFilename();
+			$dest = $filename;
+			if(file_exists($source)){
+				@mkdir($file->getPathTo(),0755,true);
+				copy($source, $dest);
 			}
-			copy($this->tmpdir.'/files/'.$file->getPathTo().'/'.$file->getFilename(), $filename);
+
 		}
 	}
 
@@ -31,8 +39,8 @@ class Restore Extends Base\RestoreBase{
 		else{
 			if(file_exists($this->tmpdir.'/files/'.'/etc/asterisk/musiconhold_additional.conf')){
 				$conf_array = parse_ini_file($this->tmpdir.'/files/'.'/etc/asterisk/musiconhold_additional.conf', true);
+				$this->FreePBX->Database->query("TRUNCATE TABLE music");
 				foreach($conf_array as $cat => $values){
-					$this->FreePBX->Database->query("TRUNCATE TABLE music");
 					if(!empty($cat) && ($cat != "none") && !empty($values["mode"])){
 						$sql 	= "INSERT INTO music (category ,type, random, application, format) VALUES (:category , :type, :random, :application, :format) ";
 						$data 	= array(	":category" 	=> $cat,
