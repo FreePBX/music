@@ -37,8 +37,14 @@ class Restore Extends Base\RestoreBase{
 			$this->restoreLegacyDatabase($pdo);
 		}
 		else{
-			if(file_exists($this->tmpdir.'/files/'.'/etc/asterisk/musiconhold_additional.conf')){
-				$conf_array = parse_ini_file($this->tmpdir.'/files/'.'/etc/asterisk/musiconhold_additional.conf', true);
+			if(file_exists($this->tmpdir.'/etc/asterisk/musiconhold_additional.conf')){
+				$conf_array = parse_ini_file($this->tmpdir.'/etc/asterisk/musiconhold_additional.conf', true);
+			}
+			elseif(file_exists($this->tmpdir.'/files'.'/etc/asterisk/musiconhold_additional.conf')){
+				$conf_array = parse_ini_file($this->tmpdir.'/files'.'/etc/asterisk/musiconhold_additional.conf', true);
+			}
+
+			if(!empty($conf_array) && is_array($conf_array)){
 				$this->FreePBX->Database->query("TRUNCATE TABLE music");
 				foreach($conf_array as $cat => $values){
 					if(!empty($cat) && ($cat != "none") && !empty($values["mode"])){
