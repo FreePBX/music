@@ -2,7 +2,7 @@
     <rawname>music</rawname>
     <repo>standard</repo>
     <name>Music on Hold</name>
-    <version>15.0.16</version>
+    <version>15.0.17</version>
     <publisher>Sangoma Technologies Corporation</publisher>
     <license>GPLv3+</license>
     <licenselink>https://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -11,6 +11,7 @@
     <category>Settings</category>
     <description>Uploading and management of sound files (wav, mp3) to be used for on-hold music.</description>
     <changelog>
+		*15.0.17* FREEPBX-20668 Getting Whoops\Exception\ErrorException failed to open dir 
 		*15.0.16* FREEPBX-20580 Restoring legacy(FreePBX 12) Backup into FreePBX 15 system is not restoring MOH entries. 
 		*15.0.15* FREEI-837 Getting mysql error on restoring moh module FreePBX 15 to FreePBX 15. 
 		*15.0.14* FREEPBX-20580 Restoring legacy(FreePBX 12) Backup into FreePBX 15 system is not restoring MOH entries. 
