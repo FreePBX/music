@@ -9,14 +9,14 @@ class Restore Extends Base\RestoreBase{
 		$configs = $this->getConfigs();
 		$files = $this->getFiles();
 		$this->FreePBX->Database->query("TRUNCATE TABLE music");
+		$mohdir = $this->FreePBX->Config->get('ASTVARLIBDIR').'/'.$this->FreePBX->Config->get('MOHDIR');
+		shell_exec("rm -rf $mohdir 2>&1");
+
 		foreach ($configs['data'] as $category) {
 			$this->FreePBX->Music->addCategoryById($category['id'], $category['category'], $category['type']);
 			$this->FreePBX->Music->updateCategoryById($category['id'], $category['type'], $category['random'], $category['application'], $category['format']);
 		}
 		$this->importAdvancedSettings($config['settings']);
-
-		$mohdir = $this->FreePBX->Config->get('ASTVARLIBDIR').'/'.$this->FreePBX->Config->get('MOHDIR');
-		shell_exec("rm -rf $mohdir 2>&1");
 
 		foreach ($files as $file) {
 			$filename = $file->getPathTo().'/'.$file->getFilename();
@@ -46,6 +46,8 @@ class Restore Extends Base\RestoreBase{
 
 			if(!empty($conf_array) && is_array($conf_array)){
 				$this->FreePBX->Database->query("TRUNCATE TABLE music");
+				$mohdir = $this->FreePBX->Config->get('ASTVARLIBDIR').'/'.$this->FreePBX->Config->get('MOHDIR');
+				shell_exec("rm -rf $mohdir 2>&1");
 				foreach($conf_array as $cat => $values){
 					if(!empty($cat) && ($cat != "none") && !empty($values["mode"])){
 						$sql 	= "INSERT INTO music (category ,type, random, application, format) VALUES (:category , :type, :random, :application, :format) ";
@@ -64,9 +66,6 @@ class Restore Extends Base\RestoreBase{
 		if(!file_exists($this->tmpdir.'/var/lib/asterisk/moh')) {
 			return;
 		}
-
-		$mohdir = $this->FreePBX->Config->get('ASTVARLIBDIR').'/'.$this->FreePBX->Config->get('MOHDIR');
-		shell_exec("rm -rf $mohdir 2>&1");
 
 		$finder = new Finder();
 		$fileSystem = new Filesystem();
