@@ -11,6 +11,8 @@ class Restore Extends Base\RestoreBase{
 		$this->FreePBX->Database->query("TRUNCATE TABLE music");
 		$mohdir = $this->FreePBX->Config->get('ASTVARLIBDIR').'/'.$this->FreePBX->Config->get('MOHDIR');
 		shell_exec("rm -rf $mohdir 2>&1");
+		//recreate the moh folder we just deleted
+		shell_exec("mkdir $mohdir 2>&1");
 
 		foreach ($configs['data'] as $category) {
 			$this->FreePBX->Music->addCategoryById($category['id'], $category['category'], $category['type']);
@@ -48,6 +50,7 @@ class Restore Extends Base\RestoreBase{
 				$this->FreePBX->Database->query("TRUNCATE TABLE music");
 				$mohdir = $this->FreePBX->Config->get('ASTVARLIBDIR').'/'.$this->FreePBX->Config->get('MOHDIR');
 				shell_exec("rm -rf $mohdir 2>&1");
+				shell_exec("mkdir $mohdir 2>&1");
 				foreach($conf_array as $cat => $values){
 					if(!empty($cat) && ($cat != "none") && !empty($values["mode"])){
 						$sql 	= "INSERT INTO music (category ,type, random, application, format) VALUES (:category , :type, :random, :application, :format) ";
