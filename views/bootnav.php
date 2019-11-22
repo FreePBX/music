@@ -3,7 +3,7 @@
 <a class="btn" href="?display=music&amp;action=add"><i class="fa fa-plus"></i> <?php echo _("Add Category")?></a>
 </div>
 
-<table data-url="ajax.php?module=music&amp;command=getJSON&amp;jdata=categories" data-cache="false" data-toggle="table" data-search="true" data-toolbar="#moh-rnav" class="table" id="table-all-side">                                                                                                                                              
+<table data-escape="true" data-url="ajax.php?module=music&amp;command=getJSON&amp;jdata=categories" data-cache="false" data-toggle="table" data-search="true" data-toolbar="#moh-rnav" class="table" id="table-all-side">                                                                                                                                              
     <thead>
         <tr>
 	    <th data-field="category" data-sortable="true"><?php echo _("Category")?></th>

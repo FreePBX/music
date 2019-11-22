@@ -165,7 +165,7 @@
 				</div>
 			</div>
 		</div>
-		<table id="musicgrid" data-url="ajax.php?module=music&amp;command=getJSON&amp;jdata=musiclist&amp;id=<?php echo $data['id']?>" data-cache="false"  data-toggle="table" class="table table-striped">
+		<table id="musicgrid" data-escape="true" data-url="ajax.php?module=music&amp;command=getJSON&amp;jdata=musiclist&amp;id=<?php echo $data['id']?>" data-cache="false"  data-toggle="table" class="table table-striped">
 			<thead>
 				<tr>
 					<th data-field="name" data-sortable="true" class="col-md-6"><?php echo _("File")?></th>
