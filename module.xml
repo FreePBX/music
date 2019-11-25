@@ -2,7 +2,7 @@
   <rawname>music</rawname>
   <repo>standard</repo>
   <name>Music on Hold</name>
-  <version>13.0.22.7</version>
+  <version>13.0.22.8</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -11,6 +11,7 @@
   <category>Settings</category>
   <description>Uploading and management of sound files (wav, mp3) to be used for on-hold music.</description>
 	<changelog>
+		*13.0.22.8* FREEI-922 Fix XSS Bootstrap Datatable Issues 
 		*13.0.22.7* FREEPBX-19630 Add MOH Custom streaming fails with SQL error
 		*13.0.22.6* Fixing FREEPBX-19511 MoH rnav view
 		*13.0.22.5* FREEPBX-17836 MOH with french characters are not visible in MOH module after upload

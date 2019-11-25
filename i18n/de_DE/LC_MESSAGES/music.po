@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-14 14:52-0400\n"
+"POT-Creation-Date: 2019-11-25 14:05+0530\n"
 "PO-Revision-Date: 2018-10-19 20:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/music/de/>\n"
@@ -28,7 +28,7 @@ msgstr "Eine PHP Erweiterung hat den Datei Upload gestoppt"
 msgid "Action"
 msgstr "Aktion"
 
-#: views/grid.php:20
+#: views/grid.php:21
 msgid "Actions"
 msgstr "Aktionen"
 
@@ -79,7 +79,7 @@ msgstr ""
 "Kategorien \"none\" und \"default\" sind reservierte Namen. Bitte geben Sie "
 "einen anderen Namen ein"
 
-#: views/bootnav.php:9 views/grid.php:18
+#: views/bootnav.php:9 views/grid.php:19
 msgid "Category"
 msgstr "Kategorie"
 
@@ -278,7 +278,7 @@ msgstr ""
 "der musiconhold.conf Konfiguration für benutzerdefinierte Audio und Internet "
 "Streaming Quellen Optionen."
 
-#: views/addcatform.php:38 views/advanced_form.php:10 views/grid.php:19
+#: views/addcatform.php:38 views/advanced_form.php:10 views/grid.php:20
 msgid "Type"
 msgstr "Typ"
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-14 14:52-0400\n"
+"POT-Creation-Date: 2019-11-25 14:05+0530\n"
 "PO-Revision-Date: 2017-07-20 13:28+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/music/"
@@ -29,7 +29,7 @@ msgstr "Một máy nhánh PHP vừa ngừng tải tệp lên"
 msgid "Action"
 msgstr "Thao tác"
 
-#: views/grid.php:20
+#: views/grid.php:21
 msgid "Actions"
 msgstr "Các thao tác"
 
@@ -80,7 +80,7 @@ msgstr ""
 "Categories: \"none\"  và \"default\" là những tên dành riêng. Vui lòng nhập "
 "một tên khác"
 
-#: views/bootnav.php:9 views/grid.php:18
+#: views/bootnav.php:9 views/grid.php:19
 msgid "Category"
 msgstr "Mục phân loại- Category"
 
@@ -272,7 +272,7 @@ msgstr ""
 "tuyến cho Asterisk. Xem thông tin các audio khác nhau và các tùy chọn ngồn "
 "trực tiếp tại cấu hình musiconhold.conf."
 
-#: views/addcatform.php:38 views/advanced_form.php:10 views/grid.php:19
+#: views/addcatform.php:38 views/advanced_form.php:10 views/grid.php:20
 msgid "Type"
 msgstr "Kiểu"
 

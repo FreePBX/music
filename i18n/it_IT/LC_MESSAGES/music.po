@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-14 14:52-0400\n"
+"POT-Creation-Date: 2019-11-25 14:05+0530\n"
 "PO-Revision-Date: 2018-05-30 07:55+0000\n"
 "Last-Translator: Stell0 <stefano.fancello@nethesis.it>\n"
 "Language-Team: Italian <http://*/projects/freepbx/music/it/>\n"
@@ -28,7 +28,7 @@ msgstr "L'estensione PHP ha fermato il caricamento del file"
 msgid "Action"
 msgstr "Azione"
 
-#: views/grid.php:20
+#: views/grid.php:21
 msgid "Actions"
 msgstr "Azioni"
 
@@ -80,7 +80,7 @@ msgstr ""
 "Categorie: \"none\" e \"default\" sono nomi riservati. Si prega di inserire "
 "un nome diverso"
 
-#: views/bootnav.php:9 views/grid.php:18
+#: views/bootnav.php:9 views/grid.php:19
 msgid "Category"
 msgstr "Categoria"
 
@@ -272,7 +272,7 @@ msgstr ""
 "streaming ad Asterisk. Cercare su Internet ulteriori informazioni sulla "
 "configurazione del file musiconhold.conf per lo streaming."
 
-#: views/addcatform.php:38 views/advanced_form.php:10 views/grid.php:19
+#: views/addcatform.php:38 views/advanced_form.php:10 views/grid.php:20
 msgid "Type"
 msgstr "Tipo"
 

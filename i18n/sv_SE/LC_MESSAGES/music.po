@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX musik\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-14 14:52-0400\n"
+"POT-Creation-Date: 2019-11-25 14:05+0530\n"
 "PO-Revision-Date: 2011-03-20 00:00+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: \n"
@@ -38,7 +38,7 @@ msgstr ""
 msgid "Action"
 msgstr ""
 
-#: views/grid.php:20
+#: views/grid.php:21
 msgid "Actions"
 msgstr ""
 
@@ -83,7 +83,7 @@ msgid ""
 "different name"
 msgstr ""
 
-#: views/bootnav.php:9 views/grid.php:18
+#: views/bootnav.php:9 views/grid.php:19
 msgid "Category"
 msgstr ""
 
@@ -264,7 +264,7 @@ msgstr ""
 "strömmande ljud. Titta i filen musiconhold.conf för olika ljudformat och "
 "strömmande media från Internet."
 
-#: views/addcatform.php:38 views/advanced_form.php:10 views/grid.php:19
+#: views/addcatform.php:38 views/advanced_form.php:10 views/grid.php:20
 msgid "Type"
 msgstr ""
 
