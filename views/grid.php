@@ -11,6 +11,7 @@
         data-show-columns="true"
         data-show-toggle="true"
         data-toggle="table"
+        data-escape="true" 
         data-pagination="true"
         data-search="true" data-toggle="table" class="table table-striped">
 	<thead>
