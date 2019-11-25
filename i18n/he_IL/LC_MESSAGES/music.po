@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-22 15:00+0530\n"
+"POT-Creation-Date: 2019-11-25 14:06+0530\n"
 "PO-Revision-Date: 2006-10-17 17:30+0300\n"
 "Last-Translator: Shimi <shimi@shimi.net>\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr ""
 msgid "Action"
 msgstr ""
 
-#: views/grid.php:20
+#: views/grid.php:21
 msgid "Actions"
 msgstr ""
 
@@ -68,7 +68,7 @@ msgid ""
 "different name"
 msgstr ""
 
-#: views/bootnav.php:9 views/grid.php:18
+#: views/bootnav.php:9 views/grid.php:19
 msgid "Category"
 msgstr ""
 
@@ -242,7 +242,7 @@ msgid ""
 "audio and Internet streaming source options."
 msgstr ""
 
-#: views/addcatform.php:38 views/advanced_form.php:10 views/grid.php:19
+#: views/addcatform.php:38 views/advanced_form.php:10 views/grid.php:20
 msgid "Type"
 msgstr ""
 
