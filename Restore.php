@@ -34,7 +34,7 @@ class Restore Extends Base\RestoreBase{
 
 	public function processLegacy($pdo, $data, $tables, $unknownTables){
 		$this->restoreLegacyAdvancedSettings($pdo);
-
+		$mohdir = $this->FreePBX->Config->get('ASTVARLIBDIR').'/'.$this->FreePBX->Config->get('MOHDIR');
 		if(version_compare_freepbx($this->getVersion(),"13","ge")) {
 			$this->restoreLegacyDatabase($pdo);
 		}
@@ -48,7 +48,6 @@ class Restore Extends Base\RestoreBase{
 
 			if(!empty($conf_array) && is_array($conf_array)){
 				$this->FreePBX->Database->query("TRUNCATE TABLE music");
-				$mohdir = $this->FreePBX->Config->get('ASTVARLIBDIR').'/'.$this->FreePBX->Config->get('MOHDIR');
 				shell_exec("rm -rf $mohdir 2>&1");
 				shell_exec("mkdir $mohdir 2>&1");
 				foreach($conf_array as $cat => $values){
