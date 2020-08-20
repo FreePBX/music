@@ -10,6 +10,7 @@
   <canuninstall>no</canuninstall>
   <category>Settings</category>
   <description>Uploading and management of sound files (wav, mp3) to be used for on-hold music.</description>
+  <more-info>https://wiki.freepbx.org/display/F2/Music+on+Hold+Module<more-info>
 	<changelog>
 		*13.0.22.8* FREEI-922 Fix XSS Bootstrap Datatable Issues 
 		*13.0.22.7* FREEPBX-19630 Add MOH Custom streaming fails with SQL error
