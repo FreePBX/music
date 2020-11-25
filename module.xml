@@ -2,7 +2,7 @@
     <rawname>music</rawname>
     <repo>standard</repo>
     <name>Music on Hold</name>
-    <version>15.0.21</version>
+    <version>15.0.22</version>
     <publisher>Sangoma Technologies Corporation</publisher>
     <license>GPLv3+</license>
     <licenselink>https://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -10,8 +10,9 @@
     <canuninstall>no</canuninstall>
     <category>Settings</category>
     <description>Uploading and management of sound files (wav, mp3) to be used for on-hold music.</description>
-    <more-info>https://wiki.freepbx.org/display/F2/Music+on+Hold+Module</more-info>
+    <more-info>https://wiki.freepbx.org/display/FPG/Music+on+Hold+Module</more-info>
     <changelog>
+		*15.0.22* Packaging of ver 15.0.22
 		*15.0.21* Packaging of ver 15.0.21
 		*15.0.20* FREEI-1002 moh files and legacy restore 
 		*15.0.19* FREEI-922 Fix XSS Bootstrap Datatable Issues 
