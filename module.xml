@@ -2,7 +2,7 @@
     <rawname>music</rawname>
     <repo>standard</repo>
     <name>Music on Hold</name>
-    <version>15.0.22</version>
+    <version>16.0.1</version>
     <publisher>Sangoma Technologies Corporation</publisher>
     <license>GPLv3+</license>
     <licenselink>https://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -12,27 +12,7 @@
     <description>Uploading and management of sound files (wav, mp3) to be used for on-hold music.</description>
     <more-info>https://wiki.freepbx.org/display/FPG/Music+on+Hold+Module</more-info>
     <changelog>
-		*15.0.22* Packaging of ver 15.0.22
-		*15.0.21* Packaging of ver 15.0.21
-		*15.0.20* FREEI-1002 moh files and legacy restore 
-		*15.0.19* FREEI-922 Fix XSS Bootstrap Datatable Issues 
-		*15.0.18* FREEPBX-20668 Getting Whoops\Exception\ErrorException failed to open dir 
-		*15.0.17* FREEPBX-20668 Getting Whoops\Exception\ErrorException failed to open dir 
-		*15.0.16* FREEPBX-20580 Restoring legacy(FreePBX 12) Backup into FreePBX 15 system is not restoring MOH entries. 
-		*15.0.15* FREEI-837 Getting mysql error on restoring moh module FreePBX 15 to FreePBX 15. 
-		*15.0.14* FREEPBX-20580 Restoring legacy(FreePBX 12) Backup into FreePBX 15 system is not restoring MOH entries. 
-		*15.0.13* Related to FREEPBX-20414: removed $jobid from runRestore() 
-		*15.0.12* FREEPBX-20413  system is not restoring Legacy custom moh added. 
-        *15.0.11* FREEPBX-19661
-		*15.0.10* FREEPBX-19630 Add MOH Custom streaming fails with SQL error
-		*15.0.8* Fixing FREEPBX-19511 MoH rnav view
-		*15.0.7* fixing legacy restore
-		*15.0.6* fixing legacy restore
-		*15.0.5* backup and restore
-		*15.0.4* FREEPBX-17836 MOH with french characters are not visible in MOH module after upload
-		*15.0.3* FREEPBX-17559 MOH not allowing uppercase letters
-		*15.0.2* Packaging of ver 15.0.2
-        *15.0.1* Backup 15.0
+        *16.0.1* release 16.0 
 	</changelog>
     <database>
         <table name="music">
@@ -54,6 +34,6 @@
         <module>framework ge 13.0.121</module>
     </depends>
     <supported>
-        <version>15.0</version>
+        <version>16.0</version>
     </supported>
 </module>
