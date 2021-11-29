@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 1.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-25 14:05+0530\n"
-"PO-Revision-Date: 2021-11-23 08:00+0000\n"
+"PO-Revision-Date: 2021-11-30 13:00+0000\n"
 "Last-Translator: Dmitriy Q <krotesk@ya.ru>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/music/ru/"
 ">\n"
@@ -68,7 +68,7 @@ msgstr ""
 
 #: Music.class.php:524
 msgid "Can Not Find Uploaded Files"
-msgstr "Загруженные файлы не обнаружены"
+msgstr "Загружаемые файлы не обнаружены"
 
 #: assets/js/music.js:9
 msgid ""
@@ -178,11 +178,11 @@ msgstr "Список категорий мелодий на удержании"
 
 #: Music.class.php:514
 msgid "Missing a temporary folder"
-msgstr "Неверная временная папка"
+msgstr "Отсутствует временная папка"
 
 #: music.i18n.php:4 music.i18n.php:10
 msgid "Music on Hold"
-msgstr "Музыка в ожидании"
+msgstr "Музыка на удержании"
 
 #: views/advanced_form.php:95 views/basic_form.php:16
 msgid "No"
@@ -246,7 +246,7 @@ msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
-"Размер загруженного файла превышает  значение MAX_FILE_SIZE , указанное в "
+"Размер загруженного файла превышает директиву MAX_FILE_SIZE, указанную в "
 "HTML-форме"
 
 #: Music.class.php:502
