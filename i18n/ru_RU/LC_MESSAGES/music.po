@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 1.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-25 14:05+0530\n"
-"PO-Revision-Date: 2021-12-02 13:00+0000\n"
+"PO-Revision-Date: 2021-12-07 05:21+0000\n"
 "Last-Translator: Dmitriy Q <krotesk@ya.ru>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/music/ru/"
 ">\n"
@@ -64,7 +64,7 @@ msgstr "Просмотр"
 
 #: music.i18n.php:12
 msgid "Cache MoH Classes"
-msgstr ""
+msgstr "Кэш классов MoH"
 
 #: Music.class.php:524
 msgid "Can Not Find Uploaded Files"
@@ -144,11 +144,11 @@ msgstr "Файл не существует"
 #: assets/js/music.js:176
 #, perl-format
 msgid "File size is too large. Max size is %s bytes"
-msgstr ""
+msgstr "Размер файла слишком велик. Максимальный размер составляет %s байт"
 
 #: Music.class.php:472
 msgid "File upload failed"
-msgstr ""
+msgstr "Не удалось загрузить файл"
 
 #: views/addcatform.php:43 views/advanced_form.php:15
 msgid "Files"
@@ -322,6 +322,9 @@ msgid ""
 "When enabled Asterisk will use 1 instance of moh class for all channels who "
 "are using it, decreasing consumable cpu cycles and memory in the process"
 msgstr ""
+"При включении Asterisk будет использовать 1 экземпляр класса moh для всех "
+"каналов, которые его используют, уменьшая потребляемые циклы процессора и "
+"память в процессе"
 
 #: views/advanced_form.php:93 views/basic_form.php:14
 msgid "Yes"
