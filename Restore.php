@@ -18,7 +18,7 @@ class Restore Extends Base\RestoreBase{
 			$this->FreePBX->Music->addCategoryById($category['id'], $category['category'], $category['type']);
 			$this->FreePBX->Music->updateCategoryById($category['id'], $category['type'], $category['random'], $category['application'], $category['format']);
 		}
-		$this->importAdvancedSettings($config['settings']);
+		$this->importAdvancedSettings($configs['settings']);
 
 		foreach ($files as $file) {
 			$filename = $file->getPathTo().'/'.$file->getFilename();
