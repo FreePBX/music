@@ -2,7 +2,7 @@
     <rawname>music</rawname>
     <repo>standard</repo>
     <name>Music on Hold</name>
-    <version>16.0.1</version>
+    <version>16.0.2</version>
     <publisher>Sangoma Technologies Corporation</publisher>
     <license>GPLv3+</license>
     <licenselink>https://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -12,7 +12,8 @@
     <description>Uploading and management of sound files (wav, mp3) to be used for on-hold music.</description>
     <more-info>https://wiki.freepbx.org/display/FPG/Music+on+Hold+Module</more-info>
     <changelog>
-        *16.0.1* release 16.0 
+		*16.0.2* FREEPBX-24005 
+        *16.0.1* release 16.0
 	</changelog>
     <database>
         <table name="music">
