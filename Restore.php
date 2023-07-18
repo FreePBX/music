@@ -6,7 +6,8 @@ use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Component\Finder\Finder;
 class Restore Extends Base\RestoreBase{
 	public function runRestore(){
-		$configs = $this->getConfigs();
+		$config = [];
+  $configs = $this->getConfigs();
 		$files = $this->getFiles();
 		$this->FreePBX->Database->query("TRUNCATE TABLE music");
 		$mohdir = $this->FreePBX->Config->get('ASTVARLIBDIR').'/'.$this->FreePBX->Config->get('MOHDIR');
@@ -53,12 +54,7 @@ class Restore Extends Base\RestoreBase{
 				foreach($conf_array as $cat => $values){
 					if(!empty($cat) && ($cat != "none") && !empty($values["mode"])){
 						$sql 	= "INSERT INTO music (category ,type, random, application, format) VALUES (:category , :type, :random, :application, :format) ";
-						$data 	= array(	":category" 	=> $cat,
-											":type"			=> $values["mode"],
-											":random" 		=> empty($values["random"])		? "0": $values["random"] ,
-											":application" 	=> empty($values["application"])? "" : $values["application"] ,
-											":format" 		=> empty($values["format"])		? "" : $values["format"]
-										);	
+						$data 	= [":category" 	=> $cat, ":type"			=> $values["mode"], ":random" 		=> empty($values["random"])		? "0": $values["random"], ":application" 	=> empty($values["application"])? "" : $values["application"], ":format" 		=> empty($values["format"])		? "" : $values["format"]];	
 						$this->FreePBX->Database->prepare($sql)->execute($data);			
 					}
 				}				

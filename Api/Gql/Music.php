@@ -12,15 +12,12 @@ class Music extends Base {
 
 	public function queryCallback() {
 		if($this->checkAllReadScope()) {
-			return function() {
-				return [
+			return fn() => [
 					'allMusiconholds' => [
 						'type' => $this->typeContainer->get('musiconhold')->getConnectionType(),
 						'description' => 'Used to manage a system wide list of blocked callers',
 						'args' => Relay::connectionArgs(),
-						'resolve' => function($root, $args) {
-							return Relay::connectionFromArray($this->freepbx->Music->getCategories(), $args);
-						},
+						'resolve' => fn($root, $args) => Relay::connectionFromArray($this->freepbx->Music->getCategories(), $args),
 					],
 					'musiconhold' => [
 						'type' => $this->typeContainer->get('musiconhold')->getObject(),
@@ -32,11 +29,10 @@ class Music extends Base {
 						],
 						'resolve' => function($root, $args) {
 							$item = $this->freepbx->Music->getCategoryByID(Relay::fromGlobalId($args['id'])['id']);
-							return isset($item) ? $item : null;
+							return $item ?? null;
 						}
 					]
 				];
-			};
 		}
 	}
 
@@ -44,20 +40,15 @@ class Music extends Base {
 		$user = $this->typeContainer->create('musiconhold');
 		$user->setDescription('Used to manage a system wide list of blocked callers');
 
-		$user->addInterfaceCallback(function() {
-			return [$this->getNodeDefinition()['nodeInterface']];
-		});
+		$user->addInterfaceCallback(fn() => [$this->getNodeDefinition()['nodeInterface']]);
 
 		$user->setGetNodeCallback(function($id) {
 			$item = $this->freepbx->Music->getCategoryByID($id);
-			return isset($item) ? $item : null;
+			return $item ?? null;
 		});
 
-		$user->addFieldCallback(function() {
-			return [
-				'id' => Relay::globalIdField('musiconhold', function($row) {
-					return $row['id'];
-				}),
+		$user->addFieldCallback(fn() => [
+				'id' => Relay::globalIdField('musiconhold', fn($row) => $row['id']),
 				'category' => [
 					'type' => Type::string(),
 					'description' => 'Category Name'
@@ -76,31 +67,22 @@ class Music extends Base {
 				'format' => [
 					'type' => Type::string()
 				]
-			];
-		});
+			]);
 
-		$user->setConnectionResolveNode(function ($edge) {
-			return $edge['node'];
-		});
+		$user->setConnectionResolveNode(fn($edge) => $edge['node']);
 
-		$user->setConnectionFields(function() {
-			return [
+		$user->setConnectionFields(fn() => [
 				'totalCount' => [
 					'type' => Type::int(),
-					'resolve' => function($value) {
-						return count($this->freepbx->Music->getCategories());
-					}
+					'resolve' => fn($value) => is_countable($this->freepbx->Music->getCategories()) ? count($this->freepbx->Music->getCategories()) : 0
 				],
 				'musiconholds' => [
 					'type' => Type::listOf($this->typeContainer->get('musiconhold')->getObject()),
 					'resolve' => function($root, $args) {
-						$data = array_map(function($row){
-							return $row['node'];
-						},$root['edges']);
+						$data = array_map(fn($row) => $row['node'],$root['edges']);
 						return $data;
 					}
 				]
-			];
-		});
+			]);
 	}
 }

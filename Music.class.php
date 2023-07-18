@@ -12,21 +12,11 @@ class Music implements \BMO {
 	 * Limited on purpose because there are far too many,
 	 * Most of which are not supported by asterisk
 	 */
-	public $convert = array(
-		"wav",
-		"sln",
-		"sln16",
-		"sln48",
-		"g722",
-		"ulaw",
-		"alaw",
-		"g729",
-		"gsm"
-	);
+	public $convert = ["wav", "sln", "sln16", "sln48", "g722", "ulaw", "alaw", "g729", "gsm"];
 
-	private $tmp = "/tmp";
+	private string $tmp = "/tmp";
 
-	private $message = array();
+	private array $message = [];
 
 	public function __construct($freepbx = null) {
 		if ($freepbx == null) {
@@ -57,10 +47,10 @@ class Music implements \BMO {
 		$mh = $this;
 		$heading = _("On Hold Music");
 		$request = $_REQUEST;
-		$request['view'] = isset($request['view'])?$request['view']:'';
-		$request['action'] = isset($request['action'])?$request['action']:'';
+		$request['view'] ??= '';
+		$request['action'] ??= '';
 		$request['category'] = isset($request['category'])?$this->stripCategory($request['category']):"";
-		$request['id'] = isset($_REQUEST['id']) ? $_REQUEST['id'] : '';
+		$request['id'] = $_REQUEST['id'] ?? '';
 
 		$display_mode = "advanced";
 		$mode = $this->FreePBX->Config->get("FPBXOPMODE");
@@ -90,25 +80,25 @@ class Music implements \BMO {
 				}
 				$heading .= ' - '.$data['category'];
 				$path = $this->getCategoryPath($data['category']);
-				$files = array();
+				$files = [];
 				foreach($mh->fileList($path) as $f) {
-					$i = pathinfo($f);
+					$i = pathinfo((string) $f);
 					$fn = $i['filename'];
 					$files[$fn] = strtolower($i['filename']);
 				}
 				$files = array_values($files);
 				$view = ($display_mode == "basic") ? __DIR__.'/views/basic_form.php' : __DIR__.'/views/advanced_form.php';
-				$content = load_view($view, array("display_mode" => $display_mode, "files" => $files, "convertto" => $convertto, "supportedHTML5" => implode(",",$supportedHTML5), "supported" => $supported, 'data' => $data));
+				$content = load_view($view, ["display_mode" => $display_mode, "files" => $files, "convertto" => $convertto, "supportedHTML5" => implode(",",$supportedHTML5), "supported" => $supported, 'data' => $data]);
 			break;
 			case "add":
 				$content = load_view(__DIR__.'/views/addcatform.php');
 			break;
 			default:
-				$content = load_view(__DIR__.'/views/grid.php', array('message' => $this->message, 'request' => $request));
+				$content = load_view(__DIR__.'/views/grid.php', ['message' => $this->message, 'request' => $request]);
 			break;
 		}
 		$request["action"] = ($request["action"] == "delete") ? "" : $request["action"];
-		return load_view(__DIR__.'/views/main.php', array('request' => $request, 'heading' => $heading, 'content' => $content));
+		return load_view(__DIR__.'/views/main.php', ['request' => $request, 'heading' => $heading, 'content' => $content]);
 	}
 
 	public function doConfigPageInit($page) {
@@ -127,13 +117,7 @@ class Music implements \BMO {
 	public function updateCategoryByID($id, $type, $random = false, $application = '', $format = '') {
 		$sql = "UPDATE music SET type = :type, random = :random, application = :application, format = :format WHERE id = :id";
 		$sth = $this->db->prepare($sql);
-		$sth->execute(array(
-			"type" => $type,
-			"random" => $random,
-			"application" => $application,
-			"format" => $format,
-			"id" => $id
-		));
+		$sth->execute(["type" => $type ?? '', "random" => $random ?: 0, "application" => $application ?? '', "format" => $format ?? '', "id" => $id]);
 		needreload();
 	}
 
@@ -162,15 +146,12 @@ class Music implements \BMO {
 		$name = basename($name);
 		$cat = $this->getCategoryByName($name);
 		if(!empty($cat)) {
-			$this->message = array(
-				"type" => "danger",
-				"message" => _("Category Already Exists")
-			);
+			$this->message = ["type" => "danger", "message" => _("Category Already Exists")];
 			return;
 		}
 		$sql = "INSERT INTO music (`id`, `category`, `type`) VALUES (?, ?,?)";
 		$sth = $this->db->prepare($sql);
-		$sth->execute(array($id,$name,$type));
+		$sth->execute([$id, $name, $type]);
 
 		if(!file_exists($this->mohpath . "/" . $name)) {
 			mkdir($this->mohpath . "/" . $name);
@@ -179,14 +160,11 @@ class Music implements \BMO {
 	}
 
 	public function genConfig() {
-		$ccc = $this->FreePBX->Config->get("CACHERTCLASSES") ? "yes" : "no";
+		$conf = [];
+  $ccc = $this->FreePBX->Config->get("CACHERTCLASSES") ? "yes" : "no";
 		$conf["musiconhold_additional.conf"]['general']['cachertclasses'] = $ccc;
 
-		$conf["musiconhold_additional.conf"]['none'] = array(
-			"mode" => "files",
-			"sort" => "alpha",
-			"directory" => $this->mohpath."/.nomusic_reserved"
-		);
+		$conf["musiconhold_additional.conf"]['none'] = ["mode" => "files", "sort" => "alpha", "directory" => $this->mohpath."/.nomusic_reserved"];
 		if(!file_exists($this->mohpath."/.nomusic_reserved")) {
 			mkdir($this->mohpath."/.nomusic_reserved",0777,true);
 			copy(__DIR__."/silence.wav",$this->mohpath."/.nomusic_reserved/silence.wav");
@@ -209,18 +187,10 @@ class Music implements \BMO {
 			$name = $cat['category'];
 			switch($cat['type']) {
 				case "files":
-					$conf["musiconhold_additional.conf"][$name] = array(
-						"mode" => $cat['type'],
-						"sort" => ($cat['random']) ? "random" : "alpha",
-						"directory" => $this->getCategoryPath($cat['category'])
-					);
+					$conf["musiconhold_additional.conf"][$name] = ["mode" => $cat['type'], "sort" => ($cat['random']) ? "random" : "alpha", "directory" => $this->getCategoryPath($cat['category'])];
 				break;
 				case "custom":
-					$conf["musiconhold_additional.conf"][$name] = array(
-						"mode" => $cat['type'],
-						"application" => $cat['application'],
-						"format" => $cat['format']
-					);
+					$conf["musiconhold_additional.conf"][$name] = ["mode" => $cat['type'], "application" => $cat['application'], "format" => $cat['format']];
 				break;
 			}
 		}
@@ -239,9 +209,9 @@ class Music implements \BMO {
 		$info = $this->getCategoryByID($id);
 		$sql = "DELETE FROM music WHERE id = ?";
 		$sth = $this->db->prepare($sql);
-		$sth->execute(array($id));
+		$sth->execute([$id]);
 		if(!empty($info['category'])) {
-			$path = $this->getCategoryPath(basename($info['category']));
+			$path = $this->getCategoryPath(basename((string) $info['category']));
 			$this->rmdirr($path);
 		}
 		needreload();
@@ -284,7 +254,8 @@ class Music implements \BMO {
 	}
 
 	public function install() {
-		$freepbx_conf = $this->FreePBX->Config;
+		$set = [];
+  $freepbx_conf = $this->FreePBX->Config;
 		if ($freepbx_conf->conf_setting_exists('AMPMPG123')) {
 			$freepbx_conf->remove_conf_setting('AMPMPG123');
 		}
@@ -312,14 +283,14 @@ class Music implements \BMO {
 			$random = file_exists($this->mohpath."/.random") ? 1 : 0;
 			$sql = "INSERT INTO music (`category`, `type`, `random`) VALUES (?,?,?)";
 			$sth = $this->db->prepare($sql);
-			$sth->execute(array("default","files",$random));
+			$sth->execute(["default", "files", $random]);
 		}
 
 		foreach(glob($this->mohpath."/*",GLOB_ONLYDIR) as $cat) {
-			$category = basename($cat);
+			$category = basename((string) $cat);
 			$sql = "SELECT * FROM music WHERE category = ?";
 			$sth = $this->db->prepare($sql);
-			$sth->execute(array($category));
+			$sth->execute([$category]);
 			$c = $sth->fetch(PDO::FETCH_ASSOC);
 			if(!empty($c)) {
 				continue;
@@ -344,7 +315,7 @@ class Music implements \BMO {
 
 			$sql = "INSERT INTO music (`category`, `type`, `random`, `application`, `format`) VALUES (?,?,?,?,?)";
 			$sth = $this->db->prepare($sql);
-			$sth->execute(array($category,$type,$random,$application,$format));
+			$sth->execute([$category, $type, $random, $application, $format]);
 		}
 	}
 	public function uninstall() {
@@ -361,24 +332,16 @@ class Music implements \BMO {
 		$sth = $this->db->prepare($sql);
 		$sth->execute();
 		$cats = $sth->fetchAll(PDO::FETCH_ASSOC);
-		return !empty($cats) ? $cats : array();
+		return !empty($cats) ? $cats : [];
 	}
 
-	public function ajaxRequest($req, &$setting) {
-		switch($req) {
-			case "gethtml5":
-			case "playback":
-			case "download":
-			case "getJSON":
-			case "upload":
-			case "deleteCategory":
-			case "deletemusic":
-			case "save":
-				return true;
-			break;
-		}
-		return false;
-	}
+	public function ajaxRequest($req, &$setting)
+ {
+     return match ($req) {
+         "gethtml5", "playback", "download", "getJSON", "upload", "deleteCategory", "deletemusic", "save" => true,
+         default => false,
+     };
+ }
 
 	public function ajaxCustomHandler() {
 		switch($_REQUEST['command']) {
@@ -395,17 +358,17 @@ class Music implements \BMO {
 			case "deletemusic":
 				$category = $this->getCategoryByID($_POST['categoryid']);
 				if(empty($category)) {
-					return array("status" => false, "message" => _("Invalid category"));
+					return ["status" => false, "message" => _("Invalid category")];
 				}
 				$path = $this->getCategoryPath($category['category']);
-				$name = basename($_POST['name']);
+				$name = basename((string) $_POST['name']);
 				foreach(glob($path."/".$name."*") as $file) {
 					if(!unlink($file)) {
-						return array("status" => false, "message" => sprintf(_("Unable to delete %s"),$file));
+						return ["status" => false, "message" => sprintf(_("Unable to delete %s"),$file)];
 						break;
 					}
 				}
-				return array("status" => true);
+				return ["status" => true];
 			break;
 			case "save":
 				if($_POST['type'] == "files") {
@@ -415,7 +378,7 @@ class Music implements \BMO {
 					$path = $this->getCategoryPath($category['category']);
 					$files = $this->fileList($path);
 					foreach($files as $file) {
-						$name = pathinfo($file,PATHINFO_FILENAME);
+						$name = pathinfo((string) $file,PATHINFO_FILENAME);
 						$media->load($path."/".$file);
 						foreach($_POST['codecs'] as $codec) {
 							$fpath = $path . "/" .$name.".".$codec;
@@ -426,19 +389,19 @@ class Music implements \BMO {
 					}
 				}
 				$this->updateCategoryByID($_POST['id'],$_POST['type'], ($_POST['erand'] == "yes"), $_POST['application'], $_POST['format']);
-				return array("status" => true);
+				return ["status" => true];
 			break;
 			case "deleteCategory":
 				if(empty($_POST['name']) || empty($_POST['categoryid'])) {
-					return array("status" => false);
+					return ["status" => false];
 				}
 				$category = $this->getCategoryByID($_REQUEST['categoryid']);
 				$path = $this->getCategoryPath($category['category']);
-				$name = basename($_POST['name']);
+				$name = basename((string) $_POST['name']);
 				foreach(glob($path."/".$name."*") as $file) {
 					unlink($file);
 				}
-				return array("status" => true);
+				return ["status" => true];
 			break;
 			case "upload":
 				// XXX If the posted file was too large,
@@ -449,13 +412,12 @@ class Music implements \BMO {
 				// $_FILES["files"] does not exist, because
 				// $_FILES is empty.
 				if (!isset($_FILES)) {
-					return array("status" => false,
-						"message" => _("File upload failed"));
+					return ["status" => false, "message" => _("File upload failed")];
 				}
 				foreach ($_FILES["files"]["error"] as $key => $error) {
 					switch($error) {
 						case UPLOAD_ERR_OK:
-							$extension = pathinfo($_FILES["files"]["name"][$key], PATHINFO_EXTENSION);
+							$extension = pathinfo((string) $_FILES["files"]["name"][$key], PATHINFO_EXTENSION);
 							$extension = strtolower($extension);
 							$supported = $this->FreePBX->Media->getSupportedFormats();
 							$category = $this->getCategoryByID($_POST['id']);
@@ -464,7 +426,7 @@ class Music implements \BMO {
 							if(in_array($extension,$supported['in'])) {
 								$tmp_name = $_FILES["files"]["tmp_name"][$key];
 								$dname = \Media\Media::cleanFileName($_FILES["files"]["name"][$key]);
-								$dname = basename($dname);
+								$dname = basename((string) $dname);
 								$dname = pathinfo($dname,PATHINFO_FILENAME);
 								$name = $dname . '.' . $extension;
 								move_uploaded_file($tmp_name, $this->tmp."/".$name);
@@ -473,52 +435,52 @@ class Music implements \BMO {
 									$media->convert($path."/".$dname.".".$c);
 								}
 								unlink($this->tmp."/".$name);
-								return array("status" => true, "name" => $dname, "filename" => $name, "formats" => $_POST['codec'], "category" => $category['category'], "categoryid" => $_POST['id']);
+								return ["status" => true, "name" => $dname, "filename" => $name, "formats" => $_POST['codec'], "category" => $category['category'], "categoryid" => $_POST['id']];
 							} else {
-								return array("status" => false, "message" => _("Unsupported file format"));
+								return ["status" => false, "message" => _("Unsupported file format")];
 								break;
 							}
 						break;
 						case UPLOAD_ERR_INI_SIZE:
-							return array("status" => false, "message" => _("The uploaded file exceeds the upload_max_filesize directive in php.ini"));
+							return ["status" => false, "message" => _("The uploaded file exceeds the upload_max_filesize directive in php.ini")];
 						break;
 						case UPLOAD_ERR_FORM_SIZE:
-							return array("status" => false, "message" => _("The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form"));
+							return ["status" => false, "message" => _("The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form")];
 						break;
 						case UPLOAD_ERR_PARTIAL:
-							return array("status" => false, "message" => _("The uploaded file was only partially uploaded"));
+							return ["status" => false, "message" => _("The uploaded file was only partially uploaded")];
 						break;
 						case UPLOAD_ERR_NO_FILE:
-							return array("status" => false, "message" => _("No file was uploaded"));
+							return ["status" => false, "message" => _("No file was uploaded")];
 						break;
 						case UPLOAD_ERR_NO_TMP_DIR:
-							return array("status" => false, "message" => _("Missing a temporary folder"));
+							return ["status" => false, "message" => _("Missing a temporary folder")];
 						break;
 						case UPLOAD_ERR_CANT_WRITE:
-							return array("status" => false, "message" => _("Failed to write file to disk"));
+							return ["status" => false, "message" => _("Failed to write file to disk")];
 						break;
 						case UPLOAD_ERR_EXTENSION:
-							return array("status" => false, "message" => _("A PHP extension stopped the file upload"));
+							return ["status" => false, "message" => _("A PHP extension stopped the file upload")];
 						break;
 					}
 				}
-				return array("status" => false, "message" => _("Can Not Find Uploaded Files"));
+				return ["status" => false, "message" => _("Can Not Find Uploaded Files")];
 			break;
 			case "gethtml5":
 				$media = $this->FreePBX->Media();
 				$category = $this->getCategoryByID($_REQUEST['categoryid']);
 				$path = $this->getCategoryPath($category['category']);
-				$file = $path . "/" . basename($_REQUEST['file']);
+				$file = $path . "/" . basename((string) $_REQUEST['file']);
 				if (file_exists($file))	{
 					$media->load($file);
 					$files = $media->generateHTML5();
-					$final = array();
+					$final = [];
 					foreach($files as $format => $name) {
 						$final[$format] = "ajax.php?module=music&command=playback&file=".$name;
 					}
-					return array("status" => true, "files" => $final);
+					return ["status" => true, "files" => $final];
 				} else {
-					return array("status" => false, "message" => _("File does not exist"));
+					return ["status" => false, "message" => _("File does not exist")];
 				}
 			break;
 			case "getJSON":
@@ -529,7 +491,7 @@ class Music implements \BMO {
 					case 'musiclist':
 						$category = $this->getCategoryByID($_REQUEST['id']);
 						$path = $this->getCategoryPath($category['category']);
-						$files = array();
+						$files = [];
 						$count = 0;
 						$list = $this->fileList($path);
 						asort($list);
@@ -537,20 +499,11 @@ class Music implements \BMO {
 							/*
 								Parse the file if there's a name + extension (name.ext)
 							*/
-							list($fn,$fe) = explode(".",$value);
+							[$fn, $fe] = explode(".",(string) $value);
 							if(!empty($fn) && !empty($fe)){
-								$fp = pathinfo($value);
+								$fp = pathinfo((string) $value);
 								if(!isset($files[$fp['filename']])){
-									$files[$fp['filename']] = array(
-										'categoryid' => $category['id'],
-										'category' => $category['category'],
-										'id' => $count,
-										'filename' => $value,
-										'name' => $fp['filename'],
-										'formats' => array(
-											$fp['extension']
-										)
-									);
+									$files[$fp['filename']] = ['categoryid' => $category['id'], 'category' => $category['category'], 'id' => $count, 'filename' => $value, 'name' => $fp['filename'], 'formats' => [$fp['extension']]];
 									$count++;
 								} else {
 									$files[$fp['filename']]['formats'][] = $fp['extension'];
@@ -561,7 +514,7 @@ class Music implements \BMO {
 						return array_values($files);
 					break;
 					default:
-						print json_encode(_("Invalid Request"));
+						print json_encode(_("Invalid Request"), JSON_THROW_ON_ERROR);
 					break;
 				}
 			break;
@@ -584,7 +537,7 @@ class Music implements \BMO {
 		}
 		$i = 1;
 		$arraycount = 0;
-		$filearray = Array("default");
+		$filearray = ["default"];
 
 		if (is_dir($path)){
 			if ($handle = opendir($path)){
@@ -616,7 +569,8 @@ class Music implements \BMO {
 	 * @return array       	list of files or null
 	 */
 	public function fileList($path){
-		$pattern = '';
+		$file_array = [];
+  $pattern = '';
 		$handle = opendir($path) ;
 		$supported = $this->FreePBX->Media->getSupportedFormats("AsteriskShell");
 		$extensions = $supported['out'];
@@ -633,7 +587,7 @@ class Music implements \BMO {
 			}
 		}
 		closedir($handle);
-		return (isset($file_array)) ? $file_array : array();  //return the size of the array
+		return $file_array ?? [];  //return the size of the array
 	}
 
 	public function getActionBar($request) {
@@ -645,30 +599,14 @@ class Music implements \BMO {
 		if($display_mode == "basic") {
 			$request['action'] = 'edit';
 		}
-		$buttons = array();
+		$buttons = [];
 		switch($request['display']) {
 			case 'music':
-				$buttons = array(
-					'delete' => array(
-						'name' => 'delete',
-						'id' => 'delete',
-						'value' => _('Delete')
-					),
-					'reset' => array(
-						'name' => 'reset',
-						'id' => 'reset',
-						'value' => _('Reset')
-					),
-					'submit' => array(
-						'name' => 'submit',
-						'id' => 'submit',
-						'value' => _('Submit')
-					)
-				);
+				$buttons = ['delete' => ['name' => 'delete', 'id' => 'delete', 'value' => _('Delete')], 'reset' => ['name' => 'reset', 'id' => 'reset', 'value' => _('Reset')], 'submit' => ['name' => 'submit', 'id' => 'submit', 'value' => _('Submit')]];
 				if ($display_mode != "basic" && (empty($request['id'])||($request['id'] == '1'))) {
 					unset($buttons['delete']);
 				}
-				$request['action'] = isset($request['action'])?$request['action']:'';
+				$request['action'] ??= '';
 				switch ($request['action']) {
 					case 'add':
 					case 'edit':
@@ -678,7 +616,7 @@ class Music implements \BMO {
 					break;
 					default:
 						/*If we don't match we return an empty array a.k.a no buttons*/
-						$buttons = array();
+						$buttons = [];
 					break;
 				}
 			break;
@@ -694,7 +632,7 @@ class Music implements \BMO {
 	public function getCategoryByName($name) {
 		$sql = "SELECT * FROM music WHERE category = ?";
 		$sth = $this->db->prepare($sql);
-		$sth->execute(array($name));
+		$sth->execute([$name]);
 		return $sth->fetch(PDO::FETCH_ASSOC);
 	}
 
@@ -706,7 +644,7 @@ class Music implements \BMO {
 	public function getCategoryByID($id) {
 		$sql = "SELECT * FROM music WHERE id = ?";
 		$sth = $this->db->prepare($sql);
-		$sth->execute(array($id));
+		$sth->execute([$id]);
 		return $sth->fetch(PDO::FETCH_ASSOC);
 	}
 
@@ -722,7 +660,7 @@ class Music implements \BMO {
 	private function getCategoryPath($category=null) {
 		$path = $this->mohpath;
 		if(!empty($category) && $category != 'default'){
-			$path .= '/'.basename($category);
+			$path .= '/'.basename((string) $category);
 		}
 		return $path;
 	}
@@ -733,13 +671,13 @@ class Music implements \BMO {
 			$lc = $this->FreePBX->LoadConfig("musiconhold_additional.conf");
 			return $lc->ProcessedConfig;
 		} else {
-			return array();
+			return [];
 		}
 	}
 
 	public function getRightNav($request) {
 		if(isset($request['action']) && ($request['action'] == 'edit' || $request['action'] == 'add' || $request['action'] == 'updatecategory' || $request['action'] == 'addstream')){
-			return load_view(__DIR__."/views/bootnav.php",array('request' => $request));
+			return load_view(__DIR__."/views/bootnav.php",['request' => $request]);
 		}
 	}
 }

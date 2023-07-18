@@ -75,4 +75,4 @@
 	<input type="hidden" id="application" name="application" value="">
 	<input type="hidden" id="format" name="format" value="">
 </form>
-<script>var display_mode = 'basic';var files = <?php echo json_encode($files)?>; var supportedRegExp = "<?php echo implode("|",array_keys($supported['in']))?>"; var supportedHTML5 = "<?php echo implode(",",FreePBX::Media()->getSupportedHTML5Formats())?>"</script>
+<script>var display_mode = 'basic';var files = <?php echo json_encode($files, JSON_THROW_ON_ERROR)?>; var supportedRegExp = "<?php echo implode("|",array_keys($supported['in']))?>"; var supportedHTML5 = "<?php echo implode(",",FreePBX::Media()->getSupportedHTML5Formats())?>"</script>
