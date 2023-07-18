@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-25 14:06+0530\n"
+"POT-Creation-Date: 2023-07-18 11:17+0000\n"
 "PO-Revision-Date: 2016-04-15 12:26+0000\n"
 "Last-Translator: Weblate Admin <admin@postmet.com>\n"
 "Language-Team: Russian <https://weblate.postmet.com/projects/freepbx13/music/"
@@ -20,7 +20,7 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
-#: Music.class.php:501
+#: Music.class.php:463
 msgid "A PHP extension stopped the file upload"
 msgstr "PHP-расширение остановило загрузку файла"
 
@@ -66,7 +66,7 @@ msgstr "Просмотр"
 msgid "Cache MoH Classes"
 msgstr ""
 
-#: Music.class.php:505
+#: Music.class.php:467
 msgid "Can Not Find Uploaded Files"
 msgstr "Загруженные файлы не обнаружены"
 
@@ -82,7 +82,7 @@ msgstr ""
 msgid "Category"
 msgstr "Категория"
 
-#: Music.class.php:167
+#: Music.class.php:149
 msgid "Category Already Exists"
 msgstr "Категория уже существует"
 
@@ -109,7 +109,7 @@ msgstr "Конвертировать Загруженные файлы в"
 msgid "Custom Application"
 msgstr "Специализированное  приложение"
 
-#: Music.class.php:655
+#: Music.class.php:605
 msgid "Delete"
 msgstr "Удалить"
 
@@ -129,7 +129,7 @@ msgstr ""
 "Включить случайное воспроизведение мелодии для этой категории . Если "
 "отключено, то мелодии будут воспроизводиться в алфавитном порядке"
 
-#: Music.class.php:498
+#: Music.class.php:460
 msgid "Failed to write file to disk"
 msgstr "Ошибка записи файла на диск"
 
@@ -137,7 +137,7 @@ msgstr "Ошибка записи файла на диск"
 msgid "File"
 msgstr "Файл"
 
-#: Music.class.php:521
+#: Music.class.php:483
 msgid "File does not exist"
 msgstr "Файл не существует"
 
@@ -146,7 +146,7 @@ msgstr "Файл не существует"
 msgid "File size is too large. Max size is %s bytes"
 msgstr ""
 
-#: Music.class.php:453
+#: Music.class.php:415
 msgid "File upload failed"
 msgstr ""
 
@@ -164,11 +164,11 @@ msgid ""
 "ok?"
 msgstr "Медиа-конвертация может занять длительное время. Продолжить?"
 
-#: Music.class.php:564
+#: Music.class.php:517
 msgid "Invalid Request"
 msgstr "Неверный запрос"
 
-#: Music.class.php:398
+#: Music.class.php:361
 msgid "Invalid category"
 msgstr "Неверная категория"
 
@@ -176,7 +176,7 @@ msgstr "Неверная категория"
 msgid "List MoH Categories"
 msgstr "Список категорий мелодий на удержании"
 
-#: Music.class.php:495
+#: Music.class.php:457
 msgid "Missing a temporary folder"
 msgstr "Неверная временная папка"
 
@@ -188,11 +188,11 @@ msgstr "Музыка в ожидании"
 msgid "No"
 msgstr "Нет"
 
-#: Music.class.php:492
+#: Music.class.php:454
 msgid "No file was uploaded"
 msgstr "Файл не загружен"
 
-#: Music.class.php:58
+#: Music.class.php:48
 msgid "On Hold Music"
 msgstr "Музыка в ожидании"
 
@@ -225,7 +225,7 @@ msgstr "Введите правильное название для катего
 msgid "Please enter a valid application command and arguments"
 msgstr "Пожалуйста введите корректную команду приложения  и аргументы"
 
-#: Music.class.php:660
+#: Music.class.php:605
 msgid "Reset"
 msgstr "Сброс"
 
@@ -233,7 +233,7 @@ msgstr "Сброс"
 msgid "Settings"
 msgstr "Настройки"
 
-#: Music.class.php:665
+#: Music.class.php:605
 msgid "Submit"
 msgstr "Подтвердить"
 
@@ -241,7 +241,7 @@ msgstr "Подтвердить"
 msgid "System Setup"
 msgstr "Системные установки"
 
-#: Music.class.php:486
+#: Music.class.php:448
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
@@ -249,13 +249,13 @@ msgstr ""
 "Размер загруженного файла превышает  значение MAX_FILE_SIZE , указанное в "
 "HTML-форме"
 
-#: Music.class.php:483
+#: Music.class.php:445
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 "Размер загруженного  файл превышает  значение upload_max_filesize directive, "
 "указанное в php.ini"
 
-#: Music.class.php:489
+#: Music.class.php:451
 msgid "The uploaded file was only partially uploaded"
 msgstr "Файл был загружен частично"
 
@@ -283,12 +283,12 @@ msgstr ""
 "воспроизведены файлы из списка ниже. Если установлено в  \"Custom Application"
 "\" , то будет воспроизводиться мелодия из набора приложений"
 
-#: Music.class.php:404
+#: Music.class.php:367
 #, php-format
 msgid "Unable to delete %s"
 msgstr "Невозможно удалить %s"
 
-#: Music.class.php:478
+#: Music.class.php:440
 msgid "Unsupported file format"
 msgstr "Неподдерживаемый  формат файла"
 
