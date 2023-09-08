@@ -6,7 +6,7 @@ use PDO;
 if(!function_exists('music_list')) {
 	include(__DIR__.'/functions.inc.php');
 }
-
+#[\AllowDynamicProperties]
 class Music implements \BMO {
 	/** Extensions to show in the convert to section
 	 * Limited on purpose because there are far too many,
