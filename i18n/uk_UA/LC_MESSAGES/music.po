@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-18 11:17+0000\n"
+"POT-Creation-Date: 2023-09-12 08:53+0000\n"
 "PO-Revision-Date: 2016-09-30 15:39+0200\n"
 "Last-Translator: Maxim <maxim@ua.fm>\n"
 "Language-Team: Ukrainian <http://weblate.freepbx.org/projects/freepbx/music/"
@@ -60,10 +60,6 @@ msgstr "Принаймні один кодек повинен бути відм�
 #: views/advanced_form.php:118 views/basic_form.php:39
 msgid "Browse"
 msgstr "Перегляд"
-
-#: music.i18n.php:12
-msgid "Cache MoH Classes"
-msgstr ""
 
 #: Music.class.php:467
 msgid "Can Not Find Uploaded Files"
@@ -174,10 +170,6 @@ msgstr ""
 msgid "Missing a temporary folder"
 msgstr ""
 
-#: music.i18n.php:4 music.i18n.php:10
-msgid "Music on Hold"
-msgstr "Музика на утриманні"
-
 #: views/advanced_form.php:95 views/basic_form.php:16
 msgid "No"
 msgstr "Ні"
@@ -223,16 +215,8 @@ msgstr ""
 msgid "Reset"
 msgstr ""
 
-#: music.i18n.php:6
-msgid "Settings"
-msgstr ""
-
 #: Music.class.php:605
 msgid "Submit"
-msgstr ""
-
-#: music.i18n.php:14
-msgid "System Setup"
 msgstr ""
 
 #: Music.class.php:448
@@ -291,18 +275,6 @@ msgid ""
 "includes archives (that include multiple files) and multiple files"
 msgstr ""
 
-#: music.i18n.php:8
-msgid ""
-"Uploading and management of sound files (wav, mp3) to be used for on-hold "
-"music."
-msgstr ""
-
-#: music.i18n.php:16
-msgid ""
-"When enabled Asterisk will use 1 instance of moh class for all channels who "
-"are using it, decreasing consumable cpu cycles and memory in the process"
-msgstr ""
-
 #: views/advanced_form.php:93 views/basic_form.php:14
 msgid "Yes"
 msgstr ""
@@ -315,6 +287,9 @@ msgid ""
 "distributed with the PBX. If you'd like to install the binaries needed for "
 "these conversions click <a href='%s'>here</a>"
 msgstr ""
+
+#~ msgid "Music on Hold"
+#~ msgstr "Музика на утриманні"
 
 #~ msgid "Are you sure you want to delete this item?"
 #~ msgstr "Ви впевнені, що хочете видалити цей пункт?"

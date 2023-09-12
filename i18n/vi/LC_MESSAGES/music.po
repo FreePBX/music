@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-18 11:17+0000\n"
+"POT-Creation-Date: 2023-09-12 08:53+0000\n"
 "PO-Revision-Date: 2017-07-20 13:28+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/music/"
@@ -63,10 +63,6 @@ msgstr "Phải đánh dấu check ít nhất một Codec"
 #: views/advanced_form.php:118 views/basic_form.php:39
 msgid "Browse"
 msgstr "Trình duyệt"
-
-#: music.i18n.php:12
-msgid "Cache MoH Classes"
-msgstr "Các loại Cache MoH"
 
 #: Music.class.php:467
 msgid "Can Not Find Uploaded Files"
@@ -185,10 +181,6 @@ msgstr "Danh sách các category MoH"
 msgid "Missing a temporary folder"
 msgstr "Bị thiếu một thư mục tạm"
 
-#: music.i18n.php:4 music.i18n.php:10
-msgid "Music on Hold"
-msgstr "Nhạc phát lúc chờ"
-
 #: views/advanced_form.php:95 views/basic_form.php:16
 msgid "No"
 msgstr "Không"
@@ -234,17 +226,9 @@ msgstr "Vui lòng nhập lệnh và các tham số ứng dụng hợp lệ"
 msgid "Reset"
 msgstr "Cài đặt lại"
 
-#: music.i18n.php:6
-msgid "Settings"
-msgstr "Cài đặt"
-
 #: Music.class.php:605
 msgid "Submit"
 msgstr "gửi đi"
-
-#: music.i18n.php:14
-msgid "System Setup"
-msgstr "Thiết lập hệ thống"
 
 #: Music.class.php:448
 msgid ""
@@ -312,23 +296,6 @@ msgstr ""
 "Tải lên các tệp từ hệ thống của bạn. Các định dạng tải lên được hỗ trợ là: "
 "%s. Bao gồm các tệp nén ( gồm nhiều tệp khác nhau) và các tệp"
 
-#: music.i18n.php:8
-msgid ""
-"Uploading and management of sound files (wav, mp3) to be used for on-hold "
-"music."
-msgstr ""
-"Đang tải lên và quản lý các tệp âm thanh ( wav, mp3) sẽ được sử dụng cho "
-"nhạc chờ."
-
-#: music.i18n.php:16
-msgid ""
-"When enabled Asterisk will use 1 instance of moh class for all channels who "
-"are using it, decreasing consumable cpu cycles and memory in the process"
-msgstr ""
-"Khi đã kích hoạt, Asterisk sẽ sử dụng một ví dụ của lớp moh cho tất cả các "
-"kênh mà người ta đang sử dụng, giảm chu kỳ của cpu và bộ nhớ trong quá trình "
-"xử lý"
-
 #: views/advanced_form.php:93 views/basic_form.php:14
 msgid "Yes"
 msgstr "Có"
@@ -345,6 +312,34 @@ msgstr ""
 "cho việc phát lại trên trình duyệt HTML5 bạn cần phải cài đặt các chường "
 "trình không thể phân phối được với PBX. Nếu bạn muốn cài đặt các chương "
 "trình cần thiết cho các chuyển đổi này, hãy nhấp vào <a href='%s'> ở đây </a>"
+
+#~ msgid "Cache MoH Classes"
+#~ msgstr "Các loại Cache MoH"
+
+#~ msgid "Music on Hold"
+#~ msgstr "Nhạc phát lúc chờ"
+
+#~ msgid "Settings"
+#~ msgstr "Cài đặt"
+
+#~ msgid "System Setup"
+#~ msgstr "Thiết lập hệ thống"
+
+#~ msgid ""
+#~ "Uploading and management of sound files (wav, mp3) to be used for on-hold "
+#~ "music."
+#~ msgstr ""
+#~ "Đang tải lên và quản lý các tệp âm thanh ( wav, mp3) sẽ được sử dụng cho "
+#~ "nhạc chờ."
+
+#~ msgid ""
+#~ "When enabled Asterisk will use 1 instance of moh class for all channels "
+#~ "who are using it, decreasing consumable cpu cycles and memory in the "
+#~ "process"
+#~ msgstr ""
+#~ "Khi đã kích hoạt, Asterisk sẽ sử dụng một ví dụ của lớp moh cho tất cả "
+#~ "các kênh mà người ta đang sử dụng, giảm chu kỳ của cpu và bộ nhớ trong "
+#~ "quá trình xử lý"
 
 #~ msgid "Are you sure you want to delete this item?"
 #~ msgstr "Bạn có chắc chắn muốn xóa mục này?"

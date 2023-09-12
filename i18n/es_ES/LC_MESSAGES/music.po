@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX - music module spanish translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-18 11:17+0000\n"
+"POT-Creation-Date: 2023-09-12 08:53+0000\n"
 "PO-Revision-Date: 2016-12-09 21:01+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/music/"
@@ -58,10 +58,6 @@ msgstr "Al menos un codec debe ser seleccionado"
 #: views/advanced_form.php:118 views/basic_form.php:39
 msgid "Browse"
 msgstr "Vistazo"
-
-#: music.i18n.php:12
-msgid "Cache MoH Classes"
-msgstr "Cache Clases MOH"
 
 #: Music.class.php:467
 msgid "Can Not Find Uploaded Files"
@@ -180,10 +176,6 @@ msgstr "Listar Categorías MOH"
 msgid "Missing a temporary folder"
 msgstr "Carpeta temporal faltante"
 
-#: music.i18n.php:4 music.i18n.php:10
-msgid "Music on Hold"
-msgstr "Música en espera"
-
 #: views/advanced_form.php:95 views/basic_form.php:16
 msgid "No"
 msgstr "No"
@@ -230,17 +222,9 @@ msgstr "Introduzca un comando de aplicación y argumentos válidos"
 msgid "Reset"
 msgstr "Reiniciar"
 
-#: music.i18n.php:6
-msgid "Settings"
-msgstr "Configuración"
-
 #: Music.class.php:605
 msgid "Submit"
 msgstr "Enviar"
-
-#: music.i18n.php:14
-msgid "System Setup"
-msgstr "Configuración del sistema"
 
 #: Music.class.php:448
 msgid ""
@@ -311,23 +295,6 @@ msgstr ""
 "son: %s. Esto incluye archivadores (que incluyen varios archivos) y "
 "múltiples archivos"
 
-#: music.i18n.php:8
-msgid ""
-"Uploading and management of sound files (wav, mp3) to be used for on-hold "
-"music."
-msgstr ""
-"Carga y gestión de archivos de sonido (wav, mp3) que se utilizarán para la "
-"música en espera."
-
-#: music.i18n.php:16
-msgid ""
-"When enabled Asterisk will use 1 instance of moh class for all channels who "
-"are using it, decreasing consumable cpu cycles and memory in the process"
-msgstr ""
-"Cuando está habilitado, Asterisk utilizará 1 instancia de la clase moh para "
-"todos los canales que la utilicen, disminuyendo los ciclos de CPU requeridos "
-"y la memoria en el proceso"
-
 #: views/advanced_form.php:93 views/basic_form.php:14
 msgid "Yes"
 msgstr "Si"
@@ -345,6 +312,34 @@ msgstr ""
 "programas que no se pueden distribuir con la central. Si desea instalar los "
 "binarios necesarios para estas conversiones, haga clic en <a href='%s'>aquí</"
 "a>"
+
+#~ msgid "Cache MoH Classes"
+#~ msgstr "Cache Clases MOH"
+
+#~ msgid "Music on Hold"
+#~ msgstr "Música en espera"
+
+#~ msgid "Settings"
+#~ msgstr "Configuración"
+
+#~ msgid "System Setup"
+#~ msgstr "Configuración del sistema"
+
+#~ msgid ""
+#~ "Uploading and management of sound files (wav, mp3) to be used for on-hold "
+#~ "music."
+#~ msgstr ""
+#~ "Carga y gestión de archivos de sonido (wav, mp3) que se utilizarán para "
+#~ "la música en espera."
+
+#~ msgid ""
+#~ "When enabled Asterisk will use 1 instance of moh class for all channels "
+#~ "who are using it, decreasing consumable cpu cycles and memory in the "
+#~ "process"
+#~ msgstr ""
+#~ "Cuando está habilitado, Asterisk utilizará 1 instancia de la clase moh "
+#~ "para todos los canales que la utilicen, disminuyendo los ciclos de CPU "
+#~ "requeridos y la memoria en el proceso"
 
 #~ msgid "Are you sure you want to delete this item?"
 #~ msgstr "¿Está seguro de que desea eliminar este elemento?"

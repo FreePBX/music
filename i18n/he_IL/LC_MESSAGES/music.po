@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-18 11:17+0000\n"
+"POT-Creation-Date: 2023-09-12 08:53+0000\n"
 "PO-Revision-Date: 2006-10-17 17:30+0300\n"
 "Last-Translator: Shimi <shimi@shimi.net>\n"
 "MIME-Version: 1.0\n"
@@ -52,10 +52,6 @@ msgstr ""
 
 #: views/advanced_form.php:118 views/basic_form.php:39
 msgid "Browse"
-msgstr ""
-
-#: music.i18n.php:12
-msgid "Cache MoH Classes"
 msgstr ""
 
 #: Music.class.php:467
@@ -165,10 +161,6 @@ msgstr ""
 msgid "Missing a temporary folder"
 msgstr ""
 
-#: music.i18n.php:4 music.i18n.php:10
-msgid "Music on Hold"
-msgstr ""
-
 #: views/advanced_form.php:95 views/basic_form.php:16
 msgid "No"
 msgstr ""
@@ -209,16 +201,8 @@ msgstr ""
 msgid "Reset"
 msgstr ""
 
-#: music.i18n.php:6
-msgid "Settings"
-msgstr ""
-
 #: Music.class.php:605
 msgid "Submit"
-msgstr ""
-
-#: music.i18n.php:14
-msgid "System Setup"
 msgstr ""
 
 #: Music.class.php:448
@@ -275,18 +259,6 @@ msgstr ""
 msgid ""
 "Upload files from your local system. Supported upload formats are: %s. This "
 "includes archives (that include multiple files) and multiple files"
-msgstr ""
-
-#: music.i18n.php:8
-msgid ""
-"Uploading and management of sound files (wav, mp3) to be used for on-hold "
-"music."
-msgstr ""
-
-#: music.i18n.php:16
-msgid ""
-"When enabled Asterisk will use 1 instance of moh class for all channels who "
-"are using it, decreasing consumable cpu cycles and memory in the process"
 msgstr ""
 
 #: views/advanced_form.php:93 views/basic_form.php:14
