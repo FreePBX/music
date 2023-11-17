@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-20 03:45+0000\n"
-"PO-Revision-Date: 2023-11-11 13:01+0000\n"
+"PO-Revision-Date: 2023-11-18 16:01+0000\n"
 "Last-Translator: Szymon Wysokinski <szymon.wysokinski@sqspolska.pl>\n"
 "Language-Team: Polish <http://weblate.freepbx.org/projects/freepbx/music/pl/>"
 "\n"
@@ -33,7 +33,7 @@ msgstr ""
 
 #: views/grid.php:21
 msgid "Actions"
-msgstr ""
+msgstr "Działania"
 
 #: views/bootnav.php:3
 #: views/grid.php:5
