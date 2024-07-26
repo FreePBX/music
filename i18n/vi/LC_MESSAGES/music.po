@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-12 08:53+0000\n"
+"POT-Creation-Date: 2024-07-25 23:34-0400\n"
 "PO-Revision-Date: 2017-07-20 13:28+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/music/"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: Music.class.php:463
+#: Music.class.php:468
 msgid "A PHP extension stopped the file upload"
 msgstr "Một máy nhánh PHP vừa ngừng tải tệp lên"
 
@@ -64,7 +64,11 @@ msgstr "Phải đánh dấu check ít nhất một Codec"
 msgid "Browse"
 msgstr "Trình duyệt"
 
-#: Music.class.php:467
+#: music.i18n.php:12
+msgid "Cache MoH Classes"
+msgstr "Các loại Cache MoH"
+
+#: Music.class.php:472
 msgid "Can Not Find Uploaded Files"
 msgstr "Không thể tìm thấy các tệp đã tải lên"
 
@@ -80,7 +84,7 @@ msgstr ""
 msgid "Category"
 msgstr "Mục phân loại- Category"
 
-#: Music.class.php:149
+#: Music.class.php:154
 msgid "Category Already Exists"
 msgstr "Category đã tồn tại"
 
@@ -108,7 +112,7 @@ msgstr "Chuyển các bản tải lên/ các tệp thành"
 msgid "Custom Application"
 msgstr "Chỉnh sửa ứng dụng"
 
-#: Music.class.php:605
+#: Music.class.php:610
 msgid "Delete"
 msgstr "Xóa"
 
@@ -128,7 +132,7 @@ msgstr ""
 "Kích hoạt phát lại nhạc ngẫu nhiên cho category này. Nếu bị vô hiệu nhạc sẽ "
 "phát theo thứ tự an pha bê"
 
-#: Music.class.php:460
+#: Music.class.php:465
 msgid "Failed to write file to disk"
 msgstr "Ghi tệp vào đã không thành công"
 
@@ -136,7 +140,7 @@ msgstr "Ghi tệp vào đã không thành công"
 msgid "File"
 msgstr "Tệp"
 
-#: Music.class.php:483
+#: Music.class.php:488
 msgid "File does not exist"
 msgstr "Tệp không tồn tại"
 
@@ -145,7 +149,7 @@ msgstr "Tệp không tồn tại"
 msgid "File size is too large. Max size is %s bytes"
 msgstr "Dung lượng tệp quá lớn. Dung lượng tối đa là %s byte"
 
-#: Music.class.php:415
+#: Music.class.php:420
 msgid "File upload failed"
 msgstr "Tải tệp lên không thành công"
 
@@ -165,11 +169,11 @@ msgstr ""
 "Nếu bạn đang chuyển đổi media thì  có thể mất mát nhiều thời gian,bạn có "
 "đồng ý không?"
 
-#: Music.class.php:517
+#: Music.class.php:522
 msgid "Invalid Request"
 msgstr "Yêu cầu không hợp lệ"
 
-#: Music.class.php:361
+#: Music.class.php:366
 msgid "Invalid category"
 msgstr "Category không hợp lệ"
 
@@ -177,15 +181,19 @@ msgstr "Category không hợp lệ"
 msgid "List MoH Categories"
 msgstr "Danh sách các category MoH"
 
-#: Music.class.php:457
+#: Music.class.php:462
 msgid "Missing a temporary folder"
 msgstr "Bị thiếu một thư mục tạm"
+
+#: music.i18n.php:4 music.i18n.php:10
+msgid "Music on Hold"
+msgstr "Nhạc phát lúc chờ"
 
 #: views/advanced_form.php:95 views/basic_form.php:16
 msgid "No"
 msgstr "Không"
 
-#: Music.class.php:454
+#: Music.class.php:459
 msgid "No file was uploaded"
 msgstr "Không có tệp nào được tải lên"
 
@@ -222,27 +230,35 @@ msgstr "Vui lòng nhập Tên của Category hợp lệ"
 msgid "Please enter a valid application command and arguments"
 msgstr "Vui lòng nhập lệnh và các tham số ứng dụng hợp lệ"
 
-#: Music.class.php:605
+#: Music.class.php:610
 msgid "Reset"
 msgstr "Cài đặt lại"
 
-#: Music.class.php:605
+#: music.i18n.php:6
+msgid "Settings"
+msgstr "Cài đặt"
+
+#: Music.class.php:610
 msgid "Submit"
 msgstr "gửi đi"
 
-#: Music.class.php:448
+#: music.i18n.php:14
+msgid "System Setup"
+msgstr "Thiết lập hệ thống"
+
+#: Music.class.php:453
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 "Tệp được tải lên vượt quá kích cỡ tệp tối đa được quy định trong mẫu HTML"
 
-#: Music.class.php:445
+#: Music.class.php:450
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 "Tệp được tải lên vượt quá kích cỡ tải lên tối đa được quy định trong php.ini"
 
-#: Music.class.php:451
+#: Music.class.php:456
 msgid "The uploaded file was only partially uploaded"
 msgstr "Các tệp tải lên đã chỉ được tải lên từng phần"
 
@@ -270,12 +286,12 @@ msgstr ""
 "liệt kê dưới đây. Nếu cài đặt là \"Custom Application\"  thì category này sẽ "
 "phát trực tuyến nhạc từ ứng dụng đã cài đặt"
 
-#: Music.class.php:367
+#: Music.class.php:372
 #, php-format
 msgid "Unable to delete %s"
 msgstr "Không thể xóa %s"
 
-#: Music.class.php:440
+#: Music.class.php:445
 msgid "Unsupported file format"
 msgstr "Định dạng tệp không được hỗ trợ"
 
@@ -296,6 +312,23 @@ msgstr ""
 "Tải lên các tệp từ hệ thống của bạn. Các định dạng tải lên được hỗ trợ là: "
 "%s. Bao gồm các tệp nén ( gồm nhiều tệp khác nhau) và các tệp"
 
+#: music.i18n.php:8
+msgid ""
+"Uploading and management of sound files (wav, mp3) to be used for on-hold "
+"music."
+msgstr ""
+"Đang tải lên và quản lý các tệp âm thanh ( wav, mp3) sẽ được sử dụng cho "
+"nhạc chờ."
+
+#: music.i18n.php:16
+msgid ""
+"When enabled Asterisk will use 1 instance of moh class for all channels who "
+"are using it, decreasing consumable cpu cycles and memory in the process"
+msgstr ""
+"Khi đã kích hoạt, Asterisk sẽ sử dụng một ví dụ của lớp moh cho tất cả các "
+"kênh mà người ta đang sử dụng, giảm chu kỳ của cpu và bộ nhớ trong quá trình "
+"xử lý"
+
 #: views/advanced_form.php:93 views/basic_form.php:14
 msgid "Yes"
 msgstr "Có"
@@ -312,34 +345,6 @@ msgstr ""
 "cho việc phát lại trên trình duyệt HTML5 bạn cần phải cài đặt các chường "
 "trình không thể phân phối được với PBX. Nếu bạn muốn cài đặt các chương "
 "trình cần thiết cho các chuyển đổi này, hãy nhấp vào <a href='%s'> ở đây </a>"
-
-#~ msgid "Cache MoH Classes"
-#~ msgstr "Các loại Cache MoH"
-
-#~ msgid "Music on Hold"
-#~ msgstr "Nhạc phát lúc chờ"
-
-#~ msgid "Settings"
-#~ msgstr "Cài đặt"
-
-#~ msgid "System Setup"
-#~ msgstr "Thiết lập hệ thống"
-
-#~ msgid ""
-#~ "Uploading and management of sound files (wav, mp3) to be used for on-hold "
-#~ "music."
-#~ msgstr ""
-#~ "Đang tải lên và quản lý các tệp âm thanh ( wav, mp3) sẽ được sử dụng cho "
-#~ "nhạc chờ."
-
-#~ msgid ""
-#~ "When enabled Asterisk will use 1 instance of moh class for all channels "
-#~ "who are using it, decreasing consumable cpu cycles and memory in the "
-#~ "process"
-#~ msgstr ""
-#~ "Khi đã kích hoạt, Asterisk sẽ sử dụng một ví dụ của lớp moh cho tất cả "
-#~ "các kênh mà người ta đang sử dụng, giảm chu kỳ của cpu và bộ nhớ trong "
-#~ "quá trình xử lý"
 
 #~ msgid "Are you sure you want to delete this item?"
 #~ msgstr "Bạn có chắc chắn muốn xóa mục này?"

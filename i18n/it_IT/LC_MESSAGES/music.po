@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-12 08:53+0000\n"
+"POT-Creation-Date: 2024-07-25 23:34-0400\n"
 "PO-Revision-Date: 2018-05-30 07:55+0000\n"
 "Last-Translator: Stell0 <stefano.fancello@nethesis.it>\n"
 "Language-Team: Italian <http://*/projects/freepbx/music/it/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-Language: Italian\n"
 "X-Poedit-Country: ITALY\n"
 
-#: Music.class.php:463
+#: Music.class.php:468
 msgid "A PHP extension stopped the file upload"
 msgstr "L'estensione PHP ha fermato il caricamento del file"
 
@@ -64,7 +64,11 @@ msgstr "Almeno un codec deve essere controllato"
 msgid "Browse"
 msgstr "Navigare"
 
-#: Music.class.php:467
+#: music.i18n.php:12
+msgid "Cache MoH Classes"
+msgstr "Classi di Cache MoH"
+
+#: Music.class.php:472
 msgid "Can Not Find Uploaded Files"
 msgstr "Impossibile trovare i file caricati"
 
@@ -80,7 +84,7 @@ msgstr ""
 msgid "Category"
 msgstr "Categoria"
 
-#: Music.class.php:149
+#: Music.class.php:154
 msgid "Category Already Exists"
 msgstr "La categoria esiste già"
 
@@ -108,7 +112,7 @@ msgstr "convertire il caricamento / Files in"
 msgid "Custom Application"
 msgstr "Applicazione personalizzata"
 
-#: Music.class.php:605
+#: Music.class.php:610
 msgid "Delete"
 msgstr "Elimina"
 
@@ -128,7 +132,7 @@ msgstr ""
 "Abilita la riproduzione casuale di musica per questa categoria. Se la musica "
 "disabilitata verrà riprodotta in ordine alfabetico"
 
-#: Music.class.php:460
+#: Music.class.php:465
 msgid "Failed to write file to disk"
 msgstr "Impossibile scrivere il file su disco"
 
@@ -136,7 +140,7 @@ msgstr "Impossibile scrivere il file su disco"
 msgid "File"
 msgstr "File"
 
-#: Music.class.php:483
+#: Music.class.php:488
 msgid "File does not exist"
 msgstr "File non esiste"
 
@@ -146,7 +150,7 @@ msgid "File size is too large. Max size is %s bytes"
 msgstr ""
 "La dimensione del file è troppo grande. La dimensione massima è %s1 byte"
 
-#: Music.class.php:415
+#: Music.class.php:420
 msgid "File upload failed"
 msgstr "Caricamento file fallito"
 
@@ -165,11 +169,11 @@ msgid ""
 msgstr ""
 "Se stai facendo conversioni di media questo può richiedere molto tempo, ok?"
 
-#: Music.class.php:517
+#: Music.class.php:522
 msgid "Invalid Request"
 msgstr "richiesta non valida"
 
-#: Music.class.php:361
+#: Music.class.php:366
 msgid "Invalid category"
 msgstr "Categoria non valida"
 
@@ -177,15 +181,19 @@ msgstr "Categoria non valida"
 msgid "List MoH Categories"
 msgstr "Elenca le categorie MoH"
 
-#: Music.class.php:457
+#: Music.class.php:462
 msgid "Missing a temporary folder"
 msgstr "Manca una cartella temporanea"
+
+#: music.i18n.php:4 music.i18n.php:10
+msgid "Music on Hold"
+msgstr "Musica di Attesa"
 
 #: views/advanced_form.php:95 views/basic_form.php:16
 msgid "No"
 msgstr "No"
 
-#: Music.class.php:454
+#: Music.class.php:459
 msgid "No file was uploaded"
 msgstr "Nessun file è stato caricato"
 
@@ -222,15 +230,23 @@ msgstr "Prego immettere un Nome di Categoria valido"
 msgid "Please enter a valid application command and arguments"
 msgstr "Inserisci un comando e argomenti validi per l'applicazione"
 
-#: Music.class.php:605
+#: Music.class.php:610
 msgid "Reset"
 msgstr "Azzera"
 
-#: Music.class.php:605
+#: music.i18n.php:6
+msgid "Settings"
+msgstr "Impostazioni"
+
+#: Music.class.php:610
 msgid "Submit"
 msgstr "Sottoscrivi"
 
-#: Music.class.php:448
+#: music.i18n.php:14
+msgid "System Setup"
+msgstr "Configurazione del sistema"
+
+#: Music.class.php:453
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
@@ -238,11 +254,11 @@ msgstr ""
 "Il file caricato supera la direttiva MAX_FILE_SIZE che è stata specificata "
 "nel modulo HTML"
 
-#: Music.class.php:445
+#: Music.class.php:450
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr "Il file caricato supera la direttiva upload_max_filesize in php.ini"
 
-#: Music.class.php:451
+#: Music.class.php:456
 msgid "The uploaded file was only partially uploaded"
 msgstr "Il file caricato è stato caricato solo parzialmente"
 
@@ -271,12 +287,12 @@ msgstr ""
 "personalizzata\", questa categoria trasmetterà musica dall'applicazione "
 "impostata"
 
-#: Music.class.php:367
+#: Music.class.php:372
 #, php-format
 msgid "Unable to delete %s"
 msgstr "Impossibile eliminare %s1"
 
-#: Music.class.php:440
+#: Music.class.php:445
 msgid "Unsupported file format"
 msgstr "Formato file non supportato"
 
@@ -297,6 +313,23 @@ msgstr ""
 "Carica file dal tuo sistema locale. I formati di caricamento supportati "
 "sono: %s1. Ciò include archivi (che includono più file) e più file"
 
+#: music.i18n.php:8
+msgid ""
+"Uploading and management of sound files (wav, mp3) to be used for on-hold "
+"music."
+msgstr ""
+"Caricamento e gestione di file audio (wav, mp3) da utilizzare per la musica "
+"di attesa."
+
+#: music.i18n.php:16
+msgid ""
+"When enabled Asterisk will use 1 instance of moh class for all channels who "
+"are using it, decreasing consumable cpu cycles and memory in the process"
+msgstr ""
+"Se abilitato, Asterisk utilizzerà 1 istanza di classe moh per tutti i canali "
+"che lo stanno utilizzando, riducendo i cicli della CPU e la memoria "
+"consumabili nel processo"
+
 #: views/advanced_form.php:93 views/basic_form.php:14
 msgid "Yes"
 msgstr "Si"
@@ -314,34 +347,6 @@ msgstr ""
 "programmi che non possono essere distribuiti con il PBX. Se desideri "
 "installare i file binari necessari per queste conversioni, fai clic su <a "
 "href='%s'> 1qui </a> 2"
-
-#~ msgid "Cache MoH Classes"
-#~ msgstr "Classi di Cache MoH"
-
-#~ msgid "Music on Hold"
-#~ msgstr "Musica di Attesa"
-
-#~ msgid "Settings"
-#~ msgstr "Impostazioni"
-
-#~ msgid "System Setup"
-#~ msgstr "Configurazione del sistema"
-
-#~ msgid ""
-#~ "Uploading and management of sound files (wav, mp3) to be used for on-hold "
-#~ "music."
-#~ msgstr ""
-#~ "Caricamento e gestione di file audio (wav, mp3) da utilizzare per la "
-#~ "musica di attesa."
-
-#~ msgid ""
-#~ "When enabled Asterisk will use 1 instance of moh class for all channels "
-#~ "who are using it, decreasing consumable cpu cycles and memory in the "
-#~ "process"
-#~ msgstr ""
-#~ "Se abilitato, Asterisk utilizzerà 1 istanza di classe moh per tutti i "
-#~ "canali che lo stanno utilizzando, riducendo i cicli della CPU e la "
-#~ "memoria consumabili nel processo"
 
 #~ msgid "Are you sure you want to delete this item?"
 #~ msgstr "Sei sicuro di volere eliminare questo oggetto ?"

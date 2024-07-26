@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-12 08:53+0000\n"
+"POT-Creation-Date: 2024-07-25 23:34-0400\n"
 "PO-Revision-Date: 2016-04-15 12:26+0000\n"
 "Last-Translator: Weblate Admin <admin@postmet.com>\n"
 "Language-Team: Russian <https://weblate.postmet.com/projects/freepbx13/music/"
@@ -16,11 +16,11 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
-#: Music.class.php:463
+#: Music.class.php:468
 msgid "A PHP extension stopped the file upload"
 msgstr "PHP-расширение остановило загрузку файла"
 
@@ -62,7 +62,11 @@ msgstr "По меньшей мере один кодек должен быть �
 msgid "Browse"
 msgstr "Просмотр"
 
-#: Music.class.php:467
+#: music.i18n.php:12
+msgid "Cache MoH Classes"
+msgstr ""
+
+#: Music.class.php:472
 msgid "Can Not Find Uploaded Files"
 msgstr "Загруженные файлы не обнаружены"
 
@@ -78,7 +82,7 @@ msgstr ""
 msgid "Category"
 msgstr "Категория"
 
-#: Music.class.php:149
+#: Music.class.php:154
 msgid "Category Already Exists"
 msgstr "Категория уже существует"
 
@@ -105,7 +109,7 @@ msgstr "Конвертировать Загруженные файлы в"
 msgid "Custom Application"
 msgstr "Специализированное  приложение"
 
-#: Music.class.php:605
+#: Music.class.php:610
 msgid "Delete"
 msgstr "Удалить"
 
@@ -125,7 +129,7 @@ msgstr ""
 "Включить случайное воспроизведение мелодии для этой категории . Если "
 "отключено, то мелодии будут воспроизводиться в алфавитном порядке"
 
-#: Music.class.php:460
+#: Music.class.php:465
 msgid "Failed to write file to disk"
 msgstr "Ошибка записи файла на диск"
 
@@ -133,7 +137,7 @@ msgstr "Ошибка записи файла на диск"
 msgid "File"
 msgstr "Файл"
 
-#: Music.class.php:483
+#: Music.class.php:488
 msgid "File does not exist"
 msgstr "Файл не существует"
 
@@ -142,7 +146,7 @@ msgstr "Файл не существует"
 msgid "File size is too large. Max size is %s bytes"
 msgstr ""
 
-#: Music.class.php:415
+#: Music.class.php:420
 msgid "File upload failed"
 msgstr ""
 
@@ -160,11 +164,11 @@ msgid ""
 "ok?"
 msgstr "Медиа-конвертация может занять длительное время. Продолжить?"
 
-#: Music.class.php:517
+#: Music.class.php:522
 msgid "Invalid Request"
 msgstr "Неверный запрос"
 
-#: Music.class.php:361
+#: Music.class.php:366
 msgid "Invalid category"
 msgstr "Неверная категория"
 
@@ -172,15 +176,19 @@ msgstr "Неверная категория"
 msgid "List MoH Categories"
 msgstr "Список категорий мелодий на удержании"
 
-#: Music.class.php:457
+#: Music.class.php:462
 msgid "Missing a temporary folder"
 msgstr "Неверная временная папка"
+
+#: music.i18n.php:4 music.i18n.php:10
+msgid "Music on Hold"
+msgstr "Музыка в ожидании"
 
 #: views/advanced_form.php:95 views/basic_form.php:16
 msgid "No"
 msgstr "Нет"
 
-#: Music.class.php:454
+#: Music.class.php:459
 msgid "No file was uploaded"
 msgstr "Файл не загружен"
 
@@ -217,15 +225,23 @@ msgstr "Введите правильное название для катего
 msgid "Please enter a valid application command and arguments"
 msgstr "Пожалуйста введите корректную команду приложения  и аргументы"
 
-#: Music.class.php:605
+#: Music.class.php:610
 msgid "Reset"
 msgstr "Сброс"
 
-#: Music.class.php:605
+#: music.i18n.php:6
+msgid "Settings"
+msgstr "Настройки"
+
+#: Music.class.php:610
 msgid "Submit"
 msgstr "Подтвердить"
 
-#: Music.class.php:448
+#: music.i18n.php:14
+msgid "System Setup"
+msgstr "Системные установки"
+
+#: Music.class.php:453
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
@@ -233,13 +249,13 @@ msgstr ""
 "Размер загруженного файла превышает  значение MAX_FILE_SIZE , указанное в "
 "HTML-форме"
 
-#: Music.class.php:445
+#: Music.class.php:450
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 "Размер загруженного  файл превышает  значение upload_max_filesize directive, "
 "указанное в php.ini"
 
-#: Music.class.php:451
+#: Music.class.php:456
 msgid "The uploaded file was only partially uploaded"
 msgstr "Файл был загружен частично"
 
@@ -264,15 +280,15 @@ msgid ""
 "stream music from the set application"
 msgstr ""
 "Тип мелодии на удержании. Если установлено в  \"Files\" , то будет "
-"воспроизведены файлы из списка ниже. Если установлено в  \"Custom Application"
-"\" , то будет воспроизводиться мелодия из набора приложений"
+"воспроизведены файлы из списка ниже. Если установлено в  \"Custom "
+"Application\" , то будет воспроизводиться мелодия из набора приложений"
 
-#: Music.class.php:367
+#: Music.class.php:372
 #, php-format
 msgid "Unable to delete %s"
 msgstr "Невозможно удалить %s"
 
-#: Music.class.php:440
+#: Music.class.php:445
 msgid "Unsupported file format"
 msgstr "Неподдерживаемый  формат файла"
 
@@ -293,6 +309,20 @@ msgstr ""
 "Загрузка файла с вашей локальной рабочей станции. Поддерживаемые форматы: "
 "%s. Включает архивные файлы(в том числе многотомные) и списки файлов"
 
+#: music.i18n.php:8
+msgid ""
+"Uploading and management of sound files (wav, mp3) to be used for on-hold "
+"music."
+msgstr ""
+"Загрузка и управление звуковыми файлами (wav, mp3) для использования как "
+"музыка в ожидании."
+
+#: music.i18n.php:16
+msgid ""
+"When enabled Asterisk will use 1 instance of moh class for all channels who "
+"are using it, decreasing consumable cpu cycles and memory in the process"
+msgstr ""
+
 #: views/advanced_form.php:93 views/basic_form.php:14
 msgid "Yes"
 msgstr "Да"
@@ -309,22 +339,6 @@ msgstr ""
 "воспроизведение HTML5 необходимо устанвоить программы,которые не "
 "распространяюься вместе с FreePBX. Если Вы желаете установить бинарные файлы "
 "для перекодирования, то нажмите <a href='%s'>здесь</a>"
-
-#~ msgid "Music on Hold"
-#~ msgstr "Музыка в ожидании"
-
-#~ msgid "Settings"
-#~ msgstr "Настройки"
-
-#~ msgid "System Setup"
-#~ msgstr "Системные установки"
-
-#~ msgid ""
-#~ "Uploading and management of sound files (wav, mp3) to be used for on-hold "
-#~ "music."
-#~ msgstr ""
-#~ "Загрузка и управление звуковыми файлами (wav, mp3) для использования как "
-#~ "музыка в ожидании."
 
 #~ msgid "Are you sure you want to delete this item?"
 #~ msgstr "Вы уверены, что хотите удалить данный элемент?"

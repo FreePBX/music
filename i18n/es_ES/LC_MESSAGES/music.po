@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX - music module spanish translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-12 08:53+0000\n"
+"POT-Creation-Date: 2024-07-25 23:34-0400\n"
 "PO-Revision-Date: 2016-12-09 21:01+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/music/"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Poedit-Country: SPAIN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: Music.class.php:463
+#: Music.class.php:468
 msgid "A PHP extension stopped the file upload"
 msgstr "Una extensión de PHP detuvo la subida del archivo"
 
@@ -59,7 +59,11 @@ msgstr "Al menos un codec debe ser seleccionado"
 msgid "Browse"
 msgstr "Vistazo"
 
-#: Music.class.php:467
+#: music.i18n.php:12
+msgid "Cache MoH Classes"
+msgstr "Cache Clases MOH"
+
+#: Music.class.php:472
 msgid "Can Not Find Uploaded Files"
 msgstr "No puede encontrase Archivos subidos"
 
@@ -75,7 +79,7 @@ msgstr ""
 msgid "Category"
 msgstr "Categoría"
 
-#: Music.class.php:149
+#: Music.class.php:154
 msgid "Category Already Exists"
 msgstr "Categoría ya existe"
 
@@ -103,7 +107,7 @@ msgstr "Convertir subida/archivos a"
 msgid "Custom Application"
 msgstr "Aplicación personalizada"
 
-#: Music.class.php:605
+#: Music.class.php:610
 msgid "Delete"
 msgstr "Eliminar"
 
@@ -123,7 +127,7 @@ msgstr ""
 "Active la reproducción aleatoria de música para esta categoría. Si se "
 "deshabilita la música se reproduce en orden alfabético"
 
-#: Music.class.php:460
+#: Music.class.php:465
 msgid "Failed to write file to disk"
 msgstr "Fallo al escribir al disco"
 
@@ -131,7 +135,7 @@ msgstr "Fallo al escribir al disco"
 msgid "File"
 msgstr "Archivo"
 
-#: Music.class.php:483
+#: Music.class.php:488
 msgid "File does not exist"
 msgstr "Archivo no existe"
 
@@ -140,7 +144,7 @@ msgstr "Archivo no existe"
 msgid "File size is too large. Max size is %s bytes"
 msgstr ""
 
-#: Music.class.php:415
+#: Music.class.php:420
 msgid "File upload failed"
 msgstr "Subida de Archivo Fallo"
 
@@ -160,11 +164,11 @@ msgstr ""
 "Si está realizando conversiones de medios, esto puede tardar mucho tiempo, "
 "¿está bien?"
 
-#: Music.class.php:517
+#: Music.class.php:522
 msgid "Invalid Request"
 msgstr "Requerimiento Invalido"
 
-#: Music.class.php:361
+#: Music.class.php:366
 msgid "Invalid category"
 msgstr "categoría invalida"
 
@@ -172,15 +176,19 @@ msgstr "categoría invalida"
 msgid "List MoH Categories"
 msgstr "Listar Categorías MOH"
 
-#: Music.class.php:457
+#: Music.class.php:462
 msgid "Missing a temporary folder"
 msgstr "Carpeta temporal faltante"
+
+#: music.i18n.php:4 music.i18n.php:10
+msgid "Music on Hold"
+msgstr "Música en espera"
 
 #: views/advanced_form.php:95 views/basic_form.php:16
 msgid "No"
 msgstr "No"
 
-#: Music.class.php:454
+#: Music.class.php:459
 msgid "No file was uploaded"
 msgstr "No se subió archivo"
 
@@ -218,15 +226,23 @@ msgstr "Por favor, introduzca un nombre de categoría válido"
 msgid "Please enter a valid application command and arguments"
 msgstr "Introduzca un comando de aplicación y argumentos válidos"
 
-#: Music.class.php:605
+#: Music.class.php:610
 msgid "Reset"
 msgstr "Reiniciar"
 
-#: Music.class.php:605
+#: music.i18n.php:6
+msgid "Settings"
+msgstr "Configuración"
+
+#: Music.class.php:610
 msgid "Submit"
 msgstr "Enviar"
 
-#: Music.class.php:448
+#: music.i18n.php:14
+msgid "System Setup"
+msgstr "Configuración del sistema"
+
+#: Music.class.php:453
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
@@ -234,11 +250,11 @@ msgstr ""
 "El archivo subido supera la directiva MAX_FILE_SIZE que se especificó en el "
 "formulario HTML"
 
-#: Music.class.php:445
+#: Music.class.php:450
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr "El archivo subido supera la directiva upload_max_filesize en php.ini"
 
-#: Music.class.php:451
+#: Music.class.php:456
 msgid "The uploaded file was only partially uploaded"
 msgstr "El archivo subido sólo se cargó parcialmente"
 
@@ -268,12 +284,12 @@ msgstr ""
 "\"Aplicación personalizada\", esta categoría transmitirá música desde la "
 "aplicación indicada"
 
-#: Music.class.php:367
+#: Music.class.php:372
 #, php-format
 msgid "Unable to delete %s"
 msgstr "No se puede eliminar %s"
 
-#: Music.class.php:440
+#: Music.class.php:445
 msgid "Unsupported file format"
 msgstr "Formato de Archivo no soportado"
 
@@ -295,6 +311,23 @@ msgstr ""
 "son: %s. Esto incluye archivadores (que incluyen varios archivos) y "
 "múltiples archivos"
 
+#: music.i18n.php:8
+msgid ""
+"Uploading and management of sound files (wav, mp3) to be used for on-hold "
+"music."
+msgstr ""
+"Carga y gestión de archivos de sonido (wav, mp3) que se utilizarán para la "
+"música en espera."
+
+#: music.i18n.php:16
+msgid ""
+"When enabled Asterisk will use 1 instance of moh class for all channels who "
+"are using it, decreasing consumable cpu cycles and memory in the process"
+msgstr ""
+"Cuando está habilitado, Asterisk utilizará 1 instancia de la clase moh para "
+"todos los canales que la utilicen, disminuyendo los ciclos de CPU requeridos "
+"y la memoria en el proceso"
+
 #: views/advanced_form.php:93 views/basic_form.php:14
 msgid "Yes"
 msgstr "Si"
@@ -312,34 +345,6 @@ msgstr ""
 "programas que no se pueden distribuir con la central. Si desea instalar los "
 "binarios necesarios para estas conversiones, haga clic en <a href='%s'>aquí</"
 "a>"
-
-#~ msgid "Cache MoH Classes"
-#~ msgstr "Cache Clases MOH"
-
-#~ msgid "Music on Hold"
-#~ msgstr "Música en espera"
-
-#~ msgid "Settings"
-#~ msgstr "Configuración"
-
-#~ msgid "System Setup"
-#~ msgstr "Configuración del sistema"
-
-#~ msgid ""
-#~ "Uploading and management of sound files (wav, mp3) to be used for on-hold "
-#~ "music."
-#~ msgstr ""
-#~ "Carga y gestión de archivos de sonido (wav, mp3) que se utilizarán para "
-#~ "la música en espera."
-
-#~ msgid ""
-#~ "When enabled Asterisk will use 1 instance of moh class for all channels "
-#~ "who are using it, decreasing consumable cpu cycles and memory in the "
-#~ "process"
-#~ msgstr ""
-#~ "Cuando está habilitado, Asterisk utilizará 1 instancia de la clase moh "
-#~ "para todos los canales que la utilicen, disminuyendo los ciclos de CPU "
-#~ "requeridos y la memoria en el proceso"
 
 #~ msgid "Are you sure you want to delete this item?"
 #~ msgstr "¿Está seguro de que desea eliminar este elemento?"
