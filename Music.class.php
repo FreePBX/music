@@ -17,6 +17,19 @@ class Music implements \BMO {
 	private string $tmp = "/tmp";
 
 	private array $message = [];
+	private string $lastValidationError = '';
+	private const ALLOWED_CUSTOM_APPLICATIONS = [
+		'/usr/bin/mpg123',
+		'/usr/local/bin/mpg123',
+		'/usr/bin/mpg321',
+		'/usr/local/bin/mpg321',
+		'/usr/bin/madplay',
+		'/usr/local/bin/madplay',
+		'/usr/bin/ogg123',
+		'/usr/local/bin/ogg123',
+		'/usr/bin/cvlc',
+		'/usr/local/bin/cvlc',
+	];
 
 	public function __construct($freepbx = null) {
 		if ($freepbx == null) {
@@ -115,15 +128,22 @@ class Music implements \BMO {
 	}
 
 	public function updateCategoryByID($id, $type, $random = false, $application = '', $format = '') {
+		$validated = $this->validateCustomConfiguration((string) ($type ?? ''), (string) ($application ?? ''), (string) ($format ?? ''));
+		if(!$validated['valid']) {
+			$this->lastValidationError = $validated['message'];
+			return false;
+		}
+		$this->lastValidationError = '';
 		$sql = "UPDATE music SET type = :type, random = :random, application = :application, format = :format WHERE id = :id";
 		$sth = $this->db->prepare($sql);
 		$sth->execute(
-			["type" => $type ?? '', 
+			["type" => $validated['type'], 
 			"random" => (int) $random ?: 0, 
-			"application" => $application ?? '', 
-			"format" => $format ?? '', 
+			"application" => $validated['application'], 
+			"format" => $validated['format'], 
 			"id" => $id]);
 		needreload();
+		return true;
 	}
 
 	/**
@@ -195,7 +215,11 @@ class Music implements \BMO {
 					$conf["musiconhold_additional.conf"][$name] = ["mode" => $cat['type'], "sort" => ($cat['random']) ? "random" : "alpha", "directory" => $this->getCategoryPath($cat['category'])];
 				break;
 				case "custom":
-					$conf["musiconhold_additional.conf"][$name] = ["mode" => $cat['type'], "application" => $cat['application'], "format" => $cat['format']];
+					$validated = $this->validateCustomConfiguration((string) ($cat['type'] ?? ''), (string) ($cat['application'] ?? ''), (string) ($cat['format'] ?? ''));
+					if(!$validated['valid']) {
+						continue;
+					}
+					$conf["musiconhold_additional.conf"][$name] = ["mode" => $validated['type'], "application" => $validated['application'], "format" => $validated['format']];
 				break;
 			}
 		}
@@ -393,7 +417,9 @@ class Music implements \BMO {
 						}
 					}
 				}
-				$this->updateCategoryByID($_POST['id'],$_POST['type'], ($_POST['erand'] == "yes"), $_POST['application'], $_POST['format']);
+				if(!$this->updateCategoryByID($_POST['id'],$_POST['type'], ($_POST['erand'] == "yes"), $_POST['application'], $_POST['format'])) {
+					return ["status" => false, "message" => $this->lastValidationError];
+				}
 				return ["status" => true];
 			break;
 			case "deleteCategory":
@@ -660,6 +686,54 @@ class Music implements \BMO {
 	 */
 	private function stripCategory($category) {
 		return basename(htmlspecialchars(strtr($category," ./\"\'\`", "------")));
+	}
+
+	private function validateCustomConfiguration(string $type, string $application, string $format): array {
+		$type = strtolower(trim($type));
+		if(!in_array($type, ['files', 'custom'], true)) {
+			return ["valid" => false, "message" => _("Invalid music on hold type"), "type" => "", "application" => "", "format" => ""];
+		}
+
+		if($type === 'files') {
+			return ["valid" => true, "message" => "", "type" => "files", "application" => "", "format" => ""];
+		}
+
+		$application = trim($application);
+		$format = trim($format);
+
+		if($application === '') {
+			return ["valid" => false, "message" => _("Please enter a valid application command and arguments"), "type" => "custom", "application" => "", "format" => ""];
+		}
+		if(strlen($application) > 255) {
+			return ["valid" => false, "message" => _("Application command is too long"), "type" => "custom", "application" => "", "format" => ""];
+		}
+		if(preg_match('/[\x00-\x1F\x7F]/', $application)) {
+			return ["valid" => false, "message" => _("Application command contains unsupported control characters"), "type" => "custom", "application" => "", "format" => ""];
+		}
+		if(preg_match('/[;&|`$<>]/', $application)) {
+			return ["valid" => false, "message" => _("Application command contains unsupported shell characters"), "type" => "custom", "application" => "", "format" => ""];
+		}
+
+		$parts = preg_split('/\s+/', $application);
+		$binary = $parts[0] ?? '';
+		if(!in_array($binary, self::ALLOWED_CUSTOM_APPLICATIONS, true)) {
+			return ["valid" => false, "message" => _("Application command is not in the allowed list"), "type" => "custom", "application" => "", "format" => ""];
+		}
+
+		foreach($parts as $part) {
+			if($part === '') {
+				continue;
+			}
+			if(!preg_match('/^[A-Za-z0-9@%_+=:,.\/~?-]+$/', $part)) {
+				return ["valid" => false, "message" => _("Application command contains invalid characters"), "type" => "custom", "application" => "", "format" => ""];
+			}
+		}
+
+		if($format !== '' && !preg_match('/^[A-Za-z0-9_-]{1,32}$/', $format)) {
+			return ["valid" => false, "message" => _("Please enter a valid format"), "type" => "custom", "application" => "", "format" => ""];
+		}
+
+		return ["valid" => true, "message" => "", "type" => "custom", "application" => $application, "format" => $format];
 	}
 
 	private function getCategoryPath($category=null) {
