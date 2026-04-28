@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-25 23:34-0400\n"
+"POT-Creation-Date: 2026-04-28 06:55-0400\n"
 "PO-Revision-Date: 2016-04-26 06:48+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: Music.class.php:468
+#: Music.class.php:494
 msgid "A PHP extension stopped the file upload"
 msgstr "بارگذاری فایل به دلیل تنظیمات PHP متوقف شد"
 
@@ -55,6 +55,26 @@ msgstr "خطا در ارسال این سند"
 msgid "Application"
 msgstr "برنامه ها"
 
+#: Music.class.php:728
+msgid "Application command contains invalid characters"
+msgstr ""
+
+#: Music.class.php:711
+msgid "Application command contains unsupported control characters"
+msgstr ""
+
+#: Music.class.php:714
+msgid "Application command contains unsupported shell characters"
+msgstr ""
+
+#: Music.class.php:720
+msgid "Application command is not in the allowed list"
+msgstr ""
+
+#: Music.class.php:708
+msgid "Application command is too long"
+msgstr ""
+
 #: assets/js/music.js:143
 msgid "At least one codec must be checked"
 msgstr "حداقل یک کدک باید بررسی شود"
@@ -67,7 +87,7 @@ msgstr "مسیر"
 msgid "Cache MoH Classes"
 msgstr "کلاسهای کش موزیک انتظار"
 
-#: Music.class.php:472
+#: Music.class.php:498
 msgid "Can Not Find Uploaded Files"
 msgstr "فایل بارگذاری شده یافت نمیشود"
 
@@ -82,7 +102,7 @@ msgstr ""
 msgid "Category"
 msgstr "دسته"
 
-#: Music.class.php:154
+#: Music.class.php:174
 msgid "Category Already Exists"
 msgstr "دسته موجود"
 
@@ -106,7 +126,7 @@ msgstr "تبدیل فایل های بارگذاری شده به"
 msgid "Custom Application"
 msgstr "برنامه شخصی"
 
-#: Music.class.php:610
+#: Music.class.php:636
 msgid "Delete"
 msgstr "حذف"
 
@@ -126,7 +146,7 @@ msgstr ""
 "فعال کردن پخش تصادفی موزیک از این دسته.اگر موزیک غیر فعال باشد به ترتیب "
 "الفبا پخش میشود"
 
-#: Music.class.php:465
+#: Music.class.php:491
 msgid "Failed to write file to disk"
 msgstr "خطا در نوشتن فایل به روی دیسک"
 
@@ -134,7 +154,7 @@ msgstr "خطا در نوشتن فایل به روی دیسک"
 msgid "File"
 msgstr "فایل"
 
-#: Music.class.php:488
+#: Music.class.php:514
 msgid "File does not exist"
 msgstr "فایل موجود نیست"
 
@@ -143,7 +163,7 @@ msgstr "فایل موجود نیست"
 msgid "File size is too large. Max size is %s bytes"
 msgstr ""
 
-#: Music.class.php:420
+#: Music.class.php:446
 msgid "File upload failed"
 msgstr "مشکل در بارگذاری فایل"
 
@@ -161,19 +181,23 @@ msgid ""
 "ok?"
 msgstr "اگر مکالمه تصویری است, زمان بیشتری میگیرد, ایرادی ندارد؟"
 
-#: Music.class.php:522
+#: Music.class.php:548
 msgid "Invalid Request"
 msgstr "درخواست نامعتبر"
 
-#: Music.class.php:366
+#: Music.class.php:390
 msgid "Invalid category"
 msgstr "دسته نامعتبر"
+
+#: Music.class.php:694
+msgid "Invalid music on hold type"
+msgstr ""
 
 #: views/bootnav.php:2
 msgid "List MoH Categories"
 msgstr "فهرست دسته MoH"
 
-#: Music.class.php:462
+#: Music.class.php:488
 msgid "Missing a temporary folder"
 msgstr "از دست دادن پوشه موقت"
 
@@ -185,11 +209,11 @@ msgstr "آهنگ انتظار"
 msgid "No"
 msgstr "خیر"
 
-#: Music.class.php:459
+#: Music.class.php:485
 msgid "No file was uploaded"
 msgstr "فایلی بارگذاری نشده"
 
-#: Music.class.php:48
+#: Music.class.php:61
 msgid "On Hold Music"
 msgstr "آهنگ انتظار"
 
@@ -218,11 +242,15 @@ msgstr "اجرا"
 msgid "Please enter a valid Category Name"
 msgstr "لطفا نام دسته درست وارد کنید"
 
-#: assets/js/music.js:16
+#: Music.class.php:705 assets/js/music.js:16
 msgid "Please enter a valid application command and arguments"
 msgstr "لطفا دستورات برنامه درست وارد کنید"
 
-#: Music.class.php:610
+#: Music.class.php:733
+msgid "Please enter a valid format"
+msgstr ""
+
+#: Music.class.php:636
 msgid "Reset"
 msgstr "بازنشانی"
 
@@ -230,7 +258,7 @@ msgstr "بازنشانی"
 msgid "Settings"
 msgstr "تنظیمات"
 
-#: Music.class.php:610
+#: Music.class.php:636
 msgid "Submit"
 msgstr "ارسال"
 
@@ -238,17 +266,17 @@ msgstr "ارسال"
 msgid "System Setup"
 msgstr "پیکربندی سیستم"
 
-#: Music.class.php:453
+#: Music.class.php:479
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr "حجم فایل بارگذاری شده بیشتر از حد مجاز تعیین شده در فرم است"
 
-#: Music.class.php:450
+#: Music.class.php:476
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr "حجم فایل بارگذاری شده بیشتر از حد تعیین شده در  php.ini  میباشد"
 
-#: Music.class.php:456
+#: Music.class.php:482
 msgid "The uploaded file was only partially uploaded"
 msgstr "بخشی از فایل بارگذاری شده"
 
@@ -276,12 +304,12 @@ msgstr ""
 "listed below. If set to \"Custom Application\" then this category will "
 "stream music from the set application"
 
-#: Music.class.php:372
+#: Music.class.php:396
 #, php-format
 msgid "Unable to delete %s"
 msgstr "نمیتوان فایل %s را حذف کرد"
 
-#: Music.class.php:445
+#: Music.class.php:471
 msgid "Unsupported file format"
 msgstr "فرمت فایل نامعتبر"
 

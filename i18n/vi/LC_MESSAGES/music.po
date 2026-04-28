@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-25 23:34-0400\n"
+"POT-Creation-Date: 2026-04-28 06:55-0400\n"
 "PO-Revision-Date: 2017-07-20 13:28+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/music/"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: Music.class.php:468
+#: Music.class.php:494
 msgid "A PHP extension stopped the file upload"
 msgstr "Một máy nhánh PHP vừa ngừng tải tệp lên"
 
@@ -56,6 +56,26 @@ msgstr "Đã xảy ra một lỗi khi đang gửi đi tài liệu này"
 msgid "Application"
 msgstr "Ứng dụng"
 
+#: Music.class.php:728
+msgid "Application command contains invalid characters"
+msgstr ""
+
+#: Music.class.php:711
+msgid "Application command contains unsupported control characters"
+msgstr ""
+
+#: Music.class.php:714
+msgid "Application command contains unsupported shell characters"
+msgstr ""
+
+#: Music.class.php:720
+msgid "Application command is not in the allowed list"
+msgstr ""
+
+#: Music.class.php:708
+msgid "Application command is too long"
+msgstr ""
+
 #: assets/js/music.js:143
 msgid "At least one codec must be checked"
 msgstr "Phải đánh dấu check ít nhất một Codec"
@@ -68,7 +88,7 @@ msgstr "Trình duyệt"
 msgid "Cache MoH Classes"
 msgstr "Các loại Cache MoH"
 
-#: Music.class.php:472
+#: Music.class.php:498
 msgid "Can Not Find Uploaded Files"
 msgstr "Không thể tìm thấy các tệp đã tải lên"
 
@@ -84,7 +104,7 @@ msgstr ""
 msgid "Category"
 msgstr "Mục phân loại- Category"
 
-#: Music.class.php:154
+#: Music.class.php:174
 msgid "Category Already Exists"
 msgstr "Category đã tồn tại"
 
@@ -112,7 +132,7 @@ msgstr "Chuyển các bản tải lên/ các tệp thành"
 msgid "Custom Application"
 msgstr "Chỉnh sửa ứng dụng"
 
-#: Music.class.php:610
+#: Music.class.php:636
 msgid "Delete"
 msgstr "Xóa"
 
@@ -132,7 +152,7 @@ msgstr ""
 "Kích hoạt phát lại nhạc ngẫu nhiên cho category này. Nếu bị vô hiệu nhạc sẽ "
 "phát theo thứ tự an pha bê"
 
-#: Music.class.php:465
+#: Music.class.php:491
 msgid "Failed to write file to disk"
 msgstr "Ghi tệp vào đã không thành công"
 
@@ -140,7 +160,7 @@ msgstr "Ghi tệp vào đã không thành công"
 msgid "File"
 msgstr "Tệp"
 
-#: Music.class.php:488
+#: Music.class.php:514
 msgid "File does not exist"
 msgstr "Tệp không tồn tại"
 
@@ -149,7 +169,7 @@ msgstr "Tệp không tồn tại"
 msgid "File size is too large. Max size is %s bytes"
 msgstr "Dung lượng tệp quá lớn. Dung lượng tối đa là %s byte"
 
-#: Music.class.php:420
+#: Music.class.php:446
 msgid "File upload failed"
 msgstr "Tải tệp lên không thành công"
 
@@ -169,19 +189,23 @@ msgstr ""
 "Nếu bạn đang chuyển đổi media thì  có thể mất mát nhiều thời gian,bạn có "
 "đồng ý không?"
 
-#: Music.class.php:522
+#: Music.class.php:548
 msgid "Invalid Request"
 msgstr "Yêu cầu không hợp lệ"
 
-#: Music.class.php:366
+#: Music.class.php:390
 msgid "Invalid category"
 msgstr "Category không hợp lệ"
+
+#: Music.class.php:694
+msgid "Invalid music on hold type"
+msgstr ""
 
 #: views/bootnav.php:2
 msgid "List MoH Categories"
 msgstr "Danh sách các category MoH"
 
-#: Music.class.php:462
+#: Music.class.php:488
 msgid "Missing a temporary folder"
 msgstr "Bị thiếu một thư mục tạm"
 
@@ -193,11 +217,11 @@ msgstr "Nhạc phát lúc chờ"
 msgid "No"
 msgstr "Không"
 
-#: Music.class.php:459
+#: Music.class.php:485
 msgid "No file was uploaded"
 msgstr "Không có tệp nào được tải lên"
 
-#: Music.class.php:48
+#: Music.class.php:61
 msgid "On Hold Music"
 msgstr "Nhạc chờ"
 
@@ -226,11 +250,15 @@ msgstr "Phát"
 msgid "Please enter a valid Category Name"
 msgstr "Vui lòng nhập Tên của Category hợp lệ"
 
-#: assets/js/music.js:16
+#: Music.class.php:705 assets/js/music.js:16
 msgid "Please enter a valid application command and arguments"
 msgstr "Vui lòng nhập lệnh và các tham số ứng dụng hợp lệ"
 
-#: Music.class.php:610
+#: Music.class.php:733
+msgid "Please enter a valid format"
+msgstr ""
+
+#: Music.class.php:636
 msgid "Reset"
 msgstr "Cài đặt lại"
 
@@ -238,7 +266,7 @@ msgstr "Cài đặt lại"
 msgid "Settings"
 msgstr "Cài đặt"
 
-#: Music.class.php:610
+#: Music.class.php:636
 msgid "Submit"
 msgstr "gửi đi"
 
@@ -246,19 +274,19 @@ msgstr "gửi đi"
 msgid "System Setup"
 msgstr "Thiết lập hệ thống"
 
-#: Music.class.php:453
+#: Music.class.php:479
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 "Tệp được tải lên vượt quá kích cỡ tệp tối đa được quy định trong mẫu HTML"
 
-#: Music.class.php:450
+#: Music.class.php:476
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 "Tệp được tải lên vượt quá kích cỡ tải lên tối đa được quy định trong php.ini"
 
-#: Music.class.php:456
+#: Music.class.php:482
 msgid "The uploaded file was only partially uploaded"
 msgstr "Các tệp tải lên đã chỉ được tải lên từng phần"
 
@@ -286,12 +314,12 @@ msgstr ""
 "liệt kê dưới đây. Nếu cài đặt là \"Custom Application\"  thì category này sẽ "
 "phát trực tuyến nhạc từ ứng dụng đã cài đặt"
 
-#: Music.class.php:372
+#: Music.class.php:396
 #, php-format
 msgid "Unable to delete %s"
 msgstr "Không thể xóa %s"
 
-#: Music.class.php:445
+#: Music.class.php:471
 msgid "Unsupported file format"
 msgstr "Định dạng tệp không được hỗ trợ"
 
