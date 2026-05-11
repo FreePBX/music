@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-26 03:33+0000\n"
+"POT-Creation-Date: 2026-05-11 07:21+0000\n"
 "PO-Revision-Date: 2016-04-26 06:48+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: Music.class.php:501
+#: Music.class.php:524
 msgid "A PHP extension stopped the file upload"
 msgstr "بارگذاری فایل به دلیل تنظیمات PHP متوقف شد"
 
@@ -55,6 +55,26 @@ msgstr "خطا در ارسال این سند"
 msgid "Application"
 msgstr "برنامه ها"
 
+#: Music.class.php:806
+msgid "Application command contains invalid characters"
+msgstr ""
+
+#: Music.class.php:789
+msgid "Application command contains unsupported control characters"
+msgstr ""
+
+#: Music.class.php:792
+msgid "Application command contains unsupported shell characters"
+msgstr ""
+
+#: Music.class.php:798
+msgid "Application command is not in the allowed list"
+msgstr ""
+
+#: Music.class.php:786
+msgid "Application command is too long"
+msgstr ""
+
 #: assets/js/music.js:143
 msgid "At least one codec must be checked"
 msgstr "حداقل یک کدک باید بررسی شود"
@@ -63,7 +83,11 @@ msgstr "حداقل یک کدک باید بررسی شود"
 msgid "Browse"
 msgstr "مسیر"
 
-#: Music.class.php:505
+#: music.i18n.php:12
+msgid "Cache MoH Classes"
+msgstr "کلاسهای کش موزیک انتظار"
+
+#: Music.class.php:528
 msgid "Can Not Find Uploaded Files"
 msgstr "فایل بارگذاری شده یافت نمیشود"
 
@@ -78,7 +102,7 @@ msgstr ""
 msgid "Category"
 msgstr "دسته"
 
-#: Music.class.php:167
+#: Music.class.php:188
 msgid "Category Already Exists"
 msgstr "دسته موجود"
 
@@ -102,7 +126,7 @@ msgstr "تبدیل فایل های بارگذاری شده به"
 msgid "Custom Application"
 msgstr "برنامه شخصی"
 
-#: Music.class.php:655
+#: Music.class.php:678
 msgid "Delete"
 msgstr "حذف"
 
@@ -122,7 +146,7 @@ msgstr ""
 "فعال کردن پخش تصادفی موزیک از این دسته.اگر موزیک غیر فعال باشد به ترتیب "
 "الفبا پخش میشود"
 
-#: Music.class.php:498
+#: Music.class.php:521
 msgid "Failed to write file to disk"
 msgstr "خطا در نوشتن فایل به روی دیسک"
 
@@ -130,7 +154,7 @@ msgstr "خطا در نوشتن فایل به روی دیسک"
 msgid "File"
 msgstr "فایل"
 
-#: Music.class.php:521
+#: Music.class.php:544
 msgid "File does not exist"
 msgstr "فایل موجود نیست"
 
@@ -139,7 +163,7 @@ msgstr "فایل موجود نیست"
 msgid "File size is too large. Max size is %s bytes"
 msgstr ""
 
-#: Music.class.php:453
+#: Music.class.php:476
 msgid "File upload failed"
 msgstr "مشکل در بارگذاری فایل"
 
@@ -157,31 +181,39 @@ msgid ""
 "ok?"
 msgstr "اگر مکالمه تصویری است, زمان بیشتری میگیرد, ایرادی ندارد؟"
 
-#: Music.class.php:564
+#: Music.class.php:587
 msgid "Invalid Request"
 msgstr "درخواست نامعتبر"
 
-#: Music.class.php:398
+#: Music.class.php:419
 msgid "Invalid category"
 msgstr "دسته نامعتبر"
+
+#: Music.class.php:772
+msgid "Invalid music on hold type"
+msgstr ""
 
 #: views/bootnav.php:2
 msgid "List MoH Categories"
 msgstr "فهرست دسته MoH"
 
-#: Music.class.php:495
+#: Music.class.php:518
 msgid "Missing a temporary folder"
 msgstr "از دست دادن پوشه موقت"
+
+#: music.i18n.php:4 music.i18n.php:10
+msgid "Music on Hold"
+msgstr "آهنگ انتظار"
 
 #: views/advanced_form.php:95 views/basic_form.php:16
 msgid "No"
 msgstr "خیر"
 
-#: Music.class.php:492
+#: Music.class.php:515
 msgid "No file was uploaded"
 msgstr "فایلی بارگذاری نشده"
 
-#: Music.class.php:58
+#: Music.class.php:71
 msgid "On Hold Music"
 msgstr "آهنگ انتظار"
 
@@ -210,29 +242,41 @@ msgstr "اجرا"
 msgid "Please enter a valid Category Name"
 msgstr "لطفا نام دسته درست وارد کنید"
 
-#: assets/js/music.js:16
+#: Music.class.php:783 assets/js/music.js:16
 msgid "Please enter a valid application command and arguments"
 msgstr "لطفا دستورات برنامه درست وارد کنید"
 
-#: Music.class.php:660
+#: Music.class.php:811
+msgid "Please enter a valid format"
+msgstr ""
+
+#: Music.class.php:683
 msgid "Reset"
 msgstr "بازنشانی"
 
-#: Music.class.php:665
+#: music.i18n.php:6
+msgid "Settings"
+msgstr "تنظیمات"
+
+#: Music.class.php:688
 msgid "Submit"
 msgstr "ارسال"
 
-#: Music.class.php:486
+#: music.i18n.php:14
+msgid "System Setup"
+msgstr "پیکربندی سیستم"
+
+#: Music.class.php:509
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr "حجم فایل بارگذاری شده بیشتر از حد مجاز تعیین شده در فرم است"
 
-#: Music.class.php:483
+#: Music.class.php:506
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr "حجم فایل بارگذاری شده بیشتر از حد تعیین شده در  php.ini  میباشد"
 
-#: Music.class.php:489
+#: Music.class.php:512
 msgid "The uploaded file was only partially uploaded"
 msgstr "بخشی از فایل بارگذاری شده"
 
@@ -260,12 +304,12 @@ msgstr ""
 "listed below. If set to \"Custom Application\" then this category will "
 "stream music from the set application"
 
-#: Music.class.php:404
+#: Music.class.php:425
 #, php-format
 msgid "Unable to delete %s"
 msgstr "نمیتوان فایل %s را حذف کرد"
 
-#: Music.class.php:478
+#: Music.class.php:501
 msgid "Unsupported file format"
 msgstr "فرمت فایل نامعتبر"
 
@@ -286,6 +330,21 @@ msgstr ""
 "بارگذاری فایل از سیستم شما.Supported upload formats are: %s. This includes "
 "archives (that include multiple files) and multiple files"
 
+#: music.i18n.php:8
+msgid ""
+"Uploading and management of sound files (wav, mp3) to be used for on-hold "
+"music."
+msgstr ""
+"بارگذاری و مدیریت فایلهای صوتی (wav, mp3) مورد استفاده در موزیک انتظار."
+
+#: music.i18n.php:16
+msgid ""
+"When enabled Asterisk will use 1 instance of moh class for all channels who "
+"are using it, decreasing consumable cpu cycles and memory in the process"
+msgstr ""
+"When enabled Asterisk will use 1 instance of moh class for all channels who "
+"are using it , decreasing consumable cpu cycles and memory in the process"
+
 #: views/advanced_form.php:93 views/basic_form.php:14
 msgid "Yes"
 msgstr "بله"
@@ -302,33 +361,6 @@ msgstr ""
 "HTML5 browser playback you will need to install programs that can not be "
 "distributed with the PBX. If you'd like to install the binaries needed for "
 "these conversions click <a href='%s'>here</a>"
-
-#~ msgid "Cache MoH Classes"
-#~ msgstr "کلاسهای کش موزیک انتظار"
-
-#~ msgid "Music on Hold"
-#~ msgstr "آهنگ انتظار"
-
-#~ msgid "Settings"
-#~ msgstr "تنظیمات"
-
-#~ msgid "System Setup"
-#~ msgstr "پیکربندی سیستم"
-
-#~ msgid ""
-#~ "Uploading and management of sound files (wav, mp3) to be used for on-hold "
-#~ "music."
-#~ msgstr ""
-#~ "بارگذاری و مدیریت فایلهای صوتی (wav, mp3) مورد استفاده در موزیک انتظار."
-
-#~ msgid ""
-#~ "When enabled Asterisk will use 1 instance of moh class for all channels "
-#~ "who are using it, decreasing consumable cpu cycles and memory in the "
-#~ "process"
-#~ msgstr ""
-#~ "When enabled Asterisk will use 1 instance of moh class for all channels "
-#~ "who are using it , decreasing consumable cpu cycles and memory in the "
-#~ "process"
 
 #~ msgid "Are you sure you want to delete this item?"
 #~ msgstr "آیا از حذف این مورد مطمئن هستید؟"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-26 03:33+0000\n"
+"POT-Creation-Date: 2026-05-11 07:21+0000\n"
 "PO-Revision-Date: 2014-07-22 12:02+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/music/bg/"
@@ -22,7 +22,7 @@ msgstr ""
 "X-Poedit-Country: BULGARIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: Music.class.php:501
+#: Music.class.php:524
 msgid "A PHP extension stopped the file upload"
 msgstr ""
 
@@ -53,6 +53,26 @@ msgstr ""
 msgid "Application"
 msgstr ""
 
+#: Music.class.php:806
+msgid "Application command contains invalid characters"
+msgstr ""
+
+#: Music.class.php:789
+msgid "Application command contains unsupported control characters"
+msgstr ""
+
+#: Music.class.php:792
+msgid "Application command contains unsupported shell characters"
+msgstr ""
+
+#: Music.class.php:798
+msgid "Application command is not in the allowed list"
+msgstr ""
+
+#: Music.class.php:786
+msgid "Application command is too long"
+msgstr ""
+
 #: assets/js/music.js:143
 msgid "At least one codec must be checked"
 msgstr ""
@@ -61,7 +81,11 @@ msgstr ""
 msgid "Browse"
 msgstr ""
 
-#: Music.class.php:505
+#: music.i18n.php:12
+msgid "Cache MoH Classes"
+msgstr ""
+
+#: Music.class.php:528
 msgid "Can Not Find Uploaded Files"
 msgstr ""
 
@@ -75,7 +99,7 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: Music.class.php:167
+#: Music.class.php:188
 msgid "Category Already Exists"
 msgstr ""
 
@@ -99,7 +123,7 @@ msgstr ""
 msgid "Custom Application"
 msgstr ""
 
-#: Music.class.php:655
+#: Music.class.php:678
 msgid "Delete"
 msgstr "Изтрий"
 
@@ -117,7 +141,7 @@ msgid ""
 "play in alphabetical order"
 msgstr ""
 
-#: Music.class.php:498
+#: Music.class.php:521
 msgid "Failed to write file to disk"
 msgstr ""
 
@@ -125,7 +149,7 @@ msgstr ""
 msgid "File"
 msgstr ""
 
-#: Music.class.php:521
+#: Music.class.php:544
 msgid "File does not exist"
 msgstr ""
 
@@ -134,7 +158,7 @@ msgstr ""
 msgid "File size is too large. Max size is %s bytes"
 msgstr ""
 
-#: Music.class.php:453
+#: Music.class.php:476
 msgid "File upload failed"
 msgstr ""
 
@@ -152,31 +176,39 @@ msgid ""
 "ok?"
 msgstr ""
 
-#: Music.class.php:564
+#: Music.class.php:587
 msgid "Invalid Request"
 msgstr ""
 
-#: Music.class.php:398
+#: Music.class.php:419
 msgid "Invalid category"
+msgstr ""
+
+#: Music.class.php:772
+msgid "Invalid music on hold type"
 msgstr ""
 
 #: views/bootnav.php:2
 msgid "List MoH Categories"
 msgstr ""
 
-#: Music.class.php:495
+#: Music.class.php:518
 msgid "Missing a temporary folder"
 msgstr ""
+
+#: music.i18n.php:4 music.i18n.php:10
+msgid "Music on Hold"
+msgstr "Музика при Задържане"
 
 #: views/advanced_form.php:95 views/basic_form.php:16
 msgid "No"
 msgstr ""
 
-#: Music.class.php:492
+#: Music.class.php:515
 msgid "No file was uploaded"
 msgstr ""
 
-#: Music.class.php:58
+#: Music.class.php:71
 msgid "On Hold Music"
 msgstr "Музика при Задържане"
 
@@ -205,29 +237,41 @@ msgstr ""
 msgid "Please enter a valid Category Name"
 msgstr "Моля въведете правилно Име на Категория"
 
-#: assets/js/music.js:16
+#: Music.class.php:783 assets/js/music.js:16
 msgid "Please enter a valid application command and arguments"
 msgstr ""
 
-#: Music.class.php:660
+#: Music.class.php:811
+msgid "Please enter a valid format"
+msgstr ""
+
+#: Music.class.php:683
 msgid "Reset"
 msgstr ""
 
-#: Music.class.php:665
+#: music.i18n.php:6
+msgid "Settings"
+msgstr "Настройки"
+
+#: Music.class.php:688
 msgid "Submit"
 msgstr ""
 
-#: Music.class.php:486
+#: music.i18n.php:14
+msgid "System Setup"
+msgstr "Общи Настройки"
+
+#: Music.class.php:509
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 
-#: Music.class.php:483
+#: Music.class.php:506
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 
-#: Music.class.php:489
+#: Music.class.php:512
 msgid "The uploaded file was only partially uploaded"
 msgstr ""
 
@@ -252,12 +296,12 @@ msgid ""
 "stream music from the set application"
 msgstr ""
 
-#: Music.class.php:404
+#: Music.class.php:425
 #, php-format
 msgid "Unable to delete %s"
 msgstr ""
 
-#: Music.class.php:478
+#: Music.class.php:501
 msgid "Unsupported file format"
 msgstr ""
 
@@ -276,6 +320,20 @@ msgid ""
 "includes archives (that include multiple files) and multiple files"
 msgstr ""
 
+#: music.i18n.php:8
+msgid ""
+"Uploading and management of sound files (wav, mp3) to be used for on-hold "
+"music."
+msgstr ""
+"Качване и управление на звукови файлове (wav, mp3), които да се използват за "
+"музика при задържане."
+
+#: music.i18n.php:16
+msgid ""
+"When enabled Asterisk will use 1 instance of moh class for all channels who "
+"are using it, decreasing consumable cpu cycles and memory in the process"
+msgstr ""
+
 #: views/advanced_form.php:93 views/basic_form.php:14
 msgid "Yes"
 msgstr ""
@@ -288,22 +346,6 @@ msgid ""
 "distributed with the PBX. If you'd like to install the binaries needed for "
 "these conversions click <a href='%s'>here</a>"
 msgstr ""
-
-#~ msgid "Music on Hold"
-#~ msgstr "Музика при Задържане"
-
-#~ msgid "Settings"
-#~ msgstr "Настройки"
-
-#~ msgid "System Setup"
-#~ msgstr "Общи Настройки"
-
-#~ msgid ""
-#~ "Uploading and management of sound files (wav, mp3) to be used for on-hold "
-#~ "music."
-#~ msgstr ""
-#~ "Качване и управление на звукови файлове (wav, mp3), които да се използват "
-#~ "за музика при задържане."
 
 #~ msgid "Add Streaming Category"
 #~ msgstr "Добави Поточна Категория"
