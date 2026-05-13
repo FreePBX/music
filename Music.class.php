@@ -217,7 +217,7 @@ class Music implements \BMO {
 				case "custom":
 					$validated = $this->validateCustomConfiguration((string) ($cat['type'] ?? ''), (string) ($cat['application'] ?? ''), (string) ($cat['format'] ?? ''));
 					if(!$validated['valid']) {
-						continue;
+						continue 2;
 					}
 					$conf["musiconhold_additional.conf"][$name] = ["mode" => $validated['type'], "application" => $validated['application'], "format" => $validated['format']];
 				break;
