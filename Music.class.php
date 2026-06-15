@@ -31,6 +31,46 @@ class Music implements \BMO {
 		'/usr/local/bin/cvlc',
 	];
 
+	private const CUSTOM_APPLICATION_PLAYER_FAMILY = [
+		'/usr/bin/mpg123' => 'mpg123',
+		'/usr/local/bin/mpg123' => 'mpg123',
+		'/usr/bin/mpg321' => 'mpg321',
+		'/usr/local/bin/mpg321' => 'mpg321',
+		'/usr/bin/madplay' => 'madplay',
+		'/usr/local/bin/madplay' => 'madplay',
+		'/usr/bin/ogg123' => 'ogg123',
+		'/usr/local/bin/ogg123' => 'ogg123',
+		'/usr/bin/cvlc' => 'cvlc',
+		'/usr/local/bin/cvlc' => 'cvlc',
+	];
+
+	/**
+	 * Player options that can read/write files, open control channels, or
+	 * otherwise expand the attack surface beyond streaming audio to stdout.
+	 */
+	private const DISALLOWED_PLAYER_OPTIONS = [
+		'mpg123' => [
+			'long' => ['streamdump', 'wav', 'outfile', 'au', 'cdr', 'auth-file', 'fifo', 'network'],
+			'short' => ['w', 'O', '@'],
+		],
+		'mpg321' => [
+			'long' => ['streamdump', 'wav', 'outfile', 'au', 'cdr', 'auth-file', 'fifo', 'network'],
+			'short' => ['w', 'O', '@'],
+		],
+		'madplay' => [
+			'long' => ['output', 'raw'],
+			'short' => ['o'],
+		],
+		'ogg123' => [
+			'long' => ['output'],
+			'short' => ['f'],
+		],
+		'cvlc' => [
+			'long' => ['sout', 'lua-config', 'input-slave', 'run'],
+			'short' => [],
+		],
+	];
+
 	public function __construct($freepbx = null) {
 		if ($freepbx == null) {
 			throw new Exception("Not given a FreePBX Object");
@@ -729,11 +769,62 @@ class Music implements \BMO {
 			}
 		}
 
+		if($this->applicationUsesDisallowedPlayerOption($binary, $parts)) {
+			return ["valid" => false, "message" => _("Application command contains a disallowed player option"), "type" => "custom", "application" => "", "format" => ""];
+		}
+
 		if($format !== '' && !preg_match('/^[A-Za-z0-9_-]{1,32}$/', $format)) {
 			return ["valid" => false, "message" => _("Please enter a valid format"), "type" => "custom", "application" => "", "format" => ""];
 		}
 
 		return ["valid" => true, "message" => "", "type" => "custom", "application" => $application, "format" => $format];
+	}
+
+	private function applicationUsesDisallowedPlayerOption(string $binary, array $parts): bool {
+		$family = self::CUSTOM_APPLICATION_PLAYER_FAMILY[$binary] ?? null;
+		if($family === null) {
+			return false;
+		}
+
+		$rules = self::DISALLOWED_PLAYER_OPTIONS[$family] ?? null;
+		if($rules === null) {
+			return false;
+		}
+
+		foreach(array_slice($parts, 1) as $part) {
+			if($part === '' || $part === '-') {
+				continue;
+			}
+			if(str_starts_with($part, '--')) {
+				$option = substr($part, 2);
+				$equals = strpos($option, '=');
+				if($equals !== false) {
+					$option = substr($option, 0, $equals);
+				}
+				if(in_array($option, $rules['long'], true)) {
+					return true;
+				}
+				continue;
+			}
+			if(!str_starts_with($part, '-') || strlen($part) === 1) {
+				continue;
+			}
+
+			$cluster = substr($part, 1);
+			if($cluster !== '' && in_array($cluster[0], $rules['short'], true)) {
+				return true;
+			}
+			if(preg_match('/^([a-zA-Z]+)/', $cluster, $matches) !== 1) {
+				continue;
+			}
+			foreach(str_split($matches[1]) as $option) {
+				if(in_array($option, $rules['short'], true)) {
+					return true;
+				}
+			}
+		}
+
+		return false;
 	}
 
 	private function getCategoryPath($category=null) {
