@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-28 06:55-0400\n"
+"POT-Creation-Date: 2026-06-15 07:43-0400\n"
 "PO-Revision-Date: 2014-07-22 12:02+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/music/bg/"
@@ -22,7 +22,7 @@ msgstr ""
 "X-Poedit-Country: BULGARIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: Music.class.php:494
+#: Music.class.php:534
 msgid "A PHP extension stopped the file upload"
 msgstr ""
 
@@ -53,23 +53,27 @@ msgstr ""
 msgid "Application"
 msgstr ""
 
-#: Music.class.php:728
+#: Music.class.php:773
+msgid "Application command contains a disallowed player option"
+msgstr ""
+
+#: Music.class.php:768
 msgid "Application command contains invalid characters"
 msgstr ""
 
-#: Music.class.php:711
+#: Music.class.php:751
 msgid "Application command contains unsupported control characters"
 msgstr ""
 
-#: Music.class.php:714
+#: Music.class.php:754
 msgid "Application command contains unsupported shell characters"
 msgstr ""
 
-#: Music.class.php:720
+#: Music.class.php:760
 msgid "Application command is not in the allowed list"
 msgstr ""
 
-#: Music.class.php:708
+#: Music.class.php:748
 msgid "Application command is too long"
 msgstr ""
 
@@ -85,7 +89,7 @@ msgstr ""
 msgid "Cache MoH Classes"
 msgstr ""
 
-#: Music.class.php:498
+#: Music.class.php:538
 msgid "Can Not Find Uploaded Files"
 msgstr ""
 
@@ -99,7 +103,7 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: Music.class.php:174
+#: Music.class.php:214
 msgid "Category Already Exists"
 msgstr ""
 
@@ -123,7 +127,7 @@ msgstr ""
 msgid "Custom Application"
 msgstr ""
 
-#: Music.class.php:636
+#: Music.class.php:676
 msgid "Delete"
 msgstr "Изтрий"
 
@@ -141,7 +145,7 @@ msgid ""
 "play in alphabetical order"
 msgstr ""
 
-#: Music.class.php:491
+#: Music.class.php:531
 msgid "Failed to write file to disk"
 msgstr ""
 
@@ -149,7 +153,7 @@ msgstr ""
 msgid "File"
 msgstr ""
 
-#: Music.class.php:514
+#: Music.class.php:554
 msgid "File does not exist"
 msgstr ""
 
@@ -158,7 +162,7 @@ msgstr ""
 msgid "File size is too large. Max size is %s bytes"
 msgstr ""
 
-#: Music.class.php:446
+#: Music.class.php:486
 msgid "File upload failed"
 msgstr ""
 
@@ -176,15 +180,15 @@ msgid ""
 "ok?"
 msgstr ""
 
-#: Music.class.php:548
+#: Music.class.php:588
 msgid "Invalid Request"
 msgstr ""
 
-#: Music.class.php:390
+#: Music.class.php:430
 msgid "Invalid category"
 msgstr ""
 
-#: Music.class.php:694
+#: Music.class.php:734
 msgid "Invalid music on hold type"
 msgstr ""
 
@@ -192,7 +196,7 @@ msgstr ""
 msgid "List MoH Categories"
 msgstr ""
 
-#: Music.class.php:488
+#: Music.class.php:528
 msgid "Missing a temporary folder"
 msgstr ""
 
@@ -204,11 +208,11 @@ msgstr "Музика при Задържане"
 msgid "No"
 msgstr ""
 
-#: Music.class.php:485
+#: Music.class.php:525
 msgid "No file was uploaded"
 msgstr ""
 
-#: Music.class.php:61
+#: Music.class.php:101
 msgid "On Hold Music"
 msgstr "Музика при Задържане"
 
@@ -237,15 +241,15 @@ msgstr ""
 msgid "Please enter a valid Category Name"
 msgstr "Моля въведете правилно Име на Категория"
 
-#: Music.class.php:705 assets/js/music.js:16
+#: Music.class.php:745 assets/js/music.js:16
 msgid "Please enter a valid application command and arguments"
 msgstr ""
 
-#: Music.class.php:733
+#: Music.class.php:777
 msgid "Please enter a valid format"
 msgstr ""
 
-#: Music.class.php:636
+#: Music.class.php:676
 msgid "Reset"
 msgstr ""
 
@@ -253,7 +257,7 @@ msgstr ""
 msgid "Settings"
 msgstr "Настройки"
 
-#: Music.class.php:636
+#: Music.class.php:676
 msgid "Submit"
 msgstr ""
 
@@ -261,17 +265,17 @@ msgstr ""
 msgid "System Setup"
 msgstr "Общи Настройки"
 
-#: Music.class.php:479
+#: Music.class.php:519
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 
-#: Music.class.php:476
+#: Music.class.php:516
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 
-#: Music.class.php:482
+#: Music.class.php:522
 msgid "The uploaded file was only partially uploaded"
 msgstr ""
 
@@ -296,12 +300,12 @@ msgid ""
 "stream music from the set application"
 msgstr ""
 
-#: Music.class.php:396
+#: Music.class.php:436
 #, php-format
 msgid "Unable to delete %s"
 msgstr ""
 
-#: Music.class.php:471
+#: Music.class.php:511
 msgid "Unsupported file format"
 msgstr ""
 
