@@ -29,6 +29,7 @@ class Music implements \BMO {
 		'/usr/local/bin/ogg123',
 		'/usr/bin/cvlc',
 		'/usr/local/bin/cvlc',
+		'/usr/bin/ffmpeg',
 	];
 
 	private const CUSTOM_APPLICATION_PLAYER_FAMILY = [
@@ -42,6 +43,7 @@ class Music implements \BMO {
 		'/usr/local/bin/ogg123' => 'ogg123',
 		'/usr/bin/cvlc' => 'cvlc',
 		'/usr/local/bin/cvlc' => 'cvlc',
+		'/usr/bin/ffmpeg' => 'ffmpeg',
 	];
 
 	/**
@@ -67,6 +69,10 @@ class Music implements \BMO {
 		],
 		'cvlc' => [
 			'long' => ['sout', 'lua-config', 'input-slave', 'run'],
+			'short' => [],
+		],
+		'ffmpeg' => [
+			'long' => ['report', 'attach', 'dump_attachment', 'filter_script', 'filter_complex_script', 'protocol_whitelist', 'protocol_blacklist'],
 			'short' => [],
 		],
 	];
