@@ -7,11 +7,14 @@ if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 echo FreePBX::Music()->showPage();
 function music_return_bytes($val) {
     $val = trim((string) $val);
+    if ($val === '') {
+        return 0;
+    }
     $last = strtolower($val[strlen($val)-1]);
-    
+
     // Validate the input to ensure it ends with 'G', 'M', or 'K'
     if (!in_array($last, ['g', 'm', 'k'])) {
-        throw new InvalidArgumentException("Invalid input format. Must end with 'G', 'M', or 'K'.");
+        return (int) $val;
     }
     
     // Extract the numeric part of the input string

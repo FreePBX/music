@@ -29,7 +29,7 @@ class Music extends Base {
 						],
 						'resolve' => function($root, $args) {
 							$item = $this->freepbx->Music->getCategoryByID(Relay::fromGlobalId($args['id'])['id']);
-							return $item ?? null;
+							return $item ?: null;
 						}
 					]
 				];
@@ -44,7 +44,7 @@ class Music extends Base {
 
 		$user->setGetNodeCallback(function($id) {
 			$item = $this->freepbx->Music->getCategoryByID($id);
-			return $item ?? null;
+			return $item ?: null;
 		});
 
 		$user->addFieldCallback(fn() => [
