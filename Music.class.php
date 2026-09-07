@@ -6,13 +6,30 @@ use PDO;
 if(!function_exists('music_list')) {
 	include(__DIR__.'/functions.inc.php');
 }
-#[\AllowDynamicProperties]
 class Music implements \BMO {
 	/** Extensions to show in the convert to section
 	 * Limited on purpose because there are far too many,
 	 * Most of which are not supported by asterisk
 	 */
 	public $convert = ["wav", "sln", "sln16", "sln48", "g722", "ulaw", "alaw", "g729", "gsm"];
+
+	/** @var \FreePBX */
+	protected $FreePBX;
+
+	/** @var PDO */
+	protected $db;
+
+	/** @var string */
+	private $mohdir;
+
+	/** @var string */
+	private $varlibdir;
+
+	/** @var string */
+	private $mohpath;
+
+	/** @var array */
+	private $config;
 
 	private string $tmp = "/tmp";
 
@@ -73,7 +90,7 @@ class Music implements \BMO {
 
 	public function __construct($freepbx = null) {
 		if ($freepbx == null) {
-			throw new Exception("Not given a FreePBX Object");
+			throw new \Exception("Not given a FreePBX Object");
 		}
 		$this->FreePBX = $freepbx;
 		$this->db = $freepbx->Database;
@@ -127,6 +144,10 @@ class Music implements \BMO {
 				$supportedHTML5 = $media->getSupportedHTML5Formats();
 				$convertto = array_intersect($supported['out'], $mh->convert);
 				$data = $this->getCategoryByID($request['id']);
+				if(empty($data)) {
+					$content = load_view(__DIR__.'/views/grid.php', ['message' => $this->message, 'request' => $request]);
+					break;
+				}
 				if($display_mode == "basic") {
 					//only files allowed in this mode
 					$data['type'] = 'files';
@@ -206,7 +227,8 @@ class Music implements \BMO {
 	 * @return void
 	 */
 	public function addCategoryById($id, $name,$type) {
-		$name = iconv("UTF-8", "ISO-8859-1//TRANSLIT", $name);
+		$converted = iconv("UTF-8", "ISO-8859-1//TRANSLIT", $name);
+		$name = ($converted !== false) ? $converted : $name;
 		$name = preg_replace("/\s+|'+|`+|\\+|\/+|\"+|<+|>+|\?+|\*|\.+|&+|\|/","",$name);
 		$name = basename($name);
 		$cat = $this->getCategoryByName($name);
@@ -440,10 +462,13 @@ class Music implements \BMO {
 				return ["status" => true];
 			break;
 			case "save":
+				$category = $this->getCategoryByID($_POST['id']);
+				if(empty($category)) {
+					return ["status" => false, "message" => _("Invalid category")];
+				}
 				if($_POST['type'] == "files") {
 					//do conversions here whooooo
 					$media = $this->FreePBX->Media();
-					$category = $this->getCategoryByID($_POST['id']);
 					$path = $this->getCategoryPath($category['category']);
 					$files = $this->fileList($path);
 					foreach($files as $file) {
@@ -467,6 +492,9 @@ class Music implements \BMO {
 					return ["status" => false];
 				}
 				$category = $this->getCategoryByID($_REQUEST['categoryid']);
+				if(empty($category)) {
+					return ["status" => false, "message" => _("Invalid category")];
+				}
 				$path = $this->getCategoryPath($category['category']);
 				$name = basename((string) $_POST['name']);
 				foreach(glob($path."/".$name."*") as $file) {
@@ -482,7 +510,7 @@ class Music implements \BMO {
 				// So, php will throw an error, as index
 				// $_FILES["files"] does not exist, because
 				// $_FILES is empty.
-				if (!isset($_FILES)) {
+				if (!isset($_FILES["files"]["error"]) || !is_array($_FILES["files"]["error"])) {
 					return ["status" => false, "message" => _("File upload failed")];
 				}
 				foreach ($_FILES["files"]["error"] as $key => $error) {
@@ -492,6 +520,9 @@ class Music implements \BMO {
 							$extension = strtolower($extension);
 							$supported = $this->FreePBX->Media->getSupportedFormats();
 							$category = $this->getCategoryByID($_POST['id']);
+							if(empty($category)) {
+								return ["status" => false, "message" => _("Invalid category")];
+							}
 							$path = $this->getCategoryPath($category['category']);
 							$media = $this->FreePBX->Media();
 							if(in_array($extension,$supported['in'])) {
@@ -540,6 +571,9 @@ class Music implements \BMO {
 			case "gethtml5":
 				$media = $this->FreePBX->Media();
 				$category = $this->getCategoryByID($_REQUEST['categoryid']);
+				if(empty($category)) {
+					return ["status" => false, "message" => _("Invalid category")];
+				}
 				$path = $this->getCategoryPath($category['category']);
 				$file = $path . "/" . basename((string) $_REQUEST['file']);
 				if (file_exists($file))	{
@@ -561,6 +595,9 @@ class Music implements \BMO {
 					break;
 					case 'musiclist':
 						$category = $this->getCategoryByID($_REQUEST['id']);
+						if(empty($category)) {
+							return [];
+						}
 						$path = $this->getCategoryPath($category['category']);
 						$files = [];
 						$count = 0;
