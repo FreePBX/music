@@ -2,7 +2,7 @@
     <rawname>music</rawname>
     <repo>standard</repo>
     <name>Music on Hold</name>
-    <version>18.0.1</version>
+    <version>18.0.1.1</version>
     <publisher>Sangoma Technologies Corporation</publisher>
     <license>GPLv3+</license>
     <licenselink>https://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -12,8 +12,9 @@
     <description>Uploading and management of sound files (wav, mp3) to be used for on-hold music.</description>
     <more-info>https://sangomakb.atlassian.net/wiki/spaces/PG/pages/26509508/PBX+GUI+-+Music+on+Hold+Module</more-info>
     <changelog>
+		*18.0.1.1* Packaging of ver 18.0.1.1
     	*18.0.1* initial release
-    </changelog>
+	</changelog>
     <database>
         <table name="music">
             <field name="id" type="integer" primarykey="true" autoincrement="true"/>
