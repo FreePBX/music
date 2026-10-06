@@ -91,7 +91,7 @@ function linkFormat(val,row){
 	}
 	var html = '<a href="?display=music&id='+row.id+'&action=edit"><i class="fa fa-pencil"></i></a>';
 	if(row.category !== 'default'){
-		html += '&nbsp;<a href="?display=music&id='+row.id+'&action=delete"" class="delAction"><i class="fa fa-trash"></i></a>';
+		html += '&nbsp;<a href="?display=music&id='+row.id+'&action=delete" class="delAction"><i class="fa fa-trash"></i></a>';
 	}
 	return html;
 }
@@ -339,8 +339,10 @@ $(document).on("click", ".delMusic", function() {
 	$.post( "ajax.php", {module: "music", command: "deletemusic", name: name, categoryid: $(this).data("categoryid")}, function( data ) {
 		if(data.status) {
 			$('#musicgrid').bootstrapTable('remove', {field: 'id', values: [id]});
-			var index = files.indexOf();
-			files.splice(name, 1);
+			var index = files.indexOf(name.toLowerCase());
+			if(index !== -1) {
+				files.splice(index, 1);
+			}
 		} else {
 			alert(data.message);
 		}

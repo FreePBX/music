@@ -42,6 +42,7 @@ class Restore Extends Base\RestoreBase{
 			$this->restoreLegacyDatabase($pdo);
 		}
 		else{
+			$conf_array = [];
 			if(file_exists($this->tmpdir.'/etc/asterisk/musiconhold_additional.conf')){
 				$conf_array = parse_ini_file($this->tmpdir.'/etc/asterisk/musiconhold_additional.conf', true);
 			}
