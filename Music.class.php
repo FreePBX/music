@@ -29,6 +29,8 @@ class Music implements \BMO {
 		'/usr/local/bin/ogg123',
 		'/usr/bin/cvlc',
 		'/usr/local/bin/cvlc',
+		'/usr/bin/ffmpeg',
+		'/usr/local/bin/ffmpeg',
 	];
 
 	private const CUSTOM_APPLICATION_PLAYER_FAMILY = [
@@ -42,6 +44,8 @@ class Music implements \BMO {
 		'/usr/local/bin/ogg123' => 'ogg123',
 		'/usr/bin/cvlc' => 'cvlc',
 		'/usr/local/bin/cvlc' => 'cvlc',
+		'/usr/bin/ffmpeg' => 'ffmpeg',
+		'/usr/local/bin/ffmpeg' => 'ffmpeg',
 	];
 
 	/**
@@ -69,6 +73,17 @@ class Music implements \BMO {
 			'long' => ['sout', 'lua-config', 'input-slave', 'run'],
 			'short' => [],
 		],
+	];
+
+	private const ALLOWED_FFMPEG_OPTIONS = [
+		'-loglevel',
+		'-re',
+		'-i',
+		'-filter:a',
+		'-f',
+		'-acodec',
+		'-ac',
+		'-ar',
 	];
 
 	public function __construct($freepbx = null) {
@@ -773,6 +788,11 @@ class Music implements \BMO {
 			return ["valid" => false, "message" => _("Application command contains a disallowed player option"), "type" => "custom", "application" => "", "format" => ""];
 		}
 
+		if((self::CUSTOM_APPLICATION_PLAYER_FAMILY[$binary] ?? null) === 'ffmpeg' && !$this->validateFfmpegCommand($parts)) {
+			return ["valid" => false, "message" => _("Invalid FFmpeg command. Required format: ".
+					"ffmpeg -loglevel quiet -re -i <http|https URL> -filter:a volume=<value> -f s16le -acodec pcm_s16le -ac 1 -ar 8000 -"),"type" => "custom", "application" => "", "format" => ""];
+		}
+
 		if($format !== '' && !preg_match('/^[A-Za-z0-9_-]{1,32}$/', $format)) {
 			return ["valid" => false, "message" => _("Please enter a valid format"), "type" => "custom", "application" => "", "format" => ""];
 		}
@@ -825,6 +845,83 @@ class Music implements \BMO {
 		}
 
 		return false;
+	}
+
+		/**
+		 * Check and verify only FFMpeg whitelisted options are allowed
+		 * Only configurable options:
+		 *    -i <stream URL>
+		 *    -filter:a volume=<value>
+		 * Force the following switches to match compatible sound output:
+		 *    -loglevel quiet (No logging)
+		 *    -re (force the readrate at native, rather than resampling)
+		 *    -f s16le (Force audio format)
+		 *    -acodec pcm_s16le (Force audio codec)
+		 *    -ac 1 (Force to mono)
+		 *    -ar 8000 (Force sammple rate to match recommended)
+		 */
+	private function validateFfmpegCommand(array $parts): bool {
+		// Verify all switches are approved
+		foreach ($parts as $part) {
+			if ($part === '-') {
+				continue;
+			}
+			if (!str_starts_with($part, '-')) {
+				continue;
+			}
+			if (!in_array($part, self::ALLOWED_FFMPEG_OPTIONS, true)) {
+				return false;
+			}
+		}
+		// Verify required options exist
+		foreach (self::ALLOWED_FFMPEG_OPTIONS as $required) {
+			if (!in_array($required, $parts, true)) {
+				return false;
+			}
+		}
+		// Validate URL
+		$idx = array_search('-i', $parts, true);
+		$url = $parts[$idx + 1] ?? '';
+		if (!preg_match('/^https?:\/\/[^\s]+$/i', $url)) {
+			return false;
+		}
+		// Validate loglevel
+		$idx = array_search('-loglevel', $parts, true);
+		if (($parts[$idx + 1] ?? '') !== 'quiet') {
+			return false;
+		}
+		// Validate volume filter
+		$idx = array_search('-filter:a', $parts, true);
+		if (!preg_match('/^volume=[0-9]+(\.[0-9]+)?$/',
+			($parts[$idx + 1] ?? '')
+		)) {
+			return false;
+		}
+		// Force output format
+		$idx = array_search('-f', $parts, true);
+		if (($parts[$idx + 1] ?? '') !== 's16le') {
+			return false;
+		}
+		// Force codec
+		$idx = array_search('-acodec', $parts, true);
+		if (($parts[$idx + 1] ?? '') !== 'pcm_s16le') {
+			return false;
+		}
+		// Force mono
+		$idx = array_search('-ac', $parts, true);
+		if (($parts[$idx + 1] ?? '') !== '1') {
+			return false;
+		}
+		// Force 8k sample rate
+		$idx = array_search('-ar', $parts, true);
+		if (($parts[$idx + 1] ?? '') !== '8000') {
+			return false;
+		}
+		// Must output to stdout
+		if (end($parts) !== '-') {
+			return false;
+		}
+		return true;
 	}
 
 	private function getCategoryPath($category=null) {
